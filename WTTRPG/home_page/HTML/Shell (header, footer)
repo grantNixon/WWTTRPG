@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <Meta charset="utf-8">
+        <title>WWTTRPG</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="HomeCS.css">
+    <header class="p-3 mb-3 border-bottom mt-9">
+    <div class="container-fluid">
+        <header class="p-3 text-bg-dark">
+            <div class="container">
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration">
+                  <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 me-2">
+                  <li><a href="#" class="nav-link px-2 link-secondary me-3">WWTTRPG</a></li>
+                  <div class="dropdown text-end me-3 mt-2">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Create
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                      <li><a class="dropdown-item" href="#">Character</a></li>
+                      <li><a class="dropdown-item" href="#">Campaign</a></li>
+                      <li><a class="dropdown-item" href="#">Homebrew</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown text-end me-3 mt-2">
+                    <a href="#" class="d-block mr-3 link-body-emphasis text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Guide Books
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                      <li><a class="dropdown-item" href="#">Main Guide</a></li>
+                      <li><a class="dropdown-item" href="#">GM Quick Guide</a></li>
+                      <li><a class="dropdown-item" href="#">Adventure: "Trouble in the Outer West"</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown text-end me-2 mt-2">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Browse
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                      <li><a class="dropdown-item" href="#">Races</a></li>
+                      <li><a class="dropdown-item" href="#">Backgrounds</a></li>
+                      <li><a class="dropdown-item" href="#">Weapons</a></li>
+                      <li><a class="dropdown-item" href="#">Spells</a></li>
+                      <li><a class="dropdown-item" href="#">Special Clothing and Armor</a></li>
+                      <li><a class="dropdown-item" href="#">Tonics</a></li>
+                      <li><a class="dropdown-item" href="#">Utilities</a></li>
+                      <li><a class="dropdown-item" href="#">Misc. Items</a></li>
+                    </ul>
+                  </div>
+                  <li><a href="#" class="nav-link px-2 link-body-emphasis text-light">Marketplace</a></li>
+                </ul>
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                  <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                </form>
+        
+                <div class="text-end">
+                  <button type="button" class="btn btn-outline-light me-2">Login</button>
+                  <button type="button" class="btn btn-warning">Sign-up</button>
+                </div>
+            </div>
+          </header>
+        </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+    </body>
+    <div class="container">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact Us</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Terms of Service</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">X</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Instagram</a></li>
+          </ul>
+          <p class="text-center text-body-secondary">© 2023 Company, LLC</p>
+        </footer>
+      </div>
+</html>
