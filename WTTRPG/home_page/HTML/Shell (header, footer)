@@ -16,7 +16,7 @@
                 </a>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 me-2">
                   <li><a href="#" class="nav-link px-2 link-secondary me-3">WWTTRPG</a></li>
-                  <div class="dropdown text-end me-3 mt-2">
+                  <div class="dropdown text-end me-5 mt-2">
                     <a href="#" class="d-block link-body-emphasis text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                       Create
                     </a>
@@ -26,7 +26,7 @@
                       <li><a class="dropdown-item" href="#">Homebrew</a></li>
                     </ul>
                   </div>
-                  <div class="dropdown text-end me-3 mt-2">
+                  <div class="dropdown text-end me-5 mt-2">
                     <a href="#" class="d-block mr-3 link-body-emphasis text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                       Guide Books
                     </a>
@@ -36,7 +36,7 @@
                       <li><a class="dropdown-item" href="#">Adventure: "Trouble in the Outer West"</a></li>
                     </ul>
                   </div>
-                  <div class="dropdown text-end me-2 mt-2">
+                  <div class="dropdown text-end me-5 mt-2">
                     <a href="#" class="d-block link-body-emphasis text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                       Browse
                     </a>
