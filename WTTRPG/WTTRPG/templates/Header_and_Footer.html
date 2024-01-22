@@ -5,41 +5,40 @@
         <title>WWTTRPG</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <link rel="stylesheet" href="HomeCS.css">
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    </head>
+    <nav class="navbar navbar-expand" style="background-color: #000500;">
       <header class="container-fluid">
-        <div class="p-3 text-bg-dark">
-          <div class="d-flex flex-wrap justify-content-between justify-content-lg-start">
-            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration">
-              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-            </a>
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 me-2">
-                  <li><a href="#" class="nav-link link-secondary me-5">WWTTRPG</a></li>
-                  <div class="dropdown text-end ms-5 me-5 mt-2">
-                    <a href="#" class="d-block link-body text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="text-bg-dark">
+            <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-center mb-md-0 me-2" style="background-color: #000500;">
+                  <li><a href="#" class="nav-link link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-light ms-5 me-5">WWTTRPG</a></li>
+                  <span class="border-start"></span>
+                  <div class="dropdown text-end ms-3 me-3 mt-2">
+                    <a href="#" class="d-block link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                       Create
                     </a>
-                    <ul class="dropdown-menu text-small">
+                    <ul class="dropdown-menu dropdown-menu-dark text-small">
                       <li><a class="dropdown-item" href="#">Character</a></li>
                       <li><a class="dropdown-item" href="#">Campaign</a></li>
                       <li><a class="dropdown-item" href="#">Homebrew</a></li>
                     </ul>
                   </div>
-                  <div class="dropdown text-end me-5 mt-2">
-                    <a href="#" class="d-block mr-3 link-body text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="border-end"></span>
+                  <div class="dropdown text-end ms-3 me-3 mt-2">
+                    <a href="#" class="d-block mr-3 link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                       Guide Books
                     </a>
-                    <ul class="dropdown-menu text-small">
+                    <ul class="dropdown-menu dropdown-menu-dark text-small">
                       <li><a class="dropdown-item" href="#">Main Guide</a></li>
                       <li><a class="dropdown-item" href="#">GM Quick Guide</a></li>
                       <li><a class="dropdown-item" href="#">Adventure: "Trouble in the Outer West"</a></li>
                     </ul>
                   </div>
-                  <div class="dropdown text-end me-4 mt-2">
-                    <a href="#" class="d-block link-body text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="border-end"></span>
+                  <div class="dropdown text-end mt-2 ms-3 me-3">
+                    <a href="#" class="d-block link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                       Browse
                     </a>
-                    <ul class="dropdown-menu text-small">
+                    <ul class="dropdown-menu dropdown-menu-dark text-small">
                       <li><a class="dropdown-item" href="#">Races</a></li>
                       <li><a class="dropdown-item" href="#">Backgrounds</a></li>
                       <li><a class="dropdown-item" href="#">Weapons</a></li>
@@ -50,42 +49,36 @@
                       <li><a class="dropdown-item" href="#">Misc. Items</a></li>
                     </ul>
                   </div>
-                  <li><a href="#" class="nav-link me-5 link-body text-light">Marketplace</a></li>
+                  <span class="border-end"></span>
+                  <li><a href="#" class="nav-link link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-light me-1 ms-1">Marketplace</a></li>
+                  <span class="border-end"></span>
                 </ul>
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 order-1 order-lg-2 ms-5" role="search">
-                  <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            </header>
+                <div class="col-4 d-flex justify-content-end">
+                <form class="btn me-2" style="background-color: #137a05;" role="search" id="search-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                  </svg>
+                  <input type="text" id="search-input" style="display: none;">
                 </form>
-        
-                <div class="text-end order-2 order-lg-3">
                   <button type="button" class="btn btn-outline-light me-2">Login</button>
-                  <button type="button" class="btn btn-warning">Sign-up</button>
+                  <button type="button" class="btn btn-sm me-3" style="background-color: #137a05;">Sign-up</button>
                 </div>
-              </div>
             </div>
-          </header>
         </nav>
-        </head>
-    <body>
+      <body style="background-color: #bf7e04;">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         <script src="main.js"></script>
     </body>
-
-    {% block content %}
-
-
-    {% endblock %}
-
-
-
     <div class="container">
         <footer class="py-3 my-4">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact Us</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Terms of Service</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 me-5 text-body-secondary">Terms of Service</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">X</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Instagram</a></li>
           </ul>
