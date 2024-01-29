@@ -9,5 +9,5 @@ def test_view(request):
     # python manage.py makemigrations my_app (result is No changes detected in app 'my_app')
     # python manage.py migrate (no migrations to apply)
     # create my_app/templates/my_app/home.html
-    return render(request,'home_page/test.html')
+    return render(request,'home_page/homepage.html')
 
