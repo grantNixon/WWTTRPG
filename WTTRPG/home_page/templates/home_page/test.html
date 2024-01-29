@@ -1,4 +1,5 @@
 {% extends "Header_and_Footer.html" %} {%block content%}
+{% load static %}
 
 <body>
       <div class="container my-1">
@@ -13,7 +14,7 @@
       <a href="" class="text-decoration-none text-white">
       <div class="container">
         <div class="col">
-          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url(blue.png);">Placeholder image*
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('{%static "home_page/blue.png"%}');>Placeholder image*
             <div class="flex-column h-100 p-5 pb-1 text-center text-white text-shadow-1">
               <h3 class="d-grid pt-3 mt-5 mb-1 p-3 btn btn-dark btn-lg display-6 lh-1 fw-bold">Getting Started: An Intro into wwttrpg</h3>
             </div>
@@ -24,7 +25,7 @@
         <div class="row">
           <div class="col-md-6">
             <a href="" class="text-decoration-none text-white">
-              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('red.jpg');">Placeholder image*
+              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url({%static "home_page/red.jpg"%});">Placeholder image*
                 <div class="d-flex flex-column h-100 p-5 pb-3 text-center text-shadow-1">
                   <h3 class="d-grid pt-3 mt-5 mb-1 p-3 display-6 lh-1 fw-bold btn btn-dark btn-lg">Guide Books</h3>
                 </div>
@@ -34,7 +35,7 @@
         
           <div class="col-md-6">
             <a href="" class="text-decoration-none text-white">
-              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('green.jpeg');">Placeholder image*
+              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url({%static "home_page/green.jpeg"%});">Placeholder image*
                 <div class="d-flex flex-column h-100 p-5 pb-3 text-center text-white text-shadow-1">
                   <h3 class="d-grid pt-3 mt-5 mb-1 p-3 display-6 lh-1 fw-bold btn btn-dark btn-lg">Create</h3>
                 </div>
