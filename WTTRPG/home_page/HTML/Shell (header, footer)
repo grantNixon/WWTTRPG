@@ -15,9 +15,9 @@
                   <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
                 </a>
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 me-2">
-                  <li><a href="#" class="nav-link px-2 link-secondary me-3">WWTTRPG</a></li>
-                  <div class="dropdown text-end me-3 mt-2">
-                    <a href="#" class="d-block link-body-emphasis text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <li><a href="#" class="nav-link px-2 link-secondary me-5">WWTTRPG</a></li>
+                  <div class="dropdown text-end me-5 mt-2">
+                    <a href="#" class="d-block link-body text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                       Create
                     </a>
                     <ul class="dropdown-menu text-small">
@@ -26,8 +26,8 @@
                       <li><a class="dropdown-item" href="#">Homebrew</a></li>
                     </ul>
                   </div>
-                  <div class="dropdown text-end me-3 mt-2">
-                    <a href="#" class="d-block mr-3 link-body-emphasis text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="dropdown text-end me-5 mt-2">
+                    <a href="#" class="d-block mr-3 link-body text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                       Guide Books
                     </a>
                     <ul class="dropdown-menu text-small">
@@ -36,8 +36,8 @@
                       <li><a class="dropdown-item" href="#">Adventure: "Trouble in the Outer West"</a></li>
                     </ul>
                   </div>
-                  <div class="dropdown text-end me-2 mt-2">
-                    <a href="#" class="d-block link-body-emphasis text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <div class="dropdown text-end me-5 mt-2">
+                    <a href="#" class="d-block link-body text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                       Browse
                     </a>
                     <ul class="dropdown-menu text-small">
@@ -51,7 +51,7 @@
                       <li><a class="dropdown-item" href="#">Misc. Items</a></li>
                     </ul>
                   </div>
-                  <li><a href="#" class="nav-link px-2 link-body-emphasis text-light">Marketplace</a></li>
+                  <li><a href="#" class="nav-link px-2 link-body text-light">Marketplace</a></li>
                 </ul>
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
                   <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
