@@ -1,0 +1,49 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+ <body style="background-color: #bf7e04;">
+        <div class="container my-1">
+            <div class="p-5 text-center bg-body-tertiary-dark rounded-3">
+              <h1 class="text-body-emphasis">Create</h1>
+              <p class="lead">
+                Create your character, plan a campaign, or make your own element of wwttrpg
+              </p>
+              <header class="mb-1 pb-1 border-bottom"></header>
+            </div>
+          </div>
+      <a href="" class="text-decoration-none text-white">
+    <div class="container">
+      <div class="col">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('blue.png');">
+          <div class="d-flex flex-column h-100 p-5 pb-1 text-center text-white text-shadow-1">
+            <h3 class="d-grid pt-3 mt-5 mb-1 p-3 display-6 lh-1 fw-bold btn btn-dark btn-lg">Character</h3>
+          </div>
+        </div>
+      </div>
+      </a>
+      <header class="mb-3 mt-3 border-bottom"></header>
+      <a href="" class="text-decoration-none text-white">
+        <div class="row">
+          <div class="col-md-6">
+            <a href="" class="text-decoration-none text-white">
+              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('red.jpg');">Placeholder image*
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-center text-shadow-1">
+                  <h3 class="d-grid pt-3 mt-5 mb-1 p-3 display-6 lh-1 fw-bold btn btn-dark btn-lg">Campaign</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        
+          <div class="col-md-6">
+            <a href="" class="text-decoration-none text-white">
+              <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('green.jpeg');">Placeholder image*
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-center text-white text-shadow-1">
+                  <h3 class="d-grid pt-3 mt-5 mb-1 p-3 display-6 lh-1 fw-bold btn btn-dark btn-lg">Homebrew</h3>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+{% endblock content%}
