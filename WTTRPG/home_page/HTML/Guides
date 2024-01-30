@@ -1,0 +1,53 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+<body style="background-color: #bf7e04;">
+        <div class="container my-1">
+            <div class="p-5 text-center bg-body-tertiary-dark rounded-3">
+              <h1 class="text-body-emphasis">Guides</h1>
+              <p class="lead">
+                Use these guides to learn how to play, GM, or try out an adventure
+              </p>
+              <header class="mb-1 pb-1 border-bottom"></header>
+            </div>
+            <header class="mb-1 pb-1 border-bottom"></header>
+          </div>
+        
+          <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 justify-content-center">
+          <a href="#" class="text-decoration-none" aria-expanded="false">
+            <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="width: 600px; height: 600px;">
+              <div class="my-3 p-3">
+                <h2 class="display-5">Main Guide</h2>
+                <p class="lead">The Basics</p>
+              </div>
+              <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 90%; height: 100%; border-radius: 21px 21px 0 0;"></div>
+            </div>
+          </div>
+        </a>
+          <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 justify-content-center">
+           <a href="#" class="text-decoration-none">
+            <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="width: 600px; height: 600px;">
+              <div class="my-3 p-3">
+                <h2 class="display-5">GM Quick Guide</h2>
+                <p class="lead">A Short Intro on How to GM for WWTTRPG</p>
+              </div>
+              <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 90%; height: 100%; border-radius: 21px 21px 0 0;"></div>
+            </div>
+          </a>
+          </div>
+          <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3 justify-content-center">
+            <a href="#" class="text-decoration-none">
+             <div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden" style="width: 600px; height: 600px;">
+               <div class="my-3 p-3">
+                 <h2 class="display-5">Adventure #1:</h2>
+                 <p class="lead">"Trouble in the Outer West"</p>
+               </div>
+               <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 90%; height: 100%; border-radius: 21px 21px 0 0;"></div>
+             </div>
+           </a>
+           </div>
+        </div>
+      </div>
+
+{% endblock content%}
