@@ -38,7 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'home_page.apps.HomePageConfig'
+    'home_page.apps.HomePageConfig',
+    'create.apps.CreateConfig',
+    'guides.apps.GuidesConfig',
+    'homebrew.apps.HomebrewConfig',
+    'purchase.apps.PurchaseConfig',
 
 ]
 

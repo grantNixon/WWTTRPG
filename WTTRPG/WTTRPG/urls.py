@@ -21,4 +21,6 @@ from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home_page/',include('home_page.urls')),
+    path('create/',include('create.urls')),
+    path('guides/',include('guides.urls'))
 ]
