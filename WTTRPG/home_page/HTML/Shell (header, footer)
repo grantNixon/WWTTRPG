@@ -38,7 +38,7 @@
                   </div>
                   <div class="dropdown text-end me-5 mt-2">
                     <a href="#" class="d-block link-body text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      Browse
+                      Compendium
                     </a>
                     <ul class="dropdown-menu text-small">
                       <li><a class="dropdown-item" href="#">Races</a></li>
