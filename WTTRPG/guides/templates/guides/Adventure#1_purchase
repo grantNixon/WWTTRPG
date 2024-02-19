@@ -1,0 +1,27 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+ <body style="background-color: #bf7e04;">
+     <div class="container-fluid">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+            <h1 class="display-4 fw-normal text-body-emphasis">Adventure #1</h1>
+            <p class="fs-5 text-body-secondary">Jump in to the first adventure module</p>
+          </div>
+          <header class="mb-1 pb-1 border-bottom"></header>
+          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center justify-content-center">
+            <div class="col">
+              <div class="card mb-4 mt-4 rounded-3 shadow-sm" style="background-color: #000500;">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal text-light">Adventure #1</h4>
+                </div>
+                <div class="card-body" style="background-color: #595958;">
+                  <img src="..." alt="" class="img-fluid mb-3">
+                  <button type="button" class="w-100 btn btn-lg btn-primary btn-outline-light" style="background-color: #137a05;">*Price*</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+{% endblock content%}
