@@ -1,0 +1,218 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+<body style="background-color: #bf7e04;">
+        <div class="container my-1">
+            <div class="p-5 text-center bg-body-tertiary-dark rounded-3">
+              <h1 class="text-body-emphasis">Backgrounds</h1>
+              <p class="lead">
+              <header class="mb-1 pb-1 border-bottom"></header>
+              </p>
+            <div class="container marketing">
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Cowboy</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Rancher</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Bounty Hunter</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Snake Oil Salesman</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Shopkeep</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Doctor</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Elemental Fella</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Wilderness Guide</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Worshipper</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Missionary</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Galvanism Scholar</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Chef</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Alchemist</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Ex-convict</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Carpenter</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Pack Mule</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Shockstone Reseacher</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Luddite</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Assassin</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Street Rat</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Cindeli Weapons</h2>
+                  <li>+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals</li>
+                    <li>-5 to all magic skills</li>
+                    <li>1 Pistol, Rifle, or 2 Melee</li>
+                    <li>Survival or General Supplies</li>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+
+{% endblock content%}
