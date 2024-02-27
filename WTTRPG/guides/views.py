@@ -6,3 +6,6 @@ def guide_view(request):
 
 def mg_purchase_view(request):
     return(render(request,"guides/main_guide_purchase.html"))
+
+def av1_purchase_view(request):
+    return(render(request,"guides/av1_purchase.html"))
