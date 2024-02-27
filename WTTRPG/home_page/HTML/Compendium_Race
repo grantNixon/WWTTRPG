@@ -1,0 +1,114 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+<body style="background-color: #bf7e04;">
+        <div class="container my-1">
+            <div class="p-5 text-center bg-body-tertiary-dark rounded-3">
+              <h1 class="text-body-emphasis">Races</h1>
+              <p class="lead">
+              <header class="mb-1 pb-1 border-bottom"></header>
+              </p>
+              <div class="p-5 text-center bg-body-tertiary-dark rounded-3">
+                <h1 class="text-body-emphasis">Grassland Races</h1>
+                <p class="lead">
+                <header class="mb-1 pb-1 border-bottom"></header>
+                </p>
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Human</h2>
+                  <li></li>
+                    <li>Race description here</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Armadill</h2>
+                  <li>Armadillo folk</li>
+                    <li>Race description here</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Hillock</h2>
+                  <li>Short, hairy humans</li>
+                    <li>Race description here</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Folinn</h2>
+                  <li>Fox folk</li>
+                    <li>Race description here</li>
+                  <p></p>
+                </div>
+                <h1 class="text-body-emphasis">Swamp Races</h1>
+                <p class="lead">
+                <header class="mb-1 pb-1 border-bottom"></header>
+                </p>
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Shibasa</h2>
+                  <li>Alligator folk</li>
+                    <li>Race description here</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Bak'wa</h2>
+                  <li>Swamp humans</li>
+                    <li>Race description here</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Egriss</h2>
+                  <li>Crane folk</li>
+                    <li>Race description here</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Bolibar</h2>
+                  <li>Bullfrog folk</li>
+                    <li>Race description here</li>
+                  <p></p>
+                </div>
+                  <h1 class="text-body-emphasis">Desert Races</h1>
+                <p class="lead">
+                <header class="mb-1 pb-1 border-bottom"></header>
+                </p>
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Cincindel</h2>
+                  <li>Beetle folk</li>
+                    <li>Race description here</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Ambaazi</h2>
+                  <li>Desert humans</li>
+                    <li>Race description here</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Palla</h2>
+                  <li>Cat folk</li>
+                    <li>Race description here</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Latran</h2>
+                  <li>Coyote folk</li>
+                    <li>Race description here</li>
+                  <p></p>
+                </div>
+              </div>
+
+{% endblock content%}
