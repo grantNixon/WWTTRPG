@@ -1,0 +1,1179 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+<body style="background-color: #bf7e04;">
+        <div class="container my-1">
+          <div class="container px-4 py-5" id="hanging-icons">
+            <h2 class="pb-2 border-bottom">Melee Weapons</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Hunting Knife</h1>
+                  <p>Slashing, 3 lbs, $5</p>
+                  <li>1 AP</li>
+                  <li>5ft</li>
+                  <li>(1d4 + Melee)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Clockwork Switchblade</h1>
+                  <p>Slashing, 1 lb, $5</p>
+                  <li>1 AP</li>
+                  <li>5ft</li>
+                  <li>(1d4 + Melee)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Evergladian Tanto</h1>
+                  <p>Slashing, 8 lbs, $5</p>
+                  <li>1.5 AP</li>
+                  <li>5ft</li>
+                  <li>(1d6 + Melee)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Lead Pipe</h1>
+                  <p>Crushing, 15 lbs, $15</p>
+                  <li>2 AP</li>
+                  <li>5ft</li>
+                  <li>(1d6 + Melee)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Leather Whip</h1>
+                  <p>Slashing</p>
+                  <li>2 AP</li>
+                  <li>10ft</li>
+                  <li>(2d4 + Ropework)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Barbed Whip</h1>
+                  <p>Piercing, 15 lbs, $40</p>
+                  <li>3 AP</li>
+                  <li>15ft</li>
+                  <li>(2d6 + Ropework)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Willow Tree Whip</h1>
+                  <p>Slashing, 10 lbs, $40</p>
+                  <li>2 AP</li>
+                  <li>10ft</li>
+                  <li>(1d8 + Ropework)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Shovel</h1>
+                  <p>Crushing, 15 lbs, $10</p>
+                  <li>2.5 AP</li>
+                  <li>5ft</li>
+                  <li>(1d8 + Melee)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Frying Pan</h1>
+                  <p>Crushing, 20 lbs, $10</p>
+                  <li>2 AP</li>
+                  <li>5ft</li>
+                  <li>(1d6 + Melee)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Giant Mallet</h1>
+                  <p>Piercing, 10 lbs, $50</p>
+                  <li>3 AP</li>
+                  <li>5ft</li>
+                  <li>(2d6 + Melee)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Cindeli Spear</h1>
+                  <p>Piercing, 10 lbs, $50</p>
+                  <li>2 AP</li>
+                  <li>10ft</li>
+                  <li>(2d4 + Melee)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Hunting Knife</h1>
+                  <p>Slashing, 3 lbs, $5</p>
+                  <li>1 AP</li>
+                  <li>5ft</li>
+                  <li>(1d4 + Melee)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Butcher Knife</h1>
+                  <p>Slashing, 7 lbs, $50</p>
+                  <li>1 AP</li>
+                  <li>5ft</li>
+                  <li>(1d6 + Melee)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Old War Sword</h1>
+                  <p>Slashing, 9 lbs, $50</p>
+                  <li>2.5 AP</li>
+                  <li>5ft</li>
+                  <li>(1d10 + Melee)</li>
+                </div>
+              </div>
+            </div>
+            <h2 class="pb-2 border-bottom">Hand-to-Hand</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Hand Wraps</h1>
+                  <p>Crushing, .5 lb, $5</p>
+                  <li>.5 AP</li>
+                  <li>5ft</li>
+                  <li>(1d2, no mod)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Brass Knuckles</h1>
+                  <p>Crushing, 3 lbs, $15</p>
+                  <li>1 AP</li>
+                  <li>5ft</li>
+                  <li>(1d4 + Hand-to-Hand)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Stone Cestus</h1>
+                  <p>Piercing, 10 lbs, $5</p>
+                  <li>2.5 AP</li>
+                  <li>5ft</li>
+                  <li>(1d6 + Hand-to-Hand, 2 hits)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Boxing Gloves</h1>
+                  <p>Crushing, 7 lbs, $75</p>
+                  <li>3.5 AP</li>
+                  <li>5ft</li>
+                  <li>(1d8 + Hand-to-Hand, 2 hits)</li>
+                </div>
+              </div>
+            </div>
+            <h2 class="pb-2 border-bottom">Bows</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Crossbow</h1>
+                  <p>Piercing, 15 lbs, $20</p>
+                  <li>2 AP</li>
+                  <li>35/60ft</li>
+                  <li>(1d4 + Archery, 2 shots)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Shortbow</h1>
+                  <p>Piercing, 10 lbs, $15</p>
+                  <li>1 AP</li>
+                  <li>15/30ft</li>
+                  <li>(1d4 + Archery)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Evergladian Crossbow</h1>
+                  <p>Crushing, 20 lbs, $55</p>
+                  <li>3 AP</li>
+                  <li>20/45ft</li>
+                  <li>(1d10 + Archery)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Longbow</h1>
+                  <p>Piercing, 15 lbs, $75</p>
+                  <li>2.5 AP</li>
+                  <li>45/90ft</li>
+                  <li>(1d8 + Archery)</li>
+                </div>
+             </div>
+             <div class="col d-flex align-items-start">
+              <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+              </div>
+              <div>
+                <h1 class="fs-5 text-body-emphasis">Waxing Crescent Bow</h1>
+                <p>Slashing, 25 lbs, $75</p>
+                <li>3 AP</li>
+                <li>65/90ft</li>
+                <li>(1d10 + Archery)</li>
+              </div>
+           </div>
+           <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+            </div>
+            <div>
+              <h1 class="fs-5 text-body-emphasis">Clockwork Standing Bow</h1>
+              <p>Piercing, 55 lbs, $75</p>
+              <li>4 AP</li>
+              <li>85/150ft</li>
+              <li>(3d6 + Archery)</li>
+            </div>
+          </div>
+        </div>
+        <h2 class="pb-2 border-bottom">Tarkish Pistols</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+            </div>
+            <div>
+              <h1 class="fs-5 text-body-emphasis">Concealed Pistol</h1>
+              <p>Slashing, 3 lbs, $20</p>
+              <li>.5 AP</li>
+              <li>10/20ft</li>
+              <li>(1d2, no mod)</li>
+              <li>Mag: 3</li>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+            </div>
+            <div>
+              <h1 class="fs-5 text-body-emphasis">Break-action Revolver</h1>
+              <p>Slashing, 7 lbs, $15</p>
+              <li>2 AP</li>
+              <li>20/40ft</li>
+              <li>(1d6 + Pistols)</li>
+              <li>Mag: 6</li>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+              <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+            </div>
+            <div>
+              <h1 class="fs-5 text-body-emphasis">Single-action Revolver</h1>
+              <p>Salshing, 8 lbs, $55</p>
+              <li>2 AP</li>
+              <li>30/45ft</li>
+              <li>(1d8 + Pistols)</li>
+              <li>Mag: 6</li>
+            </div>
+          </div>
+      </div>
+    <h2 class="pb-2 border-bottom">Clockwork Pistols</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Concealed Pistol</h1>
+          <p>Piercing, 3 lbs, $20</p>
+          <li>.5 AP</li>
+          <li>10/20ft</li>
+          <li>(1d2, no mod)</li>
+          <li>Mag: 3</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Six Shooter Revolver</h1>
+          <p>Piercing, 7 lbs, $15</p>
+          <li>1 AP</li>
+          <li>25/35ft</li>
+          <li>(1d4 + Pistols)</li>
+          <li>Mag: 6</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Single-action Revolver</h1>
+          <p>Piercing, 8 lbs, $55</p>
+          <li>2 AP</li>
+          <li>30/45ft</li>
+          <li>(1d8 + Pistols)</li>
+          <li>Mag: 6</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Double-action Revolver</h1>
+          <p>Piercing, 7 lbs, $75</p>
+          <li>2.5 AP</li>
+          <li>40/55ft</li>
+          <li>(1d10 + Pistols)</li>
+        </div>
+     </div>
+     <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+      </div>
+      <div>
+        <h1 class="fs-5 text-body-emphasis">Semi-auto Pistol</h1>
+        <p>Piercing, 25 lbs, $75</p>
+        <li>1.5 AP</li>
+        <li>20/30ft</li>
+        <li>(1d4 + Pistols, 2 shots)</li>
+        <li>Mag: 8</li>
+      </div>
+   </div>
+   <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Hand Cannon</h1>
+      <p>Piercing, 55 lbs, $75</p>
+      <li>4 AP</li>
+      <li>60/80ft</li>
+      <li>(3d8 + Pistols)</li>
+      <li>Mag: 4</li>
+    </div>
+  </div>
+</div>
+<h2 class="pb-2 border-bottom">Evergladian Pistols</h2>
+<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+  <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Six Shooter Revolver</h1>
+      <p>Crushing, 7 lbs, $15</p>
+      <li>1 AP</li>
+      <li>25/35ft</li>
+      <li>(1d4 + Pistols)</li>
+      <li>Mag: 6</li>
+    </div>
+  </div>
+  <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Break-action Revolver</h1>
+      <p>Crushing, 7 lbs, $15</p>
+      <li>2 AP</li>
+      <li>20/40ft</li>
+      <li>(1d6 + Pistols)</li>
+      <li>Mag: 6</li>
+    </div>
+  </div>
+ <div class="col d-flex align-items-start">
+  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+  </div>
+  <div>
+    <h1 class="fs-5 text-body-emphasis">Semi-auto Pistol</h1>
+    <p>Crushing, 25 lbs, $75</p>
+    <li>1.5 AP</li>
+    <li>20/30ft</li>
+    <li>(1d4 + Pistols, 2 shots)</li>
+    <li>Mag: 8</li>
+  </div>
+</div>
+<div class="col d-flex align-items-start">
+<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+</div>
+<div>
+  <h1 class="fs-5 text-body-emphasis">Heavy Revolver</h1>
+  <p>Crushing, 55 lbs, $75</p>
+  <li>4 AP</li>
+  <li>60/80ft</li>
+  <li>(3d8 + Pistols)</li>
+  <li>Mag: 4</li>
+</div>
+</div>
+</div>
+<h2 class="pb-2 border-bottom">Tarkish Rifles</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Lever-action</h1>
+          <p>Slashing, 12 lbs, $20</p>
+          <li>1.5 AP</li>
+          <li>25/50ft</li>
+          <li>(1d6 + Rifles)</li>
+          <li>Mag: 10</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Revolver Rifle</h1>
+          <p>Slashing, 15 lbs, $15</p>
+          <li>2.5 AP</li>
+          <li>65/85ft</li>
+          <li>(1d8 + Rifles)</li>
+          <li>Mag: 6</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Repeater</h1>
+          <p>Slashing, 8 lbs, $55</p>
+          <li>2 AP</li>
+          <li>60/80ft</li>
+          <li>(1d4 + Rifles, 2 shots)</li>
+          <li>Mag: 12</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Bolt-action</h1>
+          <p>Slashing, 7 lbs, $75</p>
+          <li>2 AP</li>
+          <li>80/100ft</li>
+          <li>(1d10 + Rifles)</li>
+          <li>Mag: 5</li>
+        </div>
+     </div>
+     <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+      </div>
+      <div>
+        <h1 class="fs-5 text-body-emphasis">Break-action</h1>
+        <p>Slashing, 18 lbs, $75</p>
+        <li>3 AP</li>
+        <li>75/95ft</li>
+        <li>(1d12 + Rifles)</li>
+        <li>Mag: 1</li>
+      </div>
+   </div>
+</div>
+<h2 class="pb-2 border-bottom">Clockwork Rifles</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Lever-action</h1>
+          <p>Piercing, 12 lbs, $20</p>
+          <li>1.5 AP</li>
+          <li>25/50ft</li>
+          <li>(1d6 + Rifles)</li>
+          <li>Mag: 10</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Repeater</h1>
+          <p>Piercing, 8 lbs, $55</p>
+          <li>2 AP</li>
+          <li>60/80ft</li>
+          <li>(1d4 + Rifles, 2 shots)</li>
+          <li>Mag: 12</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Bolt-action</h1>
+          <p>Piercing, 7 lbs, $75</p>
+          <li>2 AP</li>
+          <li>80/100ft</li>
+          <li>(1d10 + Rifles)</li>
+          <li>Mag: 5</li>
+        </div>
+     </div>
+</div>
+<h2 class="pb-2 border-bottom">Evergladian Rifles</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Bolt-action</h1>
+          <p>Crushing, 7 lbs, $75</p>
+          <li>2 AP</li>
+          <li>80/100ft</li>
+          <li>(1d10 + Rifles)</li>
+          <li>Mag: 5</li>
+        </div>
+     </div>
+     <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+      </div>
+      <div>
+        <h1 class="fs-5 text-body-emphasis">Break-action</h1>
+        <p>Crushing, 18 lbs, $75</p>
+        <li>3 AP</li>
+        <li>75/95ft</li>
+        <li>(1d12 + Rifles)</li>
+        <li>Mag: 1</li>
+      </div>
+   </div>
+   <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Anti-material</h1>
+      <p>Crushing, 45 lbs, $75</p>
+      <li>6 AP</li>
+      <li>120/240ft</li>
+      <li>(3d12 + Rifles) can only be shot once every 15 seconds</li>
+      <li>Mag: 1</li>
+    </div>
+ </div>
+</div>
+<h2 class="pb-2 border-bottom">Tarkish Shotguns</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Pump-action</h1>
+          <p>Slashing, 12 lbs, $20</p>
+          <li>1.5 AP</li>
+          <li>15/25ft</li>
+          <li>(1d4 + Shotguns)</li>
+          <li>Mag: 5</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Sawed-off</h1>
+          <p>Slashing, 15 lbs, $15</p>
+          <li>2 AP</li>
+          <li>10/15ft</li>
+          <li>(1d6 + Shotguns) can fire both shots at the same time for 4 AP, 1 hit check</li>
+          <li>Mag: 2</li>
+        </div>
+      </div>
+    </div>
+    <h2 class="pb-2 border-bottom">Clockwork Shotguns</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Pump-action</h1>
+          <p>Piercing, 12 lbs, $20</p>
+          <li>1.5 AP</li>
+          <li>15/25ft</li>
+          <li>(1d4 + Shotguns)</li>
+          <li>Mag: 5</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Sawed-off</h1>
+          <p>Piercing, 15 lbs, $15</p>
+          <li>2 AP</li>
+          <li>10/15ft</li>
+          <li>(1d6 + Shotguns) can fire both shots at the same time for 4 AP, 1 hit check</li>
+          <li>Mag: 6</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis"></h1>Semi-auto
+          <p>Piercing, 8 lbs, $55</p>
+          <li>3.5 AP</li>
+          <li>20/35ft</li>
+          <li>(1d8 + Shotguns, 2 shots)</li>
+          <li>Mag: 4</li>
+        </div>
+      </div>
+    </div>
+    <h2 class="pb-2 border-bottom">Evergladian Shotguns</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Pump-action</h1>
+          <p>Crushing, 12 lbs, $20</p>
+          <li>1.5 AP</li>
+          <li>15/25ft</li>
+          <li>(1d4 + Shotguns)</li>
+          <li>Mag: 5</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Sawed-off</h1>
+          <p>Crushing, 15 lbs, $15</p>
+          <li>2 AP</li>
+          <li>10/15ft</li>
+          <li>(1d6 + Shotguns) can fire both shots at the same time for 4 AP, 1 hit check</li>
+          <li>Mag: 2</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Break-action</h1>
+          <p>Crushing, 8 lbs, $55</p>
+          <li>3 AP</li>
+          <li>15/25ft</li>
+          <li>(3d6 + Shotguns)</li>
+          <li>Mag: 1</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Semi-auto</h1>
+          <p>Crushing, 7 lbs, $75</p>
+          <li>3.5 AP</li>
+          <li>20/35ft</li>
+          <li>(1d8 + Shotguns, 2 shots)</li>
+          <li>Mag: 5</li>
+        </div>
+     </div>
+     <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+      </div>
+      <div>
+        <h1 class="fs-5 text-body-emphasis">Elephant Killer</h1>
+        <p>Crushing, 20 lbs, $75</p>
+        <li>5.5 AP</li>
+        <li>10/20ft</li>
+        <li>(4d12 + Shotguns) does not do half damage at long range</li>
+        <li>Mag: 1</li>
+      </div>
+   </div>
+</div>
+<h2 class="pb-2 border-bottom">Shockstone - Melee</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Hot Knife</h1>
+          <p>Shock, 4 lbs, $20</p>
+          <li>.5 AP</li>
+          <li>5ft</li>
+          <li>(1d2, no mod)</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Shock Axe</h1>
+          <p>Shock, 15 lbs, $15</p>
+          <li>1.5 AP</li>
+          <li>5ft</li>
+          <li>(1d4 + Melee)</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Shock Whip</h1>
+          <p>Shock, 12 lbs, $55</p>
+          <li>1 AP</li>
+          <li>5ft</li>
+          <li>(1d4 + Ropework)</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Tesla Whip</h1>
+          <p>Shock, 7 lbs, $75</p>
+          <li>2 AP</li>
+          <li>10ft</li>
+          <li>(1d6 + Ropework)</li>
+        </div>
+     </div>
+     <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+      </div>
+      <div>
+        <h1 class="fs-5 text-body-emphasis">Taser</h1>
+        <p>Shock, 20 lbs, $75</p>
+        <li>.5 AP</li>
+        <li>5ft</li>
+        <li>(1d2 + Melee)</li>
+      </div>
+   </div>
+   <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Cattle Prod</h1>
+      <p>Shock, 20 lbs, $75</p>
+      <li>1.5 AP</li>
+      <li>5ft</li>
+      <li>(1d6 + Melee)</li>
+    </div>
+ </div>
+ <div class="col d-flex align-items-start">
+  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+  </div>
+  <div>
+    <h1 class="fs-5 text-body-emphasis">Electric Dai-Katana</h1>
+    <p>Shock, 20 lbs, $75</p>
+    <li>2 AP</li>
+    <li>5ft</li>
+    <li>(1d8 + Melee)</li>
+  </div>
+</div>
+ <div class="col d-flex align-items-start">
+  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+  </div>
+  <div>
+    <h1 class="fs-5 text-body-emphasis">Electromallet</h1>
+    <p>Shock, 20 lbs, $75</p>
+    <li>3 AP</li>
+    <li>5ft</li>
+    <li>(1d10 + Melee)</li>
+  </div>
+</div>
+</div>
+<h2 class="pb-2 border-bottom">Shockstone - Hand-to-Hand</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="col d-flex align-items-start">
+  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+  </div>
+  <div>
+    <h1 class="fs-5 text-body-emphasis">Knuckle Pads</h1>
+    <p>Shock, 7 lbs, $75</p>
+    <li>1 AP</li>
+    <li>5ft</li>
+    <li>(1d4 + Hand-to-Hand)</li>
+  </div>
+</div>
+</div>
+<div class="col d-flex align-items-start">
+  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+</div>
+<div>
+  <h1 class="fs-5 text-body-emphasis">Shock Gloves</h1>
+  <p>Shock, 20 lbs, $75</p>
+  <li>2.5 AP</li>
+  <li>5ft</li>
+  <li>(1d6 + Hand-to-Hand, 2 hits)</li>
+</div>
+<div class="col d-flex align-items-start">
+<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+<svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+</div>
+<div>
+<h1 class="fs-5 text-body-emphasis">Shock Talons</h1>
+<p>Shock, 20 lbs, $75</p>
+<li>2.5 AP</li>
+<li>5ft</li>
+<li>(1d4 + Hand-to-Hand, 2 hits)</li>
+</div>
+</div>
+<div class="col d-flex align-items-start">
+<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+<svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+</div>
+<div>
+<h1 class="fs-5 text-body-emphasis">Electric Cestus</h1>
+<p>Shock, 20 lbs, $75</p>
+<li>3.5 AP</li>
+<li>5ft</li>
+<li>(1d10 + Hand-to-Hand)</li>
+</div>
+</div>
+</div>
+<h2 class="pb-2 border-bottom">Shockstone Bows</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Wristbow</h1>
+          <p>Shock, 4 lbs, $20</p>
+          <li>.5 AP</li>
+          <li>10/20ft</li>
+          <li>(1d2, no mod)</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Shock Bow</h1>
+          <p>Shock, 15 lbs, $15</p>
+          <li>1 AP</li>
+          <li>15/30ft</li>
+          <li>(1d4 + Archery)</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Shocking Crossbow</h1>
+          <p>Shock, 12 lbs, $55</p>
+          <li>1.5 AP</li>
+          <li>15/30ft</li>
+          <li>(1d6 + Archery)</li>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+        </div>
+        <div>
+          <h1 class="fs-5 text-body-emphasis">Waning Crescent Bow</h1>
+          <p>Shock, 7 lbs, $75</p>
+          <li>2.5 AP</li>
+          <li>40/80ft</li>
+          <li>(1d10 + Archery)</li>
+        </div>
+     </div>
+     <div class="col d-flex align-items-start">
+      <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+      </div>
+      <div>
+        <h1 class="fs-5 text-body-emphasis">Electrified Standing Bow
+        </h1>
+        <p>Shock, 20 lbs, $75</p>
+        <li>4 AP</li>
+        <li>85/150ft</li>
+        <li>(3d6 + Archery)</li>
+      </div>
+   </div>
+</div>
+<h2 class="pb-2 border-bottom">Shockstone Pistols</h2>
+<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+  <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Volt Concealed Pistol</h1>
+      <p>Shock, 3 lbs, $20</p>
+      <li>1 AP</li>
+      <li>15/25ft</li>
+      <li>(1d4 + Pistols)</li>
+      <li>Charge: 5</li>
+    </div>
+  </div>
+  <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Zapper Revolver</h1>
+      <p>Shock, 7 lbs, $15</p>
+      <li>1.5 AP</li>
+      <li>25/35ft</li>
+      <li>(1d6 + Pistols)</li>
+      <li>Charge: 6</li>
+    </div>
+  </div>
+  <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Ohm Charge Pistol</h1>
+      <p>Shock, 8 lbs, $55</p>
+      <li>2/3 AP</li>
+      <li>25/40ft</li>
+      <li>(1d8/2d8 + Pistols)</li>
+      <li>Charge: 6</li>
+    </div>
+  </div>
+  <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Crown Joule Double-action</h1>
+      <p>Shock, 7 lbs, $75</p>
+      <li>2.5 AP</li>
+      <li>30/40ft</li>
+      <li>(1d6 + Pistols)</li>
+      <li>Charge: 6</li>
+    </div>
+ </div>
+ <div class="col d-flex align-items-start">
+  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+  </div>
+  <div>
+    <h1 class="fs-5 text-body-emphasis">Watt-a-Pistol</h1>
+    <p>Shock, 25 lbs, $75</p>
+    <li>3 AP</li>
+    <li>45/60ft</li>
+    <li>(2d8 + Pistols)</li>
+    <li>Charge: 3</li>
+  </div>
+</div>
+<div class="col d-flex align-items-start">
+<div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+</div>
+<div>
+  <h1 class="fs-5 text-body-emphasis">Transformer Revolver</h1>
+  <p>Piercing, 55 lbs, $75</p>
+  <li>4 AP</li>
+  <li>60/90ft</li>
+  <li>(1d12 + Pistols)</li>
+  <li>Charge: 4</li>
+</div>
+</div>
+</div>
+<h2 class="pb-2 border-bottom">Shockstone Rifles</h2>
+<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+  <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Amped Repeater</h1>
+      <p>Shock, 3 lbs, $20</p>
+      <li>1 AP</li>
+      <li>25/50ft</li>
+      <li>(1d4 + Rifles)</li>
+      <li>Charge: 12</li>
+    </div>
+  </div>
+  <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Quad-Arc Charge Rifle</h1>
+      <p>Shock, 7 lbs, $15</p>
+      <li>2/3/4/5 AP</li>
+      <li>45/65ft</li>
+      <li>(1d6/2d6/3d6/4d6 + Rifles)</li>
+      <li>Charge: 5</li>
+    </div>
+  </div>
+  <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Lightning Bolt-action</h1>
+      <p>Shock, 8 lbs, $55</p>
+      <li>2.5 AP</li>
+      <li>50/70ft</li>
+      <li>(1d8 + Rifles)</li>
+      <li>Charge: 4</li>
+    </div>
+  </div>
+  <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Rail Gun</h1>
+      <p>Shock, 7 lbs, $75</p>
+      <li>3 AP</li>
+      <li>60/85ft</li>
+      <li>(1d12 + Rifles)</li>
+      <li>Charge: 8</li>
+    </div>
+ </div>
+ <div class="col d-flex align-items-start">
+  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+  </div>
+  <div>
+    <h1 class="fs-5 text-body-emphasis">Gauss Cannon</h1>
+    <p>Shock, 25 lbs, $75</p>
+    <li>5 AP</li>
+    <li>240/480ft</li>
+    <li>(4d12 + Rifles) disintegrates target if killed, can only be shot once every 12 hours</li>
+    <li>Charge: 3</li>
+  </div>
+</div>
+</div>
+<h2 class="pb-2 border-bottom">Shockstone Shotguns</h2>
+<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+  <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Thunder Sawed-off</h1>
+      <p>Shock, 3 lbs, $20</p>
+      <li>3 AP</li>
+      <li>5/10ft</li>
+      <li>(2d6 + Shotguns) can fire both shots for 6 AP, 1 hit check</li>
+      <li>Charge: 2</li>
+    </div>
+  </div>
+  <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Shocking Semi-auto</h1>
+      <p>Shock, 7 lbs, $15</p>
+      <li>2 AP</li>
+      <li>15/25ft</li>
+      <li>(1d4 + Shotguns, 2 shots)</li>
+      <li>Charge: 6</li>
+    </div>
+  </div>
+  <div class="col d-flex align-items-start">
+    <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+      <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+    </div>
+    <div>
+      <h1 class="fs-5 text-body-emphasis">Current Pump</h1>
+      <p>Shock, 8 lbs, $55</p>
+      <li>1 AP</li>
+      <li>25/40ft</li>
+      <li>(1d4 + Shotguns)</li>
+      <li>Charge: 5</li>
+    </div>
+  </div>
+</div>
+
+{% endblock content%}
