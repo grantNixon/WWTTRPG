@@ -1,0 +1,143 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+<body style="background-color: #bf7e04;">
+        <div class="container my-1">
+            <div class="p-5 text-center bg-body-tertiary-dark rounded-3">
+              <h1 class="text-body-emphasis">Special Clothing and Armor</h1>
+              <p class="lead">
+              <header class="mb-1 pb-1 border-bottom"></header>
+              </p>
+            <div class="container marketing">
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Leather</h2>
+                  <p>Gives the wearer extra EC</p>
+                  <li>Top: +10</li>
+                    <li>Bottom: +5</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Fur</h2>
+                  <p>Gives the wearer extra MB</p>
+                  <li>Top: +10ft</li>
+                    <li>Bottom: +5ft</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Alligator</h2>
+                  <p>Gives the wearer extra spell slots</p>
+                  <li>Top: +1</li>
+                    <li>Bottom: +1</li>
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Gecko</h2>
+                  <p>Gives the wearer extra health</p>
+                  <li>Top: +10 </li>
+                    <li>Bottom: +5</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Caravanner</h2>
+                  <p>Gives the wearer extra carry weight</p>
+                  <li>Top: +3%</li>
+                    <li>Bottom: +2%</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Crab Shell</h2>
+                  <p>Gives the wearer resistance to slashing damage</p>
+                  <li>Top: Res. to slashing</li>
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Thiquid</h2>
+                  <p>Gives the wearer resistance to crushing damage</p>
+                  <li>Top: Res. to crushing</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Petrified Bark</h2>
+                  <p>Gives the wearer resistance to piercing damage</p>
+                  <li>Top: Res. to piercing</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Acid Sapper</h2>
+                  <p>When the wearer does acid damage, the armor heals them</p>
+                  <li>Top: +1d4 hp anytime they deal acid damage</li>
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Holy Sapper</h2>
+                  <p>When the wearer does holy damage, the armor heals them</p>
+                  <li>Top: +1d4 hp anytime they deal holy damage</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Abyssal Sapper</h2>
+                  <p>When the wearer does abyssal damage, the armor heals them</p>
+                  <li>Top: +1d4 hp anytime they deal abyssal dmage</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Valley Trekkers</h2>
+                  <p>Gives the wearer extra MB when in the valleys and grasslands</p>
+                  <li>Bottom: +10ft</li>
+                  <p></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
+                  <h2 class="fw-normal">Swamp Trekkers</h2>
+                  <p>Gives the wearer extra MB when in the swamps and everglades</p>
+                  <li>Bottom: +10ft</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Desert Trekkers</h2>
+                  <p>Gives the wearer extra MB when in the deserts and mesas</p>
+                  <li>Bottom: +10ft</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">All Terrain Trekkers</h2>
+                  <p>Difficult terrain is not difficult</p>
+                  <li>Bottom</li>
+                  <p></p>
+                </div>
+                <div class="col-lg-4">
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Lobster Shell</h2>
+                  <p>Non-shockstone weapons can't do critical damage to the wearer</p>
+                  <li>Top</li>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+{% endblock content%}
