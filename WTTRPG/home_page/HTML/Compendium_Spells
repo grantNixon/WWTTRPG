@@ -1,0 +1,355 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+<body style="background-color: #bf7e04;">
+        <div class="container my-1">
+          <div class="container px-4 py-5" id="hanging-icons">
+            <h2 class="pb-2 border-bottom">Farlight Magic - Healing spells</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Spoonful of Honey</h1>
+                  <p>Heals a single target for a small amount</p>
+                  <li>Tier 1: .5 AP, 5ft, (+1d2)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Heal</h1>
+                  <p>Heals target(s)</p>
+                  <li>Tier 1: 2 AP, 30ft single target, (+1d6 + Healing)</li>
+                  <li>Tier 2: 4 AP, 45ft two targets, (+2d6 + Healing)</li>
+                  <li>Tier 3: 5 AP, 60ft three targets, (+3d6 + Healing)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Hearth</h1>
+                  <p>Heals target(s) over time</p>
+                  <li>Tier 1: 2 AP, 30ft single target, (+1d4 + Healing every 5 seconds over 10 seconds)</li>
+                  <li>Tier 2: 4 AP, 45ft two targets, (+1d4 + Healing every 5 seconds over 15 seconds)</li>
+                  <li>Tier 3: 6 AP, 60ft two targets, (+1d4 + Healing every 5 seconds over 20 seconds)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Vanaheim's Balm</h1>
+                  <p>Cures ailments on a single target</p>
+                  <li>Tier 1: 2 AP, 30ft, cures Stunned, Blindness, and all diseases exceot Mortia's Disease</li>
+                  <li>Tier 2: 4 AP, 30ft, cures all from tier 1 plus Sloth Hypnotized</li>
+                  <li>Tier 3: 6 AP, 30ft, cures all from tier 1 and 2 plus Madness and cleans any ichor</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Create Water</h1>
+                  <p>Creates a gallon of water that flows from the casters palm</p>
+                  <li>Tier 1: create a single gallon of water</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Resuscitate</h1>
+                  <p>Revives a target from death</p>
+                  <li>Tier 3: 6 AP, touch, revives a target from death if they've died within the last 10 seconds. Target has 1 HP upon being revived. Heals mior wounds but does not repair lost limbs or appendages. Can only be done once per week.</li>
+                </div>
+              </div>
+            </div>
+            <div class="container px-4 py-5" id="hanging-icons">
+              <h2 class="pb-2 border-bottom">Farlight Magic - Utility spells</h2>
+              <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Lamplight</h1>
+                    <p>Creates a cone of light originating from the caster's waistline that can piercde through all non-magical darkness</p>
+                    <li>Tier 1: .5 AP, 5ft cone for 15 minutes</li>
+                    <li>Tier 2: 1 AP, 15ft cone for 30 minutes</li>
+                    <li>Tier 1: 2 AP, 35ft cone for 1 hour</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Quick Fix</h1>
+                    <p>Un-jams a gun</p>
+                    <li>Tier 1: 2 AP, touch, un-jams a gun or removes 1 jam counter</li>
+                    <li>Tier 2: 4 AP, touch, removes 2 jam counters</li>
+                    <li>Tier 3: 6 AP, touch, fully repairs a broken gun due to jamming</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Vanaheim's Vow</h1>
+                    <p>You and up to 3 others standing within a 10ft circle around you are buffed with healing over time and extra movement. If at full health, the healing begins after the target has taken damage, at the end of that target's turn</p>
+                    <li>Tier 1: 3 AP, 1d4 + Healing *based on the caster* over 10 seconds, +5ft MB for 1 minute</li>
+                    <li>Tier 2: 5 AP, 1d6 + Healing *based on the caster* over 10 seconds, +10ft MB for 2 minutes</li>
+                    <li>Tier 3: 7 AP, 1d8 + Healing *based on the caster* over 10 seconds, +10ft MB for 3 minutes</li>
+                  </div>
+                </div>
+              </div>
+              <h2 class="pb-2 border-bottom">Farlight Magic - Absolution spells</h2>
+              <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Radiant Crossbow</h1>
+                    <p>Conjures a one-handed crossbow made of light. Caster gets one shot after which the crossbow dissapears</p>
+                    <li>Tier 1: 2 AP, 25/40ft, (1d6 Holy + Absolution)</li>
+                    <li>Tier 2: 3 AP, 40/55ft, (1d8 Holy + Absolution)</li>
+                    <li>Tier 3: 5 AP, 60/75ft, (1d12 Holy + Absolution)</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Holy Slash</h1>
+                    <p>Creates a short slash of light that damages a target</p>
+                    <li>Tier 1: 2 AP, 5ft, (1d4 + Absolution)</li>
+                    <li>Tier 2: 3 AP, 5ft, (2d4 + Absolution)</li>
+                    <li>Tier 3: 4 AP, 5ft, (3d4 + Absolution)</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Volley of Spears</h1>
+                    <p>Conjures spears of holy light that rain down from the sky</p>
+                    <li>Tier 2: 3 AP, 10ft circle, Agi.S(60), (1d8 Holy + Absolution)</li>
+                    <li>Tier 3: 6 AP, 15ft circle, Agi.S(85), (1d8 + Absolution)</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Golden Gun</h1>
+                    <p>Conjures a revolver made of holy light. Caster gets one shot after which the gun dissapears</p>
+                    <li>Tier 3: 5 AP, 100ft, (1d20 + Absolution)</li>
+                  </div>
+                </div>
+              </div>
+            <h2 class="pb-2 border-bottom">Primordial Magic - Deception spells</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Abyss Mist</h1>
+                  <p>Creates a dark cloud that's impossible to see through with the naked eye</p>
+                  <li>Tier 1: 1 AP, 5ft range, 10ft sphere for 10 seconds</li>
+                  <li>Tier 2: 2 AP, 5ft range, 15ft sphere for 15 seconds</li>
+                  <li>Tier 3: 3 AP, 5ft range, 20ft sphere for 20 seconds</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Face Swap</h1>
+                  <p>Take the form of another humanoid creature the caster can see</p>
+                  <li>Tier 1: 1 AP, Self, 1 minute</li>
+                  <li>Tier 2: 2 AP, Self, 5 minutes</li>
+                  <li>Tier 2: 3 AP, Self, 30 minutes</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Charm</h1>
+                  <p>Charms a single target</p>
+                  <li>Tier 1: 3 AP, 20ft, Per.S(40), 30 seconds</li>
+                  <li>Tier 2: 5 AP, 30ft, Per.S(65), 1 minute</li>
+                  <li>Tier 2: 7 AP, 60ft, Per.S(90) 3 minutes</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Shadow Person</h1>
+                  <p>Creates a shadow person that's medium or smaller to appear in a spot for half a second. If not in combat, any target that can see the shadow makes an Investigation check or is distracted by it</p>
+                  <li>Tier 1: .5 AP, 50ft range, Investigation check (65)</li>
+                </div>
+              </div>
+            </div>
+            <h2 class="pb-2 border-bottom">Primordial Magic - Ritual spells</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Shibasa's Intervention</h1>
+                  <p>Teleports the caster and others to the location of a stupa or other type of worshipping ground dedicated to Shibasa or Boudrauex that the caster has seen. If the stupa no longer exists, the spell fails</p>
+                  <li>Tier 1: 2 AP, self, 2 minutes to cast</li>
+                  <li>Tier 2: 4 AP, self and three other willing targets, 3 minutes to cast</li>
+                  <li>Tier 3: 6 AP, self and five other willing targets, 5 minutes to cast</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Hex</h1>
+                  <p>Debuffs a number of targets with -1 action per turn(2 AP) and -10 max MB</p>
+                  <li>Tier 1: 2 AP, 20ft single target, Per.S(30), 5 seconds, instant cast</li>
+                  <li>Tier 2: 5 AP, 30ft two targets, Per.S(50), 10 seconds, instant cast</li>
+                  <li>Tier 3: 8 AP, 40ft three targets, Per.S(80), 15 seconds, instant cast</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Outer Strength</h1>
+                  <p>Grants otherworldly strength to targets. +2 max AP, +10 max MB, and +10 max HP</p>
+                  <li>Tier 2: 3 AP, three targets, 2 minutes to cast</li>
+                  <li>Tier 3: 6.5 AP, five targets, 5 minutes to cast</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Fungal Embrace</h1>
+                  <p>Sprouts purple fungi on allies. Next time they're hit with something that would do harm, the embraced rolls a Per.S(50). On success, the attack is brushed off and does no damage. On fail, the attack does half damage. The embrace ends after, success or fail.</p>
+                  <li>Tier 1: 2.5 AP, 20ft two targets, 10 seconds to cast</li>
+                  <li>Tier 2: 3.5 AP, 30ft three targets, 10 seconds to cast</li>
+                  <li>Tier 3: 5 AP, 40ft four targets, two hits worth of protection, 15 seconds to cast</li>
+                </div>
+             </div>
+            </div>
+          </div>
+          <h2 class="pb-2 border-bottom">Primordial Magic - Destruction spells</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Snake Bite</h1>
+                  <p>Conjures spectral snake fangs that bite a target</p>
+                  <li>Tier 1: 1.5 AP, 5ft, (1d6 piercing + Destruction)</li>
+                  <li>Tier 2: 3 AP, 5ft, (2d6 + Destruction)</li>
+                  <li>Tier 3: 5.5 AP, 5ft, (3d6 + Destruction)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Poison Ball</h1>
+                  <p>Conjures a ball of poisonous gas in the casters hand which can be thrown, causing a blast of poison gas where it lands</p>
+                  <li>Tier 2: 2 AP, 20ft range 10ft circle, Agi.S(55), on fail, poisoned for 10 seconds. Gas lasts for 10 seconds and any target entering or ending their turn in the gas takes 1d6 damage</li>
+                  <li>Tier 3: 4 AP, 40ft range 10ft circle, Agi.S(70), on fail, poisoned for 15 seconds. Gas lasts for 10 seconds and any target entering or ending their turn in the gas takes 1d6 damage</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Eldritch Tentacle</h1>
+                  <p>An abyssal tentacle protrudes from the caster's hand and pierces through multiple targets The range is for the intial target, then the tentacle can jump to another target that's max 10ft away from the previous target</p>
+                  <li>Tier 1: 3 AP, 20ft three targets, (1d8 abyssal + Destruction)</li>
+                  <li>Tier 2: 5 AP, 45ft three targets, (2d8 abyssal + Destruction)</li>
+                  <li>Tier 3: 7 AP, 60ft four targets, (3d8 abyssal + Destruction)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Fungal Weight</h1>
+                  <p>Sprout green fungi upon a single target, causing increased movement cost. Does not work on gigantic targets</p>
+                  <li>Tier 1: 1.5 AP, 20ft, Per.S(40), double MB cost for 5 seconds</li>
+                  <li>Tier 2: 2.5 AP, 35ft, Per.S(60), double MB cost for 10 seconds</li>
+                  <li>Tier 3: 4 AP, 50ft, Per.S(80), triple MB cost for 15 seconds</li>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="pb-2 border-bottom">Constellation Magic - Galvanism spells</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Punchbolt</h1>
+                  <p>Enhances the casters fist with electricity</p>
+                  <li>Tier 1: 1 AP, 5ft, (1d4 shock + Galvanism)</li>
+                  <li>Tier 2: 2 AP, 5ft, (1d6 shock + Galvanism)</li>
+                  <li>Tier 3: 3 AP, 5ft, (1d10 shock + Galvanism)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Overclock</h1>
+                  <p>Enhances the caster's shockstone weapons to cause more damage</p>
+                  <li>Tier 2: 1.5 AP, self, (+1d4 shock) per hit for 10 seconds</li>
+                  <li>Tier 3: 3 AP, self, (+1d6 shock) per hit for 10 seconds</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Horripilation</h1>
+                  <p>Make a single target's hair on the back of their neck stand up, causing fear</p>
+                  <li>Tier 2: 2 AP, 30ft, Gum.S(45), Scared for 10 seconds</li>
+                  <li>Tier 3: 5 AP, 45ft, Gum.S(75), Scared for 15 seconds</li>
+                </div>
+              </div>
+            </div>
+          </div>
+
+{% endblock content%}
