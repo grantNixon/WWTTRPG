@@ -1,0 +1,146 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+<body style="background-color: #bf7e04;">
+  <div class="container my-1">
+    <div class="p-5 text-center bg-body-tertiary-dark rounded-3">
+      <h1 class="text-body-emphasis">Tonics</h1>
+      <p class="lead">
+      <header class="mb-1 pb-1 border-bottom"></header>
+      </p>
+      <div class="container marketing">
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Herbal Tonics</h2>
+            <p>Instantly heals the drinker for a small amount</p>
+            <li>Small: .5 AC cost, 1d4 hp + Medicine</li>
+            <li>Medium: 1 AC cost, 2d4 hp + Medicine</li>
+            <li>Large: 1.5 AC cost, 3d4 hp + Medicine</li>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Herbal Injections</h2>
+            <p>Instantly heals the drinker for a large amount</p>
+            <li>Small: 1 AP cost, 1d6 hp + Medicine</li>
+            <li>Medium: 1.5 AP cost, 2d6 hp + Medicine</li>
+            <li>Large: 2 AP cost, 2d6 hp + Medicine</li>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Herbal Inhalers</h2>
+            <p>Heals the user over time</p>
+            <li>Small: 1.5 AP cost, 1d4 hp + Medicine every 5 seconds for 10 seconds</li>
+            <li>Large: 2.5 AP cost, 1d8 hp + Medicine every 5 seconds for 10 seconds</li>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Energy Tonics</h2>
+            <p>Gives the drinker extra action points</p>
+            <li>Small: 5ft MB cost, +1 AP for 5 seconds</li>
+            <li>Medium: 10ft MB cost, +2 AP for 5 seconds</li>
+            <li>Large: 15ft MB cost, +3 AP for 5 seconds</li>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Lightfoot Tonics</h2>
+            <p>Gives the drinker extra MB</p>
+            <li>Small: .5 AP cost, +5ft for 5 seconds</li>
+            <li>Medium: 1 AP cost, +10ft for 5 seconds</li>
+            <li>Large: 1.5 AP cost, +15ft for 5 seconds</li>
+            <p></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Dead-Shot Tonics</h2>
+            <p>Gives the drinker good odds on shots. Long ranges become regular rolls</p>
+            <li>Small: 1 AP cost, good odds on next shot</li>
+            <li>Medium: 2 AP cost, good odds on nexts two shots</li>
+            <li>Large: 2.5 AP cost, good odds on next three shots</li>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Mystical Tonics</h2>
+            <p>Gives the drinker free spell casts</p>
+            <li>Small: Can cast a tier one spell for no cost</li>
+            <li>Medium: Can cast a tier two spell for no cost</li>
+            <li>Large: Can cast a tier three spell for no cost</li>
+            <p></p>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Invisibility Tonic</h2>
+            <p>Become completely invisible for 10 seconds</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Boulder Skin Tonic</h2>
+            <p>+20 EC for 10 seconds</p>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Skill Mastery Tonic</h2>
+            <p>Gain the mastery of a single skill and all the mods and perks that come with it for 10 seconds</p>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Nourishing Tonic</h2>
+            <p>Gain double healing from food and drink for 30 seconds</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Cure Common Disease Tonic</h2>
+            <p>Cures a common disease</p>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Burst of Stamina Tonic</h2>
+            <p>Instantly refills MB</p>
+          </div>
+          <div class="col-lg-4">
+            <h2 class="fw-normal bor">Unlocking Tonic</h2>
+            <p>Gain the ability to pick all locks for 10 seconds</p>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+
+              <h2 class="fw-normal bor">Exp Tonic</h2>
+              <p>Gain double exp for 30 seconds</p>
+            </div>
+            <div class="col-lg-4">
+
+              <h2 class="fw-normal bor">Shock Resistance Tonic</h2>
+              <p>Resistance to shock damage for 30 minutes</p>
+            </div>
+            <div class="col-lg-4">
+
+              <h2 class="fw-normal bor">Incendiary Resistance Tonic</h2>
+              <p>Resistance to incendiary damage for 30 minutes</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+
+              <h2 class="fw-normal bor">Holy Resistance Tonic</h2>
+              <p>Resistance to holy damage for 30 minutes</p>
+            </div>
+            <div class="col-lg-4">
+
+              <h2 class="fw-normal bor">Acid Resistance Tonic</h2>
+              <p>Resistance to acid damage for 30 minutes</p>
+            </div>
+            <div class="col-lg-4">
+
+              <h2 class="fw-normal bor">Water Breathing Tonic</h2>
+              <p>Can breathe underwater for 30 minutes</p>
+            </div>
+            <div class="col-lg-4">
+
+              <h2 class="fw-normal bor">Soft Step Tonic</h2>
+              <p>Footsteps are silent for 30 seconds</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock content%}
