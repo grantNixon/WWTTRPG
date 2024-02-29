@@ -1,0 +1,248 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+     <body style="background-color: #bf7e04;">
+          <div class="container my-1">
+            <div class="container px-4 py-5" id="hanging-icons">
+              <h2 class="pb-2 border-bottom">Throwables</h2>
+              <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Throwing Star</h1>
+                    <p>Slashing, 3 lbs, $5</p>
+                    <li>.5 AP</li>
+                    <li>20/40ft</li>
+                    <li>(1d2)</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Kunai</h1>
+                    <p>Piercing, 1 lb, $5</p>
+                    <li>1 AP</li>
+                    <li>40/80ft</li>
+                    <li>(1d6)</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Throwing Hatchet</h1>
+                    <p>Slashing, 8 lbs, $5</p>
+                    <li>1.5 AP</li>
+                    <li>20/30ft</li>
+                    <li>(1d8)</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Shot Put Ball</h1>
+                    <p>Crushing, 15 lbs, $15</p>
+                    <li>2 AP</li>
+                    <li>15/25ft</li>
+                    <li>(1d10)</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Dynamite</h1>
+                    <p>Explosive</p>
+                    <li>1.5 AP</li>
+                    <li>20/30ft, 10ft sphere</li>
+                    <li>(5ft:2d6, 10ft:1d6)</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Acid Bottle</h1>
+                    <p>Acid</p>
+                    <li>1.5 AP</li>
+                    <li>25/40ft, 5ft circle for 10 seconds</li>
+                    <li>(1d6 on impact, 1d4 when entering or starting turn in circle)</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Shock Bottle</h1>
+                    <p>Shock</p>
+                    <li>1.5 AP</li>
+                    <li>20/40ft, 10ft sphere</li>
+                    <li>(1d8 on impact)</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Nortez Cocktail</h1>
+                    <p>Incendiary</p>
+                    <li>2 AP</li>
+                    <li>25/40ft, 5ft circle for 10 seconds</li>
+                    <li>(1d8 on impact, 1d6 when entering or starting turn in circle)</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Oil Bottle</h1>
+                    <p></p>
+                    <li>1 AP</li>
+                    <li>25/40ft, 5ft circle</li>
+                    <li>Area is considerd rough terrain and burns for twice as long if set on fire. Anyone covered in oil takes double incendiary damage</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Smoke Bomb</h1>
+                    <p></p>
+                    <li>.5 AP</li>
+                    <li>20/30ft, 5ft sphere for 10 sseconds</li>
+                    <li>Anyone in the cloud of smoke is concealed from sight but is also blinded</li>
+                  </div>
+                </div>
+               </div>
+              <h2 class="pb-2 border-bottom">Traps</h2>
+              <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Pocket Sand</h1>
+                    <p></p>
+                    <li>.5 AP</li>
+                    <li>5ft</li>
+                    <li>Agi.S(40) or blinded for 5 seconds</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Caltrops</h1>
+                    <p>Piercing</p>
+                    <li>1.5 AP</li>
+                    <li>10ft line or 5ft circle</li>
+                    <li>1d6 if stepped on, rough terrain</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Madness Powder</h1>
+                    <p></p>
+                    <li>2 AP</li>
+                    <li>5ft</li>
+                    <li>Gum.S(60) or mad for 10 seconds</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Sloth Powder</h1>
+                    <p></p>
+                    <li>2 AP</li>
+                    <li>5ft</li>
+                    <li>Gum.S(60) or sloth for 10 seconds</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Bear Trap</h1>
+                    <p>Crushing and piercing</p>
+                    <li>1 AP</li>
+                    <li>Step on: 1d6 crushing/1d4 piercing + Traps. Holds target until disarmed</li>
+                    <li>Disarm: Trap check or Str.S(50)</li>
+                    <li>EC: 15, HP: 25</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Rope Trap</h1>
+                    <p>Crushing</p>
+                    <li>1 AP</li>
+                    <li>Step on: 1d6 + Traps. Holds target dangling inn air until disarmed</li>
+                    <li>Disarm: Trap check, shot check, or melee check</li>
+                    <li>EC: 30, HP: 10</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Mine</h1>
+                    <p>Explosive</p>
+                    <li>1 AP</li>
+                    <li>Step on: 2d8 + Traps, 10ft sphere. All targets within sphere take 1d8 + Traps</li>
+                    <li>Disarm: Trap check</li>
+                    <li>EC: 10, HP: 15</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Acid Mine</h1>
+                    <p>Acid</p>
+                    <li>1.5 AP</li>
+                    <li>Step on: 2d6 + Traps. Leaves 10ft acid puddle for 10 seconds. Anyone who enters or ends their turn in puddle takes 1d6</li>
+                    <li>Disarm: Trap check</li>
+                    <li>EC: 10, HP: 15</li>
+                  </div>
+                </div>
+                <div class="col d-flex align-items-start">
+                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                  </div>
+                  <div>
+                    <h1 class="fs-5 text-body-emphasis">Shock Mine</h1>
+                    <p>Shock</p>
+                    <li>1.5 AP</li>
+                    <li>Step on: 1d8 + Traps, 10ft sphere. Target and anyone within 10ft makes a Gum.S(40) or be stunned for 5 seconds</li>
+                    <li>Disarm: Trap check or Str.S(50)</li>
+                    <li>EC: 15, HP: 25</li>
+                  </div>
+                </div>
+              </div> 
+
+{% endblock content%}
