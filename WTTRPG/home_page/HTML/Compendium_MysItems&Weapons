@@ -1,0 +1,583 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+body style="background-color: #bf7e04;">
+        <div class="container my-1">
+          <div class="container px-4 py-5" id="hanging-icons">
+            <h2 class="pb-2 border-bottom">Mystical Items</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Ten Gallon Hat</h1>
+                  <p>+10 to Intimidation and Barter checks</p>
+                  <li>You might need to duck in a few doorways</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Tranquil Cigar</h1>
+                  <p>While smoking this cigar, the user cannot become mad</p>
+                  <li>.5 AP cost</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Stalwart Cigar</h1>
+                  <p>While smoking this cigar, the user has good odds on Strength checks</p>
+                  <li>.5 AP cost</li>
+                  <li>Non-addictive</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Fine Silk Gloves</h1>
+                  <p>When attempting to pickpocket with these on, if the wearer fails, they may re-roll</p>
+                  <li>Two uses per rest</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Jade Frog</h1>
+                  <p>This small frog can become a living bullfrog when its command word is spoken. The bullfrog will sit on the user's shoulder and feed them any coated bullet type, shockstone, modified arrow, or elemental lacquer, three times. After the third time, it reverts back into the jade form and cannot be used for another three days. If attacked, it will revert back to jade</p>
+                  <li>1 AP cost</li>
+                  <li>Rumor has it that the god Baron Boudreax created the Bolibar as a joke, but after a lifetime of laughing, he now sees them as a sad waste of creation</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Golden Alligator Boots</h1>
+                  <p>While wearing these fashionable boots, the wearer can exchange AP and MB, where 5ft of MB = 1 AP. or vise versa. This can be done multiple times per turn</p>
+                  <li>Two uses per rest</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Big ol' Belt Buckle</h1>
+                  <p>+5 to Strength</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Swift Belt Buckle</h1>
+                  <p>+5 to Agility</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Reinforced Belt Buckle</h1>
+                  <p>+5 to Gumption</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Brain Belt Buckle</h1>
+                  <p>+5 to Intelligence</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Mystical Belt Buckle</h1>
+                  <p>+5 to Mysticism</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Smiling Belt Buckle</h1>
+                  <p>+5 to Personality</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Duelists Holster</h1>
+                  <p>+10 to shot checks during stand-offs</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Dead Eye Duster</h1>
+                  <p>Calling a shot has good odds</p>
+                  <li>Two uses per rest</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Verdant Quarter Cape</h1>
+                  <p>Allows the wearer to use the Dodge ability from the Acrobatics skill tree</p>
+                  <li>2.5 AP</li>
+                  <li>5ft</li>
+                  <li>(1d10 + Melee)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Velvet Vest</h1>
+                  <p>The wearer doesn't provoke sucker punches in combat</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Snake Bite Ring</h1>
+                  <p>The wearer can cast a tier one Snake Bite spell</p>
+                  <li>Two uses per rest</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Tribunal's Blessing Ring</h1>
+                  <p>+10 to max HP</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Masochists Ring</h1>
+                  <p>Anytime the wearer does damage add +3 of that same damage type, but they also take 1d4 damage of that type themselves</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Ferlah's Blessing Ring</h1>
+                  <p>Good odds on Hunting and Foraging checks</p>
+                  <li>Ferlah has enjoyed watching the evolution of the mortals’ hunting and gathering techniques over the years, and occasionally introduces trinkets into their world in hopes they will get better at their craft</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">McAllister's Steel Teeth</h1>
+                  <p>While wearing these metal teeth, the wearer can roll an Agi.S(50) as a reaction against a bullet or arrow to catch it with your teeth, negating all mundane damage. If it’s a coated bullet or modified arrow, you still take the damage of the effect. Cannot be done with a shockstone bolt</p>
+                  <li>One use per rest</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Boots of the Jackrabbit</h1>
+                  <p>Doubles the wearer's jumping distance</p>
+                  <li>"You think I can jump over those mountains?"</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Voodoo Doll</h1>
+                  <p>If the user acquires a piece of hair or skin from a humanoid target, they may take one day to complete a voodoo doll. Twice per day, the user may jab a pin into the doll, up to a maximum of 6. The target of the voodoo doll must make a Gum.S(50), upon fail, they take (1d10 + Destruction OR Ritual) or half that on success. Once the sixth pin is poked, the voodoo doll crumbles and disappears</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Witches Brew</h1>
+                  <p>The user or another creature can drink from the brew and get +1 max AP and +10 to Primordial magic skills for 5 minutes</p>
+                  <li>2 AP cost, three uses</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Saints Brew</h1>
+                  <p>The user or another creature can drink from the brew and heal for 1d6 and cure all ailments except Mortia’s Disease and Paralysis</p>
+                  <li>1 AP cost, three uses</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Beckoning Bell</h1>
+                  <p>Once per rest, the owner may ring this bell and call a spectral Shikasan Witch Doctor to appear within 5ft of them and cast a 2nd tier Hex spell on your enemies. After the Hex spell is cast, the witch doctor disappears</p>
+                  <li>2 AP cost, once per rest</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Golden Molcajete</h1>
+                  <p>Any food made within this blessed molcajete gives double health when eaten</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Black Hat</h1>
+                  <p>+5 to hit checks with pistols while wearing this ominous hat</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Black Duster</h1>
+                  <p>+2 damage with pistols while wearing this ominous duster</p>
+                  <li>No matter how dusty the trail is, it stays a deep, prestine black</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Black Boots</h1>
+                  <p>+10ft to max MB while wearing these ominous boots</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Golden Saddle</h1>
+                  <p>Equipped horse has +20ft to its max MB</p>
+                  <li>One use per rest</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Casa Yaga</h1>
+                  <p>A wooden hut with chicken legs that is immobile and fits in the palm of the users hand when inactive. When activated, it grows to the size of a massive cabin that can house up to four medium sized creatures comfortably and can travel while active. The Casa Yaga provides food, water, shelter, and brewing ingredients for one night before returning to its miniature form in the morning, once all its inhabitants have exited safely. Cannot be used again for three days. Cannot be used in combat, but can be activated if attempting to escape from combat</p>
+                  <li>HP: 150, MB: 40, EC: 30</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Golden Lighter</h1>
+                  <p>This flip-top lighter has three color flames: Red, Green, and Blue. Red acts as a normal flame, Green can be blown as a 5ft poison cloud which dissipates after 10 seconds, and Blue can be huffed as Sobersol</p>
+                  <li>1 AP cost, three uses total per nap if using green or blue</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Gecko Skin Flask</h1>
+                  <p>This flask has an infinite amount of clean water in it. It holds 8 oz of water and when emptied, it refills itself every morning at six a.m.</p>
+                  <li>Some believe Shibasa has blessed the geckos of the desert with mystical hides, as many items made with their skin have strangely magical properties. Perhaps she sees them as a distant cousin to her beloved Shikasa</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Hopskip Lasso</h1>
+                  <p>The user may spin this lasso and create a circular portal that will transport them up to 50ft in the direction the portal is pointing. Only one target can go through the portal, after which it dissappears</p>
+                  <li>One use per rest</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Screeching Spitoon</h1>
+                  <p>Spit into this spitoon to cause a deafening shockwave in a 30ft cone. All targets within the range makes a Gum.S(60) or be deafened for 10 secs</p>
+                  <li>2 AP cost, two uses per rest</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Blessed Cowboy Hat</h1>
+                  <p>If an attack would reduce the wearer to 0 HP, they are instead reduced to 1</p>
+                  <li>Single use, after which it becomes a plain ol' cowboy hat</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Black Hat</h1>
+                  <p>+5 to hit checks with pistols while wearing this ominous hat</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Black Duster</h1>
+                  <p>+2 damage with pistols while wearing this ominous duster</p>
+                  <li>No matter how dusty the trail is, it stays a deep, prestine black</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Black Boots</h1>
+                  <p>+10ft to max MB while wearing these ominous boots</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Gecko Skin Boots</h1>
+                  <p>Anytime the wearer uses all of their MB in one turn, they gain 2 hp</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Eldritch Playing Cards</h1>
+                  <p>2 AP to use, after use the card disappears</p>
+                  <li>Ace of Spades: this card grants the user one wish. How the wish is granted depends on the difficulty of the wish and is subject to the discretion of the GM</li>
+                  <li>Queen of Hearts: heals the user and up to ten creatures of the user’s choice that they can see to full health as well as refilling all abilities, AP, and MB</li>
+                  <li>King of Clovers:  the user may choose one target they can see to make a Mys.S(50). Upon fail, their soul is sent to Purgatory. Their corporeal body slumps dead in the spot where it is. Does not work on abyssal creatures</li>
+                  <li>Jack of Diamonds: gives the user 3d100’s worth of any currency they choose</li>
+                  <li>Joker: one random effect happens to the user or the entire party, determined by the GM</li>
+                </div>
+              </div>
+            </div>
+            <h2 class="pb-2 border-bottom">Mystical Weapons</h2>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Stunning Hand Wraps</h1>
+                  <p>Shock. +1 AP, on hit, target rolls a Gum.S(60) and on fail is stunned for 10 seconds. Twice per rest</p>
+                  <li>1 AP</li>
+                  <li>5ft</li>
+                  <li>(1d4 + Hand-to-Hand)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Butterfly Knife</h1>
+                  <p>Slashing. Rolling a natural 85-99 counts as a critical, and upon rolling a critical, the user can make an additional attack with this knife for no cost. They can continue this until they don't roll a critical</p>
+                  <li>1.5 AP</li>
+                  <li>5ft</li>
+                  <li>(1d4 + Melee)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Trigger Finger</h1>
+                  <p>Revolver, piercing. +3.5 AP: choose up to six targets and make hit checks on each with good odds. Once per rest</p>
+                  <li>1.5 AP</li>
+                  <li>25/45ft</li>
+                  <li>(1d6 + Pistols)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Vermillion</h1>
+                  <p>Rifle, piercing. On hit, this rifle heals the user for 1d4, 2d4 on a natural 100</p>
+                  <li>1 AP</li>
+                  <li>40/65ft</li>
+                  <li>(1d8 + Rifles)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">The Warper</h1>
+                  <p>Shock. This can be fired at short range as a shotgun or long range as a rifle</p>
+                  <li>2.5/3.5 AP</li>
+                  <li>5/10ft, 30/70ft</li>
+                  <li>(2d4 + Shotguns or 1d10 + Rifles)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Tranquilizer</h1>
+                  <p>Pistol, crushing. +1 AP: can choose to forgo the mundane damage and instead shoot a sleep dart. Target makes a Gum.S(50) and on fail, falls asleep for 15 seconds. Twice per rest</p>
+                  <li>1 AP</li>
+                  <li>25/40ft</li>
+                  <li>(1d4 + Pistols)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Twin Souls</h1>
+                  <p>Pistol, Piercing/Shock. User can switch between bullets or shocktones</p>
+                  <li>1.5 AP</li>
+                  <li>30/50ft</li>
+                  <li>(1d6 + Pistols)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Hopskip</h1>
+                  <p>Shockstone bow. +.5 AP: user can teleport to wihtin 5ft of where the bolt lands. Needs to be within 5 seconds of firing the bolt. Twice a day</p>
+                  <li>2 AP</li>
+                  <li>50/80ft</li>
+                  <li>(1d8 + Archery)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Callaphasia</h1>
+                  <p>Whip, slashing. +.5 AP: on hit, target makes a Gum.S(50) and on fail, gets an ichor counter. Does not work on abyssal creatures. Twice per rest</p>
+                  <li>2 AP</li>
+                  <li>15ft</li>
+                  <li>(1d6 + Ropework)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Harbinger of Fate</h1>
+                  <p>Rifle, piercing. +1.5 AP: a called shot has good odds and +1d8. Twice per rest</p>
+                  <li>2 AP</li>
+                  <li>75/100ft</li>
+                  <li>(1d8 + Rifles)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#cpu-fill"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Gatling Gun</h1>
+                  <p>Piercing. Can use MB or AP to shoot this gun, where 5ft = 2 AP. The user can exhaust both AP and MB to shoot for longer</p>
+                  <li>2 AP</li>
+                  <li>60/85ft</li>
+                  <li>(1d4, 3 shots)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Viper Bite</h1>
+                  <p>Revolver, acid. does acid damage</p>
+                  <li>1.5 AP</li>
+                  <li>25/45ft</li>
+                  <li>(1d6 acid + Pistols)</li>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                  <svg class="bi" width="1em" height="1em"><use xlink:href="#tools"></use></svg>
+                </div>
+                <div>
+                  <h1 class="fs-5 text-body-emphasis">Gauntlet of Storms</h1>
+                  <p>Crushing. +2 AP: adds (+1d10 shock) and on hit target makes a Gum.S(60) or is stunned for 10 seconds. On a critical hit, send a bolt of electricity (1d8 shock) to another target that’s within 15ft of the target being hit. Twice per rest</p>
+                  <li>1.5 AP</li>
+                  <li>5ft</li>
+                  <li>(1d6 crushing + Hand-to-Hand)</li>
+                </div>
+              </div>
+            </div>
+          </div>
+
+{% endblock content%}
