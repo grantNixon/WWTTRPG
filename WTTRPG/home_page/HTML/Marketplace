@@ -1,0 +1,11 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+<body style="background-color: #bf7e04;">
+        <div class="container my-1 text-center">
+         <h1 class="text-body-emphasis mt-5">Comin' soon, partner</h1>
+         <header class="mb-1 pb-1 border-bottom"></header>
+        </div>
+
+{% endblock content%}
