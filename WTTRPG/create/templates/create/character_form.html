@@ -4,3 +4,86 @@
     {{form.as_p}}
     <input type="submit" value="Create">
 </form>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+
+
+    const globalPointBuys = new Map([
+        
+        ["30", 30],
+        ["20", 20],
+        ["15", 15],
+        ["15-2", 15],
+        ["10", 10],
+        ["5",5]
+    ]);
+
+    function DeepCopyMap(existingMap) {
+        const deepCopy = new Map(
+            JSON.parse(
+            JSON.stringify(Array.from(existingMap))
+        ))
+        return deepCopy
+    }
+
+    function PopulatePointbuys(elementID) {
+        const selectElement = document.getElementById(elementID);
+        jqID = "#" + elementID
+        if ($(jqID + " option:selected").val() == "" ) {
+            $(jqID).find('option:not(:first)').remove();
+        }
+        else {
+            $(jqID).find('option:not(:selected)').remove();
+        }
+        pointbuys = DeepCopyMap(globalPointBuys)
+        selectedBuys = CheckSelected()
+        selectedBuys.forEach (function(buy) {
+            if (buy != 0) {
+                pointbuys.delete(buy)
+            }
+        })
+        pointbuys.forEach (function(key, value) {
+            let newOption = new Option(key, value);
+            selectElement.appendChild(newOption);
+         })
+    };
+
+    const attributesList = ["id_strength","id_agility","id_gumption","id_intelligence","id_mysticism","id_personality"]
+
+    PopulatePointbuys("id_agility")
+    PopulatePointbuys("id_gumption")
+    PopulatePointbuys("id_strength")
+    PopulatePointbuys("id_intelligence")
+    PopulatePointbuys("id_mysticism")
+    PopulatePointbuys("id_personality")
+
+    function CheckSelected() {
+        const selectedBuys = []
+        attributesList.forEach (function(attribute) {
+            attribute = "#" + attribute
+            if ($(attribute).val() != "") {
+                selectedBuys.push($(attribute).val())
+            }
+            else {
+                selectedBuys.push(0)
+            }
+        })
+        return selectedBuys
+    }
+
+    attributesList.forEach (function(attribute) {
+        //add event listener to each attribute dropdown. should re-populate pointbuys on "change" for all attributes other than the one changing
+        jqID = "#" + attribute
+        $(jqID).change(function(){
+            //update all other dropdowns with new list
+            const filteredAttr = attributesList.filter(val=> val !== attribute)
+            filteredAttr.forEach (function(attr) {
+                PopulatePointbuys(attr)
+            })
+        })
+    })
+
+
+</script>
