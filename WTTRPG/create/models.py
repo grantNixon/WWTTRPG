@@ -1,6 +1,7 @@
 from django.db import models
 from .create_settings import *
 
+
 def get_races():
     return {i: i for i in Races.races}
 
@@ -10,17 +11,28 @@ def get_backgrounds():
 def get_pointbuys():
     return {i: i for i in PointBuy.pointbuys}
 
+def get_skills():
+    return {i: i for i in Skills.skillz}
+
 # Create your models here.
 class Character(models.Model):
     name = models.CharField(max_length = 30)
     race = models.CharField(max_length = 30, choices = get_races)
     background = models.CharField(max_length = 30, choices = get_backgrounds)
-    strength = models.IntegerField(choices = "")
-    agility = models.IntegerField(choices = "")
-    intelligence = models.IntegerField(choices = "")
-    gumption = models.IntegerField(choices = "")
-    mysticism = models.IntegerField(choices = "")
-    personality = models.IntegerField(choices = "")
+    majorskill1 = models.CharField(max_length = 30, choices = get_skills)
+    majorskill2 = models.CharField(max_length = 30, choices = get_skills)
+    majorskill3 = models.CharField(max_length = 30, choices = get_skills)
+    minorskill1 = models.CharField(max_length = 30, choices = get_skills)
+    minorskill2 = models.CharField(max_length = 30, choices = get_skills)
+    minorskill3 = models.CharField(max_length = 30, choices = get_skills)
+    minorskill4 = models.CharField(max_length = 30, choices = get_skills)
+    minorskill5 = models.CharField(max_length = 30, choices = get_skills)
+    strength = models.IntegerField(choices = get_pointbuys)
+    agility = models.IntegerField(choices = get_pointbuys)
+    intelligence = models.IntegerField(choices = get_pointbuys)
+    gumption = models.IntegerField(choices = get_pointbuys)
+    mysticism = models.IntegerField(choices = get_pointbuys)
+    personality = models.IntegerField(choices = get_pointbuys)
     
 class Race(models.Model):
     RaceName = models.CharField(max_length = 30)
@@ -60,3 +72,7 @@ class Utilities(models.Model):
     ActionCost = models.FloatField()
     Range = models.IntegerField()
     Effect = models.TextField()
+
+class Skill(models.Model):
+    skillName = models.CharField(max_length = 30)
+    skillAttribute = models.CharField(max_length = 30)

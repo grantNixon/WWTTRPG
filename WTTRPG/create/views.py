@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import FormView,CreateView
 from create.models import Character
+from .forms import *
 
 # Create your views here.
 def create_view(request):
@@ -11,7 +12,8 @@ def homebrew_view(request):
 
 class QSCharCreator(CreateView):
     model = Character
-    fields = "__all__"
     success_url = '/home_page/'
+    form_class = CharacterCreateForm
+    
 
 
