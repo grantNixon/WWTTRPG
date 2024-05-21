@@ -14,10 +14,31 @@ def get_pointbuys():
 def get_skills():
     return {i: i for i in Skills.skillz}
 
+def get_weaponprofs():
+    return {i: i for i in WeaponProfs.weaponprof}
+
 # Create your models here.
+
+class Language(models.Model):
+    languageName = models.CharField(max_length = 30)
+    languageDescription = models.CharField(max_length = 300)
+    def __str__(self):
+        return self.languageName
+    class Meta:
+        ordering = ["-languageName"] 
+
+class Morals(models.Model):
+    moralsName = models.CharField(max_length = 30)
+    moralsDescription = models.CharField(max_length = 300)
+    def __str__(self):
+        return self.moralsName
+    class Meta:
+        ordering = ["-moralsName"] 
+
+
 class Character(models.Model):
     name = models.CharField(max_length = 30)
-    race = models.CharField(max_length = 30, choices = get_races)
+    species = models.CharField(max_length = 30, choices = get_races)
     background = models.CharField(max_length = 30, choices = get_backgrounds)
     majorskill1 = models.CharField(max_length = 30, choices = get_skills)
     majorskill2 = models.CharField(max_length = 30, choices = get_skills)
@@ -33,9 +54,13 @@ class Character(models.Model):
     gumption = models.IntegerField(choices = get_pointbuys)
     mysticism = models.IntegerField(choices = get_pointbuys)
     personality = models.IntegerField(choices = get_pointbuys)
+    language = models.ForeignKey(Language, on_delete=models.CASCADE)
+    morals = models.ForeignKey(Morals, on_delete=models.CASCADE)
+    weapon_proficiency = models.CharField(max_length=30, choices= get_weaponprofs)
     
-class Race(models.Model):
-    RaceName = models.CharField(max_length = 30)
+    
+class Species(models.Model):
+    SpeciesName = models.CharField(max_length = 30)
     description = models.TextField()
 
 class Background(models.Model):
@@ -76,3 +101,8 @@ class Utilities(models.Model):
 class Skill(models.Model):
     skillName = models.CharField(max_length = 30)
     skillAttribute = models.CharField(max_length = 30)
+
+
+
+
+

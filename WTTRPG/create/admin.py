@@ -4,3 +4,5 @@ from .models import *
 # Register your models here
 
 admin.site.register(Character)
+admin.site.register(Morals)
+admin.site.register(Language)

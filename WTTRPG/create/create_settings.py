@@ -14,3 +14,6 @@ class Skills():
               "Acrobatics","Sneak","Thievery","Intimidation","Hunting","Cooking","Foraging","Animal Handling","Rifles","Intuition",
               "Investigation","Gambit","Brewing","Galvanism Magic","Religion","Medicine","History","Healing Magic","Utility Magic","Absolution Magic",
               "Foolery","Persuasion","Barter","Performance","Deception Magic","Ritual Magic","Destruction Magic"]
+    
+class WeaponProfs():
+    weaponprof = {"Crushing Melee","Slashing Melee","Pistols","Rifles","Shotguns","Ropework","Archery","Hand-to-Hand"}
