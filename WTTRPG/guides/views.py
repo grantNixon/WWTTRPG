@@ -18,7 +18,7 @@ class CompMysItemsWeapons(TemplateView):
     template_name = 'guides/Compendium_MysItems-Weapons.html'
 
 class CompRaces(TemplateView):
-    template_name = 'guides/Compendium_Races.html'
+    template_name = 'guides/Compendium_Species.html'
 
 class CompSpells(TemplateView):
     template_name = 'guides/Compendium_Spells.html'
