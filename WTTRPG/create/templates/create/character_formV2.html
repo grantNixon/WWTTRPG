@@ -1,0 +1,1255 @@
+<body style="background-color: #bf7e04;">
+        <div class="container">
+            <h2 class="pb-2 border-bottom">Create New Character</h2>
+            <div class="col d-flex align-items-center">
+          <div class="col d-flex align-items-center">
+        <div class="container">
+        <div class="row row-cols-1 row-cols-lg-1">
+          <div class="col d-flex align-items-center">
+          <p>
+            <label for="id_species">Species</label>
+            <select name="species" required id="id_species">
+          <option value="" selected>---------</option>
+        
+          <option value="Valley Human" title="Versatile: +5 to any two skills
+Weapon Masters: Choose an additional weapon proficiency 
++10 to Strength
++5 to any attribute
+          ">Valley Human</option>
+
+          <option value="Forest Human" title="Versatile: +5 to any two skills
+Ones with the Trees: good odds on checks to climb and forage
++10 to Gumption
++5 to any attribute
+          ">Forest Human</option>
+        
+          <option value="Seven-Banded Armadill" title="Ball Form: for the cost of 10ft MB, change into ball form and gets +5 to EC. While in ball form, the only action that can be taken is movement. It costs another 10ft to revert to bipedal mode
+Hard Shell: resistance to slashing damage
++10 to Gumption
++5 to any attribute
+          ">Seven-Banded Armadill</option>
+
+          <option value="Five-Banded Armadill" title="Play Dead: for 1.5 AP, as a reaction after being attacked, the armadill can play dead. They fall where they are and are considered knocked down. While playing dead, the armadill can prepare an action to be performed for the AP cost of whatever that action is for it’s next turn. If a creature passes by the armadill, the armadill must roll a performance check or be discovered. If a creature wants to check the armadill, it rolls an investigation check contested by the armadills performance check. Once per nap
+Unusually Stealthy: +1d4 to sneak checks
+Night Vision
++10 to Agility
++5 to any attribute
+          ">Five-Banded Armadill</option>
+        
+          <option value="Village Hillock" title="Happy Mind: +2 on Foolery and Persuasion checks
+Connoisseur: +2 extra healing when eating or drinking something that replenishes health 
++10 to Personality
++5 to any attribute
+          ">Village Hillock</option>
+        
+          <option value="Stone Hillock" title="Stone Skin: turns the skin to scaly stone, giving resistance to piercing, crushing, slashing, and shock damage for 30 seconds. Twice per rest
+Fighter, Not a Lover: +5 to melee and hand-to-hand skills 
++10 to Strength
++5 to any attribute">Stone Hillock</option>
+
+          <option value="Short-Tailed Folinn" title="Swift Spirit: immune to Sloth and being slept
+Boil and Toil: Good odds when attempting to make tonics and healing items
+Night Vision
++10 to Agility
++5 to any attribute
+          ">Short-Tailed Folinn</option>
+
+          <option value="Long-Tailed Folinn" title="Whimsical Spirit: immune to Charm and Hypnotization
+Primordial Blessing: -.5 AP cost to Primordial spells, minimum of .5 cost
++10 to Mysticism
++5 to any attribute
+          ">Long-Tailed Folinn</option>
+        
+          <option value="Smooth Shakasa" title="Tail Whip: Can whip a target within 5ft as an attack or as a reaction to being hit. (1d6 + Unarmed). On a natural/dirty 100, the target gets knocked down. Three times per rest
+Aquatic: Can hold breath underwater for up to two hours
+Night Vision
++10 to Strength
++5 to any attribute
+          ">Smooth Shakasa</option>
+
+          <option value="Ridged Shakasa" title="Crocodile Smile: can re-roll a deception or persuasion check, once per rest
+Evergladian Ancestry: +1d6 when making saves against Primordial Magic spells. Re-roll any speech check, once per nap
++10 to Personality
++5 to any attribute
+          ">Ridged Shakasa</option>
+        
+          <option value="Onyx Bak&#x27;wa" title="Brackish Blood: Cannot become poisoned or contract any diseases
+Aware +10 to natural awareness
++10 to Gumption
++5 to any attribute
+          ">Onyx Bak&#x27;wa</option>
+
+          <option value="Mossy Bak&#x27;wa" title="Clotting Blood: thirty minutes after taking damage, regain 1d6 +2 health. Cannot bleed-out
+Nimble: add Acrobatics mod on top of Agility saves and +10ft to climbing height
++10 to Agility
++5 to any attribute
+          ">Mossy Bak&#x27;wa</option>
+        
+          <option value="Roaming Egriss" title="Fly: Has a flight distance equal to MB
+Unihemispheric Sleep: these Egriss do not need to rest in the traditional sense, instead, when resting, half of their brain stays awake, while the other half “sleeps”, allowing them to be alert 24/7
+Night vision
++10 to Agility
++5 to any attribute
+          ">Roaming Egriss</option>
+
+          <option value="Lotus Grove Egriss" title="Fly: Has a flight distance equal to MB
+Meditate: Twice per nap, can exchange AP and MB, and vise versa, where 1 AP is equal to 5ft 
+Night vision
++10 to Intelligence
++5 to any attribute
+          ">Lotus Grove Egriss</option>
+        
+          <option value="Solid Bolibar" title="Hearty: +10 to max health
+Glutinous Frenzy: lasts 10 seconds, during this state, all damage besides Holy is halved and every hit you take gives you a heal counter. Each heal counter replenishes 1d4 + 1 health and can be used for the cost of .5 AP. These can be stored until you take a nap or rest, up to a maximum of five. Once per rest.
++10 to Gumption
++5 to any attribute
+          ">Solid Bolibar</option>
+
+          <option value="Speckled Bolibar" title="Evergladian Ancestry: +1d6 when making saves against Primordial Magic spells. Once per rest, re-roll a speech check
+Power Napper: Refills three-quarters of their health when taking a nap
++10 to Personality
++5 to any attribute
+          ">Speckled Bolibar</option>
+        
+          <option value="Triadic Cincindel" title="Flutter: Can use wings to flutter 10ft in any direction (5ft in height). 3 uses per rest. This movement is not taken from MB during combat.
+Worldly: Knows an additional language and +1d6 to Barter checks
++10 to Personality
++5 to any attribute
+          ">Triadic Cincindel</option>
+
+          <option value="Analogous Cincindel" title="Flutter: Can use wings to flutter 10ft in any direction (5ft height). 3 times per rest. This movement is not taken from their MB during combat.
+Hard Shell: resistance to slashing damage
++10 to Intelligence
++5 to any attribute
+          ">Analogous Cincindel</option>
+        
+          <option value="Annointed Ambaazi" title="Soft Hands: Good odds when making investigation and intuition checks
+Unihemispheric Sleep: these Ambaazi do not need to rest in the traditional sense. When resting, half of their brain stays awake, while the other half “sleeps”, allowing them to be alert 24/7 
++10 to Intelligence
++5 to any attribute
+          ">Annointed Ambaazi</option>
+
+          <option value="Lost Ambaazi" title="Calloused Hands: Good odds when making crafting checks
+Heavy Mind: Napping gives the same benefits as a rest and resting gives the same benefits as a full rest 
+Night Vision
++10 to Strength
++5 to any attribute
+          ">Lost Ambaazi</option>
+        
+          <option value="Long-Haired Margart" title="Margart Insulation: resistant to fire and shock damage
+Natural Mercantilist: Good odds on any checks when making a transaction
+Night Vision
++10 to Gumption
++5 to any attribute
+          ">Long-Haired Margart</option>
+
+          <option value="Short-Haired Margart" title="Margart Insulation: resistant to fire and shock damage
+Feline Acrobatics: Good odds on Acrobatics checks and Agility saves
+Night Vision
++10 to Agility
++5 to any attribute
+          ">Short-Haired Margart</option>
+        
+          <option value="Desert Latran" title="Magical Inheritance: +1d4 when using magic to heal or do damage
+          Tranquil Spirit: Cannot be made Mad or Hypnotized
+Night Vision
++10 to Mysticism
++5 to any attribute
+          ">Desert Latran</option>
+
+          <option value="Mesa Latran" title="Magical Inheritance: +1d4 when using magic to heal or do damage
+Nimble: add acrobatics mod to agility saves, and +10ft to climbing height
+Night Vision
++10 to Agility
++5 to any attribute
+          ">Mesa Latran</option>
+        
+        </select>
+            
+            
+          </p>
+        
+        
+          <div class="col ms-4 d-flex align-items-center"> 
+          <p>
+            <label for="id_background">Background</label>
+            <select name="background" required id="id_background">
+          <option value="" selected>---------</option>
+        
+          <option value="Cowboy" title="+5 to Rifles, Pistols, and Ropework. Choose an additional weapon proficiency.
+-5 to all magic skills">Cowboy</option>
+        
+          <option value="Rancher" title="+5 to Animal Handling, Foraging, and Cooking. Good odds on checks made to tame wild animals
+-5 to all magic skills
+          ">Rancher</option>
+        
+          <option value="Bounty Hunter" title="+5 to Natural Awareness and +5 to Intuition and Investigation. When making an Intimidation attempt, you have good odds
+-5 to Personality 
+          ">Bounty Hunter</option>
+        
+          <option value="Snake Oil Salesman" title="+5 to Foolery, Persuasion and Barter. When attempting to persuade or deceive someone into making a deal, add +1d4 to the check
+-5 to Pistols, Rifles, and Archery
+          ">Snake Oil Salesman</option>
+        
+          <option value="Shopkeep" title="+10 to Barter and Repair, and +5 to Shotgun. -10% prices in towns
+-5 to Camping, Cooking, and Hunting
+          ">Shopkeep</option>
+        
+          <option value="Doctor" title="+10 to Medicine and +5 to Slashing Melee. When using a healing item on someone else, double the amount of dice
+-5 to all other combat skills
+          ">Doctor</option>
+        
+          <option value="Elemental Fella" title="Pick a favored element. Add +1d4 when you deal damage using your favored element. When crafting ammo or utilities of that element, double the amount
+You have bad odds on checks to use and craft items not of that element type
+          ">Elemental Fella</option>
+        
+          <option value="Wilderness Guide" title="While in a certain biome of your choice, you have +15 Natural Awareness and good odds on checks made to forage, hunt, and intuit and investigate your surroundings while in the wild
+When not in your favored biome, you have -10 to Natural Awareness and -1d4 to rolls made for the same checks as above
+          ">Wilderness Guide</option>
+        
+          <option value="Worshipper" title="+5 to Primordial Magic skills and Persuasion. Once per rest, you can ignore the AP cost of any tier of a Primordial magic spell
+-5 to Mysticism. You have bad odds when making saves against Farlight magic
+          ">Worshipper</option>
+        
+          <option value="Missionary" title="+5 to Farlight magic skills and Religion. When healing yourself or others using Healing magic or other magical means, you reroll 1’s
+-5 to Personality. You have bad odds when making saves against Primordial magic
+          ">Missionary</option>
+        
+          <option value="Galvanism Scholar" title="+10 to Galvanism. When casting a spell that causes a target to make a save, they have -1d4
+-5 to all other magic skills
+          ">Galvanism Scholar</option>
+        
+          <option value="Chef" title="+15 to Cooking and +5 to Melee. When outside of combat, you can cook a feast for up to four people if you have at least three pounds of food. They can choose to eat their meals then, which will give them good odds on a check, hit, or save of their choice. This bonus can be added twice before their next rest
+-5 to all gun skills
+          ">Chef</option>
+
+          <option value="Alchemist" title="+10 to Brewing and Foraging. When crafting tonics and herbal injections, double the amount
+-5 to Foolery, Crafting, and Intimidation
+          ">Alchemist</option>
+        
+          <option value="Ex-convict" title="+10 to Melee and Unarmed and +1d4 to Intimidation checks
+-10 to all non-combat skills, except Religion
+          ">Ex-convict</option>
+        
+          <option value="Carpenter" title="+15 to Crafting. Can re-roll a Crafting check, once per rest
+-5 to magic skills
+          ">Carpenter</option>
+        
+          <option value="Pack Mule" title="Can carry 25% of body weight without being encumbered, and when encumbered, MB stays normal
+-5 to Personality
+          ">Pack Mule</option>
+        
+          <option value="Shockstone Researcher" title="+5 to Pistols, Rifles, Shotguns, and Archery. All shockstone guns and bows have +5ft range
+When using non-shockstone weapons, you have bad odds on hit checks
+          ">Shockstone Researcher</option>
+        
+          <option value="Luddite" title="+5 to Melee, Unarmed, Ropework, and Archery and +1d4 everytime you deal damage with those types
+When using guns, shockstone weapons, and complicated traps, you have -1d10 on hit checks
+          ">Luddite</option>
+        
+          <option value="Assassin" title="+5 to Sneak, Acrobatics, and Melee. Can attempt to hide even when in full light
+-5 to Crafting, Repair, and Shotguns
+          ">Assassin</option>
+        
+          <option value="Street Urchin" title="+5 to Thievery, Sneak, and Foolery. +1d4 when attempting to pickpocket
+-5 to all magic skills
+          ">Street Urchin</option>
+        
+        
+        </select>  
+          </p>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+            </div> 
+            <h5 class="pb-2 pt-5 border-bottom">Attributes</h5>
+            <div class="row row-cols-1 row-cols-lg-1">  
+              <p>
+                <label for="id_strength" title="Determines movement bank">Strength:</label>
+                <select name="strength" required id="id_strength">
+              <option value="" selected>---------</option>
+            
+              <option value="30">30</option>
+            
+              <option value="20">20</option>
+            
+              <option value="16">16</option>
+            
+              <option value="15">15</option>
+            
+              <option value="10">10</option>
+            
+              <option value="5">5</option>
+            
+            </select>
+                
+                
+              </p>
+            
+              
+              <p>
+                <label for="id_agility" title="Determines evasion rate">Agility:</label>
+                <select name="agility" required id="id_agility">
+              <option value="" selected>---------</option>
+            
+              <option value="30">30</option>
+            
+              <option value="20">20</option>
+            
+              <option value="16">16</option>
+            
+              <option value="15">15</option>
+            
+              <option value="10">10</option>
+            
+              <option value="5">5</option>
+            
+            </select>
+                
+                
+              </p>
+            
+              <p>
+                <label for="id_gumption" title="Determines health">Gumption:</label>
+                <select name="gumption" required id="id_gumption">
+              <option value="" selected>---------</option>
+            
+              <option value="30">30</option>
+            
+              <option value="20">20</option>
+            
+              <option value="16">16</option>
+            
+              <option value="15">15</option>
+            
+              <option value="10">10</option>
+            
+              <option value="5">5</option>
+            
+            </select>
+                
+                
+              </p> 
+              <p>
+                <label for="id_intelligence" title="Determines natural awareness">Intelligence:</label>
+                <select name="intelligence" required id="id_intelligence">
+              <option value="" selected>---------</option>
+            
+              <option value="30">30</option>
+            
+              <option value="20">20</option>
+            
+              <option value="16">16</option>
+            
+              <option value="15">15</option>
+            
+              <option value="10">10</option>
+            
+              <option value="5">5</option>
+            
+            </select>
+                
+                
+              </p>
+              
+              <p>
+                <label for="id_mysticism" title="Determines total spell slots">Mysticism:</label>
+                <select name="mysticism" required id="id_mysticism">
+              <option value="" selected>---------</option>
+            
+              <option value="30">30</option>
+            
+              <option value="20">20</option>
+            
+              <option value="16">16</option>
+            
+              <option value="15">15</option>
+            
+              <option value="10">10</option>
+            
+              <option value="5">5</option>
+            
+            </select>
+                
+                
+              </p> 
+              <p>
+                <label for="id_personality" title="Determines total spell slots and prices">Personality:</label>
+                <select name="personality" required id="id_personality">
+              <option value="" selected>---------</option>
+            
+              <option value="30">30</option>
+            
+              <option value="20">20</option>
+            
+              <option value="16">16</option>
+            
+              <option value="15">15</option>
+            
+              <option value="10">10</option>
+            
+              <option value="5">5</option>
+            
+            </select>
+                
+                
+              </p>
+            
+            </div>
+    <h5 class="pb-2 pt-5 border-bottom">Major Skills - These start at 25</h5>
+        <div class="row row-cols-1 row-cols-lg-1"> 
+          <p>
+            <label for="id_majorskill1">Major Skill:</label>
+            <select name="majorskill1" required id="id_majorskill1">
+          <option value="" selected>---------</option>
+        
+          <option value="Shotguns">Shotguns</option>
+        
+          <option value="Crushing Melee">Crushing Melee</option>
+        
+          <option value="Hand-to-Hand">Hand-to-Hand</option>
+        
+          <option value="Athletics">Athletics</option>
+        
+          <option value="Crafting">Crafting</option>
+        
+          <option value="Pistols">Pistols</option>
+        
+          <option value="Slashing Melee">Slashing Melee</option>
+        
+          <option value="Archery">Archery</option>
+        
+          <option value="Ropework">Ropework</option>
+        
+          <option value="Acrobatics">Acrobatics</option>
+        
+          <option value="Sneak">Sneak</option>
+        
+          <option value="Thievery">Thievery</option>
+        
+          <option value="Intimidation">Intimidation</option>
+        
+          <option value="Hunting">Hunting</option>
+        
+          <option value="Cooking">Cooking</option>
+        
+          <option value="Foraging">Foraging</option>
+        
+          <option value="Animal Handling">Animal Handling</option>
+        
+          <option value="Rifles">Rifles</option>
+        
+          <option value="Intuition">Intuition</option>
+        
+          <option value="Investigation">Investigation</option>
+        
+          <option value="Gambit">Gambit</option>
+        
+          <option value="Brewing">Brewing</option>
+        
+          <option value="Galvanism Magic">Galvanism Magic</option>
+        
+          <option value="Religion">Religion</option>
+        
+          <option value="Medicine">Medicine</option>
+        
+          <option value="History">History</option>
+        
+          <option value="Healing Magic">Healing Magic</option>
+        
+          <option value="Utility Magic">Utility Magic</option>
+        
+          <option value="Absolution Magic">Absolution Magic</option>
+        
+          <option value="Foolery">Foolery</option>
+        
+          <option value="Persuasion">Persuasion</option>
+        
+          <option value="Barter">Barter</option>
+        
+          <option value="Performance">Performance</option>
+        
+          <option value="Deception Magic">Deception Magic</option>
+        
+          <option value="Ritual Magic">Ritual Magic</option>
+        
+          <option value="Destruction Magic">Destruction Magic</option>
+        
+        </select>
+            
+            
+          </p>
+        
+          
+          <p>
+            <label for="id_majorskill2">Major Skill:</label>
+            <select name="majorskill2" required id="id_majorskill2">
+          <option value="" selected>---------</option>
+        
+          <option value="Shotguns">Shotguns</option>
+        
+          <option value="Crushing Melee">Crushing Melee</option>
+        
+          <option value="Hand-to-Hand">Hand-to-Hand</option>
+        
+          <option value="Athletics">Athletics</option>
+        
+          <option value="Crafting">Crafting</option>
+        
+          <option value="Pistols">Pistols</option>
+        
+          <option value="Slashing Melee">Slashing Melee</option>
+        
+          <option value="Archery">Archery</option>
+        
+          <option value="Ropework">Ropework</option>
+        
+          <option value="Acrobatics">Acrobatics</option>
+        
+          <option value="Sneak">Sneak</option>
+        
+          <option value="Thievery">Thievery</option>
+        
+          <option value="Intimidation">Intimidation</option>
+        
+          <option value="Hunting">Hunting</option>
+        
+          <option value="Cooking">Cooking</option>
+        
+          <option value="Foraging">Foraging</option>
+        
+          <option value="Animal Handling">Animal Handling</option>
+        
+          <option value="Rifles">Rifles</option>
+        
+          <option value="Intuition">Intuition</option>
+        
+          <option value="Investigation">Investigation</option>
+        
+          <option value="Gambit">Gambit</option>
+        
+          <option value="Brewing">Brewing</option>
+        
+          <option value="Galvanism Magic">Galvanism Magic</option>
+        
+          <option value="Religion">Religion</option>
+        
+          <option value="Medicine">Medicine</option>
+        
+          <option value="History">History</option>
+        
+          <option value="Healing Magic">Healing Magic</option>
+        
+          <option value="Utility Magic">Utility Magic</option>
+        
+          <option value="Absolution Magic">Absolution Magic</option>
+        
+          <option value="Foolery">Foolery</option>
+        
+          <option value="Persuasion">Persuasion</option>
+        
+          <option value="Barter">Barter</option>
+        
+          <option value="Performance">Performance</option>
+        
+          <option value="Deception Magic">Deception Magic</option>
+        
+          <option value="Ritual Magic">Ritual Magic</option>
+        
+          <option value="Destruction Magic">Destruction Magic</option>
+        
+        </select>
+            
+            
+          </p>
+        
+          
+          <p>
+            <label for="id_majorskill3">Major Skill:</label>
+            <select name="majorskill3" required id="id_majorskill3">
+          <option value="" selected>---------</option>
+        
+          <option value="Shotguns">Shotguns</option>
+        
+          <option value="Crushing Melee">Crushing Melee</option>
+        
+          <option value="Hand-to-Hand">Hand-to-Hand</option>
+        
+          <option value="Athletics">Athletics</option>
+        
+          <option value="Crafting">Crafting</option>
+        
+          <option value="Pistols">Pistols</option>
+        
+          <option value="Slashing Melee">Slashing Melee</option>
+        
+          <option value="Archery">Archery</option>
+        
+          <option value="Ropework">Ropework</option>
+        
+          <option value="Acrobatics">Acrobatics</option>
+        
+          <option value="Sneak">Sneak</option>
+        
+          <option value="Thievery">Thievery</option>
+        
+          <option value="Intimidation">Intimidation</option>
+        
+          <option value="Hunting">Hunting</option>
+        
+          <option value="Cooking">Cooking</option>
+        
+          <option value="Foraging">Foraging</option>
+        
+          <option value="Animal Handling">Animal Handling</option>
+        
+          <option value="Rifles">Rifles</option>
+        
+          <option value="Intuition">Intuition</option>
+        
+          <option value="Investigation">Investigation</option>
+        
+          <option value="Gambit">Gambit</option>
+        
+          <option value="Brewing">Brewing</option>
+        
+          <option value="Galvanism Magic">Galvanism Magic</option>
+        
+          <option value="Religion">Religion</option>
+        
+          <option value="Medicine">Medicine</option>
+        
+          <option value="History">History</option>
+        
+          <option value="Healing Magic">Healing Magic</option>
+        
+          <option value="Utility Magic">Utility Magic</option>
+        
+          <option value="Absolution Magic">Absolution Magic</option>
+        
+          <option value="Foolery">Foolery</option>
+        
+          <option value="Persuasion">Persuasion</option>
+        
+          <option value="Barter">Barter</option>
+        
+          <option value="Performance">Performance</option>
+        
+          <option value="Deception Magic">Deception Magic</option>
+        
+          <option value="Ritual Magic">Ritual Magic</option>
+        
+          <option value="Destruction Magic">Destruction Magic</option>
+        
+        </select>
+            
+            
+          </p>
+        </div>
+      <h5 class="pb-2 pt-5 border-bottom">Minor Skills - These start at 15, all other skills start at 5</h5>
+        <div class="row row-cols-1 row-cols-lg-1"> 
+          <p>
+            <label for="id_minorskill1">Minor Skill:</label>
+            <select name="minorskill1" required id="id_minorskill1">
+          <option value="" selected>---------</option>
+        
+          <option value="Shotguns">Shotguns</option>
+        
+          <option value="Crushing Melee">Crushing Melee</option>
+        
+          <option value="Hand-to-Hand">Hand-to-Hand</option>
+        
+          <option value="Athletics">Athletics</option>
+        
+          <option value="Crafting">Crafting</option>
+        
+          <option value="Pistols">Pistols</option>
+        
+          <option value="Slashing Melee">Slashing Melee</option>
+        
+          <option value="Archery">Archery</option>
+        
+          <option value="Ropework">Ropework</option>
+        
+          <option value="Acrobatics">Acrobatics</option>
+        
+          <option value="Sneak">Sneak</option>
+        
+          <option value="Thievery">Thievery</option>
+        
+          <option value="Intimidation">Intimidation</option>
+        
+          <option value="Hunting">Hunting</option>
+        
+          <option value="Cooking">Cooking</option>
+        
+          <option value="Foraging">Foraging</option>
+        
+          <option value="Animal Handling">Animal Handling</option>
+        
+          <option value="Rifles">Rifles</option>
+        
+          <option value="Intuition">Intuition</option>
+        
+          <option value="Investigation">Investigation</option>
+        
+          <option value="Gambit">Gambit</option>
+        
+          <option value="Brewing">Brewing</option>
+        
+          <option value="Galvanism Magic">Galvanism Magic</option>
+        
+          <option value="Religion">Religion</option>
+        
+          <option value="Medicine">Medicine</option>
+        
+          <option value="History">History</option>
+        
+          <option value="Healing Magic">Healing Magic</option>
+        
+          <option value="Utility Magic">Utility Magic</option>
+        
+          <option value="Absolution Magic">Absolution Magic</option>
+        
+          <option value="Foolery">Foolery</option>
+        
+          <option value="Persuasion">Persuasion</option>
+        
+          <option value="Barter">Barter</option>
+        
+          <option value="Performance">Performance</option>
+        
+          <option value="Deception Magic">Deception Magic</option>
+        
+          <option value="Ritual Magic">Ritual Magic</option>
+        
+          <option value="Destruction Magic">Destruction Magic</option>
+        
+        </select>
+            
+            
+          </p>
+        
+          
+          <p>
+            <label for="id_minorskill2">Minor Skill:</label>
+            <select name="minorskill2" required id="id_minorskill2">
+          <option value="" selected>---------</option>
+        
+          <option value="Shotguns">Shotguns</option>
+        
+          <option value="Crushing Melee">Crushing Melee</option>
+        
+          <option value="Hand-to-Hand">Hand-to-Hand</option>
+        
+          <option value="Athletics">Athletics</option>
+        
+          <option value="Crafting">Crafting</option>
+        
+          <option value="Pistols">Pistols</option>
+        
+          <option value="Slashing Melee">Slashing Melee</option>
+        
+          <option value="Archery">Archery</option>
+        
+          <option value="Ropework">Ropework</option>
+        
+          <option value="Acrobatics">Acrobatics</option>
+        
+          <option value="Sneak">Sneak</option>
+        
+          <option value="Thievery">Thievery</option>
+        
+          <option value="Intimidation">Intimidation</option>
+        
+          <option value="Hunting">Hunting</option>
+        
+          <option value="Cooking">Cooking</option>
+        
+          <option value="Foraging">Foraging</option>
+        
+          <option value="Animal Handling">Animal Handling</option>
+        
+          <option value="Rifles">Rifles</option>
+        
+          <option value="Intuition">Intuition</option>
+        
+          <option value="Investigation">Investigation</option>
+        
+          <option value="Gambit">Gambit</option>
+        
+          <option value="Brewing">Brewing</option>
+        
+          <option value="Galvanism Magic">Galvanism Magic</option>
+        
+          <option value="Religion">Religion</option>
+        
+          <option value="Medicine">Medicine</option>
+        
+          <option value="History">History</option>
+        
+          <option value="Healing Magic">Healing Magic</option>
+        
+          <option value="Utility Magic">Utility Magic</option>
+        
+          <option value="Absolution Magic">Absolution Magic</option>
+        
+          <option value="Foolery">Foolery</option>
+        
+          <option value="Persuasion">Persuasion</option>
+        
+          <option value="Barter">Barter</option>
+        
+          <option value="Performance">Performance</option>
+        
+          <option value="Deception Magic">Deception Magic</option>
+        
+          <option value="Ritual Magic">Ritual Magic</option>
+        
+          <option value="Destruction Magic">Destruction Magic</option>
+        
+        </select>
+            
+            
+          </p>
+        
+          
+          <p>
+            <label for="id_minorskill3">Minor Skill:</label>
+            <select name="minorskill3" required id="id_minorskill3">
+          <option value="" selected>---------</option>
+        
+          <option value="Shotguns">Shotguns</option>
+        
+          <option value="Crushing Melee">Crushing Melee</option>
+        
+          <option value="Hand-to-Hand">Hand-to-Hand</option>
+        
+          <option value="Athletics">Athletics</option>
+        
+          <option value="Crafting">Crafting</option>
+        
+          <option value="Pistols">Pistols</option>
+        
+          <option value="Slashing Melee">Slashing Melee</option>
+        
+          <option value="Archery">Archery</option>
+        
+          <option value="Ropework">Ropework</option>
+        
+          <option value="Acrobatics">Acrobatics</option>
+        
+          <option value="Sneak">Sneak</option>
+        
+          <option value="Thievery">Thievery</option>
+        
+          <option value="Intimidation">Intimidation</option>
+        
+          <option value="Hunting">Hunting</option>
+        
+          <option value="Cooking">Cooking</option>
+        
+          <option value="Foraging">Foraging</option>
+        
+          <option value="Animal Handling">Animal Handling</option>
+        
+          <option value="Rifles">Rifles</option>
+        
+          <option value="Intuition">Intuition</option>
+        
+          <option value="Investigation">Investigation</option>
+        
+          <option value="Gambit">Gambit</option>
+        
+          <option value="Brewing">Brewing</option>
+        
+          <option value="Galvanism Magic">Galvanism Magic</option>
+        
+          <option value="Religion">Religion</option>
+        
+          <option value="Medicine">Medicine</option>
+        
+          <option value="History">History</option>
+        
+          <option value="Healing Magic">Healing Magic</option>
+        
+          <option value="Utility Magic">Utility Magic</option>
+        
+          <option value="Absolution Magic">Absolution Magic</option>
+        
+          <option value="Foolery">Foolery</option>
+        
+          <option value="Persuasion">Persuasion</option>
+        
+          <option value="Barter">Barter</option>
+        
+          <option value="Performance">Performance</option>
+        
+          <option value="Deception Magic">Deception Magic</option>
+        
+          <option value="Ritual Magic">Ritual Magic</option>
+        
+          <option value="Destruction Magic">Destruction Magic</option>
+        
+        </select>
+            
+            
+          </p>
+        
+          
+          <p>
+            <label for="id_minorskill4">Minor Skill:</label>
+            <select name="minorskill4" required id="id_minorskill4">
+          <option value="" selected>---------</option>
+        
+          <option value="Shotguns">Shotguns</option>
+        
+          <option value="Crushing Melee">Crushing Melee</option>
+        
+          <option value="Hand-to-Hand">Hand-to-Hand</option>
+        
+          <option value="Athletics">Athletics</option>
+        
+          <option value="Crafting">Crafting</option>
+        
+          <option value="Pistols">Pistols</option>
+        
+          <option value="Slashing Melee">Slashing Melee</option>
+        
+          <option value="Archery">Archery</option>
+        
+          <option value="Ropework">Ropework</option>
+        
+          <option value="Acrobatics">Acrobatics</option>
+        
+          <option value="Sneak">Sneak</option>
+        
+          <option value="Thievery">Thievery</option>
+        
+          <option value="Intimidation">Intimidation</option>
+        
+          <option value="Hunting">Hunting</option>
+        
+          <option value="Cooking">Cooking</option>
+        
+          <option value="Foraging">Foraging</option>
+        
+          <option value="Animal Handling">Animal Handling</option>
+        
+          <option value="Rifles">Rifles</option>
+        
+          <option value="Intuition">Intuition</option>
+        
+          <option value="Investigation">Investigation</option>
+        
+          <option value="Gambit">Gambit</option>
+        
+          <option value="Brewing">Brewing</option>
+        
+          <option value="Galvanism Magic">Galvanism Magic</option>
+        
+          <option value="Religion">Religion</option>
+        
+          <option value="Medicine">Medicine</option>
+        
+          <option value="History">History</option>
+        
+          <option value="Healing Magic">Healing Magic</option>
+        
+          <option value="Utility Magic">Utility Magic</option>
+        
+          <option value="Absolution Magic">Absolution Magic</option>
+        
+          <option value="Foolery">Foolery</option>
+        
+          <option value="Persuasion">Persuasion</option>
+        
+          <option value="Barter">Barter</option>
+        
+          <option value="Performance">Performance</option>
+        
+          <option value="Deception Magic">Deception Magic</option>
+        
+          <option value="Ritual Magic">Ritual Magic</option>
+        
+          <option value="Destruction Magic">Destruction Magic</option>
+        
+        </select>
+            
+            
+          </p>
+        
+          
+          <p>
+            <label for="id_minorskill5">Minor Skill:</label>
+            <select name="minorskill5" required id="id_minorskill5">
+          <option value="" selected>---------</option>
+        
+          <option value="Shotguns">Shotguns</option>
+        
+          <option value="Crushing Melee">Crushing Melee</option>
+        
+          <option value="Hand-to-Hand">Hand-to-Hand</option>
+        
+          <option value="Athletics">Athletics</option>
+        
+          <option value="Crafting">Crafting</option>
+        
+          <option value="Pistols">Pistols</option>
+        
+          <option value="Slashing Melee">Slashing Melee</option>
+        
+          <option value="Archery">Archery</option>
+        
+          <option value="Ropework">Ropework</option>
+        
+          <option value="Acrobatics">Acrobatics</option>
+        
+          <option value="Sneak">Sneak</option>
+        
+          <option value="Thievery">Thievery</option>
+        
+          <option value="Intimidation">Intimidation</option>
+        
+          <option value="Hunting">Hunting</option>
+        
+          <option value="Cooking">Cooking</option>
+        
+          <option value="Foraging">Foraging</option>
+        
+          <option value="Animal Handling">Animal Handling</option>
+        
+          <option value="Rifles">Rifles</option>
+        
+          <option value="Intuition">Intuition</option>
+        
+          <option value="Investigation">Investigation</option>
+        
+          <option value="Gambit">Gambit</option>
+        
+          <option value="Brewing">Brewing</option>
+        
+          <option value="Galvanism Magic">Galvanism Magic</option>
+        
+          <option value="Religion">Religion</option>
+        
+          <option value="Medicine">Medicine</option>
+        
+          <option value="History">History</option>
+        
+          <option value="Healing Magic">Healing Magic</option>
+        
+          <option value="Utility Magic">Utility Magic</option>
+        
+          <option value="Absolution Magic">Absolution Magic</option>
+        
+          <option value="Foolery">Foolery</option>
+        
+          <option value="Persuasion">Persuasion</option>
+        
+          <option value="Barter">Barter</option>
+        
+          <option value="Performance">Performance</option>
+        
+          <option value="Deception Magic">Deception Magic</option>
+        
+          <option value="Ritual Magic">Ritual Magic</option>
+        
+          <option value="Destruction Magic">Destruction Magic</option>
+        
+        </select>
+            
+            
+          </p>
+        </div>
+        <h5 class="pb-2 pt-5 border-bottom">Languages, morals, and weapon proficency</h5>
+        <div class="row row-cols-1 row-cols-lg-1">  
+          <p>
+            <label for="id_language">Language:</label>
+            <select name="language" required id="id_language">
+          <option value="" selected>---------</option>
+        
+          <option value="2">Tarkish</option>
+
+          <option value="1">Creonin</option>
+        
+          <option value="6">Shikasan</option>
+        
+          <option value="3">Planish</option>
+        
+          <option value="4">Folish</option>
+        
+          <option value="5">Cindeli</option>
+        
+          <option value="7">Bakanese</option>
+
+          <option value="8">Zer’koz</option>
+        
+        </select>
+            
+            
+          </p>
+        
+          
+          <p>
+            <label for="id_morals">Morals:</label>
+            <select name="morals" required id="id_morals">
+          <option value="" selected>---------</option>
+        
+          <option value="6">Holy</option>
+        
+          <option value="8">Gray</option>
+        
+          <option value="7">Good</option>
+        
+          <option value="9">Bad</option>
+
+          <option value="10">Ugly</option>
+        
+        </select>
+            
+            
+          </p>
+        
+          
+          <p>
+            <label for="id_weapon_proficiency" title="+1 to hit checks, additional +1 when skill reaches level 50">Weapon proficiency:</label>
+            <select name="weapon_proficiency" required id="id_weapon_proficiency">
+          <option value="" selected>---------</option>
+        
+          <option value="Shotguns">Shotguns</option>
+        
+          <option value="Ropework">Ropework</option>
+        
+          <option value="Slashing Melee">Slashing Melee</option>
+        
+          <option value="Rifles">Rifles</option>
+        
+          <option value="Pistols">Pistols</option>
+        
+          <option value="Archery">Archery</option>
+        
+          <option value="Hand-to-Hand">Hand-to-Hand</option>
+        
+          <option value="Crushing Melee">Crushing Melee</option>
+        
+        </select>
+            
+            
+              
+            
+          </p>
+        </div>
+        <h5 class="pb-2 pt-5 border-bottom">Final Details</h5>
+          <form action="" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="ABtK5OxOoU6kiOxqDL5P1wKDthzj4bpS8oCeLQAcKBG5ZnrQNLlxJcuoiyBpMzEX">
+            <p>
+            <label for="id_name">Name:</label>
+            <input type="text" name="name" maxlength="30" required id="id_name">
+            
+          
+            
+            
+          </p>
+          <form action="" method="post">
+            <input type="hidden" name="csrfmiddlewaretoken" value="ABtK5OxOoU6kiOxqDL5P1wKDthzj4bpS8oCeLQAcKBG5ZnrQNLlxJcuoiyBpMzEX">
+            <p>
+            <label for="id_classname">Class Name:</label>
+            <input type="text" name="classname" maxlength="30" required id="id_classname">
+            
+          
+            
+            
+          </p>
+        </div>
+          <div class="text-center">
+            <input type="submit" value="Create">
+          </div>
+         </form>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+
+
+    const globalPointBuys = new Map([
+        
+        ["30", 30],
+        ["20", 20],
+        ["15", 15],
+        ["15-2", 15],
+        ["10", 10],
+        ["5",5]
+    ]);
+
+    function DeepCopyMap(existingMap) {
+        const deepCopy = new Map(
+            JSON.parse(
+            JSON.stringify(Array.from(existingMap))
+        ))
+        return deepCopy
+    }
+
+    function PopulatePointbuys(elementID) {
+        const selectElement = document.getElementById(elementID);
+        jqID = "#" + elementID
+        if ($(jqID + " option:selected").val() == "" ) {
+            $(jqID).find('option:not(:first)').remove();
+        }
+        else {
+            $(jqID).find('option:not(:selected)').remove();
+        }
+        pointbuys = DeepCopyMap(globalPointBuys)
+        selectedBuys = CheckSelected()
+        selectedBuys.forEach (function(buy) {
+            if (buy != 0) {
+                pointbuys.delete(buy)
+            }
+        })
+        pointbuys.forEach (function(key, value) {
+            let newOption = new Option(key, value);
+            selectElement.appendChild(newOption);
+         })
+    };
+
+    const attributesList = ["id_strength","id_agility","id_gumption","id_intelligence","id_mysticism","id_personality"]
+
+    PopulatePointbuys("id_agility")
+    PopulatePointbuys("id_gumption")
+    PopulatePointbuys("id_strength")
+    PopulatePointbuys("id_intelligence")
+    PopulatePointbuys("id_mysticism")
+    PopulatePointbuys("id_personality")
+
+    function CheckSelected() {
+        const selectedBuys = []
+        attributesList.forEach (function(attribute) {
+            attribute = "#" + attribute
+            if ($(attribute).val() != "") {
+                selectedBuys.push($(attribute).val())
+            }
+            else {
+                selectedBuys.push(0)
+            }
+        })
+        return selectedBuys
+    }
+
+    attributesList.forEach (function(attribute) {
+        //add event listener to each attribute dropdown. should re-populate pointbuys on "change" for all attributes other than the one changing
+        jqID = "#" + attribute
+        $(jqID).change(function(){
+            //update all other dropdowns with new list
+            const filteredAttr = attributesList.filter(val=> val !== attribute)
+            filteredAttr.forEach (function(attr) {
+                PopulatePointbuys(attr)
+            })
+        })
+    })
+</script>
