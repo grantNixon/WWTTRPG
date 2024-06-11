@@ -19,3 +19,4 @@ class CharacterCreateForm(forms.ModelForm):
     class Meta:
         model = Character
         fields = "__all__"
+        exclude = ['user']

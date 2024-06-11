@@ -1,5 +1,6 @@
 from django.db import models
 from .create_settings import *
+from django.conf import *
 
 
 def get_races():
@@ -40,14 +41,14 @@ class Character(models.Model):
     name = models.CharField(max_length = 30)
     species = models.CharField(max_length = 30, choices = get_races)
     background = models.CharField(max_length = 30, choices = get_backgrounds)
-    majorskill1 = models.CharField(max_length = 30, choices = get_skills)
-    majorskill2 = models.CharField(max_length = 30, choices = get_skills)
-    majorskill3 = models.CharField(max_length = 30, choices = get_skills)
-    minorskill1 = models.CharField(max_length = 30, choices = get_skills)
-    minorskill2 = models.CharField(max_length = 30, choices = get_skills)
-    minorskill3 = models.CharField(max_length = 30, choices = get_skills)
-    minorskill4 = models.CharField(max_length = 30, choices = get_skills)
-    minorskill5 = models.CharField(max_length = 30, choices = get_skills)
+    major_skill_1 = models.CharField(max_length = 30, choices = get_skills)
+    major_skill_2 = models.CharField(max_length = 30, choices = get_skills)
+    major_skill_3 = models.CharField(max_length = 30, choices = get_skills)
+    minor_skill_1 = models.CharField(max_length = 30, choices = get_skills)
+    minor_skill_2 = models.CharField(max_length = 30, choices = get_skills)
+    minor_skill_3 = models.CharField(max_length = 30, choices = get_skills)
+    minor_skill_4 = models.CharField(max_length = 30, choices = get_skills)
+    minor_skill_5 = models.CharField(max_length = 30, choices = get_skills)
     strength = models.IntegerField(choices = get_pointbuys)
     agility = models.IntegerField(choices = get_pointbuys)
     intelligence = models.IntegerField(choices = get_pointbuys)
@@ -57,6 +58,8 @@ class Character(models.Model):
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
     morals = models.ForeignKey(Morals, on_delete=models.CASCADE)
     weapon_proficiency = models.CharField(max_length=30, choices= get_weaponprofs)
+    class_name = models.CharField(max_length=30)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     
     
 class Species(models.Model):
