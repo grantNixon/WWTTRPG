@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import FormView,CreateView
 from create.models import Character
 from .forms import *
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 def create_view(request):
@@ -12,7 +13,7 @@ def create_view(request):
 def homebrew_view(request):
     return(render(request,"create/homebrew.html"))
 
-class QSCharCreator(CreateView):
+class QSCharCreator(LoginRequiredMixin,CreateView):
     model = Character
     success_url = '/home_page/'
     form_class = CharacterCreateForm

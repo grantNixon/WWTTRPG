@@ -53,8 +53,15 @@
                   </svg>
                   <input type="text" id="search-input" style="display: none;">
                 </form>
-                  <button type="button" onclick="window.location.href='..//accounts/login';" class="btn btn-outline-light me-2">Login</button>
+                  {% if user.is_authenticated %}
+                  <form method="post" action="{% url 'logout' %}?next={{request.path}}">
+                    {% csrf_token %}
+                    <button type="submit" onclick="window.location.href='{% url 'logout'%}?next={{request.path}}';" class="btn btn-outline-light me-2">Log Out</button>
+                  </form>
+                  {% else %}
+                  <button type="button" onclick="window.location.href='{% url 'login' %}';" class="btn btn-outline-light me-2">Login</button>
                   <button type="button" class="btn btn-sm me-3" style="background-color: #137a05;">Sign-up</button>
+                  {% endif %}
                 </div>
             </div>
         </nav>
