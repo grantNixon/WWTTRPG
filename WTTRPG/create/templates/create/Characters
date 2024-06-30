@@ -1,0 +1,21 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+<body style="background-color: #bf7e04;">
+       <div class="container">
+        <h2 class="pb-2 pt-3 border-bottom align-text-center">Characters</h2>
+        <div class="container">
+          <a href="#" class="nav-link">
+          <h5 id="characterone" class="ps-1 pb-1 pt-3 mt-5 mb-4 border-top border-bottom border-start" style="background-color: #137a05;">Character one</h5>
+          </a>
+          <a href="#" class="nav-link">
+          <h5 id="charactertwo" class="ps-1 pb-1 pt-3 mb-4 border-top border-bottom border-start" style="background-color: #137a05;">Character two</h5>
+          </a>
+          <a href="#" class="nav-link">
+          <h5 id="characterthree" class="ps-1 pb-1 pt-3 mb-4 border-top border-bottom border-start" style="background-color: #137a05;">Character three</h5>
+          </a>
+        </div>
+       </div>
+
+{% endblock content%}
