@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <Meta charset="utf-8">
+        <title>WWTTRPG</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <nav class="navbar navbar-expand" style="background-color: #000500;">
+      <header class="container-fluid">
+        <div class="text-bg-dark">
+            <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-center mb-md-0 me-2" style="background-color: #000500;">
+                  <li><a href="#" class="nav-link link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-light ms-5 me-5">WWTTRPG</a></li>
+                  <span class="border-start"></span>
+                  <div class="text-end ms-3 me-3 mt-2">
+                    <li><a href="#" class="d-block link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-decoration-none text-light">Getting Started</a></li>
+                  </div>
+                  <span class="border-end"></span>
+                  <div class="dropdown text-end ms-3 me-3 mt-2">
+                    <a href="#" class="d-block mr-3 link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Guide Books
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small">
+                      <li><a class="dropdown-item" href="#">Main Guide</a></li>
+                      <li><a class="dropdown-item" href="#">Adventure: "Trouble in the Outer West"</a></li>
+                    </ul>
+                  </div>
+                  <span class="border-end"></span>
+                  <div class="dropdown text-end mt-2 ms-3 me-3">
+                    <a href="#" class="d-block link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Compendium
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small">
+                      <li><a class="dropdown-item" href="#">Races</a></li>
+                      <li><a class="dropdown-item" href="#">Backgrounds</a></li>
+                      <li><a class="dropdown-item" href="#">Weapons</a></li>
+                      <li><a class="dropdown-item" href="#">Spells</a></li>
+                      <li><a class="dropdown-item" href="#">Special Clothing and Armor</a></li>
+                      <li><a class="dropdown-item" href="#">Tonics</a></li>
+                      <li><a class="dropdown-item" href="#">Utilities</a></li>
+                      <li><a class="dropdown-item" href="#">Misc. Items</a></li>
+                    </ul>
+                  </div>
+                  <span class="border-end"></span>
+                  <li><a href="#" class="nav-link link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-light me-1 ms-1">Marketplace</a></li>
+                  <span class="border-end"></span>
+                </ul>
+            </header>
+                <div class="col-4 d-flex justify-content-end">
+                  <div class="dropdown text-end">
+                    <a href="#" class="d-block link-body-emphasis text-decoration-light dropdown-toggle me-5" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small" style="max-width: 200px; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                      <li><a class="dropdown-item" href="#">Characters</a></li>
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                      <li><a class="dropdown-item" href="#">Account</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    </ul>
+                  </div>
+                <form class="btn me-4" style="background-color: #137a05;" role="search" id="search-button">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                  </svg>
+                  <input type="text" id="search-input" style="display: none;">
+                </form>
+                </div>
+            </div>
+        </nav>
+      <body style="background-color: #bf7e04;">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+        <script>
+          const searchButton = document.getElementById('search-button');
+          const searchInput = document.getElementById('search-input');
+          searchButton.addEventListener('click', function() {
+
+              searchInput.style.display = (searchInput.style.display === 'none' || searchInput.style.display === '') ? 'block' : 'none';
+      
+              if (searchInput.style.display === 'block') {
+                  searchInput.focus();
+              }
+          });
+      </script>
+    </body>
+    <div class="container">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact Us</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 me-5 text-body-secondary">Terms of Service</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">X</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Instagram</a></li>
+          </ul>
+          <p class="text-center text-body-secondary">© 2023 Company, LLC</p>
+        </footer>
+      </div>
+</html>
