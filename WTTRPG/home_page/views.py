@@ -11,3 +11,5 @@ def test_view(request):
     # create my_app/templates/my_app/home.html
     return render(request,'home_page/homepage.html')
 
+
+
