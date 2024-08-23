@@ -60,6 +60,12 @@ class Character(models.Model):
     weapon_proficiency = models.CharField(max_length=30, choices= get_weaponprofs)
     class_name = models.CharField(max_length=30)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    level = models.IntegerField()
+    hp = models.IntegerField()
+    mb = models.IntegerField()
+    ec = models.IntegerField()
+    ap = models.IntegerField()
+    initiative = models.IntegerField(default=2)
     
     
 class Species(models.Model):

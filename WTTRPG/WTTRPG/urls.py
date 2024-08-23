@@ -25,5 +25,5 @@ urlpatterns = [
     path('create/',include('create.urls')),
     path('guides/',include('guides.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
-    path('accounts/signup', SignUpView, name="sign up"),
+    path('accounts/signup', SignUpView, name="sign_up"),
 ]

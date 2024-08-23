@@ -1,7 +1,10 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+
 <body style="background-color: black;">
         <div class="container my-1">
           <div class="container px-4 py-5" id="hanging-icons" style="background-color: #bf7e04;">
-            <h2 class="pb-2 border-bottom">New Character</h2>
+            <h2 class="pb-2 border-bottom">{{character.name}}</h2>
               <div class="col d-flex align-items-start">
                 <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
                   
@@ -17,7 +20,7 @@
                   
                 </div>
                 <div>
-                  <h1 id="species" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="species" class="fs-5 text-body-emphasis border-bottom">{{character.species}}</h1>
                   <p class="fs-5">Species</p>
                 </div>
               </div>
@@ -26,7 +29,7 @@
                  
                 </div>
                 <div>
-                  <h1 id="class" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="class" class="fs-5 text-body-emphasis border-bottom">{{character.class_name}}</h1>
                   <p class="fs-5">Class</p>
                 </div>
               </div>
@@ -35,7 +38,7 @@
                   
                 </div>
               <div>
-                  <h1 id="background" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="background" class="fs-5 text-body-emphasis border-bottom">{{character.background}}</h1>
                   <p class="fs-5">Background</p>
               </div>
             </div>
@@ -44,7 +47,7 @@
                  
                 </div>
                 <div>
-                  <h1 id="morals" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="morals" class="fs-5 text-body-emphasis border-bottom">{{character.morals}}</h1>
                   <p class="fs-5">Morals</p>
                 </div>
               </div>
@@ -53,7 +56,7 @@
                   
                 </div>
                 <div>
-                  <h1 id="languages" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="languages" class="fs-5 text-body-emphasis border-bottom">{{character.language}}</h1>
                   <p class="fs-5">Languages</p>
                 </div>
               </div>
@@ -64,7 +67,7 @@
                   
                 </div>
                 <div>
-                  <h1 id="strength" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="strength" class="fs-5 text-body-emphasis border-bottom">{{character.strength}}</h1>
                   <p class="fs-5">Str</p>
                   <li id="strmod"></li>
                 </div>
@@ -74,7 +77,7 @@
                  
                 </div>
                 <div>
-                  <h1 id="agility" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="agility" class="fs-5 text-body-emphasis border-bottom">{{character.agility}}</h1>
                   <p class="fs-5">Agi</p>
                   <li id="agimod"></li>
                 </div>
@@ -84,7 +87,7 @@
                   
                 </div>
                 <div>
-                  <h1 id="gumption" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="gumption" class="fs-5 text-body-emphasis border-bottom">{{character.gumption}}</h1>
                   <p class="fs-5">Gum</p>
                   <li id="gummod"></li>
                 </div>
@@ -94,7 +97,7 @@
                   
                 </div>
                 <div>
-                  <h1 id="intelligence" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="intelligence" class="fs-5 text-body-emphasis border-bottom">{{character.intelligence}}</h1>
                   <p class="fs-5">Int</p>
                   <li id="intmod"></li>
                 </div>
@@ -104,7 +107,7 @@
                  
                 </div>
                 <div>
-                  <h1 id="mysticism" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="mysticism" class="fs-5 text-body-emphasis border-bottom">{{character.mysticism}}</h1>
                   <p class="fs-5">Mys</p>
                   <li id="mysmod"></li>
                 </div>
@@ -114,7 +117,7 @@
                   
                 </div>
                 <div>
-                  <h1 id="personality" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="personality" class="fs-5 text-body-emphasis border-bottom">{{character.personality}}</h1>
                   <p class="fs-5">Per</p>
                   <li id="permod"></li>
                 </div>
@@ -126,7 +129,7 @@
                  
                 </div>
                 <div>
-                  <h1 id="health" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="health" class="fs-5 text-body-emphasis border-bottom">{{character.hp}}</h1>
                   <p class="fs-5">HP</p>
                 </div>
               </div>
@@ -135,7 +138,7 @@
                  
                 </div>
                 <div>
-                  <h1 id="movementbank" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="movementbank" class="fs-5 text-body-emphasis border-bottom">{{character.mb}}</h1>
                   <p class="fs-5">MB</p>
                 </div>
               </div>
@@ -144,7 +147,7 @@
                  
                 </div>
                 <div>
-                  <h1 id="evasionchance" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="evasionchance" class="fs-5 text-body-emphasis border-bottom">{{character.ec}}</h1>
                   <p class="fs-5">EC</p>
                 </div>
               </div>
@@ -153,7 +156,7 @@
                  
                 </div>
                 <div>
-                  <h1 id="actionpoints" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="actionpoints" class="fs-5 text-body-emphasis border-bottom">{{character.ap}}</h1>
                   <p class="fs-5">AP</p>
                 </div>
               </div>
@@ -162,7 +165,7 @@
                  
                 </div>
                 <div>
-                  <h1 id="initiative" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="initiative" class="fs-5 text-body-emphasis border-bottom">{{character.initiative}}</h1>
                   <p class="fs-5">Initiative</p>
                 </div>
               </div>
@@ -174,9 +177,9 @@
                 </div>
                 <div>
                   <h1 class="fs-5 text-body-emphasis">Major Skills</h1>
-                  <li id="major1"></li>
-                  <li id="major2"></li>
-                  <li id="major3"></li>
+                  <li id="major1">{{character.majorskill1}}</li>
+                  <li id="major2">{{character.majorskill2}}</li>
+                  <li id="major3">{{character.majorskill3}}</li>
                 </div>
               </div>
               <div class="col d-flex align-items-start">
@@ -185,11 +188,11 @@
                 </div>
                 <div>
                   <h1 class="fs-5 text-body-emphasis">Minor Skills</h1>
-                  <li id="minor1"></li>
-                  <li id="minor2"></li>
-                  <li id="minor3"></li>
-                  <li id="minor4"></li>
-                  <li id="minor5"></li>
+                  <li id="minor1">{{character.minorskill1}}</li>
+                  <li id="minor2">{{character.minorskill2}}</li>
+                  <li id="minor3">{{character.minorskill3}}</li>
+                  <li id="minor4">{{character.minorskill4}}</li>
+                  <li id="minor5">{{character.minorskill5}}</li>
                 </div>
               </div>
             </div>
@@ -199,7 +202,7 @@
                  
                 </div>
                 <div>
-                  <h1 id="weaponproficiency" class="fs-5 text-body-emphasis border-bottom"></h1>
+                  <h1 id="weaponproficiency" class="fs-5 text-body-emphasis border-bottom">{{character.weapon_proficiency}}</h1>
                   <p class="fs-5">Weapon Prof.</p>
                 </div>
               </div>
@@ -373,3 +376,4 @@
                </div>
             </div>
             
+{% endblock content %}

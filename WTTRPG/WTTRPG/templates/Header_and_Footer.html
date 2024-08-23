@@ -60,7 +60,7 @@
                   </form>
                   {% else %}
                   <button type="button" onclick="window.location.href='{% url 'login' %}';" class="btn btn-outline-light me-2">Login</button>
-                  <button type="button" class="btn btn-sm me-3" style="background-color: #137a05;">Sign-up</button>
+                  <button type="button" onclick="window.location.href='{% url 'sign_up' %}';" class="btn btn-sm me-3" style="background-color: #137a05;">Sign-up</button>
                   {% endif %}
                 </div>
             </div>
