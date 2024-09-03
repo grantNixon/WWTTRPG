@@ -115,10 +115,10 @@
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                       <h2 class="fw-normal">Long Tail Folinn</h2>
                       <p id="hillockdescription"><ul>
-                        <li><strong>Whimsical Spirit</strong>: immune to being charmed or hypnotized</li>
+                        <li><strong>Whimsical Spirit</strong>: immune to being charmed and hypnotized</li>
                         <li><strong>Primordial Blessing</strong>: -.5 AP cost to Primordial spells, to a minimum of .5 cost</li>
                         <li><strong>Magic Vision</strong></li>
-                        <li>+10 to Mysticism</li>
+                        <li>+10 to Personality</li>
                         <li>+5 to any attribute</li>
                         </ul></p>
                     </label>
@@ -197,7 +197,7 @@
                   <p id="description" class="mt-2"><ul>
                     <li><strong>Flutter</strong>: can use wings to flutter 10ft in any direction (5ft in height). 3 uses per rest. This movement is not taken from MB during combat</li>
                     <li><strong>Worldy</strong>: knows an additional language and has +1d6 to barter checks</li>
-                    <li>+10 to Personality</li>
+                    <li>+10 to Intelligence</li>
                     <li>+5 to any attribute</li>
                     </ul></p>
                   </label>
@@ -210,7 +210,7 @@
                   <p id="armadilldescription" class="mt-2"><ul>
                     <li><strong>Flutter</strong>: can use wings to flutter 10ft in any direction (5ft in height). 3 uses per rest. This movement is not taken from MB during combat</li>
                     <li><strong>Hard Shell</strong>: resistance to slashing damage</li>
-                    <li>+10 to Intelligence</li>
+                    <li>+10 to Gumption</li>
                     <li>+5 to any attribute</li>
                     </ul></p>
                   </label>
@@ -257,7 +257,7 @@
                   <p id="description" class="mt-2"><ul>
                       <li><strong>Soft Hands</strong>: good oodds when making investigation and intuition checks</li>
                       <li><strong>Unihemispheric Sleep</strong>: these Ambaazi do not need to rest in the traditional sense. When resting, half of their brain stays awake, while the other half “sleeps”, allowing them to be alert 24/7 </li>
-                      <li>+10 to Intelligence</li>
+                      <li>+10 to Mysticism</li>
                       <li>+5 to any attribute</li>
                       </ul>
                   </p>
