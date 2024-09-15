@@ -2,94 +2,72 @@
 <html lang="en">
     <head>
         <Meta charset="utf-8">
-        <title>WWTTRPG</title>
+        <title>Gumption</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     </head>
-    <nav class="navbar navbar-expand" style="background-color: #000500;">
+    <nav class="navbar navbar-expand" style="background-color: white;">
       <header class="container-fluid">
         <div class="text-bg-dark">
-            <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-center mb-md-0 me-2" style="background-color: #000500;">
-                  <li><a href="/home_page" class="nav-link link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-light ms-5 me-5">WWTTRPG</a></li>
-                  <span class="border-start"></span>
-                  <div class="text-end ms-3 me-3 mt-2">
-                    <li><a href="#" class="d-block link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-decoration-none text-light">Getting Started</a></li>
-                  </div>
-                  <span class="border-end"></span>
-                  <div class="dropdown text-end ms-3 me-3 mt-2">
-                    <a href="#" class="d-block mr-3 link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      Guide Books
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small">
-                      <li><a class="dropdown-item" href="../../guides/mg_purchase">Main Guide</a></li>
-                      <li><a class="dropdown-item" href="../../guides/av1_purchase">Adventure: "Trouble in the Outer West"</a></li>
-                    </ul>
-                  </div>
-                  <span class="border-end"></span>
-                  <div class="dropdown text-end mt-2 ms-3 me-3">
-                    <a href="#" class="d-block link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-decoration-none text-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                      Compendium
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-dark text-small">
-                      <li><a class="dropdown-item" href="{% url "guides:comp_races"%}">Races</a></li>
-                      <li><a class="dropdown-item" href="{% url "guides:comp_backgrounds"%}">Backgrounds</a></li>
-                      <li><a class="dropdown-item" href="{% url "guides:comp_weapons"%}">Weapons</a></li>
-                      <li><a class="dropdown-item" href="{% url "guides:comp_spells"%}">Spells</a></li>
-                      <li><a class="dropdown-item" href="{% url "guides:comp_clothingarmor"%}">Special Clothing and Armor</a></li>
-                      <li><a class="dropdown-item" href="{% url "guides:comp_tonics"%}">Tonics</a></li>
-                      <li><a class="dropdown-item" href="{% url "guides:comp_utilities"%}">Utilities</a></li>
-                      <li><a class="dropdown-item" href="{% url "guides:comp_mysitemsweapons"%}">Mystical Items and Weapons</a></li>
-                    </ul>
-                  </div>
-                  <span class="border-end"></span>
-                  <li><a href="#" class="nav-link link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-light me-1 ms-1">Marketplace</a></li>
-                  <span class="border-end"></span>
+            <ul class="nav col-12 col-lg-auto me-lg-auto justify-content-center mb-md-0 me-2" style="background-color: white;">
+              <li><a href="#" class="nav-link link-offset-2 link-offset-3-hover link-secondary link-underline-opacity-0 link-underline-opacity-75-hover text-dark ms-5 me-5">Gumption</a></li>
+              <span class="border-start"></span>
+              <div class="text-end ms-3 me-3 mt-2">
+                <li><a href="#" class="d-block link-offset-2 link-offset-3-hover link-secondary link-underline-dark text-dark">Getting Started</a></li>
+              </div>
+          
+              <div class="dropdown text-end ms-3 me-3 mt-2">
+                <a href="#" class="d-block mr-3 link-offset-2 link-offset-3-hover link-secondary link-underline-dark text-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  Guide Books
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small">
+                  <li><a class="dropdown-item" href="#">Main guide book</a></li>
+                  <li><a class="dropdown-item" href="#">Adventure 1</a></li>
                 </ul>
+              </div>
+            <div class="text-end ms-3 me-3 mt-2">
+              <li><a href="#" class="d-block link-offset-2 link-offset-3-hover link-secondary link-underline-dark text-dark">Marketplace</a></li>
+            </div>
             </header>
                 <div class="col-4 d-flex justify-content-end">
-                <form class="btn me-2" style="background-color: #137a05;" role="search" id="search-button">
+                <form class="btn me-2" style="background-color: white;" role="search" id="search-button">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                   </svg>
                   <input type="text" id="search-input" style="display: none;">
                 </form>
-                  {% if user.is_authenticated %}
-                  <form method="post" action="{% url 'logout' %}?next={{request.path}}">
-                    {% csrf_token %}
-                    <button type="submit" onclick="window.location.href='{% url 'logout'%}?next={{request.path}}';" class="btn btn-outline-light me-2">Log Out</button>
-                  </form>
-                  {% else %}
-                  <button type="button" onclick="window.location.href='{% url 'login' %}';" class="btn btn-outline-light me-2">Login</button>
-                  <button type="button" onclick="window.location.href='{% url 'sign_up' %}';" class="btn btn-sm me-3" style="background-color: #137a05;">Sign-up</button>
-                  {% endif %}
+                <div class="text-end ms-3 me-3 mt-2">
+                  <a href="#" class="d-block link-offset-2 link-offset-3-hover link-secondary link-underline-dark text-dark">Login</a>
+                </div>
+                  <button type="button" class="btn btn-outline-dark btn-sm me-3 text-white" style="background-color: #226150;">Sign-up</button>
                 </div>
             </div>
         </nav>
-      <body style="background-color: #bf7e04;">
+      <body style="background-color: #226150;">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         <script src="main.js"></script>
         <script>
-                    const searchButton = document.getElementById('search-button');
-                    const searchInput = document.getElementById('search-input');
-                    searchButton.addEventListener('click', function() {
-    
-                        searchInput.style.display = (searchInput.style.display === 'none' || searchInput.style.display === '') ? 'block' : 'none';
-                
-                        if (searchInput.style.display === 'block') {
-                            searchInput.focus();
-                        }
-                    });
-                </script>
+          const searchButton = document.getElementById('search-button');
+          const searchInput = document.getElementById('search-input');
+          searchButton.addEventListener('click', function() {
+
+              searchInput.style.display = (searchInput.style.display === 'none' || searchInput.style.display === '') ? 'block' : 'none';
+      
+              if (searchInput.style.display === 'block') {
+                  searchInput.focus();
+              }
+          });
+      </script>
     </body>
     {%block content%}
 
 
     {%endblock%}
 
-    <div class="container">
+   <div class="container">
         <footer class="py-3 my-4">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact Us</a></li>
@@ -98,7 +76,7 @@
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">X</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Instagram</a></li>
           </ul>
-          <p class="text-center text-body-secondary">© 2023 Company, LLC</p>
+          <p class="text-center text-body-secondary">©2025 Raspberry Jam</p>
         </footer>
       </div>
 </html>
