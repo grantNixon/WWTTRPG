@@ -63,7 +63,7 @@
                 </p>
                 <div class="row">
                   <h1 class="border-bottom mt-4">Human</h1> 
-                  <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0">
+                  <div class="col-lg-6 mt-4 border" style="background-color: #226150">
                     <label for=""> 
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                       <h2 class="fw-normal">Valley Human</h2>
@@ -73,10 +73,10 @@
                         <li>+10 to Strength</li>
                         <li>+5 to any attribute</li>
                         </ul></p>
-                        <button type="button" name="subspecies" id="valleyhuman" value="" class="btn btn-success">Select</button>
+                        <button type="button" name="subspecies" id="valleyhuman" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-lightnk-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </label>                      
                   </div>
-                  <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+                  <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
                     <label for=""> 
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                       <h2 class="fw-normal">Forest Human</h2>
@@ -87,12 +87,12 @@
                         <li>+5 to any attribute</li>
                         </ul></p>
                     </label>
-                      <button type="button" name="subspecies" id="foresthuman" value="" class="btn btn-success">Select</button>
+                      <button type="button" name="subspecies" id="foresthuman" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
               </div>
               <div class="row">
                 <h1 class="border-bottom mt-4">Folinn</h1>  
-                <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+                <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
   
   
                   <label for=""> 
@@ -106,28 +106,28 @@
                         <li>+5 to any attribute</li>
                         </ul></p>
                     </label>
-                      <button type="button" name="subspecies" id="shortfolinn" value="" class="btn btn-success">Select</button>
+                      <button type="button" name="subspecies" id="shortfolinn" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
-                  <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+                  <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
     
     
                     <label for=""> 
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                       <h2 class="fw-normal">Long Tail Folinn</h2>
                       <p id="hillockdescription"><ul>
-                        <li><strong>Whimsical Spirit</strong>: immune to being charmed and hypnotized</li>
+                        <li><strong>Whimsical Spirit</strong>: immune to being charmed or hypnotized</li>
                         <li><strong>Primordial Blessing</strong>: -.5 AP cost to Primordial spells, to a minimum of .5 cost</li>
                         <li><strong>Magic Vision</strong></li>
-                        <li>+10 to Personality</li>
+                        <li>+10 to Mysticism</li>
                         <li>+5 to any attribute</li>
                         </ul></p>
                     </label>
-                      <button type="button" name="subspecies" id="longfolinn" value="" class="btn btn-success">Select</button>
+                      <button type="button" name="subspecies" id="longfolinn" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
               </div>
               <div class="row">
                 <h1 class="border-bottom mt-4">Armadill</h1>
-                <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+                <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
   
   
                   <label for=""> 
@@ -140,9 +140,9 @@
                       <li>+5 to any attribute</li>
                       </ul></p>
                     </label>
-                    <button type="button" name="subspecies" id="fivearmadill" value="" class="btn btn-success">Select</button>
+                    <button type="button" name="subspecies" id="fivearmadill" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                 </div>
-                <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+                <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
   
   
                   <label for=""> 
@@ -156,12 +156,12 @@
                       <li>+5 to any attribute</li>
                       </ul></p>
                     </label>
-                    <button type="button" name="subspecies" id="sevenarmadill" value="" class="btn btn-success">Select</button>
+                    <button type="button" name="subspecies" id="sevenarmadill" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                 </div>
             </div>
             <div class="row">
               <h1 class="border-bottom mt-4">Hillock</h1>  
-              <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
                 <label for=""> 
                 <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                     <h2 class="fw-normal">Village Hillock</h2>
@@ -172,9 +172,9 @@
                       <li>+5 to any attribute</li>
                       </ul></p>
                     </label>
-                    <button type="button" name="subspecies" id="villagehillock" value="" class="btn btn-success">Select</button>
+                    <button type="button" name="subspecies" id="villagehillock" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                 </div>
-                <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+                <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
                   <label for=""> 
                   <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                     <h2 class="fw-normal">Stone Hillock</h2>
@@ -185,41 +185,41 @@
                       <li>+5 to any attribute</li>
                       </ul></p>
                     </label>
-                    <button type="button" name="subspecies" id="stonehillock" value="" class="btn btn-success">Select</button>
+                    <button type="button" name="subspecies" id="stonehillock" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                 </div>
             </div>
             <div class="row">
               <h1 class="border-bottom mt-4">Cincindel</h1>
-              <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
                 <label for=""> 
                 <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                   <h2 class="fw-normal">Analogous Cincindel</h2>
                   <p id="description" class="mt-2"><ul>
                     <li><strong>Flutter</strong>: can use wings to flutter 10ft in any direction (5ft in height). 3 uses per rest. This movement is not taken from MB during combat</li>
                     <li><strong>Worldy</strong>: knows an additional language and has +1d6 to barter checks</li>
-                    <li>+10 to Intelligence</li>
+                    <li>+10 to Personality</li>
                     <li>+5 to any attribute</li>
                     </ul></p>
                   </label>
-                  <button type="button" name="subspecies" id="analogouscincindel" value="" class="btn btn-success">Select</button>
+                  <button type="button" name="subspecies" id="analogouscincindel" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
               </div>
-              <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
                 <label for=""> 
                 <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                   <h2 class="fw-normal">Triadic Cincindel</h2>
                   <p id="armadilldescription" class="mt-2"><ul>
                     <li><strong>Flutter</strong>: can use wings to flutter 10ft in any direction (5ft in height). 3 uses per rest. This movement is not taken from MB during combat</li>
                     <li><strong>Hard Shell</strong>: resistance to slashing damage</li>
-                    <li>+10 to Gumption</li>
+                    <li>+10 to Intelligence</li>
                     <li>+5 to any attribute</li>
                     </ul></p>
                   </label>
-                  <button type="button" name="subspecies" id="triadiccincindel" value="" class="btn btn-success">Select</button>
+                  <button type="button" name="subspecies" id="triadiccincindel" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
               </div>
           </div>
           <div class="row">
             <h1 class="border-bottom mt-4">Latran</h1>  
-            <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+            <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
               <label for=""> 
               <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                   <h2 class="fw-normal">Mesa Latran</h2>
@@ -231,9 +231,9 @@
                     <li>+5 to any attribute</li>
                     </ul></p>
                   </label>
-                  <button type="button" name="subspecies" id="mesalatran" value="" class="btn btn-success">Select</button>
+                  <button type="button" name="subspecies" id="mesalatran" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
               </div>
-              <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
                 <label for=""> 
                 <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                   <h2 class="fw-normal">Desert Latran</h2>
@@ -245,25 +245,25 @@
                     <li>+5 to any attribute</li>
                     </ul></p>
                   </label>
-                  <button type="button" name="subspecies" id="desertlatran" value="" class="btn btn-success">Select</button>
+                  <button type="button" name="subspecies" id="desertlatran" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
               </div>
             </div>
             <div class="row">
               <h1 class="border-bottom mt-4">Ambaazi</h1>
-              <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
                 <label for=""> 
                 <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                   <h2 class="fw-normal">Anointed Ambaazi</h2>
                   <p id="description" class="mt-2"><ul>
                       <li><strong>Soft Hands</strong>: good oodds when making investigation and intuition checks</li>
                       <li><strong>Unihemispheric Sleep</strong>: these Ambaazi do not need to rest in the traditional sense. When resting, half of their brain stays awake, while the other half “sleeps”, allowing them to be alert 24/7 </li>
-                      <li>+10 to Mysticism</li>
+                      <li>+10 to Intelligence</li>
                       <li>+5 to any attribute</li>
                       </ul>
                   </p>
-                  <button type="button" name="subspecies" id="anointedambaazi" value="" class="btn btn-success">Select</button>
+                  <button type="button" name="subspecies" id="anointedambaazi" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
               </div>
-              <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
                 <label for=""> 
                 <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                   <h2 class="fw-normal">Lost Ambaazi</h2>
@@ -274,12 +274,12 @@
                     <li>+5 to any attribute</li>
                     </ul></p>
                   </label>
-                  <button type="button" name="subspecies" id="lostambaazi" value="" class="btn btn-success">Select</button>
+                  <button type="button" name="subspecies" id="lostambaazi" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
               </div>
           </div>
           <div class="row">
             <h1 class="border-bottom mt-4">Margart</h1>  
-            <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+            <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
               <label for=""> 
               <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                   <h2 class="fw-normal">Short-Haired Margart</h2>
@@ -291,9 +291,9 @@
                     <li>+5 to any attribute</li>
                     </ul></p>
                   </label>
-                  <button type="button" name="subspecies" id="shortmargart" value="" class="btn btn-success">Select</button>
+                  <button type="button" name="subspecies" id="shortmargart" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
               </div>
-              <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
                 <label for=""> 
                 <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                   <h2 class="fw-normal">Long-Haired Margart</h2>
@@ -305,12 +305,12 @@
                     <li>+5 to any attribute</li>
                     </ul></p>
                   </label>
-                  <button type="button" name="subspecies" id="longmargart" value="" class="btn btn-success">Select</button>
+                  <button type="button" name="subspecies" id="longmargart" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
               </div>
           </div>
           <div class="row">
             <h1 class="border-bottom mt-4">Shikasa</h1>
-            <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+            <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
               <label for=""> 
               <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                 <h2 class="fw-normal">Smooth Shikasa</h2>
@@ -322,9 +322,9 @@
             <li>+5 to any attribute</li>
             </ul></p>
           </label>
-                <button type="button" name="subspecies" id="smoothshikasa" value="" class="btn btn-success">Select</button>
+                <button type="button" name="subspecies" id="smoothshikasa" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
             </div>
-            <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+            <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
               <label for=""> 
               <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                 <h2 class="fw-normal">Ridged Shikasa</h2>
@@ -336,12 +336,12 @@
                   <li>+5 to any attribute</li>
                   </ul></p>
                 </label>
-                <button type="button" name="subspecies" id="ridgedshikasa" value="" class="btn btn-success">Select</button>
+                <button type="button" name="subspecies" id="ridgedshikasa" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
             </div>
         </div>
         <div class="row">
           <h1 class="border-bottom mt-4">Bak'wa</h1>  
-          <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+          <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
             <label for=""> 
             <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                 <h2 class="fw-normal">Onyx Bak'wa</h2>
@@ -352,9 +352,9 @@
                   <li>+5 to any attribute</li>
                   </ul></p>
                 </label>
-                <button type="button" name="subspecies" id="onyxbackwa" value="" class="btn btn-success">Select</button>
+                <button type="button" name="subspecies" id="onyxbackwa" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
             </div>
-            <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+            <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
               <label for=""> 
               <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
                 <h2 class="fw-normal">Mossy Bak'wa</h2>
@@ -366,12 +366,12 @@
                   <li>+5 to any attribute</li>
                   </ul></p>
                 </label>
-                <button type="button" name="subspecies" id="mossybakwa" value="" class="btn btn-success">Select</button>
+                <button type="button" name="subspecies" id="mossybakwa" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
             </div>
         </div>
         <div class="row">
           <h1 class="border-bottom mt-4">Egriss</h1>
-          <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+          <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
             <label for=""> 
             <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
               <h2 class="fw-normal">Lotus Grove Egriss</h2>
@@ -383,9 +383,9 @@
                   <li>+5 to any attribute</li>
                   </ul></p>
                 </label>
-              <button type="button" name="subspecies" id="lotusegriss" value="" class="btn btn-success">Select</button>
+              <button type="button" name="subspecies" id="lotusegriss" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
           </div>
-          <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+          <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
             <label for=""> 
             <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
               <h2 class="fw-normal">Wandering Egriss</h2>              
@@ -397,12 +397,12 @@
                 <li>+5 to any attribute</li>
                 </ul></p>
               </label>
-              <button type="button" name="subspecies" id="wanderingegriss" value="" class="btn btn-success">Select</button>
+              <button type="button" name="subspecies" id="wanderingegriss" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
           </div>
       </div>
       <div class="row">
         <h1 class="border-bottom mt-4">Bolibar</h1>  
-        <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+        <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
           <label for=""> 
           <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
               <h2 class="fw-normal">Solid Bolibar</h2>
@@ -413,9 +413,9 @@
                 <li>+5 to any attribute</li>
                 </ul></p>
               </label>
-              <button type="button" name="subspecies" id="solidbolibar" value="" class="btn btn-success">Select</button>
+              <button type="button" name="subspecies" id="solidbolibar" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
           </div>
-          <div class="col-lg-6 mt-4 border" style="background-color: #7a9ab0;">
+          <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
             <label for=""> 
             <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
               <h2 class="fw-normal">Speckled Bolibar</h2>
@@ -427,7 +427,7 @@
                 <li>+5 to any attribute</li>
                 </ul></p>
               </label>
-              <button type="button" name="subspecies" id="speckledbolibar" value="" class="btn btn-success">Select</button>
+              <button type="button" name="subspecies" id="speckledbolibar" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
             </div>
           </div>                    
         </div>
@@ -435,7 +435,7 @@
 
         <!-- Page 4 Attributes -->
         <div class="page" style="background-color: lightyellow;">
-          <div class="p-5 text-center bg-body-tertiary-dark rounded-3" style="background-color:#517739;">
+          <div class="p-5 text-center bg-body-tertiary-dark rounded-3" style="background-color:#226150;">
             <h1 class="text-body-emphasis">Attributes</h1>
             <p class="lead">
             <header class="border-bottom"></header>
@@ -664,7 +664,7 @@
                           <li>-5 to all History, Foolery, and Sneak</li>
                           <li>Survival or Utility supplies</li>
                         </p>
-                        <button type="button" name="background" id="cowboy" value="" class="btn btn-success">Select</button>
+                        <button type="button" name="background" id="cowboy" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                       </div>
                 <div class="col-lg-4 mt-4">
                   <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -674,7 +674,7 @@
                           <li>-5 to all magic skills</li>
                           <li>Survival or General supplies</li>
                         </p>
-                  <button type="button" name="background" id="rancher" value="" class="btn btn-success">Select</button>
+                  <button type="button" name="background" id="rancher" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                 </div>
                 <div class="col-lg-4 mt-4">
                   <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -684,7 +684,7 @@
                           <li>-5 to Personailty</li>
                           <li>Survival or Utility supplies</li>
                         </p>
-                  <button type="button" name="background" id="bountyhunter" value="" class="btn btn-success">Select</button>
+                  <button type="button" name="background" id="bountyhunter" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                 </div>
               </div>
               <div class="row">
@@ -696,7 +696,7 @@
                           <li>-5 to Pistols, Rifles, and Archery</li>
                           <li>General or Utility supplies</li>
                         </p>
-                    <button type="button" name="background" id="snakeoil" value="" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="snakeoil" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -706,7 +706,7 @@
                           <li>-5 to Camping, Cooking, and Hunting</li>
                           <li>General or Survival supplies</li>
                         </p>
-                    <button type="button" name="background" id="shopkeep" value="" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="shopkeep" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -716,7 +716,7 @@
                           <li>-5 to all other combat skills</li>
                           <li>Medical or Utility supplies</li>
                         </p>
-                    <button type="button" name="background" id="doctor" value="" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="doctor" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                 </div>
                 <div class="row">
@@ -728,7 +728,7 @@
                           <li>You have bad odds on checks to use and craft items not of that element type</li>
                           <li>General or Utility supplies</li>
                         </p>
-                    <button type="button" name="background" id="elementalfella" value="" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="elementalfella" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -738,7 +738,7 @@
                           <li>When not in your favored biome, you have -15 to Natural Awareness and -1d4 + 1 to rolls made for the same checks as above</li>
                           <li>General or Utility supplies</li>
                         </p>
-                    <button type="button" name="background" id="wildernessguide" value="" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="wildernessguide" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -748,7 +748,7 @@
                           <li>-5 to Mysticism. You have bad odds when making saves against Farlight magic</li>
                           <li>Mystical or Utility supplies</li>
                         </p>
-                    <button type="button" name="background" id="worshipper" value="" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="worshipper" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -758,7 +758,7 @@
                           <li>-5 to Personality. You have bad odds when making saves against Primordial magic</li>
                           <li>Mystical or Medical supplies</li>
                         </p>
-                    <button type="button" name="background" id="missionary" value="" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="missionary" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -768,7 +768,7 @@
                           <li>-5 to all other magic skills</li>
                           <li>Mystical or Utility supplies</li>
                         </p>
-                    <button type="button" name="background" id="galvanismscholar" value="" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="galvanismscholar" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -778,7 +778,7 @@
                           <li>-5 to all Pistols, Rifles, and Archery</li>
                           <li>Survival or General supplies</li>
                         </p>
-                    <button type="button" name="background" id="chef" value="" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="chef" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -788,7 +788,7 @@
                           <li>-5 to all Pistols, Rifles, and Archery</li>
                           <li>Survival or General supplies</li>
                         </p>
-                      <button type="button" name="background" id="alchemist" value="" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="alchemist" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -798,7 +798,7 @@
                           <li>-5 to Mysticism</li>
                           <li>Survival or Utility supplies</li>
                         </p>
-                      <button type="button" name="background" id="convict" value="" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="convict" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -807,7 +807,7 @@
                           <li>-5 to magic skills</li>
                           <li>Survival or General supplies</li>
                         </p>
-                      <button type="button" name="background" id="carpenter" value="" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="carpenter" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -817,7 +817,7 @@
                                 <li>-5 to Personality</li>
                                 <li>General or Utility supplies</li>
                               </p>
-                      <button type="button" name="background" id="packmule" value="" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="packmule" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -827,7 +827,7 @@
                                 <li>When using non-shockstone weapons, you have bad odds on hit checks</li>
                                 <li>General or Utility supplies</li>
                               </p>
-                      <button type="button" name="background" id="shockstoneresearch" value="" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="shockstoneresearch" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -837,7 +837,7 @@
                                 <li>When using guns, shockstone weapons, and complicated traps, you have -1d10 on hit checks</li>
                                 <li>General or Survival supplies</li>
                               </p>
-                      <button type="button" name="background" id="luddite" value="" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="luddite" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -847,7 +847,7 @@
                                 <li>-5 to Crafting, Repair, and Shotguns</li>
                                 <li>General or Utility supplies</li>
                               </p>
-                      <button type="button" name="background" id="assassin" value="" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="assassin" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -857,7 +857,7 @@
                                 <li>-5 to all magic skills and History</li>
                                 <li>General or Utility supplies</li>
                               </p>
-                      <button type="button" name="background" id="urchin" value="" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="urchin" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
               </div>
           </div>
@@ -954,7 +954,7 @@
         </div>
       </div>
 
-      <div class="page" style="background-color: #517739;">
+      <div class="page" style="background-color: #226150;">
         <div class="p-5 text-center bg-body-tertiary-dark rounded-3">
           <h1 class="text-body-emphasis">Character Name and Info</h1>
           <p class="lead">
