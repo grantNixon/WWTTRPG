@@ -7,6 +7,10 @@ from .forms import *
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
+
 
 # Create your views here.
 def create_view(request):
@@ -75,3 +79,70 @@ def SignUpView(request):
 
 class CharacterSheet(DetailView):
     model = Character
+
+@csrf_exempt
+def update_skills(request):
+    #request should contain primary key for character, skill to increment, value to increment
+    if request.method == 'POST':
+        primary_key = request.POST.get('id')
+        skill_to_update = "sk_" + request.POST.get('skill')
+        increment = request.POST.get('increment')
+        if primary_key and skill_to_update and increment:
+            obj = Character.objects.get(id=primary_key)
+            current_sk_value = getattr(obj, skill_to_update)
+            new_sk_value = current_sk_value + int(increment)
+            setattr(obj, skill_to_update, new_sk_value)
+            obj.save()
+            return JsonResponse({'status': 'success'})
+        else:
+            return JsonResponse({'status': 'error', 'message': 'Failed to update skills'})
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
+    
+@csrf_exempt
+def retrieve_skills(request):
+    if request.method == 'GET':
+       primary_key = request.GET.get('id')
+       obj = Character.objects.get(id=primary_key)
+       response_string = {
+           'status':'success',
+           'crushing':{'level': obj.sk_crushing, 'xp': 0},
+           'shotguns':{'level': obj.sk_shotguns, 'xp': 0},
+           'hand':{'level': obj.sk_hand, 'xp': 0},
+           'athletics':{'level': obj.sk_athletics, 'xp': 0},
+           'crafting':{'level': obj.sk_crafting, 'xp': 0},
+           'slashingmelee':{'level': obj.sk_slashingmelee, 'xp': 0},
+           'pistols':{'level': obj.sk_pistols, 'xp': 0},
+           'archery':{'level': obj.sk_archery,'xp': 0},
+           'ropework':{'level': obj.sk_ropework, 'xp': 0},
+           'acrobatics':{'level': obj.sk_acrobatics, 'xp': 0},
+           'sneak':{'level': obj.sk_sneak, 'xp': 0},
+           'thievery':{'level':obj.sk_thievery, 'xp': 0},
+           'intimidation':{'level':obj.sk_intimidation, 'xp': 0},
+           'hunting':{'level':obj.sk_hunting, 'xp': 0},
+           'animal':{'level':obj.sk_animalhandling, 'xp': 0 },
+            'rifles': { 'level': obj.sk_rifles, 'xp': 0 },
+            'intuition': { 'level': obj.sk_intuition , 'xp': 0 },
+            'investigation': { 'level': obj.sk_investigation , 'xp': 0 },
+            'gambit': { 'level':obj.sk_gambit, 'xp': 0 },
+            'brewing': { 'level': obj.sk_brewing, 'xp': 0 },
+            'galvanism': { 'level': obj.sk_galvanismmagic, 'xp': 0 },
+            'religion': { 'level': obj.sk_religion, 'xp': 0 },
+            'history': { 'level': obj.sk_history, 'xp': 0 },
+            'medicine': { 'level': obj.sk_medicine, 'xp': 0 },
+           'healing': { 'level': obj.sk_healingmagic, 'xp': 0 },
+            'utility': { 'level': obj.sk_utilitymagic, 'xp': 0 },
+            'absolution': { 'level': obj.sk_absolutionmagic, 'xp': 0 },
+            'foolery': { 'level': obj.sk_foolery, 'xp': 0 },
+            'persuasion': { 'level': obj.sk_persuasion, 'xp': 0 },
+            'barter': { 'level': obj.sk_barter, 'xp': 0 },
+            'performance': { 'level': obj.sk_performance, 'xp': 0 },
+            'deception': { 'level': obj.sk_deceptionmagic, 'xp': 0 },
+            'ritual': { 'level': obj.sk_ritualmagic, 'xp': 0 },
+            'destruction': { 'level': obj.sk_destructionmagic, 'xp': 0 },
+           
+           }
+       return JsonResponse(response_string)
+    else:
+        return JsonResponse({'status':'error'})
+    

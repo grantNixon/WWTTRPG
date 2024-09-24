@@ -1,379 +1,633 @@
 {% extends "Header_and_Footer.html" %} 
 {%block content%}
+{% load static %}
 
-<body style="background-color: black;">
-        <div class="container my-1">
-          <div class="container px-4 py-5" id="hanging-icons" style="background-color: #bf7e04;">
-            <h2 class="pb-2 border-bottom">{{character.name}}</h2>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                  
-                </div>
-                <div>
-                  <h1 id="name" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Name</p>
-                </div>
-              </div>
-            <div class="row g-4 py-5 row-cols-1 row-cols-lg-5">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                  
-                </div>
-                <div>
-                  <h1 id="species" class="fs-5 text-body-emphasis border-bottom">{{character.species}}</h1>
-                  <p class="fs-5">Species</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 id="class" class="fs-5 text-body-emphasis border-bottom">{{character.class_name}}</h1>
-                  <p class="fs-5">Class</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                  
-                </div>
-              <div>
-                  <h1 id="background" class="fs-5 text-body-emphasis border-bottom">{{character.background}}</h1>
-                  <p class="fs-5">Background</p>
-              </div>
+<div class="page" style="background-color: #1592b4;">
+  <div class="container my-1">
+    <div class="container px-4 py-5" id="hanging-icons" style="background-color: #dc9750;">
+      <h2 class="pb-2 border-bottom">{{character.name}}</h2>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+            
+          </div>
+          <div>
+            <h1 id="name" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Name</p>
+          </div>
+        </div>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-5">
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+            
+          </div>
+          <div>
+            <p class="fs-5">{{character.species}}</p>
+            <h1 id="species" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Species</p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <p class="fs-5">{{character.class_name}}</p>
+            <h1 id="class" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Class</p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+            
+          </div>
+        <div>
+            <p class="fs-5">{{character.background}}</p>
+            <h1 id="background" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Background</p>
+        </div>
+      </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <p class="fs-5">{{character.morals}}</p>
+            <h1 id="morals" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Morals</p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+            
+          </div>
+          <div>
+            <p class="fs-5">{{character.language}}</p>
+            <h1 id="languages" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Languages</p>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 py-1 row-cols-1 row-cols-lg-6">
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+            
+          </div>
+          <div>
+            <h1 id="strength" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Str</p>
+            <li id="strmod">{{character.strength}}</li>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <h1 id="agility" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Agi</p>
+            <li id="agimod">{{character.agility}}</li>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+            
+          </div>
+          <div>
+            <h1 id="gumption" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Gum</p>
+            <li id="gummod">{{character.gumption}}</li>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+            
+          </div>
+          <div>
+            <h1 id="intelligence" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Int</p>
+            <li id="intmod">{{character.intelligence}}</li>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <h1 id="mysticism" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Mys</p>
+            <li id="mysmod">{{character.mysticism}}</li>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+            
+          </div>
+          <div>
+            <h1 id="personality" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Per</p>
+            <li id="permod">{{character.personality}}</li>
+          </div>
+        </div>
+       </div>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-5">
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <button class="skill-btn" onclick="decrease('hp')">-</button>
+                <span id="hp-amount">{{character.hp}}</span>
+                <button class="skill-btn" onclick="increase('hp')">+</button>
+            <h1 id="actionpoints" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p id="hp" class="fs-5">HP</p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <span id="hp-amount">{{character.mb}}</span>
+            <h1 id="movementbank" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">MB</p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <span id="hp-amount">{{character.ec}}</span>
+            <h1 id="evasionchance" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">EC</p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <button class="skill-btn" onclick="decrease('ap')">-</button>
+                <span id="ap-amount">{{character.ap}}</span>
+                <button class="skill-btn" onclick="increase('ap')">+</button>
+            <h1 id="actionpoints" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p id="ap" class="fs-5">AP</p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <span id="ap-amount">{{character.initiative}}</span>
+            <h1 id="initiative" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Initiative</p>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <h1 class="fs-5 text-body-emphasis">Major Skills</h1>
+            <li id="major1">{{character.major_skill_1}}</li>
+            <li id="major2">{{character.major_skill_2}}</li>
+            <li id="major3">{{character.major_skill_3}}</li>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <h1 class="fs-5 text-body-emphasis">Minor Skills</h1>
+            <li id="minor1">{{character.minor_skill_1}}</li>
+            <li id="minor2">{{character.minor_skill_2}}</li>
+            <li id="minor3">{{character.minor_skill_3}}</li>
+            <li id="minor4">{{character.minor_skill_4}}</li>
+            <li id="minor5">{{character.minor_skill_5}}</li>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 py-1 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <p class="fs-5">{{character.weapon_proficiency}}</p>
+            <h1 id="weaponproficiency" class="fs-5 text-body-emphasis border-bottom"></h1>
+            <p class="fs-5">Weapon Prof.</p>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <h1 class="fs-5 text-body-emphasis">Weapons</h1>
+            <li id="weapon1">Wet Noodle</li>
+            <li id="weapon2">Plastic Spork</li>
+          </div>
+        </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <h1 class="fs-5 text-body-emphasis">Spells</h1>
+            <li id="spell1">Shit Self</li>
+            <li id="spell2">Fart Vision</li>
+          </div>
+        </div>
+      </div>
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <h1 class="fs-5 text-body-emphasis">Inventory</h1>
+            <li id="startingequipment">*starting equipment here*</li>
+          </div>
+        </div>
+      <div class="row g-4 py-1 row-cols-1 row-cols-lg-3">
+        <div class="col d-flex align-items-start">
+          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div>
+            <h1 class="fs-5 text-body-emphasis">Abilities and Perks</h1>
+            <li id=""></li>
+          </div>
+        </div>
+      </div>
+        <h2 class="pb-2 border-bottom">Attributes and Skills</h2>
+        <div class="row g-4 py-1 row-cols-1 row-cols-lg-6">
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+              
             </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 id="morals" class="fs-5 text-body-emphasis border-bottom">{{character.morals}}</h1>
-                  <p class="fs-5">Morals</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                  
-                </div>
-                <div>
-                  <h1 id="languages" class="fs-5 text-body-emphasis border-bottom">{{character.language}}</h1>
-                  <p class="fs-5">Languages</p>
-                </div>
-              </div>
-            </div>
-            <div class="row g-4 py-1 row-cols-1 row-cols-lg-6">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                  
-                </div>
-                <div>
-                  <h1 id="strength" class="fs-5 text-body-emphasis border-bottom">{{character.strength}}</h1>
-                  <p class="fs-5">Str</p>
-                  <li id="strmod"></li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 id="agility" class="fs-5 text-body-emphasis border-bottom">{{character.agility}}</h1>
-                  <p class="fs-5">Agi</p>
-                  <li id="agimod"></li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                  
-                </div>
-                <div>
-                  <h1 id="gumption" class="fs-5 text-body-emphasis border-bottom">{{character.gumption}}</h1>
-                  <p class="fs-5">Gum</p>
-                  <li id="gummod"></li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                  
-                </div>
-                <div>
-                  <h1 id="intelligence" class="fs-5 text-body-emphasis border-bottom">{{character.intelligence}}</h1>
-                  <p class="fs-5">Int</p>
-                  <li id="intmod"></li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 id="mysticism" class="fs-5 text-body-emphasis border-bottom">{{character.mysticism}}</h1>
-                  <p class="fs-5">Mys</p>
-                  <li id="mysmod"></li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                  
-                </div>
-                <div>
-                  <h1 id="personality" class="fs-5 text-body-emphasis border-bottom">{{character.personality}}</h1>
-                  <p class="fs-5">Per</p>
-                  <li id="permod"></li>
-                </div>
-              </div>
-             </div>
-            <div class="row g-4 py-5 row-cols-1 row-cols-lg-5">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 id="health" class="fs-5 text-body-emphasis border-bottom">{{character.hp}}</h1>
-                  <p class="fs-5">HP</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 id="movementbank" class="fs-5 text-body-emphasis border-bottom">{{character.mb}}</h1>
-                  <p class="fs-5">MB</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 id="evasionchance" class="fs-5 text-body-emphasis border-bottom">{{character.ec}}</h1>
-                  <p class="fs-5">EC</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 id="actionpoints" class="fs-5 text-body-emphasis border-bottom">{{character.ap}}</h1>
-                  <p class="fs-5">AP</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 id="initiative" class="fs-5 text-body-emphasis border-bottom">{{character.initiative}}</h1>
-                  <p class="fs-5">Initiative</p>
-                </div>
-              </div>
-            </div>
-            <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 class="fs-5 text-body-emphasis">Major Skills</h1>
-                  <li id="major1">{{character.majorskill1}}</li>
-                  <li id="major2">{{character.majorskill2}}</li>
-                  <li id="major3">{{character.majorskill3}}</li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 class="fs-5 text-body-emphasis">Minor Skills</h1>
-                  <li id="minor1">{{character.minorskill1}}</li>
-                  <li id="minor2">{{character.minorskill2}}</li>
-                  <li id="minor3">{{character.minorskill3}}</li>
-                  <li id="minor4">{{character.minorskill4}}</li>
-                  <li id="minor5">{{character.minorskill5}}</li>
-                </div>
-              </div>
-            </div>
-            <div class="row g-4 py-1 row-cols-1 row-cols-lg-3">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 id="weaponproficiency" class="fs-5 text-body-emphasis border-bottom">{{character.weapon_proficiency}}</h1>
-                  <p class="fs-5">Weapon Prof.</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 class="fs-5 text-body-emphasis">Weapons</h1>
-                  <li id="weapon1"></li>
-                  <li id="weapon2"></li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 class="fs-5 text-body-emphasis">Spells</h1>
-                  <li id="spell1"></li>
-                  <li id="spell2"></li>
-                </div>
-              </div>
-            </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 class="fs-5 text-body-emphasis">Inventory</h1>
-                  <li id="startingequipment">*starting equipment here*</li>
-                </div>
-              </div>
-            <div class="row g-4 py-1 row-cols-1 row-cols-lg-3">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                 
-                </div>
-                <div>
-                  <h1 class="fs-5 text-body-emphasis">Abilities and Perks</h1>
-                  <li id=""></li>
-                </div>
-              </div>
-            </div>
-              <h2 class="pb-2 border-bottom">Attributes and Skills</h2>
-              <div class="row g-4 py-1 row-cols-1 row-cols-lg-6">
-                <div class="col d-flex align-items-start">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                    
-                  </div>
-                  <div>
-                    <h1 id="strength" class="fs-5 text-body-emphasis border-bottom"></h1>
-                    <p class="fs-5">Str</p>
-                    <p>Crushing Melee</p>
-                    <li id="crushing"></li>
-                    <p>Shotguns</p>
-                    <li id="shotguns"></li>
-                    <p>Hand-to-Hand</p>
-                    <li id="hand"></li>
-                    <p>Athletics</p>
-                    <li id="athletics"></li>
-                    <p>Crafting</p>
-                    <li id="crafting"></li>
-                  </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                   
-                  </div>
-                  <div>
-                    <h1 id="agility" class="fs-5 text-body-emphasis border-bottom"></h1>
-                    <p class="fs-5">Agi</p>
-                    <p>Slashing Melee</p>
-                    <li id="crushing"></li>
-                    <p>Pistols</p>
-                    <li id="pistols"></li>
-                    <p>Archery</p>
-                    <li id="archery"></li>
-                    <p>Ropework</p>
-                    <li id="ropework"></li>
-                    <p>Acrobatics</p>
-                    <li id="acrobatics"></li>
-                    <p>Sneak</p>
-                    <li id="sneak"></li>
-                    <p>Thievery</p>
-                    <li id="thievery"></li>
-                  </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                    
-                  </div>
-                  <div>
-                    <h1 id="gumption" class="fs-5 text-body-emphasis border-bottom"></h1>
-                    <p class="fs-5">Gum</p>
-                    <p>Intimidation</p>
-                    <li id="intimidation"></li>
-                    <p>Hunting</p>
-                    <li id="hunting"></li>
-                    <p>Cooking</p>
-                    <li id="cooking"></li>
-                    <p>Foraging</p>
-                    <li id="foraging"></li>
-                    <p>Animal Handling</p>
-                    <li id="animalhandling"></li>
-                  </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                    
-                  </div>
-                  <div>
-                    <h1 id="intelligence" class="fs-5 text-body-emphasis border-bottom"></h1>
-                    <p class="fs-5">Int</p>
-                    <p>Rifles</p>
-                    <li id="rifles"></li>
-                    <p>Intuition</p>
-                    <li id="intuition"></li>
-                    <p>Investigation</p>
-                    <li id="brewing"></li>
-                    <p>Gambit</p>
-                    <li id="gambit"></li>
-                    <p>Brewing</p>
-                    <li id="brewing"></li>
-                    <p>Galvanism Magic</p>
-                    <li id="galvanism"></li>
-                  </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                   
-                  </div>
-                  <div>
-                    <h1 id="mysticism" class="fs-5 text-body-emphasis border-bottom"></h1>
-                    <p class="fs-5">Mys</p>
-                    <p>Religion</p>
-                    <li id="religion"></li>
-                    <p>Medicine</p>
-                    <li id="medicine"></li>
-                    <p>History</p>
-                    <li id="history"></li>
-                    <p>Healing Magic</p>
-                    <li id="healing"></li>
-                    <p>Utility Magic</p>
-                    <li id="utility"></li>
-                    <p>Absolution Magic</p>
-                    <li id="absolution"></li>
-                  </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                    
-                  </div>
-                  <div>
-                    <h1 id="personality" class="fs-5 text-body-emphasis border-bottom"></h1>
-                    <p class="fs-5">Per</p>
-                    <p>Foolery</p>
-                    <li id="foolery"></li>
-                    <p>Persuasion</p>
-                    <li id="persuasion"></li>
-                    <p>Barter</p>
-                    <li id="barter"></li>
-                    <p>Deception Magic</p>
-                    <li id="deception"></li>
-                    <p>Ritual Magic</p>
-                    <li id="ritual"></li>
-                    <p>Destruction Magic</p>
-                    <li id="destruction"></li>
-                  </div>
-                </div>
-               </div>
+            <div>
+              <h1 id="strength" class="fs-5 text-body-emphasis border-bottom"></h1>
+              <p class="fs-5">Str</p>
+              
+              <p class="border-bottom mb-1">Crushing Melee</p>
+              <button id="crushing" class="skill-btn" onclick="decreaseXP('crushing')">-</button>
+                <button class="skill-btn" onclick="increaseXP('crushing')">+</button>
+              <span id="crushing-skill">{{character.sk_crushing}} | XP: <span id="crushing-xp-tracker"></span></span>
+              <div class="border-bottom mt-3 mb-1"></div>
+
+              <p class="border-bottom mb-1">Shotguns</p>
+              <button id="shotguns" class="skill-btn" onclick="decreaseXP('shotguns')">-</button>
+                <button class="skill-btn" onclick="increaseXP('shotguns')">+</button>
+              <span id="shotguns-skill">{{character.sk_shotguns}}| XP: <span id="shotguns-xp-tracker"></span></span>
+              <div class="border-bottom mt-3 mb-1"></div>
+              
+              <p class="border-bottom mb-1">Hand-to-Hand</p>
+              <button id="hand" class="skill-btn" onclick="decreaseXP('hand')">-</button>
+                <button class="skill-btn" onclick="increaseXP('hand')">+</button>
+              <span id="hand-skill">{{character.sk_hand}} | XP: <span id="hand-xp-tracker"></span></span>
+              <div class="border-bottom mt-3 mb-1"></div>
+              
+              <p class="border-bottom mb-1">Athletics</p>
+              <button id="athletics" class="skill-btn" onclick="decreaseXP('athletics')">-</button>
+                <button class="skill-btn" onclick="increaseXP('athletics')">+</button>
+              <span id="athletics-skill">{{character.sk_athletics}} | XP: <span id="athletics-xp-tracker"></span></span>
+              <div class="border-bottom mt-3 mb-1"></div>
+              
+              <p class="border-bottom mb-1">Crafting</p>
+              <button id="crafting" class="skill-btn" onclick="decreaseXP('crafting')">-</button>
+                <button class="skill-btn" onclick="increaseXP('crafting')">+</button>
+              <span id="crafting-skill">{{character.sk_athletics}}| XP: <span id="crafting-xp-tracker"></span></span>
+              <div class="border-bottom mt-3 mb-1"></div>
             </div>
             
-{% endblock content %}
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+             
+            </div>
+            <div>
+              <h1 id="agility" class="fs-5 text-body-emphasis border-bottom"></h1>
+              <p class="fs-5">Agi</p>
+              <p>Slashing Melee</p>
+              <li id="crushing"></li>
+              <p>Pistols</p>
+              <li id="pistols"></li>
+              <p>Archery</p>
+              <li id="archery"></li>
+              <p>Ropework</p>
+              <li id="ropework"></li>
+              <p>Acrobatics</p>
+              <li id="acrobatics"></li>
+              <p>Sneak</p>
+              <li id="sneak"></li>
+              <p>Thievery</p>
+              <li id="thievery"></li>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+              
+            </div>
+            <div>
+              <h1 id="gumption" class="fs-5 text-body-emphasis border-bottom"></h1>
+              <p class="fs-5">Gum</p>
+              <p>Intimidation</p>
+              <li id="intimidation"></li>
+              <p>Hunting</p>
+              <li id="hunting"></li>
+              <p>Cooking</p>
+              <li id="cooking"></li>
+              <p>Foraging</p>
+              <li id="foraging"></li>
+              <p>Animal Handling</p>
+              <li id="animalhandling"></li>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+              
+            </div>
+            <div>
+              <h1 id="intelligence" class="fs-5 text-body-emphasis border-bottom"></h1>
+              <p class="fs-5">Int</p>
+              <p>Rifles</p>
+              <li id="rifles"></li>
+              <p>Intuition</p>
+              <li id="intuition"></li>
+              <p>Investigation</p>
+              <li id="brewing"></li>
+              <p>Gambit</p>
+              <li id="gambit"></li>
+              <p>Brewing</p>
+              <li id="brewing"></li>
+              <p>Galvanism Magic</p>
+              <li id="galvanism"></li>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+             
+            </div>
+            <div>
+              <h1 id="mysticism" class="fs-5 text-body-emphasis border-bottom"></h1>
+              <p class="fs-5">Mys</p>
+              <p>Religion</p>
+              <li id="religion"></li>
+              <p>Medicine</p>
+              <li id="medicine"></li>
+              <p>History</p>
+              <li id="history"></li>
+              <p>Healing Magic</p>
+              <li id="healing"></li>
+              <p>Utility Magic</p>
+              <li id="utility"></li>
+              <p>Absolution Magic</p>
+              <li id="absolution"></li>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+              
+            </div>
+            <div>
+              <h1 id="personality" class="fs-5 text-body-emphasis border-bottom"></h1>
+              <p class="fs-5">Per</p>
+              <p>Foolery</p>
+              <li id="foolery"></li>
+              <p>Persuasion</p>
+              <li id="persuasion"></li>
+              <p>Barter</p>
+              <li id="barter"></li>
+              <p>Deception Magic</p>
+              <li id="deception"></li>
+              <p>Ritual Magic</p>
+              <li id="ritual"></li>
+              <p>Destruction Magic</p>
+              <li id="destruction">Skill Level: 5 | XP: <span id="xp-tracker"></span></li>
+              <button onclick="addXP()">+</button>
+              <button onclick="subtractXP()">−</button>
+            </div>
+          </div>
+         </div>
+      </div>
+      <div class="d-flex justify-content-center mt-2">
+      <button type="button" class="btn btn-success ms-5">Finish and create!</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div class="controls">
+  <button class="control-btn" id="prevBtn">Previous</button>
+  <button class="control-btn" id="nextBtn">Next</button>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script >
+
+
+
+
+// increase/decrease buttons
+function increase(id) {
+const amountElement = document.getElementById(`${id}-amount`);
+let currentAmount = parseInt(amountElement.textContent);
+amountElement.textContent = currentAmount + 1;
+}
+
+function decrease(id) {
+const amountElement = document.getElementById(`${id}-amount`);
+let currentAmount = parseInt(amountElement.textContent);
+if (currentAmount > 0) {
+amountElement.textContent = currentAmount - 1;
+}
+}
+
+// Initialize skill levels and XP for each skill
+
+let skills
+
+async function getData() {
+    try {
+        skills = await getDatabaseSkills();
+        //console.log(response);  // Handle the response data here
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+// Usage
+(async () => {
+    await getData()
+    console.log(skills);  // The response is now saved in the 'data' variable
+})();
+
+
+/*let skills = {
+crushing: { level: 10, xp: 0 },
+shotguns: { level: 10, xp: 0 },
+hand: { level: 10, xp: 0 },
+athletics: { level: 10, xp: 0 },
+crafting: { level: 10, xp: 0 },
+slashing: { level: 10, xp: 0 },
+pistols: { level: 10, xp: 0 },
+ropework: { level: 10, xp: 0 },
+archery: { level: 10, xp: 0 },
+acrobatics: { level: 10, xp: 0 },
+sneak: { level: 10, xp: 0 },
+thievery: { level: 10, xp: 0 },
+intimidation: { level: 10, xp: 0 },
+foraging: { level: 10, xp: 0 },
+cooking: { level: 10, xp: 0 },
+hunting: { level: 10, xp: 0 },
+animal: { level: 10, xp: 0 },
+rifles: { level: 10, xp: 0 },
+intuition: { level: 10, xp: 0 },
+investigation: { level: 10, xp: 0 },
+gambit: { level: 10, xp: 0 },
+brewing: { level: 10, xp: 0 },
+galvanism: { level: 10, xp: 0 },
+religion: { level: 10, xp: 0 },
+history: { level: 10, xp: 0 },
+medicine: { level: 10, xp: 0 },
+healing: { level: 10, xp: 0 },
+utility: { level: 10, xp: 0 },
+absolution: { level: 10, xp: 0 },
+foolery: { level: 10, xp: 0 },
+persuasion: { level: 10, xp: 0 },
+barter: { level: 10, xp: 0 },
+performance: { level: 10, xp: 0 },
+deception: { level: 10, xp: 0 },
+ritual: { level: 10, xp: 0 },
+destruction: { level: 10, xp: 0 },
+};*/
+
+
+function getRequiredXP(level) {
+if (level < 16) {
+  return 3;
+} else if (level < 51) {
+  return 4;
+} else if (level <= 100) {
+  return 5;
+}
+}
+
+function updateUI(skill) {
+const skillData = skills[skill];
+const requiredXP = getRequiredXP(skillData.level);
+document.getElementById(`${skill}-skill`).innerHTML = ` ${skillData.level} | xp: ${renderXPTracker(skillData.xp, requiredXP)}`;
+}
+
+function renderXPTracker(xp, requiredXP) {
+let tracker = '';
+for (let i = 0; i < requiredXP; i++) {
+  tracker += i < xp ? '■' : '□';
+}
+return tracker;
+}
+
+function getDatabaseSkills() {
+  const pagePath = window.location.pathname
+  const pathSections = pagePath.split("/")
+  const characterPrimaryKey = pathSections[pathSections.length - 1]
+  result = ""
+  return new Promise(function(resolve,reject) {
+    $.ajax({
+            url: '{% url "create:retrieve_skills" %}',
+            type: 'GET',
+            dataType: 'json',
+            data: {
+                'id': characterPrimaryKey,
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function(response) {
+                if (response.status === 'success') {
+                  resolve(response)
+                } else {
+                    reject(error)
+                }
+            }
+            
+        });
+  })
+
+}
+
+function updateDatabaseSkills(skill, increment) {
+  const pagePath = window.location.pathname
+  const pathSections = pagePath.split("/")
+  const characterPrimaryKey = pathSections[pathSections.length - 1]
+  console.log(characterPrimaryKey)
+  $.ajax({
+            url: '{% url "create:update_skills" %}',
+            type: 'POST',
+            data: {
+                'id': characterPrimaryKey,
+                'skill': skill,
+                'increment': increment,
+                'csrfmiddlewaretoken': '{{ csrf_token }}'
+            },
+            success: function(response) {
+                if (response.status === 'success') {
+                    console.log('Data updated successfully!');
+                } else {
+                    console.log('Error: ' + response.message);
+                }
+            }
+
+        });
+  //parse int at end of path from above variable -> this is the character primary key
+  //send AJAX request with pk, skill, and increment to update_skills view which should update the DB
+}
+
+function increaseXP(skill) {
+const skillData = skills[skill];
+const requiredXP = getRequiredXP(skillData.level);
+skillData.xp += 1;
+if (skillData.xp >= requiredXP) {
+  skillData.xp = 0;
+  skillData.level += 1;
+  updateDatabaseSkills(skill,1)
+  if (skillData.level > 100) {
+      skillData.level = 100;
+      skillData.xp = 0;
+  }
+}
+
+updateUI(skill);
+}
+
+function decreaseXP(skill) {
+const skillData = skills[skill];
+skillData.xp -= 1;
+if (skillData.xp < 0 && skillData.level > 1) {
+  updateDatabaseSkills(skill,-1)
+  skillData.level -= 1;
+  skillData.xp = getRequiredXP(skillData.level) - 1;
+}
+
+updateUI(skill);
+}
+
+// Initialize UI for all skills
+for (let skill in skills) {
+updateUI(skill);
+}
+
+
+
+</script>
+
+  
+
+</body>
+
+{%endblock content%}
