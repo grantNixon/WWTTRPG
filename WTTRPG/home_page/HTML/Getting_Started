@@ -2,25 +2,27 @@
 {%block content%}
 {% load static %}
 
- <body style="background-color: #bf7e04;">
-        <div class="container my-1">
-          <div class="container px-4 py-5" id="hanging-icons">
+<body style="background-color: #226150;">
+        <div class="container my-1"></div>
+          <div class="container px-4 py-5 text-white" id="hanging-icons">
             <h2 class="pb-2 border-bottom">Getting Started</h2>
-            <p>So you've decided to leave your civilized life, pack up the caravan, and venture out to the Far West? Whether you're a vet in the ttrpg realm or completely new, we'll set you up with all you need to get started in wwtrpg.</p>
+            <p>So you've decided to leave your civilized life, pack up the wagon, and venture out to the Far West? Whether you're a vet in the TTRPG realm or completely new, we'll set you up with all you need to get started in Gumption.</p>
             <h5>The Basics</h5>
-            <p>Wwtrpg is based off of the Dungeons and Dragons 5th edition system. If you're familiar with D&D 5e and other d20 based ttrpgs, then you'll be familiar with most of the mechanics, save a couple tweaks. First, this is a d100 system, meaning rolls use a d100 or percentile die + d10 instead of the traditional d20. Second, wwttrpg uses a skill usage based leveling system, meaning that skills are leveled as you use them, rather than dividing a bank of points to skills upon leveling up.</p>
-            <p>Now, if this is your first time playing a ttrpg, than you'll need to know 3 terms before jumping in: campaign, game master, and player(s). A campaign is the story being told, the game master or "GM" is the person telling and controlling the story, and the players are the people playing their own characters within that story. Throughout a campaign, the GM will guide their players through story beats and ask them to make rolls on things they want to do or perform. Good, bad, and funny outcomes will happen depending on how high or low those rolls are, creating a magical back and forth of GM and players that is the lifeblood of any good campaign.</p>
-            <h5>Using the Dice</h5>
-            <p>There are three types of rolls you'll be doing throughout a session: Checks, rolling damage, and saves. Checks are anything you want to do in the session. "I want to check this room for anything interesting", "I want to shoot that creature with my revolver", etc. Damage dice are when you deal damage, and saves are when you are trying to resist the effect of something happening to you like a spell or being poisoned.</p>
-            <li>"I want to..." = d100</li>
-            <li>Damage dice = d2-d20</li>
-            <li>Saves = d100</li>
-            <img src="">
+            <p>Gumption is based off of the Dungeons and Dragons 5th edition system. If you're familiar with D&D 5e or other d20 based TTRPGs, then you'll be familiar with most of the mechanics, save a couple tweaks. First, Gumption uses a skill usage based leveling system, meaning that skills are leveled as you use them, rather than dividing a bank of exp per encounter.</p>
+            <p>If this is your first time playing a d20 based TTRPG, than you'll need to know 3 terms before jumping in: campaign, game master, and players. A campaign is the story being told, the game master or "GM" is the person telling and controlling the story, and the players are the people playing their own characters within that story. Throughout a campaign, the GM will guide their players through story beats and ask them to make rolls on things they want to do or perform. Good, bad, and funny outcomes will happen depending on how high or low those rolls are, creating a back and forth of GM and players that is the lifeblood of any good campaign.</p>
+            <h2 class="pb-2 border-bottom"></h2>
+            <h5>The Dice</h5>
+            <p>There are three types of rolls you'll be making throughout a session: checks, damage, and saves. Checks are anything you want to do in the session. "I want to check this room for anything interesting", "I want to shoot that creature with my revolver", etc. Damage dice are when you deal damage, and saves are when you are trying to resist the effect of something happening to you like a spell or being poisoned.</p>
+            <li><strong>Checks:</strong> d20</li>
+            <li><strong>Damage:</strong> d2-d20</li>
+            <li><strong>Saves:</strong> d20</li>
+            <h2 class="pb-2 border-bottom"></h2>
             <h5>Creating a Character</h5>
-            <p>Now that we've covered the bare bones, it's time for the most exciting part: creating your own character. Want to be a cowboy, herding cattle and picking up odd jobs to make a living? Or maybe a holy missionary, spreading the message of your god across the cruel west? Or an outlaw, robbin' banks and killing innocents while runnin' the law? The options are endless.</p>
+            <p>Now that we've covered the bare bones, it's time for the most exciting part: creating your own character. Want to be a cowboy, herding cattle and picking up odd jobs to make a living? Or maybe a holy missionary, spreading the message of your god across the cruel west? Or an outlaw, robbin' banks and killing innocents while runnin' from the law? The options are endless.</p>
+            <h2 class="pb-2 border-bottom"></h2>
             <h5>Setting</h5>
-            <p>Wwttrpg is set in the Far West; an utamed land of do-gooders and ne'er-do-wells trying to carve themselves a homestead. The living is tough, the law is loose, and the opportunities are endless. Grab your best rifle, hop on your loyal nag, and start manifesting your destiny, partner.</p>
-            <h5>Get Started</h5>
+            <p>Gumption is set in the Far West; an utamed land of do-gooders and ne'er-do-wells trying to carve themselves a home. The living is rough, the law is loose, and the opportunities are endless. Grab your best rifle, hop on your loyal nag, and start manifesting your destiny, partner.</p>
+            <h2 class="pb-2 border-bottom"></h2>
             <div class="container">
               <div class="row">
                 <div class="col-md-6">
@@ -40,7 +42,7 @@
                 </div>
               </div>
           </div>
+          <p>Dungeons and Dragons is property of Wizards of the Coast, LLC and has no affiliation with Raspberry Jam, LLC or Gumption</p>
         </div>
-        <p>Dungeons and Dragons is property of Wizards of the Coast LLC</p>
 
 {% endblock content%}

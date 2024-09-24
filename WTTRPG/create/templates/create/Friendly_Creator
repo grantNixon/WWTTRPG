@@ -53,156 +53,389 @@
 <div class="slider-container">
     <div class="slider-content" id="sliderContent">
         <!-- Page 2: species -->
-        <div class="page" style="background-color: lightcoral;">
-            <div class="p-5 text-center bg-body-tertiary-dark rounded-3" style="background-color: #f3eac0;">
-                <h1 class="text-body-emphasis">Species</h1>
+        <div class="page" style="background-color: black;">
+            <div class="p-5 text-center bg-body-tertiary-dark rounded-3" style="background-color: burlywood;">
+              <form method="post">
+                {% csrf_token %}  
+              <h1 class="text-body-emphasis">Species</h1>
                 <p class="lead">
                 <header class="mb-1 pb-1 border-bottom"></header>
                 </p>
-                  <div class="row">
-                      <div class="col-lg-4 mt-4">
-                          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" style="background-image: url('cowboy.jpg');"></rect></svg>
-                          <h2 class="fw-normal">Human</h2>
-                          <select class="form-select bg-dark text-light" aria-label="Default select example" id="humanType">
-                            <option value="3">Sub-species</option>
-                            <option value="1">Valley Human</option>
-                            <option value="2">Forest Human</option>
-                        </select>
-                          <p id="description" class="mt-2">Text test</p>
-                          <button type="button" class="btn btn-success">Select</button>
-                      </div>
-                  <div class="col-lg-4 mt-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                    <h2 class="fw-normal">Armadill</h2>
-                    <select class="form-select bg-dark text-light" aria-label="Default select example" id="armadillType">
-                      <option>Sub-species</option>
-                      <option value="1">Five-Banded Armadill</option>
-                      <option value="2">Seven-Banded Armadill</option>
-                    </select>
-                    <p id="armadilldescription" class="mt-2">Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-                    <button type="button" class="btn btn-success">Select</button>
-                  </div>
-                  <div class="col-lg-4 mt-4">
-                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                    <h2 class="fw-normal">Folinn</h2>
-                    <select class="form-select bg-dark text-light" aria-label="Default select example" id="folinnType">
-                      <option>Sub-species</option>
-                      <option value="1">Short-Tailed Folinn</option>
-                      <option value="2">Long-Tailed Folinn</option>
-                    </select>
-                    <p id="folinndescription">And lastly this, the third column of representative placeholder content.</p>
-                    <button type="button" class="btn btn-success">Select</button>
-                  </div>
-                </div>
                 <div class="row">
-                    <div class="col-lg-4 mt-4">
-                      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                      <h2 class="fw-normal">Hillock</h2>
-                      <select class="form-select bg-dark text-light" aria-label="Default select example" id="hillockType">
-                        <option>Sub-species</option>
-                        <option value="1">Village Hillock</option>
-                        <option value="2">Stone Hillock</option>
-                      </select>
-                      <p id="hillockdescription">Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-                      <button type="button" class="btn btn-success">Select</button>
-                    </div>
-                    <div class="col-lg-4 mt-4">
-                      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                      <h2 class="fw-normal">Cincindel</h2>
-                      <select class="form-select bg-dark text-light" aria-label="Default select example" id="cincindelType">
-                        <option>Sub-species</option>
-                        <option value="1">Analogous Cincindel</option>
-                        <option value="2">Triadic Cincindel</option>
-                      </select>
-                      <p id="cincindeldescription">Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-                      <button type="button" class="btn btn-success">Select</button>
-                    </div>
-                    <div class="col-lg-4 mt-4">
-                      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                      <h2 class="fw-normal">Latran</h2>
-                      <select class="form-select bg-dark text-light" aria-label="Default select example" id="latranType">
-                        <option>Sub-species</option>
-                        <option value="1">Desert Latran</option>
-                        <option value="2">Mesa Latran</option>
-                      </select>
-                      <p id="latrandescription">And lastly this, the third column of representative placeholder content.</p>
-                      <button type="button" class="btn btn-success">Select</button>
-                    </div>
+                  <h1 class="border-bottom mt-4">Human</h1> 
+                  <div class="col-lg-6 mt-4 border" style="background-color: #226150">
+                    <label for=""> 
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                      <h2 class="fw-normal">Valley Human</h2>
+                      <p id="description" class="mt-2"><ul>
+                        <li><strong>Versatile</strong>: add +5 to two skills</li>
+                        <li><strong>Weapon Master</strong>: pick an additional weapon proficiency</li>
+                        <li>+10 to Strength</li>
+                        <li>+5 to any attribute</li>
+                        </ul></p>
+                        <button type="button" name="subspecies" id="valleyhuman" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-lightnk-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+                    </label>                      
                   </div>
-                  <div class="row">
-                    <div class="col-lg-4 mt-4">
-                      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                      <h2 class="fw-normal">Ambaazi</h2>
-                      <select class="form-select bg-dark text-light" aria-label="Default select example" id="ambaaziType">
-                        <option>Sub-species</option>
-                        <option value="1">Annointed Ambaazi</option>
-                        <option value="2">Lost Ambaazi</option>
-                      </select>
-                      <p id="ambaazidescription">Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-                      <button type="button" class="btn btn-success">Select</button>
-                    </div>
-                    <div class="col-lg-4 mt-4">
-                      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                      <h2 class="fw-normal">Margart</h2>
-                      <select class="form-select bg-dark text-light" aria-label="Default select example" id="margartType">
-                        <option>Sub-species</option>
-                        <option value="1">Short Haired Margart</option>
-                        <option value="2">Long-Haired Margart</option>
-                      </select>
-                      <p id="margartdescription">Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-                      <button type="button" class="btn btn-success">Select</button>
-                    </div>
-                    <div class="col-lg-4 mt-4">
-                      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                      <h2 class="fw-normal">Shikasa</h2>
-                      <select class="form-select bg-dark text-light" aria-label="Default select example" id="shikasaType">
-                        <option>Sub-species</option>
-                        <option value="1">Smooth Shikasa</option>
-                        <option value="2">Ridged Shikasa</option>
-                      </select>
-                      <p id="shikasadecription">And lastly this, the third column of representative placeholder content.</p>
-                      <button type="button" class="btn btn-success">Select</button>
-                    </div>
-                    <div class="col-lg-4 mt-4 mt-4">
-                      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                      <h2 class="fw-normal">Bak'wa</h2>
-                      <select class="form-select bg-dark text-light" aria-label="Default select example" id="bakwaType">
-                        <option>Sub-species</option>
-                        <option value="1">Onyx Bak'wa</option>
-                        <option value="2">Mossy Bak'wa</option>
-                      </select>
-                      <p id="bakwadescription">And lastly this, the third column of representative placeholder content.</p>
-                      <button type="button" class="btn btn-success">Select</button>
-                    </div>
-                    <div class="col-lg-4 mt-4 mt-4">
-                      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                      <h2 class="fw-normal">Egriss</h2>
-                      <select class="form-select bg-dark text-light" aria-label="Default select example" id="egrissType">
-                        <option>Sub-species</option>
-                        <option value="1">Roaming Egriss</option>
-                        <option value="2">Lotus Grove Egriss</option>
-                      </select>
-                      <p id="egrissdescription">And lastly this, the third column of representative placeholder content.</p>
-                      <button type="button" class="btn btn-success">Select</button>
-                    </div>
-                    <div class="col-lg-4 mt-4">
-                      <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
-                      <h2 class="fw-normal">Bolibar</h2>
-                      <select class="form-select bg-dark text-light" aria-label="Default select example" id="bolibarType">
-                        <option>Sub-species</option>
-                        <option value="1">Solid Bolibar</option>
-                        <option value="2">Speckled Bolibar</option>
-                      </select>
-                      <p id="bolibardescription">And lastly this, the third column of representative placeholder content.</p>
-                      <button type="button" class="btn btn-success">Select</button>
-                    </div>
+                  <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+                    <label for=""> 
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                      <h2 class="fw-normal">Forest Human</h2>
+                      <p id="armadilldescription" class="mt-2"><ul>
+                        <li><strong>Versatile</strong>: add +5 to two skills</li>
+                        <li><strong>One with the Forest</strong>: good odds when making checks to climb or forage</li>
+                        <li>+10 to Agility</li>
+                        <li>+5 to any attribute</li>
+                        </ul></p>
+                    </label>
+                      <button type="button" name="subspecies" id="foresthuman" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+                  </div>
+              </div>
+              <div class="row">
+                <h1 class="border-bottom mt-4">Folinn</h1>  
+                <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+  
+  
+                  <label for=""> 
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                      <h2 class="fw-normal">Short Tail Folinn</h2>
+                      <p id="folinndescription"><ul>
+                        <li><strong>Swift Spirit</strong>: immune to being slowed or slept</li>
+                        <li><strong>Boil and Toil</strong>: good odds when attempting to make tonics and healing items</li>
+                        <li><strong>Night Vision</strong></li>
+                        <li>+10 to Mysticism</li>
+                        <li>+5 to any attribute</li>
+                        </ul></p>
+                    </label>
+                      <button type="button" name="subspecies" id="shortfolinn" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+                  </div>
+                  <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+    
+    
+                    <label for=""> 
+                    <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                      <h2 class="fw-normal">Long Tail Folinn</h2>
+                      <p id="hillockdescription"><ul>
+                        <li><strong>Whimsical Spirit</strong>: immune to being charmed or hypnotized</li>
+                        <li><strong>Primordial Blessing</strong>: -.5 AP cost to Primordial spells, to a minimum of .5 cost</li>
+                        <li><strong>Magic Vision</strong></li>
+                        <li>+10 to Mysticism</li>
+                        <li>+5 to any attribute</li>
+                        </ul></p>
+                    </label>
+                      <button type="button" name="subspecies" id="longfolinn" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+                  </div>
+              </div>
+              <div class="row">
+                <h1 class="border-bottom mt-4">Armadill</h1>
+                <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+  
+  
+                  <label for=""> 
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                    <h2 class="fw-normal">Five-Banded Armadill</h2>
+                    <p id="description" class="mt-2"><ul>
+                      <li><strong>Ball Form</strong>: for the cost of 10ft MB, change into ball form and gets +5 to EC. While in ball form, the only action that can be taken is movement. It costs another 10ft to revert to bipedal mode</li>
+                      <li><strong>Hard Shell</strong>: resistance to slashing damage</li>
+                      <li>+10 to Gumption</li>
+                      <li>+5 to any attribute</li>
+                      </ul></p>
+                    </label>
+                    <button type="button" name="subspecies" id="fivearmadill" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+                </div>
+                <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+  
+  
+                  <label for=""> 
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                    <h2 class="fw-normal">Seven-Banded Armadill</h2>
+                    <p id="armadilldescription" class="mt-2"><ul>
+                      <li><strong>Play Dead</strong>: for 1.5 AP, as a reaction after being attacked, the armadill can play dead. They fall where they are and are considered knocked down. While playing dead, the armadill can prepare an action to be performed for the AP cost of whatever that action is for it’s next turn. If a creature passes by the armadill, the armadill must roll a performance check or be discovered. If a creature wants to check the armadill, it rolls an investigation check contested by the armadills performance check. Once per nap</li>
+                      <li><strong>Unusually Stealthy</strong>: +1d4 to sneak checks</li>
+                      <li><strong>Night Vision</strong></li>
+                      <li>+10 to Agility</li>
+                      <li>+5 to any attribute</li>
+                      </ul></p>
+                    </label>
+                    <button type="button" name="subspecies" id="sevenarmadill" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                 </div>
             </div>
+            <div class="row">
+              <h1 class="border-bottom mt-4">Hillock</h1>  
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+                <label for=""> 
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                    <h2 class="fw-normal">Village Hillock</h2>
+                    <p id="folinndescription"><ul>
+                      <li><strong>Happy Mind</strong>: good odds on foolery and persuasion checks</li>
+                      <li><strong>Connoisseur</strong>: +3 eaxt health when eating or drinking something that replenishes health</li>
+                      <li>+10 to Personality</li>
+                      <li>+5 to any attribute</li>
+                      </ul></p>
+                    </label>
+                    <button type="button" name="subspecies" id="villagehillock" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+                </div>
+                <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+                  <label for=""> 
+                  <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                    <h2 class="fw-normal">Stone Hillock</h2>
+                    <p id="hillockdescription"><ul>
+                      <li><strong>Stone Skin</strong>: for 30 seconds, skin becomes scaly stone, giving resistance to piercing, crushing, slashing, and shock damage. Twice per rest</li>
+                      <li><strong>Fighter, Not a Lover</strong>: +5 to melee and hand-to-hand skills</li>
+                      <li>+10 to Strength</li>
+                      <li>+5 to any attribute</li>
+                      </ul></p>
+                    </label>
+                    <button type="button" name="subspecies" id="stonehillock" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+                </div>
+            </div>
+            <div class="row">
+              <h1 class="border-bottom mt-4">Cincindel</h1>
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+                <label for=""> 
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Analogous Cincindel</h2>
+                  <p id="description" class="mt-2"><ul>
+                    <li><strong>Flutter</strong>: can use wings to flutter 10ft in any direction (5ft in height). 3 uses per rest. This movement is not taken from MB during combat</li>
+                    <li><strong>Worldy</strong>: knows an additional language and has +1d6 to barter checks</li>
+                    <li>+10 to Personality</li>
+                    <li>+5 to any attribute</li>
+                    </ul></p>
+                  </label>
+                  <button type="button" name="subspecies" id="analogouscincindel" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+              </div>
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+                <label for=""> 
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Triadic Cincindel</h2>
+                  <p id="armadilldescription" class="mt-2"><ul>
+                    <li><strong>Flutter</strong>: can use wings to flutter 10ft in any direction (5ft in height). 3 uses per rest. This movement is not taken from MB during combat</li>
+                    <li><strong>Hard Shell</strong>: resistance to slashing damage</li>
+                    <li>+10 to Intelligence</li>
+                    <li>+5 to any attribute</li>
+                    </ul></p>
+                  </label>
+                  <button type="button" name="subspecies" id="triadiccincindel" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+              </div>
+          </div>
+          <div class="row">
+            <h1 class="border-bottom mt-4">Latran</h1>  
+            <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+              <label for=""> 
+              <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Mesa Latran</h2>
+                  <p id="folinndescription"><ul>
+                    <li><strong>Magical Inheritance</strong>: +1d4 when using magic ot heal or do damage</li>
+                    <li><strong>Nimble</strong>: add acrobatics mod to agility save. +10ft to climbing height</li>
+                    <li><strong>Magic Vision</strong></li>
+                    <li>+10 to Agility</li>
+                    <li>+5 to any attribute</li>
+                    </ul></p>
+                  </label>
+                  <button type="button" name="subspecies" id="mesalatran" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+              </div>
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+                <label for=""> 
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Desert Latran</h2>
+                  <p id="hillockdescription"><ul>
+                    <li><strong>Magical Inheritance</strong>: +1d4 when using magic to heal or do damage</li>
+                    <li><strong>Tranquil Spirit</strong>: cannot be made mad or hypnotized</li>
+                    <li><strong>Night Vision</strong></li>
+                    <li>+10 to Mysticism</li>
+                    <li>+5 to any attribute</li>
+                    </ul></p>
+                  </label>
+                  <button type="button" name="subspecies" id="desertlatran" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+              </div>
+            </div>
+            <div class="row">
+              <h1 class="border-bottom mt-4">Ambaazi</h1>
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+                <label for=""> 
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Anointed Ambaazi</h2>
+                  <p id="description" class="mt-2"><ul>
+                      <li><strong>Soft Hands</strong>: good oodds when making investigation and intuition checks</li>
+                      <li><strong>Unihemispheric Sleep</strong>: these Ambaazi do not need to rest in the traditional sense. When resting, half of their brain stays awake, while the other half “sleeps”, allowing them to be alert 24/7 </li>
+                      <li>+10 to Intelligence</li>
+                      <li>+5 to any attribute</li>
+                      </ul>
+                  </p>
+                  <button type="button" name="subspecies" id="anointedambaazi" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+              </div>
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+                <label for=""> 
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Lost Ambaazi</h2>
+                  <p id="armadilldescription" class="mt-2"><ul>
+                    <li><strong>Calloused Hands</strong>: good odds when making crafting</li>
+                    <li><strong>Heavy Sleepers</strong>: Napping gives the same benefits as a rest and resting gives the same benefits as a full rest</li>
+                    <li>+10 to Intelligence</li>
+                    <li>+5 to any attribute</li>
+                    </ul></p>
+                  </label>
+                  <button type="button" name="subspecies" id="lostambaazi" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+              </div>
+          </div>
+          <div class="row">
+            <h1 class="border-bottom mt-4">Margart</h1>  
+            <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+              <label for=""> 
+              <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Short-Haired Margart</h2>
+                  <p id="folinndescription"><ul>
+                    <li><strong>Insulated</strong>: resistant to incendiary and shock damage</li>
+                    <li><strong>Natural Mercantilists</strong>: good odds on barter checks </li>
+                    <li><strong>Magic Vision</strong></li>
+                    <li>+10 to Gumption</li>
+                    <li>+5 to any attribute</li>
+                    </ul></p>
+                  </label>
+                  <button type="button" name="subspecies" id="shortmargart" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+              </div>
+              <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+                <label for=""> 
+                <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                  <h2 class="fw-normal">Long-Haired Margart</h2>
+                  <p id="hillockdescription"><ul>
+                    <li><strong>Insulated</strong>: resistance to incendiary and shock damage</li>
+                    <li><strong>Feline Acrobatics</strong>: good odds on acrobatics checks and agility saves</li>
+                    <li><strong>Night Vision</strong></li>
+                    <li>+10 to Agility</li>
+                    <li>+5 to any attribute</li>
+                    </ul></p>
+                  </label>
+                  <button type="button" name="subspecies" id="longmargart" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+              </div>
+          </div>
+          <div class="row">
+            <h1 class="border-bottom mt-4">Shikasa</h1>
+            <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+              <label for=""> 
+              <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                <h2 class="fw-normal">Smooth Shikasa</h2>
+                <p id="description" class="mt-2"><ul>
+            <li><strong>Tail Whip</strong>: can whip a target within 5ft as an attack or as a reaction to being hit. (1d6 + Unarmed). On a natural/dirty 20, the target gets knocked down. Three times per rest</li>
+            <li><strong>Aquatic</strong>: can hold breath underwater for up to two hours</li>
+            <li><strong>Night Vision</strong></li>
+            <li>+10 to Strength</li>
+            <li>+5 to any attribute</li>
+            </ul></p>
+          </label>
+                <button type="button" name="subspecies" id="smoothshikasa" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+            </div>
+            <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+              <label for=""> 
+              <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                <h2 class="fw-normal">Ridged Shikasa</h2>
+                <p id="armadilldescription" class="mt-2"><ul>
+                  <li><strong>Crocodile Smile</strong>: can re-roll a foolery or persuasion check. Once per rest</li>
+                  <li><strong>Evergladian Ancestry</strong>: +1d6 when making saves against Primordial Magic spells. Re-roll any speech check, once per nap</li>
+                  <li><strong>Magic Vision</strong></li>
+                  <li>+10 to Personality</li>
+                  <li>+5 to any attribute</li>
+                  </ul></p>
+                </label>
+                <button type="button" name="subspecies" id="ridgedshikasa" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+            </div>
         </div>
+        <div class="row">
+          <h1 class="border-bottom mt-4">Bak'wa</h1>  
+          <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+            <label for=""> 
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                <h2 class="fw-normal">Onyx Bak'wa</h2>
+                <p id="folinndescription">"<ul>
+                  <li><strong>Brackish Blood</strong>: cannot become poisoned or contract diseases</li>
+                  <li><strong>Aware</strong>: +10 to natural awareness</li>
+                  <li>+10 to Gumption</li>
+                  <li>+5 to any attribute</li>
+                  </ul></p>
+                </label>
+                <button type="button" name="subspecies" id="onyxbackwa" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+            </div>
+            <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+              <label for=""> 
+              <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+                <h2 class="fw-normal">Mossy Bak'wa</h2>
+                <p id="hillockdescription">"<ul>
+                  <li><strong>Clotting Blood</strong>: thirty minutes after taking damage, regain 1d6 +2 health. Cannot bleed-out</li>
+                  <li><strong>Nimble</strong>: can add acrobatics mod bonus to agility saves. +10ft to climbing height</li>
+                  <li><strong>Magic Vision</strong></li>
+                  <li>+10 to Agility</li>
+                  <li>+5 to any attribute</li>
+                  </ul></p>
+                </label>
+                <button type="button" name="subspecies" id="mossybakwa" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+            </div>
+        </div>
+        <div class="row">
+          <h1 class="border-bottom mt-4">Egriss</h1>
+          <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+            <label for=""> 
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+              <h2 class="fw-normal">Lotus Grove Egriss</h2>
+              <p id="description" class="mt-2">
+                "<ul>
+                  <li><strong>Fly</strong>: has a flight distance equal to MB</li>
+                  <li><strong>Meditate</strong>: can exchange AP and MB, and vise versa, where 1 AP is equal to 5ft. Twice per nap</li>
+                  <li>+10 to Intelligence</li>
+                  <li>+5 to any attribute</li>
+                  </ul></p>
+                </label>
+              <button type="button" name="subspecies" id="lotusegriss" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+          </div>
+          <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+            <label for=""> 
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+              <h2 class="fw-normal">Wandering Egriss</h2>              
+              <p id="armadilldescription" class="mt-2"><ul>
+                <li><strong>Fly</strong>: has a flight distance equal to MB</li>
+                <li><strong>Unihemispheric Sleep</strong>: these Egriss do not need to rest in the traditional sense, instead, when resting, half of their brain stays awake, while the other half “sleeps”, allowing them to be alert 24/7</li>
+                <li><strong>Night Vision</strong></li>
+                <li>+10 to Agility</li>
+                <li>+5 to any attribute</li>
+                </ul></p>
+              </label>
+              <button type="button" name="subspecies" id="wanderingegriss" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+          </div>
+      </div>
+      <div class="row">
+        <h1 class="border-bottom mt-4">Bolibar</h1>  
+        <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+          <label for=""> 
+          <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+              <h2 class="fw-normal">Solid Bolibar</h2>
+              <p id="folinndescription"><ul>
+                <li><strong>Hearty</strong>: +10 to max health</li>
+                <li><strong>Glutinous Frenzy</strong>: lasts 10 seconds, during this state, all damage besides Holy is halved and every hit you take gives you a heal counter. Each heal counter replenishes 1d4 + 1 health and can be used for the cost of .5 AP. These can be stored until you take a nap or rest, up to a maximum of five. Once per rest.</li>
+                <li>+10 to Gumption</li>
+                <li>+5 to any attribute</li>
+                </ul></p>
+              </label>
+              <button type="button" name="subspecies" id="solidbolibar" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+          </div>
+          <div class="col-lg-6 mt-4 border" style="background-color: #226150;">
+            <label for=""> 
+            <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
+              <h2 class="fw-normal">Speckled Bolibar</h2>
+              <p id="hillockdescription"><ul>
+                <li><strong>Evergladian Ancestry</strong>: +1d6 when making saves against Primordial Magic spells. Once per rest, re-roll a speech check</li>
+                <li><strong>Power Napper</strong>: Refills three-quarters of their health when taking a nap</li>
+                <li><strong>Magic Vision</strong></li>
+                <li>+10 to Personality</li>
+                <li>+5 to any attribute</li>
+                </ul></p>
+              </label>
+              <button type="button" name="subspecies" id="speckledbolibar" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
+            </div>
+          </div>                    
+        </div>
+      </div>
 
         <!-- Page 4 Attributes -->
         <div class="page" style="background-color: lightyellow;">
-          <div class="p-5 text-center bg-body-tertiary-dark rounded-3" style="background-color:#517739;">
+          <div class="p-5 text-center bg-body-tertiary-dark rounded-3" style="background-color:#226150;">
             <h1 class="text-body-emphasis">Attributes</h1>
             <p class="lead">
             <header class="border-bottom"></header>
@@ -211,7 +444,7 @@
               <div class="feature col">
                 <h4 class="text-body-emphasis border-bottom">Strength</h4>
                 <p>Determines total movement bank</p>
-                <select class="form-select bg-dark text-light" aria-label="Default select example">
+                <select class="form-select bg-dark text-light" name="attribute1" id="strength" aria-label="Default select example">
 
                   <option value="1"></option>
                   <option value="2"></option>
@@ -224,7 +457,7 @@
               <div class="feature col">
                   <h4 class="text-body-emphasis border-bottom">Agility</h4>
                   <p>Determines evasion chance</p>
-                  <select class="form-select bg-dark text-light" aria-label="Default select example">
+                  <select class="form-select bg-dark text-light" name="attribute2" id="agility" aria-label="Default select example">
    
                     <option value="1"></option>
                       <option value="2"></option>
@@ -237,7 +470,7 @@
                 <div class="feature col">
                   <h4 class="text-body-emphasis border-bottom">Gumption</h4>
                   <p>Determines total health</p>
-                  <select class="form-select bg-dark text-light" aria-label="Default select example">
+                  <select class="form-select bg-dark text-light" name="attribute3" id="gumption" aria-label="Default select example">
    
                     <option value="1"></option>
                       <option value="2"></option>
@@ -250,7 +483,7 @@
                 <div class="feature col">
                   <h4 class="text-body-emphasis border-bottom">Intelligence</h4>
                   <p>Determines natural awareness</p>
-                  <select class="form-select bg-dark text-light" aria-label="Default select example">
+                  <select class="form-select bg-dark text-light" name="attribute4" id="intelligence" aria-label="Default select example">
     
                     <option value="1"></option>
                       <option value="2"></option>
@@ -263,7 +496,7 @@
                 <div class="feature col">
                   <h4 class="text-body-emphasis border-bottom">Mysticism</h4>
                   <p>Determines spell slots</p>
-                  <select class="form-select bg-dark text-light" aria-label="Default select example">
+                  <select class="form-select bg-dark text-light" name="attribute5" id="mysticism" aria-label="Default select example">
     
                     <option value="1"></option>
                       <option value="2"></option>
@@ -276,7 +509,7 @@
                 <div class="feature col">
                   <h4 class="text-body-emphasis border-bottom">Personality</h4>
                   <p>Determines spell slots and store prices</p>
-                  <select class="form-select bg-dark text-light" aria-label="Default select example">
+                  <select class="form-select bg-dark text-light" name="attribute6" id="personality" aria-label="Default select example">
   
                     <option value="1"></option>
                       <option value="2"></option>
@@ -298,7 +531,7 @@
                   <div class="feature col">
                     <h5 class="text-body-emphasis">Major One</h5>
                     <p></p>
-                    <select class="form-select bg-dark text-light" aria-label="Default select example">
+                    <select class="form-select bg-dark text-light" name="major1" id="major1" aria-label="Default select example">
 
                       <option value="1"></option>
                       <option value="2"></option>
@@ -311,7 +544,7 @@
                   <div class="feature col">
                       <h5 class="text-body-emphasis">Major Two</h5>
                       <p></p>
-                      <select class="form-select bg-dark text-light" aria-label="Default select example">
+                      <select class="form-select bg-dark text-light" name="major3" id="major3" aria-label="Default select example">
     
                         <option value="1"></option>
                           <option value="2"></option>
@@ -324,7 +557,7 @@
                     <div class="feature col">
                       <h5 class="text-body-emphasis">Major Three</h5>
                       <p></p>
-                      <select class="form-select bg-dark text-light" aria-label="Default select example">
+                      <select class="form-select bg-dark text-light" name="major3" id="major3" aria-label="Default select example">
         
                         <option value="1"></option>
                           <option value="2"></option>
@@ -345,7 +578,7 @@
                       <div class="feature col">
                         <h5 class="text-body-emphasis">Minor One</h5>
                         <p></p>
-                        <select class="form-select bg-dark text-light" aria-label="Default select example">
+                        <select class="form-select bg-dark text-light" name="minor1" id="minor1" aria-label="Default select example">
       
                           <option value="1"></option>
                           <option value="2"></option>
@@ -358,7 +591,7 @@
                       <div class="feature col">
                           <h5 class="text-body-emphasis">Minor Two</h5>
                           <p></p>
-                          <select class="form-select bg-dark text-light" aria-label="Default select example">
+                          <select class="form-select bg-dark text-light" name="minor2" id="minor2" aria-label="Default select example">
           
                             <option value="1"></option>
                               <option value="2"></option>
@@ -371,7 +604,7 @@
                         <div class="feature col">
                           <h5 class="text-body-emphasis">Minor Three</h5>
                           <p></p>
-                          <select class="form-select bg-dark text-light" aria-label="Default select example">
+                          <select class="form-select bg-dark text-light" name="minor3" id="minor3" aria-label="Default select example">
             
                             <option value="1"></option>
                               <option value="2"></option>
@@ -384,7 +617,7 @@
                         <div class="feature col">
                           <h5 class="text-body-emphasis">Minor Four</h5>
                           <p></p>
-                          <select class="form-select bg-dark text-light" aria-label="Default select example">
+                          <select class="form-select bg-dark text-light" name="minor4" id="minor4" aria-label="Default select example">
            
                             <option value="1"></option>
                               <option value="2"></option>
@@ -397,7 +630,7 @@
                         <div class="feature col">
                           <h5 class="text-body-emphasis">Minor Five</h5>
                           <p></p>
-                          <select class="form-select bg-dark text-light" aria-label="Default select example">
+                          <select class="form-select bg-dark text-light" name="minor5" id="minor5" aria-label="Default select example">
             
                             <option value="1"></option>
                               <option value="2"></option>
@@ -431,7 +664,7 @@
                           <li>-5 to all History, Foolery, and Sneak</li>
                           <li>Survival or Utility supplies</li>
                         </p>
-                        <button type="button" class="btn btn-success">Select</button>
+                        <button type="button" name="background" id="cowboy" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                       </div>
                 <div class="col-lg-4 mt-4">
                   <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -441,7 +674,7 @@
                           <li>-5 to all magic skills</li>
                           <li>Survival or General supplies</li>
                         </p>
-                  <button type="button" class="btn btn-success">Select</button>
+                  <button type="button" name="background" id="rancher" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                 </div>
                 <div class="col-lg-4 mt-4">
                   <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -451,7 +684,7 @@
                           <li>-5 to Personailty</li>
                           <li>Survival or Utility supplies</li>
                         </p>
-                  <button type="button" class="btn btn-success">Select</button>
+                  <button type="button" name="background" id="bountyhunter" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                 </div>
               </div>
               <div class="row">
@@ -463,7 +696,7 @@
                           <li>-5 to Pistols, Rifles, and Archery</li>
                           <li>General or Utility supplies</li>
                         </p>
-                    <button type="button" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="snakeoil" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -473,7 +706,7 @@
                           <li>-5 to Camping, Cooking, and Hunting</li>
                           <li>General or Survival supplies</li>
                         </p>
-                    <button type="button" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="shopkeep" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -483,7 +716,7 @@
                           <li>-5 to all other combat skills</li>
                           <li>Medical or Utility supplies</li>
                         </p>
-                    <button type="button" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="doctor" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                 </div>
                 <div class="row">
@@ -495,7 +728,7 @@
                           <li>You have bad odds on checks to use and craft items not of that element type</li>
                           <li>General or Utility supplies</li>
                         </p>
-                    <button type="button" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="elementalfella" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -505,7 +738,7 @@
                           <li>When not in your favored biome, you have -15 to Natural Awareness and -1d4 + 1 to rolls made for the same checks as above</li>
                           <li>General or Utility supplies</li>
                         </p>
-                    <button type="button" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="wildernessguide" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -515,7 +748,7 @@
                           <li>-5 to Mysticism. You have bad odds when making saves against Farlight magic</li>
                           <li>Mystical or Utility supplies</li>
                         </p>
-                    <button type="button" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="worshipper" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -525,7 +758,7 @@
                           <li>-5 to Personality. You have bad odds when making saves against Primordial magic</li>
                           <li>Mystical or Medical supplies</li>
                         </p>
-                    <button type="button" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="missionary" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -535,7 +768,7 @@
                           <li>-5 to all other magic skills</li>
                           <li>Mystical or Utility supplies</li>
                         </p>
-                    <button type="button" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="galvanismscholar" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4">
                     <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -545,7 +778,7 @@
                           <li>-5 to all Pistols, Rifles, and Archery</li>
                           <li>Survival or General supplies</li>
                         </p>
-                    <button type="button" class="btn btn-success">Select</button>
+                    <button type="button" name="background" id="chef" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                   </div>
                   <div class="col-lg-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -555,7 +788,7 @@
                           <li>-5 to all Pistols, Rifles, and Archery</li>
                           <li>Survival or General supplies</li>
                         </p>
-                      <button type="button" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="alchemist" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -565,7 +798,7 @@
                           <li>-5 to Mysticism</li>
                           <li>Survival or Utility supplies</li>
                         </p>
-                      <button type="button" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="convict" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -574,7 +807,7 @@
                           <li>-5 to magic skills</li>
                           <li>Survival or General supplies</li>
                         </p>
-                      <button type="button" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="carpenter" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -584,7 +817,7 @@
                                 <li>-5 to Personality</li>
                                 <li>General or Utility supplies</li>
                               </p>
-                      <button type="button" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="packmule" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -594,7 +827,7 @@
                                 <li>When using non-shockstone weapons, you have bad odds on hit checks</li>
                                 <li>General or Utility supplies</li>
                               </p>
-                      <button type="button" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="shockstoneresearch" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -604,7 +837,7 @@
                                 <li>When using guns, shockstone weapons, and complicated traps, you have -1d10 on hit checks</li>
                                 <li>General or Survival supplies</li>
                               </p>
-                      <button type="button" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="luddite" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -614,7 +847,7 @@
                                 <li>-5 to Crafting, Repair, and Shotguns</li>
                                 <li>General or Utility supplies</li>
                               </p>
-                      <button type="button" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="assassin" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
                     <div class="col-lg-4 mt-4">
                       <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect></svg>
@@ -624,7 +857,7 @@
                                 <li>-5 to all magic skills and History</li>
                                 <li>General or Utility supplies</li>
                               </p>
-                      <button type="button" class="btn btn-success">Select</button>
+                      <button type="button" name="background" id="urchin" value="" class="btn btn-link link-offset-2 link-offset-3-hover link-underline-dark text-light">Select</button>
                     </div>
               </div>
           </div>
@@ -641,7 +874,7 @@
                 <div class="feature col">
                   <h3 class="text-body-emphasis">Starting Equipment</h3>
                   <p></p>
-                  <select class="form-select bg-dark text-light" aria-label="Default select example">
+                  <select class="form-select bg-dark text-light" name="startequip" id="startequip" aria-label="Default select example">
                     <option selected>Select</option>
                     <option value="1"></option>
                     <option value="2"></option>
@@ -650,7 +883,7 @@
                 <div class="feature col">
                   <h3 class="text-body-emphasis">Weapon Proficiency</h3>
                   <p>+1 to hits, another +1 when related skill reaches 50</p>
-                  <select class="form-select bg-dark text-light" aria-label="Default select example">
+                  <select class="form-select bg-dark text-light" name="weaponprof" id="weaponprof" aria-label="Default select example">
                       <option selected>Select</option>
                       <option value="1"></option>
                       <option value="2"></option>
@@ -663,7 +896,7 @@
                 <div class="feature col">
                     <h3 class="text-body-emphasis">Starting Weapon(s)</h3>
                     <p></p>
-                    <select class="form-select bg-dark text-light" aria-label="Default select example">
+                    <select class="form-select bg-dark text-light" name="startweapon" id="startweapon" aria-label="Default select example">
                         <option selected>Select</option>
                         <option value="1"></option>
                         <option value="2"></option>
@@ -682,7 +915,7 @@
                   <div class="row g-4 row-cols-1 row-cols-lg-1">
                     <div class="feature col">
                       <p></p>
-                      <select class="form-select bg-dark text-light" aria-label="Default select example">
+                      <select class="form-select bg-dark text-light" name="morals" id="morals" aria-label="Default select example">
                         <option selected>Select</option>
                         <option value="1"></option>
                         <option value="2"></option>
@@ -701,7 +934,7 @@
                       <div class="row g-4 row-cols-1 row-cols-lg-1">
                         <div class="feature col">
                           <p></p>
-                          <select class="form-select bg-dark text-light" aria-label="Default select example">
+                          <select class="form-select bg-dark text-light" name="language" id="language" aria-label="Default select example">
                             <option selected>Select</option>
                             <option value="1"></option>
                             <option value="2"></option>
@@ -721,7 +954,7 @@
         </div>
       </div>
 
-      <div class="page" style="background-color: #517739;">
+      <div class="page" style="background-color: #226150;">
         <div class="p-5 text-center bg-body-tertiary-dark rounded-3">
           <h1 class="text-body-emphasis">Character Name and Info</h1>
           <p class="lead">
@@ -750,423 +983,14 @@
                       <span id="nameHelpInline" class="form-text">
                       </span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-      <!-- Page 6 Finished Sheet-->
-      <div class="page" style="background-color: #1592b4;">
-        <div class="container my-1">
-          <div class="container px-4 py-5" id="hanging-icons" style="background-color: #dc9750;">
-            <h2 class="pb-2 border-bottom">New Character</h2>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                  
-                </div>
-                <div>
-                  <h1 id="name" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Name</p>
-                </div>
-              </div>
-            <div class="row g-4 py-5 row-cols-1 row-cols-lg-5">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                  
-                </div>
-                <div>
-                  <h1 id="species" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Species</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 id="class" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Class</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                  
-                </div>
-              <div>
-                  <h1 id="background" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Background</p>
-              </div>
-            </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 id="morals" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Morals</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                  
-                </div>
-                <div>
-                  <h1 id="languages" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Languages</p>
-                </div>
-              </div>
-            </div>
-            <div class="row g-4 py-1 row-cols-1 row-cols-lg-6">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                  
-                </div>
-                <div>
-                  <h1 id="strength" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Str</p>
-                  <li id="strmod"></li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 id="agility" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Agi</p>
-                  <li id="agimod"></li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                  
-                </div>
-                <div>
-                  <h1 id="gumption" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Gum</p>
-                  <li id="gummod"></li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                  
-                </div>
-                <div>
-                  <h1 id="intelligence" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Int</p>
-                  <li id="intmod"></li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 id="mysticism" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Mys</p>
-                  <li id="mysmod"></li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                  
-                </div>
-                <div>
-                  <h1 id="personality" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Per</p>
-                  <li id="permod"></li>
-                </div>
-              </div>
-             </div>
-            <div class="row g-4 py-5 row-cols-1 row-cols-lg-5">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <button class="skill-btn" onclick="decrease('hp')">-</button>
-                      <span id="hp-amount">20</span>
-                      <button class="skill-btn" onclick="increase('hp')">+</button>
-                  <h1 id="actionpoints" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p id="hp" class="fs-5">HP</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 id="movementbank" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">MB</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 id="evasionchance" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">EC</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <button class="skill-btn" onclick="decrease('ap')">-</button>
-                      <span id="ap-amount">4</span>
-                      <button class="skill-btn" onclick="increase('ap')">+</button>
-                  <h1 id="actionpoints" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p id="ap" class="fs-5">AP</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 id="initiative" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Initiative</p>
-                </div>
-              </div>
-            </div>
-            <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 class="fs-5 text-body-emphasis">Major Skills</h1>
-                  <li id="major1"></li>
-                  <li id="major2"></li>
-                  <li id="major3"></li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 class="fs-5 text-body-emphasis">Minor Skills</h1>
-                  <li id="minor1"></li>
-                  <li id="minor2"></li>
-                  <li id="minor3"></li>
-                  <li id="minor4"></li>
-                  <li id="minor5"></li>
-                </div>
-              </div>
-            </div>
-            <div class="row g-4 py-1 row-cols-1 row-cols-lg-3">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 id="weaponproficiency" class="fs-5 text-body-emphasis border-bottom"></h1>
-                  <p class="fs-5">Weapon Prof.</p>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 class="fs-5 text-body-emphasis">Weapons</h1>
-                  <li id="weapon1"></li>
-                  <li id="weapon2"></li>
-                </div>
-              </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 class="fs-5 text-body-emphasis">Spells</h1>
-                  <li id="spell1"></li>
-                  <li id="spell2"></li>
-                </div>
-              </div>
-            </div>
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 class="fs-5 text-body-emphasis">Inventory</h1>
-                  <li id="startingequipment">*starting equipment here*</li>
-                </div>
-              </div>
-            <div class="row g-4 py-1 row-cols-1 row-cols-lg-3">
-              <div class="col d-flex align-items-start">
-                <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                 
-                </div>
-                <div>
-                  <h1 class="fs-5 text-body-emphasis">Abilities and Perks</h1>
-                  <li id=""></li>
-                </div>
-              </div>
-            </div>
-              <h2 class="pb-2 border-bottom">Attributes and Skills</h2>
-              <div class="row g-4 py-1 row-cols-1 row-cols-lg-6">
-                <div class="col d-flex align-items-start">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                    
-                  </div>
-                  <div>
-                    <h1 id="strength" class="fs-5 text-body-emphasis border-bottom"></h1>
-                    <p class="fs-5">Str</p>
-                    
-                    <p class="border-bottom mb-1">Crushing Melee</p>
-                    <button id="crushing" class="skill-btn" onclick="decreaseXP('crushing')">-</button>
-                      <button class="skill-btn" onclick="increaseXP('crushing')">+</button>
-                    <span id="crushing-skill">Skill Level: 5 | XP: <span id="crushing-xp-tracker"></span></span>
-                    <div class="border-bottom mt-3 mb-1"></div>
-
-                    <p class="border-bottom mb-1">Shotguns</p>
-                    <button id="shotguns" class="skill-btn" onclick="decreaseXP('shotguns')">-</button>
-                      <button class="skill-btn" onclick="increaseXP('shotguns')">+</button>
-                    <span id="shotguns-skill">Skill Level: 5 | XP: <span id="shotguns-xp-tracker"></span></span>
-                    <div class="border-bottom mt-3 mb-1"></div>
-                    
-                    <p class="border-bottom mb-1">Hand-to-Hand</p>
-                    <button id="hand" class="skill-btn" onclick="decreaseXP('hand')">-</button>
-                      <button class="skill-btn" onclick="increaseXP('hand')">+</button>
-                    <span id="hand-skill">Skill Level: 5 | XP: <span id="hand-xp-tracker"></span></span>
-                    <div class="border-bottom mt-3 mb-1"></div>
-                    
-                    <p class="border-bottom mb-1">Athletics</p>
-                    <button id="athletics" class="skill-btn" onclick="decreaseXP('athletics')">-</button>
-                      <button class="skill-btn" onclick="increaseXP('athletics')">+</button>
-                    <span id="athletics-skill">Skill Level: 5 | XP: <span id="athletics-xp-tracker"></span></span>
-                    <div class="border-bottom mt-3 mb-1"></div>
-                    
-                    <p class="border-bottom mb-1">Crafting</p>
-                    <button id="crafting" class="skill-btn" onclick="decreaseXP('crafting')">-</button>
-                      <button class="skill-btn" onclick="increaseXP('crafting')">+</button>
-                    <span id="crafting-skill">Skill Level: 5 | XP: <span id="crafting-xp-tracker"></span></span>
-                    <div class="border-bottom mt-3 mb-1"></div>
-                  </div>
-                  
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                   
-                  </div>
-                  <div>
-                    <h1 id="agility" class="fs-5 text-body-emphasis border-bottom"></h1>
-                    <p class="fs-5">Agi</p>
-                    <p>Slashing Melee</p>
-                    <li id="crushing"></li>
-                    <p>Pistols</p>
-                    <li id="pistols"></li>
-                    <p>Archery</p>
-                    <li id="archery"></li>
-                    <p>Ropework</p>
-                    <li id="ropework"></li>
-                    <p>Acrobatics</p>
-                    <li id="acrobatics"></li>
-                    <p>Sneak</p>
-                    <li id="sneak"></li>
-                    <p>Thievery</p>
-                    <li id="thievery"></li>
                   </div>
                 </div>
-                <div class="col d-flex align-items-start">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                    
-                  </div>
-                  <div>
-                    <h1 id="gumption" class="fs-5 text-body-emphasis border-bottom"></h1>
-                    <p class="fs-5">Gum</p>
-                    <p>Intimidation</p>
-                    <li id="intimidation"></li>
-                    <p>Hunting</p>
-                    <li id="hunting"></li>
-                    <p>Cooking</p>
-                    <li id="cooking"></li>
-                    <p>Foraging</p>
-                    <li id="foraging"></li>
-                    <p>Animal Handling</p>
-                    <li id="animalhandling"></li>
-                  </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                    
-                  </div>
-                  <div>
-                    <h1 id="intelligence" class="fs-5 text-body-emphasis border-bottom"></h1>
-                    <p class="fs-5">Int</p>
-                    <p>Rifles</p>
-                    <li id="rifles"></li>
-                    <p>Intuition</p>
-                    <li id="intuition"></li>
-                    <p>Investigation</p>
-                    <li id="brewing"></li>
-                    <p>Gambit</p>
-                    <li id="gambit"></li>
-                    <p>Brewing</p>
-                    <li id="brewing"></li>
-                    <p>Galvanism Magic</p>
-                    <li id="galvanism"></li>
-                  </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                   
-                  </div>
-                  <div>
-                    <h1 id="mysticism" class="fs-5 text-body-emphasis border-bottom"></h1>
-                    <p class="fs-5">Mys</p>
-                    <p>Religion</p>
-                    <li id="religion"></li>
-                    <p>Medicine</p>
-                    <li id="medicine"></li>
-                    <p>History</p>
-                    <li id="history"></li>
-                    <p>Healing Magic</p>
-                    <li id="healing"></li>
-                    <p>Utility Magic</p>
-                    <li id="utility"></li>
-                    <p>Absolution Magic</p>
-                    <li id="absolution"></li>
-                  </div>
-                </div>
-                <div class="col d-flex align-items-start">
-                  <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-                    
-                  </div>
-                  <div>
-                    <h1 id="personality" class="fs-5 text-body-emphasis border-bottom"></h1>
-                    <p class="fs-5">Per</p>
-                    <p>Foolery</p>
-                    <li id="foolery"></li>
-                    <p>Persuasion</p>
-                    <li id="persuasion"></li>
-                    <p>Barter</p>
-                    <li id="barter"></li>
-                    <p>Deception Magic</p>
-                    <li id="deception"></li>
-                    <p>Ritual Magic</p>
-                    <li id="ritual"></li>
-                    <p>Destruction Magic</p>
-                    <li id="destruction">Skill Level: 5 | XP: <span id="xp-tracker"></span></li>
-                    <button onclick="addXP()">+</button>
-                    <button onclick="subtractXP()">−</button>
-                  </div>
-                </div>
-               </div>
-            </div>
-            <div class="d-flex justify-content-center mt-2">
-            <button type="button" class="btn btn-success ms-5">Finish and create!</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  
+    </form>
 
     <div class="controls">
         <button class="control-btn" id="prevBtn">Previous</button>
@@ -1199,434 +1023,8 @@
     function updateSlider() {
         sliderContent.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
-   
-    // increase/decrease buttons
-    function increase(id) {
-  const amountElement = document.getElementById(`${id}-amount`);
-  let currentAmount = parseInt(amountElement.textContent);
-  amountElement.textContent = currentAmount + 1;
-}
-
-function decrease(id) {
-  const amountElement = document.getElementById(`${id}-amount`);
-  let currentAmount = parseInt(amountElement.textContent);
-  if (currentAmount > 0) {
-    amountElement.textContent = currentAmount - 1;
-  }
-}
-
-// Initialize skill levels and XP for each skill
-let skills = {
-    crushing: { level: 10, xp: 0 },
-    shotguns: { level: 10, xp: 0 },
-    hand: { level: 10, xp: 0 },
-    athletics: { level: 10, xp: 0 },
-    crafting: { level: 10, xp: 0 },
-    slashing: { level: 10, xp: 0 },
-    pistols: { level: 10, xp: 0 },
-    ropework: { level: 10, xp: 0 },
-    archery: { level: 10, xp: 0 },
-    acrobatics: { level: 10, xp: 0 },
-    sneak: { level: 10, xp: 0 },
-    thievery: { level: 10, xp: 0 },
-    intimidation: { level: 10, xp: 0 },
-    foraging: { level: 10, xp: 0 },
-    cooking: { level: 10, xp: 0 },
-    hunting: { level: 10, xp: 0 },
-    animal: { level: 10, xp: 0 },
-    rifles: { level: 10, xp: 0 },
-    intuition: { level: 10, xp: 0 },
-    investigation: { level: 10, xp: 0 },
-    gambit: { level: 10, xp: 0 },
-    brewing: { level: 10, xp: 0 },
-    galvanism: { level: 10, xp: 0 },
-    religion: { level: 10, xp: 0 },
-    history: { level: 10, xp: 0 },
-    medicine: { level: 10, xp: 0 },
-    healing: { level: 10, xp: 0 },
-    utility: { level: 10, xp: 0 },
-    absolution: { level: 10, xp: 0 },
-    foolery: { level: 10, xp: 0 },
-    persuasion: { level: 10, xp: 0 },
-    barter: { level: 10, xp: 0 },
-    performance: { level: 10, xp: 0 },
-    deception: { level: 10, xp: 0 },
-    ritual: { level: 10, xp: 0 },
-    destruction: { level: 10, xp: 0 },
-};
-
-function getRequiredXP(level) {
-    if (level < 16) {
-        return 3;
-    } else if (level < 51) {
-        return 4;
-    } else if (level <= 100) {
-        return 5;
-    }
-}
-
-function updateUI(skill) {
-    const skillData = skills[skill];
-    const requiredXP = getRequiredXP(skillData.level);
-    document.getElementById(`${skill}-skill`).innerHTML = ` ${skillData.level} | xp: ${renderXPTracker(skillData.xp, requiredXP)}`;
-}
-
-function renderXPTracker(xp, requiredXP) {
-    let tracker = '';
-    for (let i = 0; i < requiredXP; i++) {
-        tracker += i < xp ? '■' : '□';
-    }
-    return tracker;
-}
-
-function increaseXP(skill) {
-    const skillData = skills[skill];
-    const requiredXP = getRequiredXP(skillData.level);
-    skillData.xp += 1;
-
-    if (skillData.xp >= requiredXP) {
-        skillData.xp = 0;
-        skillData.level += 1;
-        if (skillData.level > 100) {
-            skillData.level = 100;
-            skillData.xp = 0;
-        }
-    }
-
-    updateUI(skill);
-}
-
-function decreaseXP(skill) {
-    const skillData = skills[skill];
-    skillData.xp -= 1;
-
-    if (skillData.xp < 0 && skillData.level > 10) {
-        skillData.level -= 1;
-        skillData.xp = getRequiredXP(skillData.level) - 1;
-    }
-
-    updateUI(skill);
-}
-
-// Initialize UI for all skills
-for (let skill in skills) {
-    updateUI(skill);
-}
-
-
 
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-                <script src="main.js"></script>
-                <script>
-                  const searchButton = document.getElementById('search-button');
-                  const searchInput = document.getElementById('search-input');
-                  searchButton.addEventListener('click', function() {
-  
-                      searchInput.style.display = (searchInput.style.display === 'none' || searchInput.style.display === '') ? 'block' : 'none';
-              
-                      if (searchInput.style.display === 'block') {
-                          searchInput.focus();
-                      }
-                  });
-                const humanTypeDropdown = document.getElementById('humanType');
-                const description = document.getElementById('description');
-            
-                humanTypeDropdown.addEventListener('change', function() {
-    if (this.value == "1") {
-        description.innerHTML = 
-            "<ul>" +
-            "<li><strong>Versatile</strong>: add +5 to two skills</li>" +
-            "<li><strong>Weapon Master</strong>: pick an additional weapon proficiency</li>" +
-            "<li>+10 to Strength</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    } else if (this.value == "2") {
-        description.innerHTML = 
-           "<ul>" +
-            "<li><strong>Versatile</strong>: add +5 to two skills</li>" +
-            "<li><strong>One with the Forest</strong>: good odds when making checks to climb or forage</li>" +
-            "<li>+10 to Agility</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    }
-    else if (this.value == "3") {
-        description.innerHTML = 
-           "Text test"
-    }
-});
-
-
-                const armadillTypeDropdown = document.getElementById('armadillType');
-                const armadilldescription = document.getElementById('armadilldescription');
-            
-                armadillTypeDropdown.addEventListener('change', function() {
-                  if (this.value == "1") {
-        armadilldescription.innerHTML = 
-            "<ul>" +
-            "<li><strong>Ball Form</strong>: for the cost of 10ft MB, change into ball form and gets +5 to EC. While in ball form, the only action that can be taken is movement. It costs another 10ft to revert to bipedal mode</li>" +
-            "<li><strong>Hard Shell</strong>: resistance to slashing damage</li>" +
-            "<li>+10 to Gumption</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    } else if (this.value == "2") {
-        armadilldescription.innerHTML = 
-           "<ul>" +
-            "<li><strong>Play Dead</strong>: for 1.5 AP, as a reaction after being attacked, the armadill can play dead. They fall where they are and are considered knocked down. While playing dead, the armadill can prepare an action to be performed for the AP cost of whatever that action is for it’s next turn. If a creature passes by the armadill, the armadill must roll a performance check or be discovered. If a creature wants to check the armadill, it rolls an investigation check contested by the armadills performance check. Once per nap</li>" +
-            "<li><strong>Unusually Stealthy</strong>: +1d4 to sneak checks</li>" +
-            "<li><strong>Night Vision</strong></li>" +
-            "<li>+10 to Agility</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    }
-});
-
-                const folinnTypeDropdown = document.getElementById('folinnType');
-                const folinndescription = document.getElementById('folinndescription');
-            
-                folinnTypeDropdown.addEventListener('change', function() {
-                  if (this.value == "1") {
-        folinndescription.innerHTML = 
-            "<ul>" +
-            "<li><strong>Swift Spirit</strong>: immune to being slowed and slept</li>" +
-            "<li><strong>Boil and Toil</strong>: good odds when trying to make tonics and healing items</li>" +
-            "<li><strong>Night Vision</strong></li>" +
-            "<li>+10 to Intelligence</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    } else if (this.value == "2") {
-        folinndescription.innerHTML = 
-           "<ul>" +
-            "<li><strong>Whimsical Spirit</strong>: immune to being charmed or hypnotized</li>" +
-            "<li><strong>Primordial Blessing</strong>: -.5 AP cost to Primordial spells, to a minimum of .5 cost</li>" +
-            "<li><strong>Magic Vision</strong></li>" +
-            "<li>+10 to Mysticism</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    }
-});
-
-
-const hillockTypeDropdown = document.getElementById('hillockType');
-                const hillockdescription = document.getElementById('hillockdescription');
-            
-                hillockTypeDropdown.addEventListener('change', function() {
-                  if (this.value == "1") {
-        hillockdescription.innerHTML = 
-            "<ul>" +
-            "<li><strong>Happy Mind</strong>: good odds on foolery and persuasion checks</li>" +
-            "<li><strong>Connoisseur</strong>: +3 eaxt health when eating or drinking something that replenishes health</li>" +
-            "<li>+10 to Personality</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    } else if (this.value == "2") {
-        hillockdescription.innerHTML = 
-           "<ul>" +
-            "<li><strong>Stone Skin</strong>: for 30 seconds, skin becomes scaly stone, giving resistance to piercing, crushing, slashing, and shock damage. Twice per rest</li>" +
-            "<li><strong>Fighter, Not a Lover</strong>: +5 to melee and hand-to-hand skills</li>" +
-            "<li>+10 to Strength</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    }
-});
-                
-                const cincindelTypeDropdown = document.getElementById('cincindelType');
-                const cincindeldescription = document.getElementById('cincindeldescription');
-                
-                cincindelTypeDropdown.addEventListener('change', function() {
-                  if (this.value == "1") {
-        cincindeldescription.innerHTML = 
-            "<ul>" +
-            "<li><strong>Flutter</strong>: can use wings to flutter 10ft in any direction (5ft in height). 3 uses per rest. This movement is not taken from MB during combat</li>" +
-            "<li><strong>Worldy</strong>: knows an additional language and has +1d6 to barter checks</li>" +
-            "<li>+10 to Personality</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    } else if (this.value == "2") {
-        cincindeldescription.innerHTML = 
-           "<ul>" +
-            "<li><strong>Flutter</strong>: can use wings to flutter 10ft in any direction (5ft in height). 3 uses per rest. This movement is not taken from MB during combat</li>" +
-            "<li><strong>Hard Shell</strong>: resistance to slashing damage</li>" +
-            "<li>+10 to Intelligence</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    }
-});
-
-const latranTypeDropdown = document.getElementById('latranType');
-                const latrandescription = document.getElementById('latrandescription');
-                
-                latranTypeDropdown.addEventListener('change', function() {
-                  if (this.value == "1") {
-        latrandescription.innerHTML = 
-            "<ul>" +
-            "<li><strong>Magical Inheritance</strong>: +1d4 when using magic to heal or do damage</li>" +
-            "<li><strong>Tranquil Spirit</strong>: cannot be made mad or hypnotized</li>" +
-            "<li><strong>Night Vision</strong></li>" +
-            "<li>+10 to Mysticism</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    } else if (this.value == "2") {
-        latrandescription.innerHTML = 
-           "<ul>" +
-            "<li><strong>Magical Inheritance</strong>: +1d4 when using magic ot heal or do damage</li>" +
-            "<li><strong>Nimble</strong>: add acrobatics mod to agility save. +10ft to climbing height</li>" +
-            "<li><strong>Magic Vision</strong></li>" +
-            "<li>+10 to Agility</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    }
-});
-
-
-                const ambaaziTypeDropdown = document.getElementById('ambaaziType');
-                const ambaazidescription = document.getElementById('ambaazidescription');
-                
-                ambaaziTypeDropdown.addEventListener('change', function() {
-                  if (this.value == "1") {
-        ambaazidescription.innerHTML = 
-            "<ul>" +
-            "<li><strong>Soft Hands</strong>: good oodds when making investigation and intuition checks</li>" +
-            "<li><strong>Unihemispheric Sleep</strong>: these Ambaazi do not need to rest in the traditional sense. When resting, half of their brain stays awake, while the other half “sleeps”, allowing them to be alert 24/7 </li>" +
-            "<li>+10 to Intelligence</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    } else if (this.value == "2") {
-        ambaazidescription.innerHTML = 
-           "<ul>" +
-            "<li><strong>Calloused Hands</strong>: good odds when making crafting</li>" +
-            "<li><strong>Heavy Sleepers</strong>: Napping gives the same benefits as a rest and resting gives the same benefits as a full rest</li>" +
-            "<li>+10 to Intelligence</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    }
-});
-
-                const margartTypeDropdown = document.getElementById('margartType');
-                const margartdescription = document.getElementById('margartdescription');
-                
-                margartTypeDropdown.addEventListener('change', function() {
-                  if (this.value == "1") {
-        margartdescription.innerHTML = 
-            "<ul>" +
-            "<li><strong>Insulated</strong>: resistant to incendiary and shock damage</li>" +
-            "<li><strong>Natural Mercantlilist</strong>: good odds on barter checks </li>" +
-            "<li><strong>Magic Vision</strong></li>" +
-            "<li>+10 to Gumption</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    } else if (this.value == "2") {
-        margartdescription.innerHTML = 
-           "<ul>" +
-            "<li><strong>Insulated</strong>: resistance to incendiary and shock damage</li>" +
-            "<li><strong>Feline Acrobatics</strong>: good odds on acrobatics checks and agility saves</li>" +
-            "<li><strong>Night Vision</strong></li>" +
-            "<li>+10 to Agility</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    }
-});
-
-                const shikasaTypeDropdown = document.getElementById('shikasaType');
-                const shikasadescription = document.getElementById('shikasadescription');
-                
-                shikasaTypeDropdown.addEventListener('change', function() {
-                  if (this.value == "1") {
-        shikasadescription.innerHTML = 
-            "<ul>" +
-            "<li><strong>Tail Whip</strong>: can whip a target within 5ft as an attack or as a reaction to being hit. (1d6 + Unarmed). On a natural/dirty 20, the target gets knocked down. Three times per rest</li>" +
-            "<li><strong>Aquatic</strong>: can hold breath underwater for up to two hours</li>" +
-            "<li><strong>Night Vision</strong></li>" +
-            "<li>+10 to Strength</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    } else if (this.value == "2") {
-        shikasadescription.innerHTML = 
-           "<ul>" +
-            "<li><strong>Crocodile Smile</strong>: can re-roll a foolery or persuasion check. Once per rest</li>" +
-            "<li><strong>Evergladian Ancestry</strong>: +1d6 when making saves against Primordial Magic spells. Re-roll any speech check, once per nap</li>" +
-            "<li><strong>Magic Vision</strong></li>" +
-            "<li>+10 to Personality</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    }
-});
-
-                const bakwaTypeDropdown = document.getElementById('bakwaType');
-                const bakwadescription = document.getElementById('bakwadescription');
-                
-                bakwaTypeDropdown.addEventListener('change', function() {
-                  if (this.value == "1") {
-        bakwadescription.innerHTML = 
-            "<ul>" +
-            "<li><strong>Brackish Blood</strong>: cannot become poisoned or contract diseases</li>" +
-            "<li><strong>Aware</strong>: +10 to natural awareness</li>" +
-            "<li>+10 to Gumption</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    } else if (this.value == "2") {
-        bakwadescription.innerHTML = 
-           "<ul>" +
-            "<li><strong>Clotting Blood</strong>: thirty minutes after taking damage, regain 1d6 +2 health. Cannot bleed-out</li>" +
-            "<li><strong>Nimble</strong>: can add acrobatics mod bonus to agility saves. +10ft to climbing height</li>" +
-            "<li><strong>Magic Vision</strong></li>" +
-            "<li>+10 to Agility</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    }
-});
-
-                const egrissTypeDropdown = document.getElementById('egrissType');
-                const egrissdescription = document.getElementById('egrissdescription');
-                
-                egrissTypeDropdown.addEventListener('change', function() {
-                  if (this.value == "1") {
-        egrissdescription.innerHTML = 
-            "<ul>" +
-            "<li><strong>Fly</strong>: has a flight distance equal to MB</li>" +
-            "<li><strong>Unihemispheric Sleep</strong>: these Egriss do not need to rest in the traditional sense, instead, when resting, half of their brain stays awake, while the other half “sleeps”, allowing them to be alert 24/7</li>" +
-            "<li><strong>Night Vision</strong></li>" +
-            "<li>+10 to Agility</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    } else if (this.value == "2") {
-        egrissdescription.innerHTML = 
-           "<ul>" +
-            "<li><strong>Fly</strong>: has a flight distance equal to MB</li>" +
-            "<li><strong>Meditate</strong>: can exchange AP and MB, and vise versa, where 1 AP is equal to 5ft. Twice per nap</li>" +
-            "<li>+10 to Intelligence</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    }
-});
-
-                const bolibarTypeDropdown = document.getElementById('bolibarType');
-                const bolibardescription = document.getElementById('bolibardescription');
-                
-                bolibarTypeDropdown.addEventListener('change', function() {
-                  if (this.value == "1") {
-        bolibardescription.innerHTML = 
-            "<ul>" +
-            "<li><strong>Hearty</strong>: +10 to max health</li>" +
-            "<li><strong>Glutinous Frenzy</strong>: lasts 10 seconds, during this state, all damage besides Holy is halved and every hit you take gives you a heal counter. Each heal counter replenishes 1d4 + 1 health and can be used for the cost of .5 AP. These can be stored until you take a nap or rest, up to a maximum of five. Once per rest.</li>" +
-            "<li>+10 to Gumption</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    } else if (this.value == "2") {
-        bolibardescription.innerHTML = 
-           "<ul>" +
-            "<li><strong>Evergladian Ancestry</strong>: +1d6 when making saves against Primordial Magic spells. Once per rest, re-roll a speech check</li>" +
-            "<li><strong>Power Napper</strong>: Refills three-quarters of their health when taking a nap</li>" +
-            "<li><strong>Magic Vision</strong></li>" +
-            "<li>+10 to Personality</li>" +
-            "<li>+5 to any attribute</li>" +
-            "</ul>";
-    }
-});
-            </script>
 
 </body>
 
