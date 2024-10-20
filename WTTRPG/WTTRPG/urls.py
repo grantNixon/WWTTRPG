@@ -19,6 +19,7 @@ from django.urls import path
 from django.urls import include
 from create.views import *
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home_page/',include('home_page.urls')),
@@ -26,4 +27,5 @@ urlpatterns = [
     path('guides/',include('guides.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
     path('accounts/signup', SignUpView, name="sign_up"),
+
 ]
