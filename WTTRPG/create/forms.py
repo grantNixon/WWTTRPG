@@ -16,7 +16,6 @@ class CharacterCreateForm(forms.ModelForm):
         if len(list(result.keys())) > 0:
             raise forms.ValidationError("Please make sure you are selecting a skill only once!")
 
-
     class Meta:
         model = Character
         fields = ['name', 'species', 'background', 'major_skill_1','major_skill_2','major_skill_3','minor_skill_1','minor_skill_2','minor_skill_3','minor_skill_4','minor_skill_5','strength','agility','intelligence','gumption','mysticism','personality','language','morals','weapon_proficiency','starting_weapon','starting_equipment','class_name']

@@ -36,6 +36,23 @@ class Morals(models.Model):
     class Meta:
         ordering = ["-moralsName"] 
 
+class Weapon(models.Model):
+    WeaponName = models.CharField(max_length = 100)
+    DamageType = models.CharField(max_length = 100)
+    ActionCost = models.FloatField()
+    Range = models.IntegerField()
+    Damage = models.CharField(max_length = 100)
+
+    def __str__(self):
+        return self.WeaponName    
+
+class StartingEquipment(models.Model):
+    name = models.CharField(max_length=30)
+    itemList = models.CharField(max_length=1000)
+
+
+    def __str__(self):
+        return self.name
 
 class Character(models.Model):
     name = models.CharField(max_length = 30)
@@ -59,8 +76,8 @@ class Character(models.Model):
     morals = models.ForeignKey(Morals, on_delete=models.CASCADE)
     weapon_proficiency = models.CharField(max_length=30, choices= get_weaponprofs)
     class_name = models.CharField(max_length=30)
-    starting_weapon = models.CharField(max_length=100)
-    starting_equipment = models.CharField(max_length=100)
+    starting_weapon = models.ForeignKey(Weapon, on_delete=models.CASCADE)
+    starting_equipment = models.ForeignKey(StartingEquipment, on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     level = models.IntegerField()
     hp = models.IntegerField()
@@ -118,13 +135,6 @@ class Background(models.Model):
     StartingBuff = models.CharField(max_length = 100)
     StartingDebuff = models.CharField(max_length = 100)
 
-class Weapon(models.Model):
-    WeaponName = models.CharField(max_length = 100)
-    DamageType = models.CharField(max_length = 100)
-    ActionCost = models.FloatField()
-    Range = models.IntegerField()
-    Damage = models.CharField(max_length = 100)
-
 class Spell(models.Model):
     MagicSchool = models.CharField(max_length = 100)
     SpellType = models.CharField(max_length = 100)
@@ -150,8 +160,7 @@ class Skill(models.Model):
     skillName = models.CharField(max_length = 30)
     skillAttribute = models.CharField(max_length = 30)
 
-class StartingEquipment(models.Model):
-    itemList = models.CharField(max_length=1000)
+
 
 
 
