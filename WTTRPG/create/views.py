@@ -1,8 +1,8 @@
 from django.forms import BaseModelForm
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.views.generic import FormView, CreateView, DetailView
-from create.models import Character
+from django.views.generic import FormView, CreateView, DetailView, ListView
+from create.models import Character, Weapon
 from .forms import *
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
@@ -11,6 +11,19 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 from .create_settings import *
+import csv
+
+
+def bulk_DB_upload():
+    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\CSV_Test.csv', newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+           StartingEquipment.objects.create(
+                name = row['name'],
+                itemList = row['itemList'],
+            )
+
+bulk_DB_upload()
 
 
 # Create your views here.
@@ -19,6 +32,11 @@ def create_view(request):
 
 def homebrew_view(request):
     return(render(request,"create/homebrew.html"))
+
+class CharacterListView(ListView):
+    model = Character
+    #need to add login required mixin
+    #need to adjust queryset so only characters created by the logged in user are pulled
 
 class QSCharCreator(LoginRequiredMixin,CreateView):
     model = Character
@@ -75,11 +93,11 @@ class QSCharCreator(LoginRequiredMixin,CreateView):
         return redirect('/create/character_detail/' + str(Character.id))  # Redirect to a success page
 
 def SignUpView(request):
-    form = NewUserForm(request.POST or None)
+    form = SignUpForm(request.POST or None)
     if request.method == "POST":
         if form.is_valid():
             user = User.objects.create_user(form.cleaned_data['email'], form.cleaned_data['email'], 
-                                           form.cleaned_data['password'])
+                                           form.cleaned_data['password1'])
         else:
             errors = form.errors
             for field_name, error_list in errors.items():

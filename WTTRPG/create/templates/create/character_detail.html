@@ -258,7 +258,10 @@
           </div>
           <div>
             <h1 class="fs-5 text-body-emphasis">Inventory</h1>
-            <li id="startingequipment">{{character.starting_equipment}}</li>
+            <li>{{character.starting_equipment}}</li>
+            <ul>
+              <li id="startingequipment">{{character.starting_equipment.itemList}}</li>
+            </ul>
           </div>
         </div>
       <div class="row g-4 py-1 row-cols-1 row-cols-lg-3">

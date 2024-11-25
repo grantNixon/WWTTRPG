@@ -1,0 +1,18 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+{% load static %}
+
+<body style="background-color: #bf7e04;">
+       <div class="container">
+        <h2 class="pb-2 pt-3 border-bottom align-text-center">Characters</h2>
+        <div class="container">
+          {% for character in object_list %}
+          <!-- href should link to character sheet. need to somehow access primary keys from object list to build the right URL -->
+          <a href="#" class="nav-link">
+          <h5 id="characterone" class="ps-1 pb-1 pt-3 mt-5 mb-4 border-top border-bottom border-start" style="background-color: #137a05;">{{character.name}}</h5>
+          </a>
+          {% endfor %}
+        </div>
+       </div>
+
+{% endblock content%}

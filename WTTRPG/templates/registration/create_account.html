@@ -24,8 +24,8 @@
           <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="password" class="form-control" name="password" maxlength="128" required id="id_password">
-          <label for="floatingPassword">Create a password</label>
+          <input type="password" class="form-control" name="password1" maxlength="128" required id="id_password">
+          <label for="id_password">Create a password</label>
           {% if form.errors %}
           <ul class="errorlist">
               {% for field in form %}
@@ -37,8 +37,8 @@
           {% endif %}
         </div>
         <div class="form-floating mb-3">
-          <input type="password" class="form-control" id="floatingPassword" name="password2" placeholder="Password">
-          <label for="floatingPassword">Confirm password</label>
+          <input type="password" class="form-control" required id="id_password" name="password2" placeholder="Password">
+          <label for="id_password">Confirm password</label>
         </div>
         <button class="w-100 btn btn-lg btn-primary mb-2" type="submit">Create account</button>
         <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>

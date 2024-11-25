@@ -1,5 +1,5 @@
 from django.db import models
-from .create_settings import *
+from create.create_settings import *
 from django.conf import *
 
 
@@ -40,7 +40,7 @@ class Weapon(models.Model):
     WeaponName = models.CharField(max_length = 100)
     DamageType = models.CharField(max_length = 100)
     ActionCost = models.FloatField()
-    Range = models.IntegerField()
+    Range = models.CharField(max_length=30)
     Damage = models.CharField(max_length = 100)
 
     def __str__(self):
@@ -137,24 +137,42 @@ class Background(models.Model):
 
 class Spell(models.Model):
     MagicSchool = models.CharField(max_length = 100)
-    SpellType = models.CharField(max_length = 100)
     SpellDescription = models.TextField()
+    SpellName = models.CharField(max_length = 100)
+    ActionCost = models.CharField(max_length=100)
+    Range = models.CharField(max_length=100)
+    SpellEffect =models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.SpellName  
 
 class Armor(models.Model):
     ArmorName = models.CharField(max_length = 100)
     ArmorDescription = models.TextField()
+    ArmorStats = models.TextField()
 
-class Tonics(models.Model):
+    def __str__(self):
+        return self.ArmorName
+
+class Tonic(models.Model):
     TonicName = models.CharField(max_length = 100)
     TonicSize = models.CharField(max_length = 100)
     TonicDescription = models.TextField()
+    ActionCost = models.TextField()
+
+    def __str__(self):
+        return self.TonicName
+
 
 class Utilities(models.Model):
     UtilityName = models.CharField(max_length = 100)
     UtilityType = models.CharField(max_length = 100)
     ActionCost = models.FloatField()
-    Range = models.IntegerField()
+    Range = models.CharField(max_length = 100)
     Effect = models.TextField()
+
+    def __str__(self):
+        return self.UtilityName
 
 class Skill(models.Model):
     skillName = models.CharField(max_length = 30)
