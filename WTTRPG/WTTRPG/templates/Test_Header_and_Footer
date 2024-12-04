@@ -78,8 +78,9 @@
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact Us</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Privacy Policy</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 me-5 text-body-secondary">Terms of Service</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">X</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Instagram</a></li>
+            <li class="nav-item"><a href="x.com/gumptiongame" class="nav-link px-2 text-body-secondary">X</a></li>
+            <li class="nav-item"><a href="instagram.com/gumptionttrpg" class="nav-link px-2 text-body-secondary">Instagram</a></li>
+            <li class="nav-item"><a href="patreon.com/gumptionttrpg" class="nav-link px-2 text-body-secondary">Patreon</a></li>
           </ul>
           <p class="nav-item"><a href="https://www.raspberryjamgames.com/" class="nav-link-underline px-2 text-body-secondary">©Raspberry Jam</a></p>
         </footer>
