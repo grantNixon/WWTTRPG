@@ -551,23 +551,29 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script >
 
+ // AP adjustments
+                  function increase(id) {
+    const amountSpan = document.getElementById(`${id}-amount`);
+    let currentValue = parseFloat(amountSpan.textContent);
 
+    currentValue += 0.5;
 
-
-// increase/decrease buttons
-function increase(id) {
-const amountElement = document.getElementById(`${id}-amount`);
-let currentAmount = parseInt(amountElement.textContent);
-amountElement.textContent = currentAmount + 1;
+    amountSpan.textContent = currentValue.toFixed(1);
 }
 
 function decrease(id) {
-const amountElement = document.getElementById(`${id}-amount`);
-let currentAmount = parseInt(amountElement.textContent);
-if (currentAmount > 0) {
-amountElement.textContent = currentAmount - 1;
+    const amountSpan = document.getElementById(`${id}-amount`);
+    let currentValue = parseFloat(amountSpan.textContent);
+
+    currentValue -= 0.5;
+
+    if (currentValue < 0) {
+        currentValue = 0;
+    }
+
+    amountSpan.textContent = currentValue.toFixed(1);
 }
-}
+        }
 
 // Initialize skill levels and XP for each skill
 
