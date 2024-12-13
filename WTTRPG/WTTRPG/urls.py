@@ -22,7 +22,7 @@ from create.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home_page/',include('home_page.urls')),
+    path('home_page/',include('home_page.urls'), name="home_page"),
     path('create/',include('create.urls')),
     path('guides/',include('guides.urls')),
     path('accounts/',include('django.contrib.auth.urls')),

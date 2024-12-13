@@ -11,5 +11,6 @@ urlpatterns = [
     path('character_detail/<int:pk>', CharacterSheet.as_view(), name="charater_sheet"),
     path('update_skills', views.update_skills, name="update_skills"),
     path('retrieve_skills', views.retrieve_skills, name="retrieve_skills"),
-    path('character_list/',CharacterListView.as_view(), name="character_list"), 
+    path('character_list/',CharacterListView.as_view(), name="character_list"),
+    path('test_packet/', views.download_testpacket, name = 'test_packet') 
 ]

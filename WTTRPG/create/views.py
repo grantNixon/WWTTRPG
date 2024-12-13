@@ -12,6 +12,9 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from .create_settings import *
 import csv
+from django.contrib.auth import authenticate, login
+from django.http import FileResponse
+from .models import TestPacketFile
 
 
 def bulk_DB_upload():
@@ -23,10 +26,18 @@ def bulk_DB_upload():
                 itemList = row['itemList'],
             )
 
-bulk_DB_upload()
+#bulk_DB_upload()
 
 
 # Create your views here.
+
+def download_testpacket(request):
+    uploaded_file = TestPacketFile.objects.get(pk=1)
+    response = FileResponse(uploaded_file.tpFile, content_type='application/force-download')
+    response['Content-Disposition'] = f'attachment; filename={uploaded_file.tpFile.name}'
+    return response
+
+
 def create_view(request):
     return(render(request,"create/create_page.html"))
 
@@ -96,8 +107,10 @@ def SignUpView(request):
     form = SignUpForm(request.POST or None)
     if request.method == "POST":
         if form.is_valid():
-            user = User.objects.create_user(form.cleaned_data['email'], form.cleaned_data['email'], 
+            user = User.objects.create_user(form.cleaned_data['username'], form.cleaned_data['email'], 
                                            form.cleaned_data['password1'])
+            login(request, user)
+            return redirect('home_page')
         else:
             errors = form.errors
             for field_name, error_list in errors.items():

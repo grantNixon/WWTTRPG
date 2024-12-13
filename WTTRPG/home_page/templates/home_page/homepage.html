@@ -2,50 +2,48 @@
 {%block content%}
 {% load static %}
 
-<body style="background-color: #bf7e04;">
-      <div class="container my-1">
-        <div class="p-5 text-center bg-body-tertiary-dark rounded-3">
-          <h1 class="text-body-emphasis">Howdy</h1>
-          <p class="lead">
-          <header class="mb-1 pb-1 border-bottom"></header>
-            
-          </p>
-        </div>
-      </div>
-      <a href="" class="text-decoration-none text-white">
-      <div class="container">
-        <div class="col">
-          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url(blue.png);">Placeholder image*
-            <div class="flex-column h-100 p-5 pb-1 text-center text-white text-shadow-1">
-              <h3 class="d-grid pt-3 mt-5 mb-1 p-3 btn btn-dark btn-lg display-6 lh-1 fw-bold">Getting Started: An Intro into wwttrpg</h3>
-            </div>
+<body style="background-color: #226150;">
+      <div style="background-color: #F9E49A;" class="container my-1">
+        <div class="p-3 bg-body-tertiary-dark rounded-3 text-center">
+          <h1 class="text-body-emphasis">Howdy, partner</h1>
+          <h5 class="">
+          <header class="mb-1 border-bottom border-dark"></header>
+            Welcome to the first open test of Gumption!</h5>
+            <header class="mb-1 border-bottom border-dark"></header>
+            <p class="mt-3">1. Create an account</p>
+            <p>2. Download the test packet</p>
+            <p>3. Create a character</p>
+            <p>4. Run a few one-shots, fight some creatures, or fight your friends in a battle royale</p>
+            <p>5. Send us feedback through our socials</p>
+      <div style="background-color: #F9E49A;" class="container-fluid">
+            <header class="mb-1 border-bottom border-dark"></header>
+            <p>
+                <div class="container-fluid justify-content-center">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <a href="{% url "sign_up"%}" class="text-decoration-none text-white">
+                          <div class="d-flex flex-column text-center text-shadow-1">
+                            <h3 class="d-grid display-6 fw-bold btn btn-lg" style="background-color: #BE5656;">Create an account</h3>
+                          </div>
+                      </a>
+                    </div>
+                    <div class="col-md-4">
+                      <a href="{% url "create:test_packet"%}" class="text-decoration-none text-white" download>
+                          <div class="d-flex flex-column text-center text-shadow-1">
+                            <h3 class="d-grid display-6 fw-bold btn btn-lg" style="background-color: #BE5656;">Download the test packet</h3>
+                          </div>
+                      </a>
+                    </div>
+                  
+                    <div class="col-md-4">
+                      <a href="{%url "create:qscc"%}" class="text-decoration-none text-white">
+                          <div class="d-flex flex-column text-center text-white text-shadow-1">
+                            <h3 class="d-grid display-6 fw-bold btn btn-lg" style="background-color: #BE5656;">Create a character</h3>
+                            <p class="text-dark">*This is an alpha version of our character creator. There will be bugs</p>
+                          </div>
+                      </a>
+                    </div>
           </div>
-        </div>
-        </a>
-        <header class="mt-3 mb-3 border-bottom"></header>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <a href="{% url "sign_up"%}" class="text-decoration-none text-white">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('red.jpg');">Placeholder image*
-                  <div class="d-flex flex-column h-100 p-5 pb-3 text-center text-shadow-1">
-                    <h3 class="d-grid pt-3 mt-5 mb-1 p-3 display-6 lh-1 fw-bold btn btn-dark btn-lg">Create an Account</h3>
-                  </div>
-                </div>
-              </a>
-            </div>
-          
-            <div class="col-md-6">
-              <a href="{%url "create:qscc"%}" class="text-decoration-none text-white">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('green.jpeg');">Placeholder image*
-                  <div class="d-flex flex-column h-100 p-5 pb-3 text-center text-white text-shadow-1">
-                    <h3 class="d-grid pt-3 mt-5 mb-1 p-3 display-6 lh-1 fw-bold btn btn-dark btn-lg">Create a Character</h3>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-      </div> 
-    </body>
+         </div>
 
-{% endblock content%}
+{%endblock content%}         
