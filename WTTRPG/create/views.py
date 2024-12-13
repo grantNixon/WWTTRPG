@@ -1,3 +1,4 @@
+from django.db.models.query import QuerySet
 from django.forms import BaseModelForm
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -44,10 +45,18 @@ def create_view(request):
 def homebrew_view(request):
     return(render(request,"create/homebrew.html"))
 
-class CharacterListView(ListView):
+class CharacterListView(LoginRequiredMixin,ListView):
     model = Character
-    #need to add login required mixin
+    
     #need to adjust queryset so only characters created by the logged in user are pulled
+
+    def get_queryset(self):
+        qSet = super().get_queryset()
+
+        loggedInUser = self.request.user
+        qSet = qSet.filter(user=loggedInUser)
+
+        return qSet
 
 class QSCharCreator(LoginRequiredMixin,CreateView):
     model = Character
