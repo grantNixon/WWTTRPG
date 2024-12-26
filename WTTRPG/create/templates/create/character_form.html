@@ -1,15 +1,18 @@
 {% extends "Header_and_Footer.html" %} 
 {%block content%}
 
-<h1>Quick Start Character Creator</h1>
-
-<div>
-    <form action="" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Create">
-</form>
-</div>
+<body class="d-flex flex-column min-vh-100" style="background-color: #226150;">
+<div class="container" style="background-color: #F9E49A;">
+    <h4 class="text-center mb-2 p-3 border-bottom border-dark">Quick Start Character Creator</h4>
+    <div class="text-center fw-bold">
+        <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="mt-2 mb-2 justify-content-center btn text-white" style="background-color: #226150;" type="submit" value="Create">
+        </form>
+        </div>
+    </div>
+</body>
 
 {% load static %}
 <link rel="stylesheet" href="{% static 'create/character_form.css' %}">
