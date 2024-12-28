@@ -5,9 +5,10 @@
 
 
 
-  <body style="background-color: #bf7e04;">
+  <body>
+    <div class="container" style="background-color: #F9E49A;">
     <div class="col-md-10 mx-auto my-5 col-lg-5">
-      <h2 class="pb-2 border-bottom">Create an Account</h2>
+      <h2 class="pb-2 border-bottom border-dark text-center">Create an Account</h2>
       {% if form.errors %}
       <ul class="errorlist">
           {% for field in form %}
@@ -38,7 +39,7 @@
         </div>
         <button class="w-100 btn btn-lg btn-primary mb-2" type="submit">Create account</button>
         <hr class="my-4">
-        <small class="text-body-secondary">By clicking Create account, you agree to the terms of use.</small>
+        <small class="text-body-secondary">By clicking Create account, you agree to the terms of use</small>
       </form>
     </div>
 
