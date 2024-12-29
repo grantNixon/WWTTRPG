@@ -94,7 +94,7 @@ class Character(models.Model):
     sk_hand = models.IntegerField(default = 5)
     sk_athletics = models.IntegerField(default = 5)
     sk_crafting = models.IntegerField(default = 5)
-    sk_slashingmelee= models.IntegerField(default = 5)
+    sk_slashing= models.IntegerField(default = 5)
     sk_pistols = models.IntegerField(default = 5)
     sk_archery = models.IntegerField(default = 5)
     sk_ropework = models.IntegerField(default = 5)

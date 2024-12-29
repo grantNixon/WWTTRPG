@@ -163,7 +163,7 @@ def retrieve_skills(request):
            'hand':{'level': obj.sk_hand, 'xp': 0},
            'athletics':{'level': obj.sk_athletics, 'xp': 0},
            'crafting':{'level': obj.sk_crafting, 'xp': 0},
-           'slashingmelee':{'level': obj.sk_slashingmelee, 'xp': 0},
+           'slashing':{'level': obj.sk_slashing, 'xp': 0},
            'pistols':{'level': obj.sk_pistols, 'xp': 0},
            'archery':{'level': obj.sk_archery,'xp': 0},
            'ropework':{'level': obj.sk_ropework, 'xp': 0},
@@ -192,6 +192,8 @@ def retrieve_skills(request):
             'deception': { 'level': obj.sk_deceptionmagic, 'xp': 0 },
             'ritual': { 'level': obj.sk_ritualmagic, 'xp': 0 },
             'destruction': { 'level': obj.sk_destructionmagic, 'xp': 0 },
+            'cooking': {'level':obj.sk_cooking, 'xp': 0},
+            'foraging': {'level':obj.sk_foraging, 'xp': 0},
            
            }
        return JsonResponse(response_string)
