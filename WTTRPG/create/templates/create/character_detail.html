@@ -2,154 +2,75 @@
 {%block content%}
 {% load static %}
 
-<style>
-        
+<style>      
         .skill-btn {
-          background-color: rgba(0, 0, 0, 0.5);
+          background-color: #C3976A;
           border: none;
-          color: white;
-          padding: 2px;
+          color: black;
+          padding: 4px;
           cursor: pointer;
       }
       </style>
 <div class="page" style="background-color: #226150;">
   <div class="container my-1">
-    <div class="container px-4 py-5" id="hanging-icons" style="background-color: #F9E49A;">
-      <h2 class="pb-2 border-bottom border-dark">{{character.name}}</h2>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-            
+    <div class="container px-4 py-1" id="hanging-icons" style="background-color: #F9E49A;">
+      
+      <!-- Name, Species, Class, Background -->
+      <h2 class="border-bottom mt-2 border-dark">{{character.name}}</h2>
+      <h1 id="name" class="fs-6 text-body-emphasis"></h1>
+              <h1 class="fs-6 badge" style="background-color: #924A36;">Name</h1>
+        <div class="row g-4 py-2 mt-1 row-cols-1 row-cols-lg-5">
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+              
+            </div>
+            <div>
+              <h1 class="fs-6">{{character.species}}</h1>
+              <h1 id="species" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
+              <h1 class="fs-6 badge" style="background-color: #924A36;">Species</h1>
+            </div>
           </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+             
+            </div>
+            <div>
+              <h1 class="fs-6">{{character.class_name}}</h1>
+              <h1 id="class" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
+              <h1 class="fs-6 badge" style="background-color: #924A36;">Class</h1>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+              
+            </div>
           <div>
-            <h1 id="name" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">Name</p>
+              <h1 class="fs-6">{{character.background}}</h1>
+              <h1 id="background" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
+              <h1 class="fs-6 badge" style="background-color: #924A36;">Background</h1>
           </div>
         </div>
-      <div class="row g-4 py-5 row-cols-1 row-cols-lg-5">
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-            
-          </div>
-          <div>
-            <p class="fs-5">{{character.species}}</p>
-            <h1 id="species" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">Species</p>
+          <div class="col d-flex align-items-start">
+            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+             
+            </div>
           </div>
         </div>
+      
+        <!-- HP, MB, EC, AP, Initiative -->
+        <div class="row g-4 py-2 mt-2 row-cols-1 row-cols-lg-5">
         <div class="col d-flex align-items-start">
           <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
            
           </div>
           <div>
-            <p class="fs-5">{{character.class_name}}</p>
-            <h1 id="class" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">Class</p>
-          </div>
-        </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-            
-          </div>
-        <div>
-            <p class="fs-5">{{character.background}}</p>
-            <h1 id="background" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">Background</p>
-        </div>
-      </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <p class="fs-5">{{character.morals}}</p>
-            <h1 id="morals" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">Morals</p>
-          </div>
-        </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-            
-          </div>
-          <div>
-            <p class="fs-5">{{character.language}}</p>
-            <h1 id="languages" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">Languages</p>
-          </div>
-        </div>
-      </div>
-      <div class="row g-4 py-1 row-cols-1 row-cols-lg-6">
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-            
-          </div>
-          <div>
-            <h1 id="strength" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">Str</p>
-            <li id="strmod">{{character.strength}}</li>
-          </div>
-        </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <h1 id="agility" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">Agi</p>
-            <li id="agimod">{{character.agility}}</li>
-          </div>
-        </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-            
-          </div>
-          <div>
-            <h1 id="gumption" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">Gum</p>
-            <li id="gummod">{{character.gumption}}</li>
-          </div>
-        </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-            
-          </div>
-          <div>
-            <h1 id="intelligence" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">Int</p>
-            <li id="intmod">{{character.intelligence}}</li>
-          </div>
-        </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <h1 id="mysticism" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">Mys</p>
-            <li id="mysmod">{{character.mysticism}}</li>
-          </div>
-        </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-            
-          </div>
-          <div>
-            <h1 id="personality" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">Per</p>
-            <li id="permod">{{character.personality}}</li>
-          </div>
-        </div>
-       </div>
-      <div class="row g-4 py-5 row-cols-1 row-cols-lg-5">
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <button class="skill-btn" onclick="decrease('hp')">-</button>
+            <button class="skill-btn" onclick="hpdown5('hp')">-5</button>
+            <button class="skill-btn" onclick="hpdown('hp')">-</button>
                 <span id="hp-amount">{{character.hp}}</span>
-                <button class="skill-btn" onclick="increase('hp')">+</button>
-            <h1 id="actionpoints" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p id="hp" class="fs-5">HP</p>
+                <button class="skill-btn" onclick="hpup('hp')">+</button>
+                <button class="skill-btn" onclick="hpup5('hp')">+5</button>
+            <h1 id="actionpoints" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
+            <h1 id="hp" class="fs-6 badge" style="background-color: #924A36;">HP</h1>
           </div>
         </div>
         <div class="col d-flex align-items-start">
@@ -158,8 +79,8 @@
           </div>
           <div>
             <span id="hp-amount">{{character.mb}}</span>
-            <h1 id="movementbank" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">MB</p>
+            <h1 id="movementbank" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
+            <h1 class="fs-6 badge" style="background-color: #924A36;">MB</h1>
           </div>
         </div>
         <div class="col d-flex align-items-start">
@@ -168,8 +89,8 @@
           </div>
           <div>
             <span id="hp-amount">{{character.ec}}</span>
-            <h1 id="evasionchance" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">EC</p>
+            <h1 id="evasionchance" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
+            <h1 class="fs-6 badge" style="background-color: #924A36;">EC</h1>
           </div>
         </div>
         <div class="col d-flex align-items-start">
@@ -180,8 +101,8 @@
             <button class="skill-btn" onclick="decrease('ap')">-</button>
                 <span id="ap-amount">{{character.ap}}</span>
                 <button class="skill-btn" onclick="increase('ap')">+</button>
-            <h1 id="actionpoints" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p id="ap" class="fs-5">AP</p>
+            <h1 id="actionpoints" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
+            <h1 id="ap" class="fs-6 badge" style="background-color: #924A36;">AP</h1>
           </div>
         </div>
         <div class="col d-flex align-items-start">
@@ -189,19 +110,21 @@
            
           </div>
           <div>
-            <span id="ap-amount">{{character.initiative}}</span>
-            <h1 id="initiative" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-            <p class="fs-5">Initiative</p>
+            <span id="ap-amount">+{{character.initiative}}</span>
+            <h1 id="initiative" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
+            <h1 class="fs-6 badge" style="background-color: #924A36;">Initiative</h1>
           </div>
         </div>
       </div>
-      <div class="row g-4 py-5 row-cols-1 row-cols-lg-2">
+      
+      <!-- Major/Minor skills, Weapon prof. -->
+      <div class="row g-4 py-3 mt-2 row-cols-1 row-cols-3">
         <div class="col d-flex align-items-start">
           <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
            
           </div>
           <div>
-            <h1 class="fs-5 text-body-emphasis">Major Skills</h1>
+            <h1 class="fs-6 badge" style="background-color: #924A36;">Major Skills</h1>
             <li id="major1">{{character.major_skill_1}}</li>
             <li id="major2">{{character.major_skill_2}}</li>
             <li id="major3">{{character.major_skill_3}}</li>
@@ -212,7 +135,7 @@
            
           </div>
           <div>
-            <h1 class="fs-5 text-body-emphasis">Minor Skills</h1>
+            <h1 class="fs-6 badge" style="background-color: #924A36;">Minor Skills</h1>
             <li id="minor1">{{character.minor_skill_1}}</li>
             <li id="minor2">{{character.minor_skill_2}}</li>
             <li id="minor3">{{character.minor_skill_3}}</li>
@@ -220,24 +143,25 @@
             <li id="minor5">{{character.minor_skill_5}}</li>
           </div>
         </div>
-      </div>
-      <div class="row g-4 py-1 row-cols-1 row-cols-lg-3">
         <div class="col d-flex align-items-start">
           <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
            
           </div>
           <div>
-            <p class="fs-5">{{character.weapon_proficiency}}</p>
-            <h1 id="weaponproficiency" class="fs-5 text-body-emphasis border-bottom  border-dark"></h1>
-            <p class="fs-5">Weapon Prof.</p>
+            <h1 class="fs-6 badge" style="background-color: #924A36;">Weapon Prof.</h1>
+            <li id="weaponproficiency">{{character.weapon_proficiency}}</li>
           </div>
         </div>
+      </div>
+      
+      <!-- Spells, Weapons, Inventory -->
+      <div class="row g-4 py-1 mt-2 row-cols-1 row-cols-lg-2">
         <div class="col d-flex align-items-start">
           <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
            
           </div>
           <div>
-            <h1 class="fs-5 text-body-emphasis">Weapons</h1>
+            <h1 class="fs-6 badge" style="background-color: #924A36;">Weapons</h1>
             <li id="weapon1">{{character.starting_weapon}}</li>
           </div>
         </div>
@@ -246,9 +170,8 @@
            
           </div>
           <div>
-            <h1 class="fs-5 text-body-emphasis">Spells</h1>
-            <li id="spell1">Shit Self</li>
-            <li id="spell2">Fart Vision</li>
+            <h1 class="fs-6 badge" style="background-color: #924A36;">Spells</h1>
+            <li id="spell1"><em>Refer to the testing packet to pick your spells</em></li>
           </div>
         </div>
       </div>
@@ -257,63 +180,85 @@
            
           </div>
           <div>
-            <h1 class="fs-5 text-body-emphasis">Inventory</h1>
+            <h1 class="fs-6 mt-3 badge" style="background-color: #924A36;">Inventory</h1>
             <li>{{character.starting_equipment}}</li>
             <ul>
               <li id="startingequipment">{{character.starting_equipment.itemList}}</li>
             </ul>
           </div>
         </div>
-      <div class="row g-4 py-1 row-cols-1 row-cols-lg-3">
+      
+      <!-- Perks, Morals, Languages -->
+        <div class="row g-2 py-2 row-cols-1 row-cols-lg-3">
         <div class="col d-flex align-items-start">
           <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
            
           </div>
           <div>
-            <h1 class="fs-5 text-body-emphasis">Abilities and Perks</h1>
-            <li id=""></li>
+            <h1 class="fs-6 badge mt-3" style="background-color: #924A36;">Abilities and Perks</h1>
+            <li id=""><em>Refer to the testing packet for your perks</em></li>
+          </div>
+        </div>
+        <div class="col d-flex me-2 align-items-start">
+          <div class="icon-square me-2 text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
+           
+          </div>
+          <div class="me-3">
+            <h1 class="fs-6 mt-3">{{character.morals}}</h1>
+            <h1 id="morals" class="fs-6 me-3 text-body-emphasis border-bottom border-dark"></h1>
+            <h1 class="fs-6 badge" style="background-color: #924A36;">Morals</h1>
+          </div>
+          <div>
+            <h1 class="fs-6 mt-3">{{character.language}}</h1>
+            <h1 id="languages" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
+            <h1 class="fs-6 badge" style="background-color: #924A36;">Languages</h1>
           </div>
         </div>
       </div>
-        <h2 class="pb-2 border-bottom border-dark">Attributes and Skills</h2>
+      
+      <!-- Attributes, Skills -->
+      <h2 class="fs-6 mt-3 border-bottom border-dark badge" style="background-color: #924A36;">Attributes and Skills</h2>
         <div class="row g-4 py-1 row-cols-1 row-cols-lg-6">
           <div class="col d-flex align-items-start">
             <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
               
             </div>
+            
+           <!-- Strength -->
             <div>
-              <h1 id="strength" class="fs-5 text-body-emphasis border-bottom"></h1>
-              <p class="fs-5">Str</p>
+              <h1 class="fs-6">{{character.strength}}</h1>
+            <h1 id="strength" class="fs-6 text-body border-bottom border-dark"></h1>
+              <h1 class="fs-6 fw-bold pb-2">Strength</h1>
               
               <p class="border-bottom border-dark mb-1">Crushing Melee</p>
               <button id="crushing" class="skill-btn" onclick="decreaseXP('crushing')">-</button>
                 <button class="skill-btn" onclick="increaseXP('crushing')">+</button>
-              <span id="crushing-skill">{{character.sk_crushing}} | XP: <span id="crushing-xp-tracker"></span></span>
-              <div class="border-bottom border-dark mt-3 mb-1"></div>
+              <span id="crushing-skill">{{character.sk_crushing}} | xp: <span id="crushing-xp-tracker"></span></span>
+              <div class="mt-3 mb-1"></div>
 
               <p class="border-bottom border-dark mb-1">Shotguns</p>
               <button id="shotguns" class="skill-btn" onclick="decreaseXP('shotguns')">-</button>
                 <button class="skill-btn" onclick="increaseXP('shotguns')">+</button>
-              <span id="shotguns-skill">{{character.sk_shotguns}}| XP: <span id="shotguns-xp-tracker"></span></span>
-              <div class="border-bottom border-dark mt-3 mb-1"></div>
+              <span id="shotguns-skill">{{character.sk_shotguns}}| xp: <span id="shotguns-xp-tracker"></span></span>
+              <div class="mt-3 mb-1"></div>
               
               <p class="border-bottom border-dark mb-1">Hand-to-Hand</p>
               <button id="hand" class="skill-btn" onclick="decreaseXP('hand')">-</button>
                 <button class="skill-btn" onclick="increaseXP('hand')">+</button>
-              <span id="hand-skill">{{character.sk_hand}} | XP: <span id="hand-xp-tracker"></span></span>
-              <div class="border-bottom border-dark mt-3 mb-1"></div>
+              <span id="hand-skill">{{character.sk_hand}} | xp: <span id="hand-xp-tracker"></span></span>
+              <div class="mt-3 mb-1"></div>
               
               <p class="border-bottom border-dark mb-1">Athletics</p>
               <button id="athletics" class="skill-btn" onclick="decreaseXP('athletics')">-</button>
                 <button class="skill-btn" onclick="increaseXP('athletics')">+</button>
-              <span id="athletics-skill">{{character.sk_athletics}} | XP: <span id="athletics-xp-tracker"></span></span>
-              <div class="border-bottom border-dark mt-3 mb-1"></div>
+              <span id="athletics-skill">{{character.sk_athletics}} | xp: <span id="athletics-xp-tracker"></span></span>
+              <div class="mt-3 mb-1"></div>
               
               <p class="border-bottom border-dark mb-1">Crafting</p>
               <button id="crafting" class="skill-btn" onclick="decreaseXP('crafting')">-</button>
                 <button class="skill-btn" onclick="increaseXP('crafting')">+</button>
-              <span id="crafting-skill">{{character.sk_crafting}}| XP: <span id="crafting-xp-tracker"></span></span>
-              <div class="border-bottom border-dark mt-3 mb-1"></div>
+              <span id="crafting-skill">{{character.sk_crafting}}| xp: <span id="crafting-xp-tracker"></span></span>
+              <div class="mt-3 mb-1"></div>
             </div>
                     
                   </div>
@@ -321,232 +266,233 @@
                     <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
                      
                     </div>
+                    
+                    <!-- Agility -->
                     <div>
-                      <h1 id="agility" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-                      <p class="fs-5">Agi</p>
+                      <h1 class="fs-6">{{character.agility}}</h1>
+                      <h1 id="agility" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
+                      <h1 class="fs-6 fw-bold pb-2">Agility</h1>
                       <p class="border-bottom border-dark mb-1">Slashing Melee</p>
                       <button id="slashing" class="skill-btn" onclick="decreaseXP('slashing')">-</button>
                         <button class="skill-btn" onclick="increaseXP('slashing')">+</button>
-                      <span id="slashing-skill">{{character.sk_slashingmelee}} | XP: <span id="slashing-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="slashing-skill">{{character.sk_slashingmelee}} | xp: <span id="slashing-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
         
                       <p class="border-bottom border-dark mb-1">Pistols</p>
                       <button id="pistols" class="skill-btn" onclick="decreaseXP('pistols')">-</button>
                         <button class="skill-btn" onclick="increaseXP('pistols')">+</button>
-                      <span id="pistols-skill">{{character.sk_pistols}}| XP: <span id="pistols-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="pistols-skill">{{character.sk_pistols}}| xp: <span id="pistols-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Archery</p>
                       <button id="archery" class="skill-btn" onclick="decreaseXP('archery')">-</button>
                         <button class="skill-btn" onclick="increaseXP('archery')">+</button>
-                      <span id="archery-skill">{{character.sk_archery}} | XP: <span id="archery-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="archery-skill">{{character.sk_archery}} | xp: <span id="archery-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Ropework</p>
                       <button id="ropework" class="skill-btn" onclick="decreaseXP('ropework')">-</button>
                         <button class="skill-btn" onclick="increaseXP('ropework')">+</button>
-                      <span id="ropework-skill">{{character.sk_ropework}} | XP: <span id="ropework-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="ropework-skill">{{character.sk_ropework}} | xp: <span id="ropework-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Acrobatics</p>
                       <button id="acrobatics" class="skill-btn" onclick="decreaseXP('acrobatics')">-</button>
                         <button class="skill-btn" onclick="increaseXP('acrobatics')">+</button>
-                      <span id="acrobatics-skill">{{character.sk_acrobatics}}| XP: <span id="acrobatics-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="acrobatics-skill">{{character.sk_acrobatics}}| xp: <span id="acrobatics-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
 
                       <p class="border-bottom border-dark mb-1">Sneak</p>
                       <button id="sneak" class="skill-btn" onclick="decreaseXP('sneak')">-</button>
                         <button class="skill-btn" onclick="increaseXP('sneak')">+</button>
-                      <span id="sneak-skill">{{character.sk_sneak}}| XP: <span id="sneak-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="sneak-skill">{{character.sk_sneak}}| xp: <span id="sneak-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
 
                       <p class="border-bottom border-dark mb-1">Thievery</p>
                       <button id="thievery" class="skill-btn" onclick="decreaseXP('thievery')">-</button>
                         <button class="skill-btn" onclick="increaseXP('thievery')">+</button>
-                      <span id="thievery-skill">{{character.sk_thievery}}| XP: <span id="thievery-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="thievery-skill">{{character.sk_thievery}}| xp: <span id="thievery-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                     </div>
                   </div>
                   <div class="col d-flex align-items-start">
                     <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
                       
                     </div>
+                    
+                    <!-- Gumption -->
                     <div>
-                      <h1 id="gumption" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-                      <p class="fs-5">Gum</p>
+                      <h1 class="fs-6">{{character.gumption}}</h1>
+                      <h1 id="gumption" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
+                      <h1 class="fs-6 fw-bold pb-2">Gumption</h1>
                       <p class="border-bottom border-dark mb-1">Intimidation</p>
                       <button id="intimidation" class="skill-btn" onclick="decreaseXP('intimidation')">-</button>
                         <button class="skill-btn" onclick="increaseXP('intimidation')">+</button>
-                      <span id="intimidation-skill">{{character.sk_intimidation}} | XP: <span id="intimidation-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="intimidation-skill">{{character.sk_intimidation}} | xp: <span id="intimidation-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
         
                       <p class="border-bottom border-dark mb-1">Hunting</p>
                       <button id="hunting" class="skill-btn" onclick="decreaseXP('hunting')">-</button>
                         <button class="skill-btn" onclick="increaseXP('hunting')">+</button>
-                      <span id="hunting-skill">{{character.sk_hunting}}| XP: <span id="hunting-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="hunting-skill">{{character.sk_hunting}}| xp: <span id="hunting-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Cooking</p>
                       <button id="cooking" class="skill-btn" onclick="decreaseXP('cooking')">-</button>
                         <button class="skill-btn" onclick="increaseXP('cooking')">+</button>
-                      <span id="cooking-skill">{{character.sk_cooking}} | XP: <span id="cooking-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="cooking-skill">{{character.sk_cooking}} | xp: <span id="cooking-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Foraging</p>
                       <button id="foraging" class="skill-btn" onclick="decreaseXP('foraging')">-</button>
                         <button class="skill-btn" onclick="increaseXP('foraging')">+</button>
-                      <span id="foraging-skill">{{character.sk_foraging}} | XP: <span id="foraging-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="foraging-skill">{{character.sk_foraging}} | xp: <span id="foraging-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Animal Handling</p>
                       <button id="animal" class="skill-btn" onclick="decreaseXP('animal')">-</button>
                         <button class="skill-btn" onclick="increaseXP('animal')">+</button>
-                      <span id="animal-skill">{{character.sk_animalhandling}}| XP: <span id="animal-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="animal-skill">{{character.sk_animalhandling}}| xp: <span id="animal-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                     </div>
                   </div>
                   <div class="col d-flex align-items-start">
                     <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
                       
                     </div>
+                    
+                    <!-- Intelligence -->
                     <div>
-                      <h1 id="intelligence" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-                      <p class="fs-5">Int</p>
+                      <h1 class="fs-6">{{character.intelligence}}</h1>
+                      <h1 id="intelligence" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
+                      <h1 class="fs-6 fw-bold pb-2">Intelligence</h1>
                       <p class="border-bottom border-dark mb-1">Rifles</p>
                       <button id="rifles" class="skill-btn" onclick="decreaseXP('rifles')">-</button>
                         <button class="skill-btn" onclick="increaseXP('rifles')">+</button>
-                      <span id="rifles-skill">{{character.sk_rifles}} | XP: <span id="rifles-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="rifles-skill">{{character.sk_rifles}} | xp: <span id="rifles-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
         
                       <p class="border-bottom border-dark mb-1">Intuition</p>
                       <button id="intuition" class="skill-btn" onclick="decreaseXP('intuition')">-</button>
                         <button class="skill-btn" onclick="increaseXP('intuition')">+</button>
-                      <span id="intuition-skill">{{character.sk_intuition}}| XP: <span id="intuition-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="intuition-skill">{{character.sk_intuition}}| xp: <span id="intuition-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Investigation</p>
                       <button id="investigation" class="skill-btn" onclick="decreaseXP('investigation')">-</button>
                         <button class="skill-btn" onclick="increaseXP('investigation')">+</button>
-                      <span id="investigation-skill">{{character.sk_investigation}} | XP: <span id="investigation-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="investigation-skill">{{character.sk_investigation}} | xp: <span id="investigation-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Brewing</p>
                       <button id="brewing" class="skill-btn" onclick="decreaseXP('brewing')">-</button>
                         <button class="skill-btn" onclick="increaseXP('brewing')">+</button>
-                      <span id="brewing-skill">{{character.sk_brewing}} | XP: <span id="brewing-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="brewing-skill">{{character.sk_brewing}} | xp: <span id="brewing-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Galvanism Magic</p>
                       <button id="galvanism" class="skill-btn" onclick="decreaseXP('galvanism')">-</button>
                         <button class="skill-btn" onclick="increaseXP('galvanism')">+</button>
-                      <span id="galvanism-skill">{{character.sk_galvanismmagic}}| XP: <span id="galvanism-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="galvanism-skill">{{character.sk_galvanismmagic}}| xp: <span id="galvanism-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                     </div>
                   </div>
                   <div class="col d-flex align-items-start">
                     <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
                      
                     </div>
+                    
+                    <!-- Mysticism -->
                     <div>
-                      <h1 id="mysticism" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-                      <p class="fs-5">Mys</p>
+                      <h1 class="fs-6">{{character.mysticism}}</h1>
+                      <h1 id="mysticism" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
+                      <h1 class="fs-6 fw-bold pb-2">Mysticism</h1>
                       <p class="border-bottom border-dark mb-1">Religion</p>
                       <button id="religion" class="skill-btn" onclick="decreaseXP('religion')">-</button>
                         <button class="skill-btn" onclick="increaseXP('religion')">+</button>
-                      <span id="religion-skill">{{character.sk_religion}} | XP: <span id="religion-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="religion-skill">{{character.sk_religion}} | xp: <span id="religion-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
         
                       <p class="border-bottom border-dark mb-1">History</p>
                       <button id="history" class="skill-btn" onclick="decreaseXP('history')">-</button>
                         <button class="skill-btn" onclick="increaseXP('history')">+</button>
-                      <span id="history-skill">{{character.sk_history}}| XP: <span id="history-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="history-skill">{{character.sk_history}}| xp: <span id="history-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Medicine</p>
                       <button id="medicine" class="skill-btn" onclick="decreaseXP('medicine')">-</button>
                         <button class="skill-btn" onclick="increaseXP('medicine')">+</button>
-                      <span id="medicine-skill">{{character.sk_medicine}} | XP: <span id="medicine-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="medicine-skill">{{character.sk_medicine}} | xp: <span id="medicine-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Healing Magic</p>
                       <button id="healing" class="skill-btn" onclick="decreaseXP('healing')">-</button>
                         <button class="skill-btn" onclick="increaseXP('healing')">+</button>
-                      <span id="healing-skill">{{character.sk_healingmagic}} | XP: <span id="healing-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="healing-skill">{{character.sk_healingmagic}} | xp: <span id="healing-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Utility Magic</p>
                       <button id="utility" class="skill-btn" onclick="decreaseXP('utility')">-</button>
                         <button class="skill-btn" onclick="increaseXP('utility')">+</button>
-                      <span id="utility-skill">{{character.sk_utilitymagic}}| XP: <span id="utility-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="utility-skill">{{character.sk_utilitymagic}}| xp: <span id="utility-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
 
                       <p class="border-bottom border-dark mb-1">Absolution Magic</p>
                       <button id="absolution" class="skill-btn" onclick="decreaseXP('absolution')">-</button>
                         <button class="skill-btn" onclick="increaseXP('absolution')">+</button>
-                      <span id="absolution-skill">{{character.sk_absolutionmagic}}| XP: <span id="absolution-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="absolution-skill">{{character.sk_absolutionmagic}}| xp: <span id="absolution-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                     </div>
                   </div>
                   <div class="col d-flex align-items-start">
                     <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
                       
                     </div>
+                    
+                    <!-- Personality -->
                     <div>
-                      <h1 id="personality" class="fs-5 text-body-emphasis border-bottom border-dark"></h1>
-                      <p class="fs-5">Per</p>
+                      <h1 class="fs-6 text-body-emphasis">{{character.personality}}</h1>
+                      <h1 id="personality" class="fs-6 border-bottom border-dark"></h1>
+                      <h1 class="fs-6 fw-bold pb-2">Personality</h1>
                       <p class="border-bottom border-dark mb-1">Foolery</p>
                       <button id="foolery" class="skill-btn" onclick="decreaseXP('foolery')">-</button>
                         <button class="skill-btn" onclick="increaseXP('foolery')">+</button>
-                      <span id="foolery-skill">{{character.sk_foolery}} | XP: <span id="foolery-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="foolery-skill">{{character.sk_foolery}} | xp: <span id="foolery-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
         
                       <p class="border-bottom border-dark mb-1">Persuasion</p>
                       <button id="persuasion" class="skill-btn" onclick="decreaseXP('persuasion')">-</button>
                         <button class="skill-btn" onclick="increaseXP('persuasion')">+</button>
-                      <span id="persuasion-skill">{{character.sk_persuasion}}| XP: <span id="persuasion-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="persuasion-skill">{{character.sk_persuasion}}| xp: <span id="persuasion-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Barter</p>
                       <button id="barter" class="skill-btn" onclick="decreaseXP('barter')">-</button>
                         <button class="skill-btn" onclick="increaseXP('barter')">+</button>
-                      <span id="barter-skill">{{character.sk_barter}} | XP: <span id="barter-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="barter-skill">{{character.sk_barter}} | xp: <span id="barter-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Deception Magic</p>
                       <button id="deception" class="skill-btn" onclick="decreaseXP('deception')">-</button>
                         <button class="skill-btn" onclick="increaseXP('deception')">+</button>
-                      <span id="deception-skill">{{character.sk_deceptionmagic}} | XP: <span id="deception-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="deception-skill">{{character.sk_deceptionmagic}} | xp: <span id="deception-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                       
                       <p class="border-bottom border-dark mb-1">Ritual Magic</p>
                       <button id="ritual" class="skill-btn" onclick="decreaseXP('ritual')">-</button>
                         <button class="skill-btn" onclick="increaseXP('ritual')">+</button>
-                      <span id="ritual-skill">{{character.sk_ritualmagic}}| XP: <span id="ritual-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="ritual-skill">{{character.sk_ritualmagic}}| xp: <span id="ritual-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
 
                       <p class="border-bottom border-dark mb-1">Destruction Magic</p>
                       <button id="destruction" class="skill-btn" onclick="decreaseXP('destruction')">-</button>
                         <button class="skill-btn" onclick="increaseXP('destruction')">+</button>
-                      <span id="destruction-skill">{{character.sk_destructionmagic}}| XP: <span id="destruction-xp-tracker"></span></span>
-                      <div class="border-bottom border-dark mt-3 mb-1"></div>
+                      <span id="destruction-skill">{{character.sk_destructionmagic}}| xp: <span id="destruction-xp-tracker"></span></span>
+                      <div class="mt-3 mb-1"></div>
                     </div>
                   </div>
                  </div>
-      </div>
-      <div class="d-flex justify-content-center mt-2">
-      <button type="button" class="btn btn-success ms-5">Finish and create!</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-
-<div class="controls">
-  <button class="control-btn" id="prevBtn">Previous</button>
-  <button class="control-btn" id="nextBtn">Next</button>
-</div>
-</div>
+   
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script >
@@ -573,10 +519,53 @@ function decrease(id) {
 
     amountSpan.textContent = currentValue.toFixed(1);
 }
-        
+ 
+// HP adjustments
+function hpup(id) {
+    const amountSpan = document.getElementById(`${id}-amount`);
+    let currentValue = parseFloat(amountSpan.textContent);
+
+    currentValue += 1;
+
+    amountSpan.textContent = currentValue.toFixed(1);
+}
+
+function hpdown(id) {
+    const amountSpan = document.getElementById(`${id}-amount`);
+    let currentValue = parseFloat(amountSpan.textContent);
+
+    currentValue -= 1;
+
+    if (currentValue < 0) {
+        currentValue = 0;
+    }
+
+    amountSpan.textContent = currentValue.toFixed(1);
+}
+
+function hpup5(id) {
+    const amountSpan = document.getElementById(`${id}-amount`);
+    let currentValue = parseFloat(amountSpan.textContent);
+
+    currentValue += 5;
+
+    amountSpan.textContent = currentValue.toFixed(1);
+}
+
+function hpdown5(id) {
+    const amountSpan = document.getElementById(`${id}-amount`);
+    let currentValue = parseFloat(amountSpan.textContent);
+
+    currentValue -= 5;
+
+    if (currentValue < 0) {
+        currentValue = 0;
+    }
+
+    amountSpan.textContent = currentValue.toFixed(1);
+}
 
 // Initialize skill levels and XP for each skill
-
 let skills
 
 async function getData() {
@@ -645,6 +634,7 @@ if (level < 16) {
 }
 }
 
+// XP UI
 function updateUI(skill) {
 const skillData = skills[skill];
 const requiredXP = getRequiredXP(skillData.level);

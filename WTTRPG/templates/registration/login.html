@@ -3,19 +3,19 @@
 {% load static %}
 
 {% if form.errors %}
-  <p>your username or password was incorrect</p>
+  <p>Username or password is incorrect</p>
 {% endif %}
 
 {% if next %}
   {% if user.is_authenticated %}
     <p>You don't have permission to see this page</p>
   {% else %}
-    <p>Please login to see this page</p>
+    <p>Please login</p>
 {% endif %}
 {% endif %}
-<body style="background-color: #bf7e04;">
-    <div class="col-md-10 mx-auto my-5 col-lg-5">
-      <h2 class="pb-2 border-bottom">Sign-in</h2>
+<body>
+  <div class="container" style="background-color: #F9E49A;">
+    <div class=" container mx-auto my-5 col-lg-5">
       <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post" action="{% url 'login'%}">
         {% csrf_token %}
         {{form.as_p}}
@@ -24,10 +24,11 @@
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-        <button class="w-100 btn btn-lg btn-primary mb-2" value="login" type="submit">Sign-in</button>
+        <button class="w-100 btn btn-lg btn-primary mb-2" value="login" type="submit">Login</button>
         <hr class="my-4">
         <input type="hidden" name="next" value="{{next}}">
       </form>
     </div>
+  </div>
 
 {% endblock content %}

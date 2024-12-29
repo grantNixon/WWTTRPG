@@ -1,12 +1,25 @@
-<h1>Quick Start Character Creator</h1>
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
 
-<div>
-    <form action="" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Create">
-</form>
-</div>
+<body class="d-flex flex-column min-vh-100" style="background-color: #226150;">
+<div class="container" style="background-color: #F9E49A;">
+    <h4 class="text-center mb-2 text-decoration-underline">Quick Start Character Creator</h4>
+    <p class="text-center mb-2 border-bottom border-dark">Major skills start at 25, minor at 15, the rest at 5<br />
+    Str.= Movement<br />
+    Agi.= Evasion chance<br />
+    Gum.= Health<br />
+    Int.= Awareness<br />
+    Mys.= Spell slots<br />
+    Per.= Prices & spell slots</p>
+    <div class="text-center fw-bold">
+        <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="mt-2 mb-2 justify-content-center btn text-white" style="background-color: #226150;" type="submit" value="Create">
+        </form>
+        </div>
+    </div>
+</body>
 
 {% load static %}
 <link rel="stylesheet" href="{% static 'create/character_form.css' %}">
@@ -95,3 +108,6 @@
 
 
 </script>
+
+
+{% endblock content%}
