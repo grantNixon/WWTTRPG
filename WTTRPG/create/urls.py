@@ -12,5 +12,6 @@ urlpatterns = [
     path('update_skills', views.update_skills, name="update_skills"),
     path('retrieve_skills', views.retrieve_skills, name="retrieve_skills"),
     path('character_list/',CharacterListView.as_view(), name="character_list"),
-    path('test_packet/', views.download_testpacket, name = 'test_packet') 
+    path('test_packet/', views.download_testpacket, name = 'test_packet'),
+    path('user_profile/', UserProfileView.as_view(), name= 'user_profile') 
 ]

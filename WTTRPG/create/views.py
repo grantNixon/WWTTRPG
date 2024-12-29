@@ -16,6 +16,7 @@ import csv
 from django.contrib.auth import authenticate, login
 from django.http import FileResponse
 from .models import TestPacketFile
+from django.contrib.auth.decorators import login_required
 
 
 def bulk_DB_upload():
@@ -196,4 +197,10 @@ def retrieve_skills(request):
        return JsonResponse(response_string)
     else:
         return JsonResponse({'status':'error'})
+
+class UserProfileView(LoginRequiredMixin, DetailView): 
+    model = User
+    template_name = "user_detail.html"
     
+    def get_object(self): 
+        return self.request.user
