@@ -9,11 +9,9 @@ variables:
 
 steps:
 # Set up Python environment
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.x'  # Use a more general version spec
-    disableDownloadFromRegistry: false
-    githubToken: '$(ght)'  # Add GitHub token if downloading from GitHub Actions registry
+- script: |
+    python --version
+  displayName: 'Check Python version'
 
 # Install dependencies
 - script: |
