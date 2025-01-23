@@ -4,6 +4,8 @@ trigger:
       - dev
 
 pool: 'my-PC'
+variables:
+  - group: vg  # Link the variable group
 
 steps:
 # Set up Python environment
