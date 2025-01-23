@@ -39,7 +39,7 @@ steps:
   inputs:
     source: 'current'
     artifact: 'drop'
-    path: '$(Pipeline.Workspace)'
+    path: '$(Pipeline.Workspace)/drop/'
 
 # Deploy to Azure App Service
 - task: AzureRmWebAppDeployment@4
