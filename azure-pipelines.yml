@@ -4,18 +4,14 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
 trigger:
-- main
+- dev
 
 pool:
   vmImage: ubuntu-latest
 strategy:
   matrix:
-    Python38:
-      PYTHON_VERSION: '3.8'
-    Python39:
-      PYTHON_VERSION: '3.9'
-    Python310:
-      PYTHON_VERSION: '3.10'
+    Python311:
+      PYTHON_VERSION: '3.11'
   maxParallel: 1
 
 steps:
@@ -29,12 +25,11 @@ steps:
     pip install -r requirements.txt
   displayName: 'Install prerequisites'
 
-- script: |
-    python manage.py test
-  displayName: 'Run tests'
 
-- task: PublishTestResults@2
+- task: AzureRmWebAppDeployment@4
   inputs:
-    testResultsFiles: '**/TEST-*.xml'
-    testRunTitle: 'Python $(PYTHON_VERSION)'
-  condition: succeededOrFailed()
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'gumption-webapp(2154975a-cbdf-4bb8-8d44-a6134adb9acf)'
+    appType: 'webAppLinux'
+    WebAppName: 'gumption-dev'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
