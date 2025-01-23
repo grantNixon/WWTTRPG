@@ -6,11 +6,6 @@ trigger:
 pool: 'my-PC'
 
 steps:
-# Set up Python environment
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.11.9'
-    disableDownloadFromRegistry: true
 
 # Install dependencies
 - script: |
