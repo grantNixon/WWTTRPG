@@ -11,7 +11,7 @@ steps:
   inputs:
     versionSpec: '3.11'  # Use a more general version spec
     disableDownloadFromRegistry: false
-    githubToken: '$(Github.Token)'  # Add GitHub token if downloading from GitHub Actions registry
+    githubToken: $(ght)  # Add GitHub token if downloading from GitHub Actions registry
 
 # Install dependencies
 - script: |
