@@ -9,7 +9,7 @@ steps:
 # Set up Python environment
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '3.11'
+    versionSpec: '3.11.9'
 
 # Install dependencies
 - script: |
