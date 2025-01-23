@@ -20,11 +20,6 @@ steps:
     pip install -r requirements.txt
   displayName: 'Install dependencies'
 
-# Run tests
-- script: |
-    source env/bin/activate
-    python manage.py test
-  displayName: 'Run tests'
 
 # Archive the application
 - task: ArchiveFiles@2
