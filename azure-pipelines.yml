@@ -1,35 +1,55 @@
-# Python Django
-# Test a Django project on multiple versions of Python.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/python
-
 trigger:
-- dev
+  branches:
+    include:
+      - dev
 
-pool:
-  vmImage: ubuntu-latest
-strategy:
-  matrix:
-    Python311:
-      PYTHON_VERSION: '3.11'
-  maxParallel: 1
+pool: 'my-PC'
 
 steps:
+# Set up Python environment
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '$(PYTHON_VERSION)'
-    architecture: 'x64'
+    versionSpec: '3.11'
 
+# Install dependencies
 - script: |
-    python -m pip install --upgrade pip
+    python -m venv env
+    source env/bin/activate
     pip install -r requirements.txt
-  displayName: 'Install prerequisites'
+  displayName: 'Install dependencies'
 
+# Run tests
+- script: |
+    source env/bin/activate
+    python manage.py test
+  displayName: 'Run tests'
 
+# Archive the application
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+# Publish the artifact
+- publish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+  artifact: drop
+
+# Download the artifact
+- task: DownloadPipelineArtifact@2
+  inputs:
+    source: 'current'
+    artifact: 'drop'
+    path: '$(Pipeline.Workspace)'
+
+# Deploy to Azure App Service
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'gumption-webapp(2154975a-cbdf-4bb8-8d44-a6134adb9acf)'
     appType: 'webAppLinux'
     WebAppName: 'gumption-dev'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(Pipeline.Workspace)/drop/*.zip'
+    RuntimeStack: 'PYTHON|3.11'
