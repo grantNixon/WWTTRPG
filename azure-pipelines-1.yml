@@ -1,23 +1,55 @@
 trigger:
-- dev
+  branches:
+    include:
+      - dev
 
-pool: my-PC
-
+pool: 'my-PC'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+# Set up Python environment
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
 
+# Install dependencies
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    python -m venv env
+    source env/bin/activate
+    pip install -r requirements.txt
+  displayName: 'Install dependencies'
 
+# Run tests
+- script: |
+    source env/bin/activate
+    python manage.py test
+  displayName: 'Run tests'
+
+# Archive the application
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+
+# Publish the artifact
+- publish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+  artifact: drop
+
+# Download the artifact
+- task: DownloadPipelineArtifact@2
+  inputs:
+    source: 'current'
+    artifact: 'drop'
+    path: '$(Pipeline.Workspace)'
+
+# Deploy to Azure App Service
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'gumption-webapp(2154975a-cbdf-4bb8-8d44-a6134adb9acf)'
     appType: 'webAppLinux'
     WebAppName: 'gumption-dev'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(Pipeline.Workspace)/drop/*.zip'
     RuntimeStack: 'PYTHON|3.11'
