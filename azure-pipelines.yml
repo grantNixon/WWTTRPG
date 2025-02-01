@@ -16,10 +16,6 @@ variables:
   VIRTUALENV_NAME: 'genv'
 
 steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '$(PYTHON_VERSION)'
-    addToPath: true
 
 - script: python -m venv $(VIRTUALENV_NAME)
   displayName: 'Create virtual environment'
