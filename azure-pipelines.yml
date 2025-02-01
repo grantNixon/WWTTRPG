@@ -40,11 +40,10 @@ steps:
     path: '$(Pipeline.Workspace)/drop/'
 
 # Deploy to Azure App Service
-- task: AzureRmWebAppDeployment@4
+- task: AzureWebApp@1
   inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'gumption-webapp(2154975a-cbdf-4bb8-8d44-a6134adb9acf)'
-    appType: 'webAppLinux'
-    WebAppName: 'gumption-dev'
-    packageForLinux: '$(Pipeline.Workspace)/drop/*.zip'
-    RuntimeStack: 'PYTHON|3.11'
+    azureSubscription: 'gumption-webapp(2154975a-cbdf-4bb8-8d44-a6134adb9acf)' # Replace with your Azure subscription name
+    appType: 'webApp'
+    appName: '$(AZURE_WEBAPP_NAME)'
+    package: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    startupCommand: 'source $(VIRTUALENV_NAME)/bin/activate && gunicorn $(DJANGO_SETTINGS_MODULE):application --bind 0.0.0.0:8001 --timeout 600'
