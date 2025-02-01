@@ -10,7 +10,7 @@ pool:
 
 
 variables:
-  AZURE_WEBAPP_NAME: 'your-webapp-name' # Replace with your web app name
+  AZURE_WEBAPP_NAME: 'gumption' # Replace with your web app name
   PYTHON_VERSION: '3.11' # Replace with your Python version
   DJANGO_SETTINGS_MODULE: 'WTTRPG.settings' # Replace with your Django settings module
   VIRTUALENV_NAME: 'genv'
