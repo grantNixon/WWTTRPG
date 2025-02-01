@@ -3,28 +3,38 @@ trigger:
     include:
       - dev
 
-pool: 'my-PC'
+pool:
+  name: 'my-PC'
+  demands:
+    - agent.name -equals 'GRANTY-PC' # Replace with your self-hosted agent name
+
+variables:
+  AZURE_WEBAPP_NAME: 'your-webapp-name' # Replace with your web app name
+  PYTHON_VERSION: '3.8' # Replace with your Python version
+  DJANGO_SETTINGS_MODULE: 'your_project_name.settings' # Replace with your Django settings module
+  VIRTUALENV_NAME: 'env'
 
 steps:
-# Set up Python environment
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '3.11'
+    versionSpec: '$(PYTHON_VERSION)'
+    addToPath: true
 
-# Install dependencies
+- script: python -m venv $(VIRTUALENV_NAME)
+  displayName: 'Create virtual environment'
+
 - script: |
-    python -m venv env
-    source env/bin/activate
+    source $(VIRTUALENV_NAME)/bin/activate
+    pip install --upgrade pip
     pip install -r requirements.txt
   displayName: 'Install dependencies'
 
-# Run tests
 - script: |
-    source env/bin/activate
-    python manage.py test
-  displayName: 'Run tests'
+    source $(VIRTUALENV_NAME)/bin/activate
+    python manage.py collectstatic --noinput
+    python manage.py migrate
+  displayName: 'Run Django management commands'
 
-# Archive the application
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
@@ -33,23 +43,15 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
 
-# Publish the artifact
-- publish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+- upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
   artifact: drop
 
-# Download the artifact
-- task: DownloadPipelineArtifact@2
+- task: AzureWebApp@1
   inputs:
-    source: 'current'
-    artifact: 'drop'
-    path: '$(Pipeline.Workspace)'
+    azureSubscription: 'gumption-webapp(2154975a-cbdf-4bb8-8d44-a6134adb9acf)' # Replace with your Azure subscription name
+    appType: 'webApp'
+    appName: '$(AZURE_WEBAPP_NAME)'
+    package: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    startupCommand: 'source $(VIRTUALENV_NAME)/bin/activate && gunicorn $(DJANGO_SETTINGS_MODULE):application --bind 0.0.0.0:8001 --timeout 600'
 
-# Deploy to Azure App Service
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'gumption-webapp(2154975a-cbdf-4bb8-8d44-a6134adb9acf)'
-    appType: 'webAppLinux'
-    WebAppName: 'gumption-dev'
-    packageForLinux: '$(Pipeline.Workspace)/drop/*.zip'
-    RuntimeStack: 'PYTHON|3.11'
+
