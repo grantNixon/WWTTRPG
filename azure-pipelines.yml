@@ -5,8 +5,7 @@ trigger:
 
 pool:
   name: 'my-PC'
-  demands:
-    - agent.name -equals 'GRANTY-PC' # Replace with your self-hosted agent name
+
 
 variables:
   AZURE_WEBAPP_NAME: 'your-webapp-name' # Replace with your web app name
