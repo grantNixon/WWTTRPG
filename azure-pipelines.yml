@@ -5,6 +5,8 @@ trigger:
 
 pool:
   name: 'my-PC'
+  variables:
+  - group: vg  # Link the variable group
 
 
 variables:
