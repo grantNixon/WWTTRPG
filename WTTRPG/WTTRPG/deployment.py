@@ -7,7 +7,7 @@ from .settings import BASE_DIR
 ALLOWED_HOSTS = ['gumption-dev-hmbferejfsd2c8ct.canadacentral-01.azurewebsites.net']
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['WEBSITE_HOSTNAME']]
 DEBUG = False
-
+SECRET_KEY = os.environ['MY_SECRET_KEY']
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -23,7 +23,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 connection_string = os.environ['AZURE_POSTGRESQL_CONNECTIONSTRING']
-params = {pair.split('='):pair.split('=')[1] for pair in connection_string.split(' ')}
+params = {pair.split('=')[0]:pair.split('=')[1] for pair in connection_string.split(' ')}
 
 DATABASES =  {
     'default': {
