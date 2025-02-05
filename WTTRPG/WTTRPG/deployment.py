@@ -2,6 +2,8 @@ import os
 from .settings import *
 from .settings import BASE_DIR
 
+
+
 ALLOWED_HOSTS = ['gumption-dev-hmbferejfsd2c8ct.canadacentral-01.azurewebsites.net']
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['WEBSITE_HOSTNAME']]
 DEBUG = False
