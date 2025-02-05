@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from .settings import *
 from .settings import BASE_DIR
 
@@ -8,6 +9,21 @@ ALLOWED_HOSTS = ['gumption-dev-hmbferejfsd2c8ct.canadacentral-01.azurewebsites.n
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['WEBSITE_HOSTNAME']]
 DEBUG = False
 SECRET_KEY = os.environ['MY_SECRET_KEY']
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'home_page.apps.HomePageConfig',
+    'create.apps.CreateConfig',
+    'guides.apps.GuidesConfig',
+    'homebrew.apps.HomebrewConfig',
+
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
