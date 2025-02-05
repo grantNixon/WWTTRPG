@@ -7,7 +7,7 @@ from .settings import BASE_DIR
 
 ALLOWED_HOSTS = ['gumption-dev-hmbferejfsd2c8ct.canadacentral-01.azurewebsites.net']
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['WEBSITE_HOSTNAME']]
-DEBUG = False
+DEBUG = True
 SECRET_KEY = os.environ['MY_SECRET_KEY']
 
 INSTALLED_APPS = [
