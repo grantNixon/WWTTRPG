@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-w4-%c87%y(9@#c9*egp6xv1)y=gyyv%voqa1*tdqk-qqry_w9e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['gumption-dev-hmbferejfsd2c8ct.canadacentral-01.azurewebsites.net']
+ALLOWED_HOSTS = ['gumption-dev-hmbferejfsd2c8ct.canadacentral-01.azurewebsites.net','127.0.0.1']
 
 
 # Application definition
@@ -129,7 +129,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = '/home_page'
+LOGIN_REDIRECT_URL = '/'
 
-LOGOUT_REDIRECT_URL = '/home_page'
+LOGOUT_REDIRECT_URL = '/'
 
