@@ -5,7 +5,7 @@ from .settings import BASE_DIR
 
 
 
-ALLOWED_HOSTS = ['gumption-dev-hmbferejfsd2c8ct.canadacentral-01.azurewebsites.net']
+ALLOWED_HOSTS = ['gumption-dev-hmbferejfsd2c8ct.canadacentral-01.azurewebsites.net', 'gumptionrpg.com']
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ['WEBSITE_HOSTNAME']]
 DEBUG = True
 SECRET_KEY = os.environ['MY_SECRET_KEY']
