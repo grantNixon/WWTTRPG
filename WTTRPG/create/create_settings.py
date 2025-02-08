@@ -3,7 +3,7 @@ class Races():
     races = ["Valley Human", "Forest Human", " Seven-Banded Armadill", "Five-Banded Armadill", "Village Hillock", "Stone Hillock", "Short-tailed Folinn", "Long-tailed Folinn", "Smooth Shikasa", "Rigid Shikasa", "Onyx Bak'wa", "Mossy Bak'wa","Roaming Egriss", "Lotus Grove Egriss","Solid Bolibar", "Speckled Bolibar","Triadic Cincindel", "Analogous Cincindel","Anointed Ambaazi", "Lost Ambaazi", "Desert Latran", "Mesa Latran", "Long-Haired Margart", "Short-Haired Margart"]
 
 class Backgrounds():
-    backgrounds = ["Cowboy", "Bounty Hunter", "Snake Oil Salesman", "Doctor", "Elemental Fella", "Wilderness Guide", "Worshipper", "Missionary", "Chef"
+    backgrounds = ["Cowboy", "Bounty Hunter", "Snake Oil Salesman", "Doctor", "Elemental Fella", "Wilderness Guide", "Worshipper", "Missionary", "Chef",
                    "Alchemist", "Ex-convict","Shockstone Scholar","Assassin",]
     
 class PointBuy():
