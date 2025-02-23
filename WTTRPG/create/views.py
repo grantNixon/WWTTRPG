@@ -40,7 +40,7 @@ def download_testpacket(request):
     return response
 
 def download_oneshot(request):
-    uploaded_file = OneShotFile.objects.get(pk=1)
+    uploaded_file = OneShotFile.objects.get(pk=2)
     response = FileResponse(uploaded_file.tpFile, content_type='application/force-download')
     response['Content-Disposition'] = f'attachment; filename={uploaded_file.tpFile.name}'
     return response
