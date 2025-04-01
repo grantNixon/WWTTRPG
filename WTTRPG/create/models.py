@@ -24,6 +24,10 @@ class TestPacketFile(models.Model):
     tpFile = models.FileField(upload_to="create/files")
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
+class OneShotFile(models.Model):
+    tpFile = models.FileField(upload_to="create/files")
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
 class Language(models.Model):
     languageName = models.CharField(max_length = 30)
     languageDescription = models.CharField(max_length = 300)

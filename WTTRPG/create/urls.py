@@ -13,5 +13,6 @@ urlpatterns = [
     path('retrieve_skills', views.retrieve_skills, name="retrieve_skills"),
     path('character_list/',CharacterListView.as_view(), name="character_list"),
     path('test_packet/', views.download_testpacket, name = 'test_packet'),
+    path('oneshot/', views.download_oneshot, name = 'oneshot'),
     path('user_profile/', UserProfileView.as_view(), name= 'user_profile') 
 ]
