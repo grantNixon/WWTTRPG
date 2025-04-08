@@ -952,6 +952,167 @@ function trackSkillLevelUp() {
     }
 }
 
+        function applyBackgroundBonuses(background) {
+    const bonuses = {
+        Cowboy: {
+            pistols: 5,
+            rifles: 5,
+            ropework: 5,
+            history: -5,
+            foolery: -5,
+            sneak: -5,
+        },
+        Rancher: {
+            animal: 5,
+            crafting: 5,
+            ropework: 5,
+            deception: -5,
+            healing: -5,
+            utility: -5,
+            absolution: -5,
+            galvanism: -5,
+            ritual: -5,
+            destruction: -5,
+        },
+        'Bounty Hunter': {
+            intuition: 5,
+            investigation: 5,
+            religion: -5,
+            healing: -5,
+            performance: -5,
+        },
+        Alchemist: {
+            brewing: 10,
+            foraging: 10,
+            foolery: -5,
+            intimidation: -5,
+            crafting: -5,
+        },
+        Assassin: {
+            sneak: 5,
+            acrobatics: 5,
+            pistols: 5,
+            repair: -5,
+            crafting: -5,
+            shotguns: -5,
+        },
+        Chef: {
+            cooking: 10,
+            slashing: 5,
+            crushing: 5,
+            archery: -5,
+            rifles: -5,
+            pistols: -5,
+        },
+        Doctor: {
+            medicine: 10,
+            slashing: 5,
+            archery: -5,
+            rifles: -5,
+            pistols: -5,
+            shotguns: -5,
+            crushing: -5,
+            hand: -5,
+        },
+        'Ex-convict': {
+            hand: 5,
+            slashing: 10,
+            religion: 5,
+            foolery: -5,
+            foraging: -5,
+            persuasion: -5,
+        },
+        'Elemental Fella': {
+        },
+        'Galvanism Scholar': {
+            galvanism: 15,
+            deception: -5,
+            healing: -5,
+            utility: -5,
+            absolution: -5,
+            ritual: -5,
+            destruction: -5,
+        },
+        Carpenter: {
+            crafting: 15,
+            deception: -5,
+            healing: -5,
+            utility: -5,
+            absolution: -5,
+            ritual: -5,
+            destruction: -5,
+            galvanism: -5,
+        },
+        'Snake Oil Salesman': {
+            foolery: 5,
+            persuasion: 5,
+            barter: 5,
+            pistols: -5,
+            rifles: -5,
+            archery: -5,
+        },
+        'Wilderness Guide': {
+        },
+        Worshipper: {
+            ritual: 5,
+            destruction: 5,
+            deception: 5,
+            persuasion: 5,
+            mysticism: -5,
+        },
+        Shopkeep: {
+            barter: 10,
+            crafting: 10,
+            shotguns: 5,
+            cooking: -5,
+            hunting: -5,
+            animal: -5,
+        },
+        Missionary: {
+            healing: 5,
+            utility: 5,
+            absolution: 5,
+            ritual: -5,
+            destruction: -5,
+            deception: -5,
+        },
+        Luddite: {
+            crushing: 5,
+            slashing: 5,
+            hand: 5,
+            ropework: 5,
+            archery: 5,
+            rifles: -5,
+            pistols: -5,
+            shotguns: -5,
+        },
+        'Street Urchin': {
+            thievery: 5,
+            sneak: 5,
+            foolery: 5,
+            healing: -5,
+            utility: -5,
+            absolution: -5,
+            ritual: -5,
+            destruction: -5,
+            galvanism: -5,
+            history: -5
+        },
+    };
+
+    const bg = bonuses[background];
+    if (!bg) return;
+
+    for (let skill in bg) {
+        if (skills[skill]) {
+            skills[skill].level += bg[skill];
+            // Prevent levels going below 0 or above 100
+            skills[skill].level = Math.max(0, Math.min(100, skills[skill].level));
+            updateUI(skill); // update skill display
+        }
+    }
+}
+
 
 </script>
 
