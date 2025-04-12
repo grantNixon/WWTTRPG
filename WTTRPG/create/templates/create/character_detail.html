@@ -174,7 +174,7 @@
                           </li>
                       </ul>
                       <div class="tab-content mt-2" id="myTabContent1">
-                          <div class="tab-pane fade pb-5 show active" id="weapons" role="tabpanel">
+                          <div class="tab-pane fade pb-5 show active" id="weaponManager" role="tabpanel">
                               <button class="btn btn-sm btn-dark btn-secondary" onclick="openWeaponManager()">Manage</button>
                               <ul id="weapon-list">
                                   <li>{{ character.starting_weapon }}</li>
@@ -827,7 +827,12 @@ function openWeaponManager() {
 
   function fetchWeapons() {
     // Load the weapons the character currently has
-    fetch("/api/character/weapons/")  // Update with your Django endpoint
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    fetch("/api/character/weapons/", {
+      method: "POST",
+      body: JSON.stringify({'id':characterPrimaryKey})
+    })  // Update with your Django endpoint
       .then(response => response.json())
       .then(data => {
         const currentWeaponList = document.getElementById("current-weapons");
@@ -912,6 +917,10 @@ function closeLevelUpModal() {
 }
 
 function applyLevelUp() {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    console.log(characterPrimaryKey)
     const attr5 = document.getElementById("attributeIncrease5").value;
     const attr3 = document.getElementById("attributeIncrease3").value;
     
@@ -927,10 +936,24 @@ function applyLevelUp() {
      // Increase character level
      const levelElement = document.getElementById("characterLevel");
     levelElement.textContent = parseInt(levelElement.textContent) + 1;
+
+    fetch('{% url "api:levelup" %}', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': getCSRFToken() 
+    },
+      body: JSON.stringify( {
+        'id':characterPrimaryKey,
+        'major':attr5,
+        'minor':attr3
+      })
+    })
     
     skillLevelUps = 0; // Reset skill level-up counter after leveling up
     closeLevelUpModal();
 }
+
 
 function getRequiredSkillLevelUps(characterLevel) {
     if (characterLevel <= 3) {

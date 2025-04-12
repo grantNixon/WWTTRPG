@@ -100,6 +100,9 @@ class QSCharCreator(LoginRequiredMixin,CreateView):
     def form_valid(self, form):
         Character = form.save(commit=False)
         Character.user = self.request.user  # Set the user field
+        newInv = Inventory.objects.create()
+        Character.inventory = newInv
+        Character.inventory.weapons.append({'name':form.cleaned_data['starting_weapon']})
         Character.level = 1
         stats = self.compute_stats(form.cleaned_data['gumption'],form.cleaned_data['strength'],form.cleaned_data['agility'],1)
         Character.hp = stats.get("hp")
