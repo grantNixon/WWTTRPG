@@ -102,7 +102,9 @@ class QSCharCreator(LoginRequiredMixin,CreateView):
         Character.user = self.request.user  # Set the user field
         newInv = Inventory.objects.create()
         Character.inventory = newInv
-        Character.inventory.weapons.append({'name':form.cleaned_data['starting_weapon']})
+        Character.inventory.weapons.append({'name':str(form.cleaned_data['starting_weapon'])})
+        print(Character.inventory.weapons)
+        Character.inventory.save()
         Character.level = 1
         stats = self.compute_stats(form.cleaned_data['gumption'],form.cleaned_data['strength'],form.cleaned_data['agility'],1)
         Character.hp = stats.get("hp")
@@ -119,6 +121,11 @@ class QSCharCreator(LoginRequiredMixin,CreateView):
             conv_sk = Skills_to_ModelName.skilldic[sk]
             print(conv_sk)
             setattr(Character,conv_sk,15)
+        charBackground = form.cleaned_data['background']
+        bgBonuses = BackgroundBonuses.bonuses[charBackground]
+        for skill, value in bgBonuses.items():
+            currentValue = getattr(Character, skill)
+            setattr(Character, skill, currentValue + value)
         Character.save()        
         return redirect('/create/character_detail/' + str(Character.id))  # Redirect to a success page
 
@@ -160,6 +167,7 @@ def update_skills(request):
     else:
         return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
     
+
 @csrf_exempt
 def retrieve_skills(request):
     if request.method == 'GET':

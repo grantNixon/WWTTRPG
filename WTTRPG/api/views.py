@@ -2,15 +2,19 @@ from django.shortcuts import render
 from create.models import *
 from django.http import HttpResponse
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 import json
 
 # Create your views here.
+@csrf_exempt
 def fetchWeapons(request):
     #return all weapons in current characters inventory
     if request.method == 'POST':
-       primary_key = request.GET.get('id')
+       data = json.loads(request.body)
+       primary_key = data.get('id')
        obj = Character.objects.get(id=primary_key)
-       return JsonResponse(obj.inventory.weapons)
+       print(obj.inventory.weapons)
+       return JsonResponse({'status':'success'})
     else:
         return JsonResponse({'status':'error'})
 

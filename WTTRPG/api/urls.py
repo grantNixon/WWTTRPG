@@ -5,7 +5,7 @@ from .views import *
 app_name = 'api'
 
 urlpatterns = [
-    path('character/fetchWeapons', views.fetchWeapons, name='fetchWeapons'),
+    path('character/weapons', views.fetchWeapons, name='fetchWeapons'),
     path('character/levelUp', views.levelUp, name='levelup'),
     
 
