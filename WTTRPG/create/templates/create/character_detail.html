@@ -16,6 +16,21 @@
           cursor: pointer;
       }
 
+           #weaponManager {
+    display: none;
+    position: top;
+    overflow-y: auto;
+    background-color: #f0d7a8;
+    border: 1px solid #000;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  #weaponManager button {
+    margin-top: 10px;
+  }
+
       </style>
 <div class="page" style="background-color: #f0d7a8;">
   <div class="container">
@@ -175,9 +190,16 @@
                       </ul>
                       <div class="tab-content mt-2" id="myTabContent1">
                           <div class="tab-pane fade pb-5 show active" id="weaponManager" role="tabpanel">
-                              <button class="btn btn-sm btn-dark btn-secondary" onclick="openWeaponManager()">Manage</button>
-                              <ul id="weapon-list">
-                                  <li>{{ character.starting_weapon }}</li>
+                             <button id="weaponToggleButton" class="btn btn-sm btn-dark btn-secondary px-3" onclick="toggleWeaponManager()">Manage</button>
+                              <div id="weaponManager" style="display: none;">                              
+                                <p class="border-bottom border-dark text-dark w-50">Current Weapons</p>
+                                <ul id="current-weapons"></ul>
+                              
+                                <p class="border-bottom border-dark w-50 text-dark">Available Weapons</p>
+                                <ul id="weapon-options"></ul>
+                              </div>
+                              <ul id="current-weapons">
+                                  <li></li>
                               </ul>
                           </div>
                           <div class="tab-pane fade pb-5" id="spells" role="tabpanel">
@@ -879,7 +901,20 @@ function openWeaponManager() {
   function getCSRFToken() {
     return document.querySelector("[name=csrfmiddlewaretoken]").value;
   }
+       // weapon manager toggle
+        function toggleWeaponManager() {
+  const manager = document.getElementById("weaponManager");
+  const button = document.getElementById("weaponToggleButton");
 
+  if (manager.style.display === "none" || manager.style.display === "") {
+    manager.style.display = "block";
+    button.textContent = "Close";
+    fetchWeapons();  // only fetch when opening
+  } else {
+    manager.style.display = "none";
+    button.textContent = "Manage";
+  }
+}
 
 // Initialize UI for all skills
 for (let skill in skills) {
