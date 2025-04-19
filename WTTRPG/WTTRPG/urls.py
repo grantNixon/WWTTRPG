@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from create.views import *
+from api.views import *
 
 
 urlpatterns = [
@@ -27,5 +28,6 @@ urlpatterns = [
     path('guides/',include('guides.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
     path('accounts/signup', SignUpView, name="sign_up"),
+    path('api/', include('api.urls'))
 
 ]

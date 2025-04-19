@@ -61,6 +61,14 @@ class StartingEquipment(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Inventory(models.Model):
+    weapons = models.JSONField(default=list)
+    armors = models.JSONField(default=list)
+    utilities = models.JSONField(default=list)
+    tonics = models.JSONField(default=list)
+
 
 class Character(models.Model):
     name = models.CharField(max_length = 30)
@@ -86,6 +94,7 @@ class Character(models.Model):
     class_name = models.CharField(max_length=30)
     starting_weapon = models.ForeignKey(Weapon, on_delete=models.CASCADE)
     starting_equipment = models.ForeignKey(StartingEquipment, on_delete=models.CASCADE)
+    inventory = models.OneToOneField('Inventory', on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     level = models.IntegerField()
     hp = models.IntegerField()
@@ -185,7 +194,6 @@ class Utilities(models.Model):
 class Skill(models.Model):
     skillName = models.CharField(max_length = 30)
     skillAttribute = models.CharField(max_length = 30)
-
 
 
 
