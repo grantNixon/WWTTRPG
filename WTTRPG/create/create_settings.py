@@ -1,10 +1,9 @@
 
 class Races():
-    races = ["Valley Human", "Forest Human", " Seven-Banded Armadill", "Five-Banded Armadill", "Village Hillock", "Stone Hillock", "Short-tailed Folinn", "Long-tailed Folinn", "Smooth Shikasa", "Rigid Shikasa", "Onyx Bak'wa", "Mossy Bak'wa","Roaming Egriss", "Lotus Grove Egriss","Solid Bolibar", "Speckled Bolibar","Triadic Cincindel", "Analogous Cincindel","Anointed Ambaazi", "Lost Ambaazi", "Desert Latran", "Mesa Latran", "Long-Haired Margart", "Short-Haired Margart"]
+    races = ["Anointed Ambaazi", "Lost Ambaazi", " Seven-Banded Armadill", "Five-Banded Armadill", "Onyx Bak'wa", "Mossy Bak'wa", "Solid Bolibar", "Speckled Bolibar", "Triadic Cincindel", "Analogous Cincindel", "Roaming Egriss", "Lotus Grove Egriss", "Short-tailed Folinn", "Long-tailed Folinn", "Village Hillock", "Stone Hillock", "Valley Human", "Forest Human", "Desert Latran", "Mesa Latran", "Long-Haired Margart", "Short-Haired Margart", "Smooth Shikasa", "Rigid Shikasa"]
 
 class Backgrounds():
-    backgrounds = ["Cowboy", "Rancher", "Bounty Hunter", "Snake Oil Salesman", "Doctor", "Elemental Fella", "Wilderness Guide", "Worshipper", "Missionary", "Chef",
-                   "Alchemist", "Ex-convict","Galvanism Scholar","Assassin", "Carpenter", "Shopkeep", "Luddite", "Street Urchin"]
+    backgrounds = ["Alchemist", "Assassin", "Bounty Hunter", "Carpenter", "Chef", "Cowboy", "Doctor", "Elemental Fella", "Ex-convict", "Galvanism Scholar", "Luddite", "Missionary", "Rancher", "Shopkeep", "Snake Oil Salesman", "Street Urchin", "Wilderness Guide", "Worshipper"]
     
 class PointBuy():
     pointbuys = [30,20,16,15,10,5]
@@ -16,7 +15,7 @@ class Skills():
               "Foolery","Persuasion","Barter","Performance","Deception Magic","Ritual Magic","Destruction Magic"]
     
 class WeaponProfs():
-    weaponprof = {"Crushing Melee","Slashing Melee","Pistols","Rifles","Shotguns","Ropework","Archery","Hand-to-Hand"}
+    weaponprof = {"Crushing Melee","Slashing Melee", "Hand-to-Hand","Ropework","Archery","Pistols","Rifles","Shotguns"}
 
 class Skills_to_ModelName():
     skilldic = {"Shotguns":"sk_shotguns","Crushing Melee":"sk_crushing", "Hand-to-Hand":"sk_hand","Athletics":"sk_athletics","Crafting":"sk_crafting","Pistols":"sk_pistols",
