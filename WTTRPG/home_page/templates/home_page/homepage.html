@@ -2,113 +2,227 @@
 {%block content%}
 {% load static %}
 
-<body class="d-flex flex-column min-vh-100" style="background-color: #226150;">
-      <div style="background-color: #F9E49A;" class="container d-flex flex-column min-vh-100">
-        <div class="bg-body-tertiary-dark rounded-3 text-center">
-          
-          <!-- Jumbotron -->
-          <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-            <div class="carousel-inner mt-3">
-              <div class="carousel-item carousel-item-next carousel-item-start">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#924A36"></rect></svg>
-                <div class="container-fluid mt-3">
-                  <div class="carousel-caption">
-                    <h1></h1>
-                    <p class="text-dark"><h5 class="fw-bold fs-1 text-decoration-underline">Gumption</h5><p class="fs-5">Howdy partner, welcome to the first round of testing</p>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#924A36"></rect></svg>
-                <div class="container mt-3">
-                  <div class="carousel-caption">
-                    <h1></h1>
-                    <p class="fs-5">Testing will last from February 7th - March 14th, followed by a second round not long after. We really appreciate the feedback.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item active carousel-item-start">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#924A36"></rect></svg>
-                <div class="container mt-3">
-                  <div class="carousel-caption">
-                    <h1></h1>
-                    <p class="fs-5">Interested in Gumption? Support us by subbing to our Patreon!</p>
-                    <p><a class="btn text-white" style="background-color: #226150;" href="https://www.patreon.com/GumptionTTRPG">Patreon</a></p>
-                  </div>
-                </div>
-              </div>
+<main class="container" style="background-color: #f0d7a8;">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary mt-3">
+      <div class="col-lg-6 px-0">
+        <h1 class="display-4 fst-italic">Welcome to Gumption</h1>
+        <p class="lead my-3 text-dark">Test #2 is here! Download the new test guidebook, featuring updated mechanics and a shitload of new items.</p>
+        <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Create an account, get the guidebook, create a character, and jump in to a fight</a></p>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 h-75 position-relative" style="background-color: black;">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0 text-light">Create an Account</h3>
+            <span class="text-light border-top mt-2 mb-4">Step 1</span>
+            <a href="{% url "sign_up"%}" class="icon-link gap-1 icon-link-hover stretched-link text-light mt-4">
+              Create an account
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
+                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
+                <path d="M8.256 14a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <svg class="bd-placeholder-img" width="100" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 h-75 position-relative text-light" style="background-color: black;">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0 text-light">Get the Test Packet</h3>
+            <span class="text-light border-top mt-2">This'll get you started with everythiing you need for test 2</span>
+            <a href="{% url "create:test_packet"%}" class="icon-link gap-1 icon-link-hover stretched-link text-light mt-4">
+              Download PDF
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-arrow-down" viewBox="0 0 16 16">
+                <path d="M8.5 6.5a.5.5 0 0 0-1 0v3.793L6.354 9.146a.5.5 0 1 0-.708.708l2 2a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 10.293z"/>
+                <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <svg class="bd-placeholder-img" width="100" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 h-75 position-relative" style="background-color: black;">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0 text-light">Create a Character</h3>
+            <span class="text-light border-top mt-2">Make it quick or try out the new expanded creator</span>
+            <div class="row row-cols row-cols-lg-2">
+            <div class="col d-flex">
+            <a href="#" class="icon-link gap-1 icon-link-hover text-light mt-5">
+              Quick start creator
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="col d-flex">
+            <a href="#" class="icon-link gap-1 icon-link-hover text-light mt-5">
+              Expanded creator
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-half" viewBox="0 0 16 16">
+                <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+              </svg>
+            </a>
+          </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          
-          <!-- Body -->
           </div>
-            <header class="mb-1 border-bottom border-dark"></header>
-            <p class="mt-3 fs-6 fw-bold">1. Create an account</p>
-            <p class="fs-6 fw-bold">2. Download the test packet</p>
-            <p class="fs-6 fw-bold">3. Create a character</p>
-            <p class="fs-6 fw-bold">4. Run a few one-shots, fight some creatures,<br />
-              or fight your friends in a battle royale. You<br /> 
-              can do this in person or by using digital<br /> 
-              tabletop resource sites, like Roll20<br />
-              You can also download and try out our new free one-shot adventure: "Trouble at Coffey Mine" <a href="{% url "create:oneshot"%}">here</a></p>
-            <p class="fs-6 fw-bold">5. Send us feedback through our socials<br />
-            <a href="https://discord.gg/Zu54fUH6uK" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-discord" viewBox="0 0 16 16">
-                <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+          <div class="col-auto d-none d-lg-block">
+            <svg class="bd-placeholder-img" width="100" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 h-75 position-relative" style="background-color: black;">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0 text-light">Run a few fight sessions</h3>
+            <span class="text-light border-top mt-2">Try out our free one-shot offline or through Roll20</span>
+            <div class="row row-cols row-cols-lg-2">
+            <div class="col d-flex">
+            <a href="#" class="icon-link icon-link-hover text-light mt-5">
+              One-shot adventure
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-crosshair" viewBox="0 0 16 16">
+                <path d="M8.5.5a.5.5 0 0 0-1 0v.518A7 7 0 0 0 1.018 7.5H.5a.5.5 0 0 0 0 1h.518A7 7 0 0 0 7.5 14.982v.518a.5.5 0 0 0 1 0v-.518A7 7 0 0 0 14.982 8.5h.518a.5.5 0 0 0 0-1h-.518A7 7 0 0 0 8.5 1.018zm-6.48 7A6 6 0 0 1 7.5 2.02v.48a.5.5 0 0 0 1 0v-.48a6 6 0 0 1 5.48 5.48h-.48a.5.5 0 0 0 0 1h.48a6 6 0 0 1-5.48 5.48v-.48a.5.5 0 0 0-1 0v.48A6 6 0 0 1 2.02 8.5h.48a.5.5 0 0 0 0-1zM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/>
               </svg>
-              </a>
-              <a href="https://x.com/gumptiongame" target="_blank" rel="noopener noreferrer">
-              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="black" class="bi bi-x" viewBox="0 0 16 16">
-                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+            </a>
+          </div>
+          <div class="col d-flex">
+            <a href="#" class="icon-link icon-link-hover text-light mt-5">
+              Roll20 online module
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dice-6" viewBox="0 0 16 16">
+                <path d="M13 1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zM3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3z"/>
+                <path d="M5.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-8 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
               </svg>
-              </a>
-              <a href="https://www.instagram.com/gumptionttrpg" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="black" class="bi bi-instagram" viewBox="0 0 16 16">
-                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                </svg>
-              </a>
-            </p>
-            </p>
-      <div class="container-fluid">
-            <header class="mb-1 border-bottom border-dark"></header>
-            <p>
-                
-              <!-- Buttons -->
-              <div class="container-fluid justify-content-center mt-2">
-                  <div class="row mt-2">
-                    <div class="col-md-4 mt-2">
-                      <a href="{% url "sign_up"%}" class="text-decoration-none text-white">
-                          <div class="d-flex flex-column text-center text-shadow-1">
-                            <h3 class="d-grid display-6 fw-bold text-white btn btn-lg" style="background-color: #924A36;">Create an account</h3>
-                          </div>
-                      </a>
-                    </div>
-                    <div class="col-md-4 mt-2">
-                      <a href="{% url "create:test_packet"%}" class="text-decoration-none text-white" download>
-                          <div class="d-flex flex-column text-center text-shadow-1">
-                            <h3 class="d-grid display-6 fw-bold text-white btn btn-lg" style="background-color: #924A36;">Download the test packet</h3>
-                          </div>
-                      </a>
-                    </div>
-                    <div class="col-md-4 mt-2">
-                      <a href="{%url "create:qscc"%}" class="text-decoration-none text-white">
-                          <div class="d-flex flex-column text-center text-white text-shadow-1">
-                            <h3 class="d-grid display-6 fw-bold text-white btn btn-lg" style="background-color: #924A36;">Create a character</h3>
-                            <p class="text-dark fs-6"><em>This is an alpha version of our character creator. You can use the character sheets to change HP, AP, and track exp, but some elements won't populate and they can't be edited once created. There will be bugs.</em></p>
-                          </div>
-                      </a>
-                    </div>
+            </a>
+          </div>
+            </div>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <svg class="bd-placeholder-img" width="100" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row g-5">
+      <div class="col-md-8">
+        <h3 class="pb-4 mb-4 fst-italic text-dark border-bottom border-dark">
+          Updates
+        </h3>
+  
+        <article class="blog-post">
+          <h2 class="display-5 link-body-emphasis mb-1">Patch Notes</h2>
+          <p class="blog-post-meta">Test #2 - "Ver. 0.02"</p>
+  
+          <ul class="text-dark">
+            <h5>Website</h5>
+            <li><b>UI updates</b></li><br />
+            <h5 class="mt-2">Character Sheet</h5>
+            <li><b>Two Ways to Create:</b> 
+              <ul>
+                <li>In addition to added descriptions for the quick start creator, there is now<br /> an expanded creator which gives players a more detailed experience when creating</li></ul></li>
+            <li><b>Level Up System</b></li>
+            <li><b>Weapon Manager</b></li>
+            <li><b>Spell Manager</b></li>
+            <li><b>Inventory Manager</b></li>
+            <li><b>Conditions</b></li>
+            <h5 class="mt-5">Rules and Mechanics</h5>
+            <li><b>Added Mechanics:</b>
+              <ul>
+                <li>Special Ammo Types</li>
+                <li>Alchemy/Brewing</li>
+                <li>Crafting</li>
+                <li>Food and Drink</li>
+                <li>Horses and Land Lobsters</li>
+                <li>Currencies</li>
+                <li>Poker</li>
+                <li>Lockpicking</li>
+                <li>Crimes and Bounties</li>
+                <li>Skill Books</li>
+                <li>Special Weather</li>
+              </ul>
+            </li>
+            <li><b>Philosophies</b> have been re-worked to <b>Talents</b></li>
+            <li><b>Backgrounds</b>
+              <ul>
+                <li>Now they only give flat skill bonuses. Their associated perks have been removed and moved into other aspects.</ul> </li>
+            <li><b>Skill Perks:</b> 
+              <ul>
+                <li><b>Cooking:</b> 
+                  <ul><li>"Quick Snack" perk has been replaced with "Fight Prep" perk</ul></li></li>
+                <li><b>Ropework:</b> <ul><li>"Knot Expert" perk has been replaced with "Disarm" perk</ul></li>
+                <li><b>Number Adjustments:</b> <ul><li>"Paralyzing Strike" perk save has been reduced from 17 to 15</ul></li>
+                </ul>
+            </li>
+            <li><b>Armors/Clothes:</b> <ul><li>All now have upgraded versions that get stronger with each tier</ul></li>
+            <li><b>Spells:</b> <ul><li>Most spells now branch at tier 2, giving the player more versatility with their favorite spells</ul></li>
+            <li><b>Food:</b><ul><li>Meals have been updated. Instead of giving a larger flat health bonus than Snacks,<br /> they now grant different upgrades depending on the type of Meal, like bonus MB or Inspiration</ul></li>
+            <h5 class="mt-5">New Items</h5>
+            <li><b>Weapons, guns, tonics, and more!</b>
+              <ul><li>
+                Too many to list! Tons of everything has been added, check it all out in the new test packet
+              </ul></li>
+          </ul>
+  
+      </div>
+  
+      <div class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+          <div class="p-4 mb-3 bg-body-tertiary rounded">
+            <h4 class="fst-italic">About</h4>
+            <p class="mb-0 text-dark">Raspberry Jam</p>
+          </div>
+  
+          <div>
+            <h4 class="fst-italic">News</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                  <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" fill="#777"></rect></svg>
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">Thank you to our Patreons!</h6>
+                    <small class="text-body-secondary">-Miss Gmoney</small>
                   </div>
-                </div>
-            </p>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                  <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" fill="#777"></rect></svg>
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">This is another blog post title</h6>
+                    <small class="text-body-secondary">January 14, 2024</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                  <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><rect width="100%" height="100%" fill="#777"></rect></svg>
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
+                    <small class="text-body-secondary">January 13, 2024</small>
+                  </div>
+                </a>
+              </li>
+            </ul>
           </div>
-         </div>
+  
+          <div class="p-4">
+            <h4 class="fst-italic">Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Social</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </main>
 
 {%endblock content%}         
