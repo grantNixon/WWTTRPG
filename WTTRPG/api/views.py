@@ -14,7 +14,7 @@ def fetchWeapons(request):
        primary_key = data.get('id')
        obj = Character.objects.get(id=primary_key)
        print(obj.inventory.weapons)
-       return JsonResponse({'status':'success'})
+       return JsonResponse(obj.inventory.weapons)
     else:
         return JsonResponse({'status':'error'})
 
