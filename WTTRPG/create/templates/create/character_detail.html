@@ -857,8 +857,9 @@ function openWeaponManager() {
       method: "POST",
       body: JSON.stringify({'id':characterPrimaryKey})
     })  // Update with your Django endpoint
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
         const currentWeaponList = document.getElementById("current-weapons");
         currentWeaponList.innerHTML = "";
         data.forEach((weapon) => {
