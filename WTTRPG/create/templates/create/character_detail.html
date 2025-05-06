@@ -203,7 +203,7 @@
                               </ul>
                           </div>
                           <div class="tab-pane fade pb-5" id="spells-tab" role="spelltabpanel">
-                              <button class="btn btn-sm btn-dark btn-primary" onclick="openSpellManager()">Manage</button>
+                              <button id="spellToggleButton" class="btn btn-sm btn-dark btn-primary" onclick="openSpellManager()">Manage</button>
                               <ul>
                                   <li><em>Refer to the testing packet to pick your spells</em></li>
                               </ul>
@@ -862,7 +862,7 @@ function openWeaponManager() {
         const currentWeaponList = document.getElementById("current-weapons");
         currentWeaponList.innerHTML = "";
         data.forEach(weapon => {
-          currentWeaponList.innerHTML += `<li>${WeaponName} 
+          currentWeaponList.innerHTML += `<li>${weapon.name} 
             <button onclick="removeWeapon(${weapon.id})">❌</button></li>`;
         });
       });
@@ -874,7 +874,7 @@ function openWeaponManager() {
         const weaponOptionsList = document.getElementById("weapon-options");
         weaponOptionsList.innerHTML = "";
         data.forEach(weapon => {
-          weaponOptionsList.innerHTML += `<li>${WeaponName} 
+          weaponOptionsList.innerHTML += `<li>${weapon.name} 
             <button onclick="addWeapon(${weapon.id})">➕</button></li>`;
         });
       });
