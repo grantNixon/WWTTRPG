@@ -861,7 +861,7 @@ function openWeaponManager() {
       .then(data => {
         const currentWeaponList = document.getElementById("current-weapons");
         currentWeaponList.innerHTML = "";
-        data.forEach(weapon => {
+        data.forEach((weapon) => {
           currentWeaponList.innerHTML += `<li>${weapon.name} 
             <button onclick="removeWeapon(${weapon.id})">❌</button></li>`;
         });
@@ -873,7 +873,7 @@ function openWeaponManager() {
       .then(data => {
         const weaponOptionsList = document.getElementById("weapon-options");
         weaponOptionsList.innerHTML = "";
-        data.forEach(weapon => {
+        data.forEach((weapon) => {
           weaponOptionsList.innerHTML += `<li>${weapon.name} 
             <button onclick="addWeapon(${weapon.id})">➕</button></li>`;
         });
