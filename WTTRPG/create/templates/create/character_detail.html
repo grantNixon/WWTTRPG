@@ -868,7 +868,7 @@ function openWeaponManager() {
       });
 
     // Load all available weapons from the database
-    fetch("/api/weapons/")  // Update with your Django endpoint
+    fetch('{% url "api:fetchWeapons" %}')  // Update with your Django endpoint
       .then(response => response.json())
       .then(data => {
         const weaponOptionsList = document.getElementById("weapon-options");
