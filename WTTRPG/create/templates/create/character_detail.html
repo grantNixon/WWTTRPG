@@ -859,10 +859,11 @@ function openWeaponManager() {
     })  // Update with your Django endpoint
       .then((response) => response.json())
       .then((data) => {
-        console.log(data)
+        jsonData = JSON.parse(data)
+        console.log(jsonData[0].name)
         const currentWeaponList = document.getElementById("current-weapons");
         currentWeaponList.innerHTML = "";
-        data.forEach((weapon) => {
+        jsonData.forEach((weapon) => {
           currentWeaponList.innerHTML += `<li>${weapon.name} 
             <button onclick="removeWeapon(${weapon.id})">❌</button></li>`;
         });
