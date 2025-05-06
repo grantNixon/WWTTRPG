@@ -870,13 +870,17 @@ function openWeaponManager() {
       });
 
     // Load all available weapons from the database
-    fetch('{% url "api:fetchWeapons" %}')  // Update with your Django endpoint
-      .then(response => response.json())
-      .then(data => {
+    fetch('{% url "api:fetchAllWeapons" %}', {
+      method: "POST"
+    })  // Update with your Django endpoint
+      .then((response) => response.json())
+      .then((data) => {
         const weaponOptionsList = document.getElementById("weapon-options");
         weaponOptionsList.innerHTML = "";
-        data.forEach((weapon) => {
-          weaponOptionsList.innerHTML += `<li>${weapon.name} 
+        jsonData = JSON.parse(data)
+        console.log(jsonData.name[0])
+        jsonData.name.forEach((weapon) => {
+          weaponOptionsList.innerHTML += `<li>${weapon} 
             <button onclick="addWeapon(${weapon.id})">➕</button></li>`;
         });
       });

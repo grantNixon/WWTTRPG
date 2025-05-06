@@ -18,6 +18,16 @@ def fetchWeapons(request):
        return JsonResponse(jsonInv, safe=False)
     else:
         return JsonResponse({'status':'error'})
+    
+@csrf_exempt    
+def fetchAllWeapons(request):
+    if request.method == 'POST':
+        obj = list(Weapon.objects.values_list('WeaponName', flat=True))
+        print(obj)
+        jsonObj = json.dumps({'name':obj})
+        return JsonResponse(jsonObj, safe=False)
+    else:
+        return JsonResponse({'status':'error'})
 
 def addWeapon():
     pass
