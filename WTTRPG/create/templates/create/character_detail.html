@@ -199,7 +199,7 @@
                                 <ul id="weapon-options"></ul>
                               </div>
                               <ul id="currentWeaponList">
-                    
+                                <li>{{currentWeaponList}}</li>
                               </ul>
                           </div>
                           <div class="tab-pane fade pb-5" id="spells-tab" role="spelltabpanel">
@@ -225,11 +225,22 @@
                               <button class="nav-link text-dark" id="abilities-tab" data-bs-toggle="tab" data-bs-target="#abilities" type="button" role="tab">Abilities & Perks</button>
                           </li>
                           <li class="nav-item" role="presentation">
-                              <button class="nav-link text-dark" id="philosophies-tab" data-bs-toggle="tab" data-bs-target="#philosophies" type="button" role="tab">Philosophies</button>
+                              <button class="nav-link text-dark" id="talents-tab" data-bs-toggle="tab" data-bs-target="#talents" type="button" role="tab">Talents</button>
                           </li>
                       </ul>
                       <div class="tab-content mt-2" id="myTabContent2">
                           <div class="tab-pane fade pb-5 show active" id="inventory" role="tabpanel">
+                            <button id="inventoryToggleButton" class="btn btn-sm btn-dark btn-secondary px-3" onclick="toggleInventoryManager()">Manage</button>
+                              <div id="inventoryManager">                              
+                                <p class="border-bottom border-dark text-dark w-50">Current Inv.</p>
+                                <ul id="current-inventory"></ul>
+                              
+                                <p class="border-bottom border-dark w-50 text-dark">Available Inv.</p>
+                                <ul id="inventory-options"></ul>
+                              </div>
+                              <ul id="currentInventoryList">
+                                <li>{{currentWeaponList}}</li>
+                              </ul>
                               <ul id="inventory-list">
                                   <li>[Item Placeholder]</li>
                               </ul>
@@ -239,9 +250,9 @@
                                   <li><em>Refer to the testing packet for your perks</em></li>
                               </ul>
                           </div>
-                          <div class="tab-pane fade pb-5" id="philosophies" role="tabpanel">
+                          <div class="tab-pane fade pb-5" id="talents" role="tabpanel">
                               <ul>
-                                  <li><em>Refer to the testing packet for your philosophies</em></li>
+                                  <li><em>Refer to the testing packet for your talents</em></li>
                               </ul>
                           </div>
                       </div>
