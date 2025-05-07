@@ -29,8 +29,16 @@ def fetchAllWeapons(request):
     else:
         return JsonResponse({'status':'error'})
 
-def addWeapon():
-    pass
+def addWeapon(request):
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       weaponToRemove = data.get('weapon_id')
+       primary_key = data.get('char_id')
+       obj = Character.objects.get(id=primary_key)
+       charInv = obj.inventory.weapons
+       charInv = [weapon for weapon in charInv if weapon["name"] != weaponToRemove]
+       charInv.save()
+       obj.save()
 
 def removeWeapon():
     pass

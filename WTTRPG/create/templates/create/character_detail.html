@@ -881,19 +881,21 @@ function openWeaponManager() {
         console.log(jsonData.name[0])
         jsonData.name.forEach((weapon) => {
           weaponOptionsList.innerHTML += `<li>${weapon} 
-            <button onclick="addWeapon(${weapon.id})">➕</button></li>`;
+            <button onclick="addWeapon(${weapon})">➕</button></li>`;
         });
       });
   }
 
   function addWeapon(weaponId) {
-    fetch(`/api/character/weapons/add/`, {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    fetch('{% url "api:addWeapon" %}', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "X-CSRFToken": getCSRFToken(),
       },
-      body: JSON.stringify({ weapon_id: weaponId }),
+      body: JSON.stringify({ weapon_id: weaponId, char_id: characterPrimaryKey }),
     }).then(() => fetchWeapons());
   }
 
