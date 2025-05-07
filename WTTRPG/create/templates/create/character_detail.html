@@ -20,7 +20,7 @@
     display: none;
     position: top;
     overflow-y: auto;
-    background-color: #f0d7a8;
+    background-color: #fffbf1;
     border: 1px solid #000;
     padding: 10px;
     z-index: 1000;
@@ -875,9 +875,9 @@ function openWeaponManager() {
         const currentWeaponList = document.getElementById("current-weapons");
         currentWeaponList.innerHTML = "";
         jsonData.forEach((weapon) => {
-          currentWeaponList.innerHTML += `<li>${weapon.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" style="cursor: pointer;" onclick="removeWeapon(${weapon.id})" viewBox="0 0 16 16">
+          currentWeaponList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: #f0d7a8;" onclick="removeWeapon(${weapon.id})">${weapon.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
-</svg></li>`;
+</svg></button><br />`;
         });
       });
 
@@ -892,10 +892,10 @@ function openWeaponManager() {
         jsonData = JSON.parse(data)
         console.log(jsonData.name[0])
         jsonData.name.forEach((weapon) => {
-          weaponOptionsList.innerHTML += `<li>${weapon} 
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" style="cursor: pointer;" onclick="addWeapon(${weapon})" viewBox="0 0 16 16">
+          weaponOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: #f0d7a8;" onclick="addWeapon(${weapon})">${weapon} 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
-</svg></li>`;
+</svg></button><br />`;
         });
       });
   }
