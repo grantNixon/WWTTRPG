@@ -1,0 +1,894 @@
+{% extends "Header_and_Footer.html" %} 
+{%block content%}
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Button</title>
+    <style>
+       .dropdown-menu {
+        min-width: 200px;
+        width: auto !important;
+        background-color: #fffbf1;
+        border-color: black;
+        border-radius: 0;
+
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dropdown-menu .dropdown-menu {
+        top: 0;
+        display: none;
+        background-color: #fffbf1;
+    }
+    </style>
+
+<body class="d-flex flex-column min-vh-100" style="background-color: #be2a4a;">
+<div class="container-fluid" style="background-color: #fffbf1;">
+    <h4 class="text-center text-decoration-bold mt-2">Expanded Character Creator</h4>
+<div class="row mb-2 container-fluid text-center">
+  <div class="accordion mt-4 mb-5" id="characterCreatorAccordion">
+
+    <!-- ATTRIBUTES -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingAttributes">
+        <button class="accordion-button text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAttributes" aria-expanded="true" aria-controls="collapseAttributes">
+          <b>1st: Attributes</b>
+        </button>
+      </h2>
+      <div id="collapseAttributes" class="accordion-collapse collapse show" aria-labelledby="headingAttributes" data-bs-parent="#characterCreatorAccordion">
+        <div class="accordion-body">
+          <p>Determine different core aspects of the character like health and total movement</p>
+          <div class="row g-4 py-1 mb-5 row-cols-1 row-cols-lg-6">
+            <div class="col d-flex border-end border-dark">
+              <div>
+                <h5 class="fs-5 text-body-emphasis">Strength</h5>
+                <p>Total "MB" or movement bank. How far you can move each turn</p>
+                <form action="" method="post">{{ form.strength }}</form>
+              </div>
+            </div>
+            <div class="col d-flex border-end border-dark">
+              <div>
+                <h5 class="fs-5 text-body-emphasis">Agility</h5>
+                <p>Total "EC" or evasion chance. How likely you are to be hit</p>
+                <form action="" method="post">{{ form.agility }}</form>
+              </div>
+            </div>
+            <div class="col d-flex border-end border-dark justify-content-center">
+              <div>
+                <h5 class="fs-5 text-body-emphasis">Gumption</h5>
+                <p>Total health</p>
+                <form action="" method="post">{{ form.gumption }}</form>
+              </div>
+            </div>
+            <div class="col d-flex border-end border-dark">
+              <div>
+                <h5 class="fs-5 text-body-emphasis">Intelligence</h5>
+                <p>Total natural awareness or your ability to sense things in your surroundings</p>
+                <form action="" method="post">{{ form.intelligence }}</form>
+              </div>
+            </div>
+            <div class="col d-flex border-end border-dark justify-content-center">
+              <div>
+                <h5 class="fs-5 text-body-emphasis">Mysticism</h5>
+                <p>Total spell slots</p>
+                <form action="" method="post">{{ form.mysticism }}</form>
+              </div>
+            </div>
+            <div class="col d-flex border-end border-dark justify-content-center">
+              <div>
+                <h5 class="fs-5 text-body-emphasis">Personality</h5>
+                <p>Total spell slots and discounts in stores</p>
+                <form action="" method="post">{{ form.personality }}</form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- SPECIES -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingSpecies">
+      <button class="accordion-button collapsed text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpecies" aria-expanded="false" aria-controls="collapseSpecies">
+        <b>2nd: Species</b> <form class="ms-3" action="" method="post">{{ form.species }}</form>
+      </button>
+    </h2>
+    <div id="collapseSpecies" class="accordion-collapse collapse" aria-labelledby="headingSpecies" data-bs-parent="#characterCreatorAccordion">
+      <div class="accordion-body">
+        <div class="row g-3 mb-5 row-cols-1 row-cols-6">
+          <div class="col d-flex justify-content-center">
+            <div>
+              <h4 class="text-body-emphasis border-bottom border-dark mt-2">Ambaazi</h4>
+              <div class="dropdown">
+                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                <ul class="dropdown-menu">
+                    <li><div class="dropdown-item-text"><b>Annointed Ambaazi</b><br />
+                        <i>Soft Hands</i><br />
+                        <i>Unihemispheric Sleep</i><br /> 
+                        +10 to Mysticism<br />
+                        +5 to any attribute<br />
+                 </li>
+                    <li><div class="dropdown-item-text"><b>Lost Ambaazi</b><br />
+                        <i>Calloused Hands</i><br />
+                        <i>Heavy Mind</i><br /> 
+                        +10 to Strength<br />
+                        +5 to any attribute<br /></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center">
+            <div>
+              <h4 class="text-body-emphasis border-bottom border-dark mt-2">Armadill</h4>
+              <div class="dropdown">
+                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                <ul class="dropdown-menu">
+                    <li><div class="dropdown-item-text"><b>Seven-Banded Armadill</b><br />
+                        <i>Ball Form</i><br />
+                        <i>Hard Shell</i><br /> 
+                        +10 to Gumption<br />
+                        +5 to any attribute<br />
+                 </li>
+                    <li><div class="dropdown-item-text"><b>Five-Banded Armadill</b><br />
+                        <i>Play Dead</i><br />
+                        <i>Unusually Stealthy</i><br /> 
+                        +10 to Agility<br />
+                        +5 to any attribute<br /></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center">
+            <div>
+              <h4 class="text-body-emphasis border-bottom border-dark mt-2">Bak'wa</h4>
+              <div class="dropdown">
+                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                <ul class="dropdown-menu">
+                    <li><div class="dropdown-item-text w-100 me-5"><b>Mossy Bak'wa</b><br />
+                        <i>Quick-Clotting Blood</i><br />
+                        <i>Nimble</i><br /> 
+                        +10 to Agility<br />
+                        +5 to any attribute<br />
+                 </li>
+                    <li><div class="dropdown-item-text"><b>Onyx Bak'wa</b><br />
+                        <i>Brackish Blood</i><br />
+                        <i>Aware</i><br /> 
+                        +10 to Gumption<br />
+                        +5 to any attribute<br /></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center">
+            <div>
+              <h4 class="text-body-emphasis border-bottom border-dark mt-2">Bolibar</h4>
+              <div class="dropdown">
+                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                <ul class="dropdown-menu">
+                    <li><div class="dropdown-item-text"><b>Solid Bolibar</b><br />
+                        <i>Hearty</i><br />
+                        <i>Gluntinous Frenzy</i><br /> 
+                        +10 to Gumption<br />
+                        +5 to any attribute<br />
+                 </li>
+                    <li><div class="dropdown-item-text"><b>Speckled Bolibar</b><br />
+                        <i>Evergladian Ancestry</i><br />
+                        <i>Power Napper</i><br /> 
+                        +10 to Personality<br />
+                        +5 to any attribute<br /></li>
+                </ul>
+            </div>
+            </div>
+          </div>
+            <div class="col d-flex justify-content-center">
+              <div>
+                <h4 class="text-body-emphasis border-bottom border-dark mt-2">Cincindel</h4>
+                <div class="dropdown">
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <ul class="dropdown-menu">
+                        <li><div class="dropdown-item-text"><b>Triadic Cincindel</b><br />
+                            <i>Flutter</i><br />
+                            <i>Worldly</i><br /> 
+                            +10 to Intelligence<br />
+                            +5 to any attribute<br />
+                     </li>
+                        <li><div class="dropdown-item-text"><b>Analogous Cincindel</b><br />
+                            <i>Flutter</i><br />
+                            <i>Hard Shell</i><br /> 
+                            +10 to Gumption<br />
+                            +5 to any attribute<br /></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <div>
+                <h4 class="text-body-emphasis border-bottom border-dark mt-2">Egriss</h4>
+                <div class="dropdown">
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <ul class="dropdown-menu">
+                        <li><div class="dropdown-item-text"><b>Roaming Egriss</b><br />
+                            <i>Fly</i><br />
+                            <i>Unihemispheric Sleep</i><br /> 
+                            +10 to Agility<br />
+                            +5 to any attribute<br />
+                     </li>
+                        <li><div class="dropdown-item-text"><b>Lotus Egriss</b><br />
+                            <i>Fly</i><br />
+                            <i>Meditate</i><br /> 
+                            +10 to Intelligence<br />
+                            +5 to any attribute<br /></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-center border-dark mt-3">
+              <div>
+                <h4 class="text-body-emphasis mt-3 border-bottom border-dark">Folinn</h4>
+                <div class="dropdown">
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <ul class="dropdown-menu">
+                        <li><div class="dropdown-item-text"><b>Short-Tailed Folinn</b><br />
+                            <i>Swift Spirit</i><br />
+                            <i>Boil and Toil</i><br /> 
+                            +10 to Intelligence<br />
+                            +5 to any attribute<br />
+                     </li>
+                        <li><div class="dropdown-item-text"><b>Long-Tailed Folinn</b><br />
+                            Whimsical Spirit<br />
+                            Primordial Blessing<br /> 
+                            +10 to Personality<br />
+                            +5 to any attribute<br /></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-center border-dark mt-3">
+              <div>
+                <h4 class="text-body-emphasis mt-3 border-bottom border-dark">Hillock</h4>
+                <div class="dropdown">
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <ul class="dropdown-menu">
+                        <li><div class="dropdown-item-text"><b>Village Hillock</b><br />
+                            <i>Happy Mind</i><br />
+                            <i>Connoisseur</i><br /> 
+                            +10 to Personality<br />
+                            +5 to any attribute<br />
+                     </li>
+                        <li><div class="dropdown-item-text"><b>Stone Hillock</b><br />
+                            <i>Stone Skin</i><br />
+                            <i>Fighter, Not a Lover</i><br /> 
+                            +10 to Strength<br />
+                            +5 to any attribute<br /></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col d-flex justify-content-center border-dark mt-3">
+                <div>
+                  <h4 class="text-body-emphasis mt-3 border-bottom border-dark">Human</h4>
+                  <div class="dropdown">
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <ul class="dropdown-menu">
+                        <li><div class="dropdown-item-text"><b>Valley Human</b><br />
+                            <i>Versatile</i><br />
+                            <i>Weapon Master</i><br /> 
+                            +10 to Strength<br />
+                            +5 to any attribute<br />
+                     </li>
+                        <li><div class="dropdown-item-text"><b>Forest Human</b><br />
+                            <i>Versatile</i><br />
+                            <i>Tree Dweller</i><br /> 
+                            +10 to Gumption<br />
+                            +5 to any attribute<br /></li>
+                    </ul>
+                </div>
+                </div>
+              </div>
+              <div class="col d-flex justify-content-center border-dark mt-3">
+                <div>
+                  <h4 class="text-body-emphasis mt-3 border-bottom border-dark">Latran</h4>
+                  <div class="dropdown">
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                <ul class="dropdown-menu">
+                    <li><div class="dropdown-item-text"><b>Desert Latran</b><br />
+                        <i>Magical Inheritance</i><br />
+                        <i>Tranquil Spirit</i><br /> 
+                        +10 to Mysticism<br />
+                        +5 to any attribute<br />
+                 </li>
+                    <li><div class="dropdown-item-text"><b>Mesa Latran</b><br />
+                        <i>Magical Inheritance</i><br />
+                        <i>Nimble</i><br /> 
+                        +10 to Agility<br />
+                        +5 to any attribute<br /></li>
+                </ul>
+            </div>
+                </div>
+              </div>
+              <div class="col d-flex justify-content-center border-dark mt-3">
+                <div>
+                  <h4 class="text-body-emphasis mt-3 border-bottom border-dark">Margart</h4>
+                  <div class="dropdown">
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <ul class="dropdown-menu">
+                        <li><div class="dropdown-item-text"><b>Long-Haired Margart</b><br />
+                            <i>Margart Insulation</i><br />
+                            <i>Natural Mercantilist</i><br /> 
+                            +10 to Gumption<br />
+                            +5 to any attribute<br />
+                     </li>
+                        <li><div class="dropdown-item-text"><b>Short-Haired Margart</b><br />
+                            <i>Pounce</i><br />
+                            <i>Felin Acrobatics</i><br /> 
+                            +10 to Agility<br />
+                            +5 to any attribute<br /></li>
+                    </ul>
+                </div>
+                </div>
+              </div>
+              <div class="col d-flex justify-content-center border-dark mt-3">
+                <div>
+                  <h4 class="text-body-emphasis mt-3 border-bottom border-dark">Shikasa</h4>
+                  <div class="dropdown">
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <ul class="dropdown-menu">
+                        <li><div class="dropdown-item-text"><b>Smooth Shikasa</b><br />
+                            <i>Tail Whip</i><br />
+                            <i>Aquatic</i><br /> 
+                            +10 to Strength<br />
+                            +5 to any attribute<br />
+                     </li>
+                        <li><div class="dropdown-item-text"><b>Ridged Shikasa</b><br />
+                            <i>Crocodile Smile</i><br />
+                            <i>Evergladian Ancestry</i><br /> 
+                            +10 to Personality<br />
+                            +5 to any attribute<br /></li>
+                    </ul>
+                </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingBackground">
+      <button class="accordion-button collapsed text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBackground" aria-expanded="false" aria-controls="collapseBackground">
+        <b>3rd: Background</b><form class="ms-3" action="" method="post">{{ form.background }}</form>
+      </button>
+    </h2>
+    <div id="collapseBackground" class="accordion-collapse collapse" aria-labelledby="headingBackground" data-bs-parent="#characterCreatorAccordion">
+      <div class="accordion-body">
+        <p>Grant bonuses and subtractions to skills, with some granting perks instead</p>
+        <div class="row g-4 py-1 mb-5 row-cols-1 row-cols-lg-5">
+          <div class="col d-flex gy=2 border border-dark">
+            <div>
+              <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Alchemist</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+              </svg>+10 to Brewing and Foraging<br />
+              <br />
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+              </svg>-5 to Foolery, Crafting, and Intimidation<br />
+            </div>
+          </div>
+          <div class="col d-flex border border-dark">
+            <div>
+              <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Assassin</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+              </svg>+5 to Sneak, Acrobatics, and Slashing Melee<br />
+              <br />
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+              </svg>-5 to Crafting, Repair, and Shotguns<br />
+            </div>
+          </div>
+          <div class="col d-flex border border-dark">
+            <div>
+              <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Bounty Hunter</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+              </svg>+5 to Natural Awareness and +5 to Intuition and Investigation<br />
+              <br />
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+              </svg>-5 to Performance, Religion, and Healing Magic<br />
+            </div>
+          </div>
+          <div class="col d-flex justify-content-center border border-dark">
+            <div>
+              <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Carpenter</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+              </svg>+15 to Crafting<br />
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+              </svg>-5 to magic skills<br />
+            </div>
+          </div>
+            <div class="col d-flex border border-dark">
+              <div>
+                <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Chef</h5>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                  <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                </svg>+10 to Cooking and +5 to Slashing and Crushing Melee<br />
+                <br />
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                  <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                </svg>-5 to all Pistols, Rifles, and Archery<br />
+              </div>
+            </div>
+            <div class="col d-flex border border-dark">
+              <div>
+                <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Cowboy</h5>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                  <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                </svg>+10 to Medicine and +5 to Slashing Melee<br />
+                <br />
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                  <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                </svg>-5 to all other combat skills<br />
+              </div>
+            </div>
+            <div class="col d-flex border border-dark">
+              <div>
+                <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Doctor</h5>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                  <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                </svg>+10 to Medicine and +5 to Slashing Melee<br />
+                <br />
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                  <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                </svg>-5 to all other combat skills<br />
+              </div>
+            </div>
+            <div class="col d-flex border border-dark">
+              <div>
+                <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Elemental Fella</h5>
+                Pick a favored element. Add 1d4 when you deal damage using that favored element. When crafting ammo or utilities of that element, double the amount<br />
+                You have bad odds on checks to use and craft items not of that element type<br />
+              </div>
+            </div>
+            <div class="col d-flex border border-dark">
+                <div>
+                  <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Ex-Convict</h5>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                  </svg>+10 to Slashing Melee, Hand-to-Hand, and Religion<br />
+                  <br />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                  </svg>-5 to Persuasion, Foolery, and Foraging<br />
+                </div>
+              </div>
+              <div class="col d-flex border border-dark">
+                <div>
+                  <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Galvanism Scholar</h5>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                  </svg>+15 to Galvanism<br />
+                  <br />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                  </svg>-5 to all other magic skills<br />
+                </div>
+              </div>
+              <div class="col d-flex border border-dark">
+                <div>
+                  <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Luddite</h5>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                  </svg>+5 to Melee, Unarmed, Ropework, and Archery<br />
+                  <br />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                  </svg>-5 to Pistols, Rifles, Shotguns and weapons using complicated machinery<br />
+                </div>
+              </div>
+              <div class="col d-flex border border-dark">
+                <div>
+                  <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Missionary</h5>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                  </svg>+5 to Farlight magic skills and Religion. When healing yourself or others using Healing magic or other magical means, add 1d4 healing<br />
+                  <br />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                  </svg>-5 to Primordial magic skills<br />
+                </div>
+              </div>
+              <div class="col d-flex border border-dark">
+                <div>
+                  <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Rancher</h5>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                  </svg>+5 to Animal Handling, Crafting, and Ropework<br />
+                  <br />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                  </svg>-5 to all magic skills<br />
+                </div>
+              </div>
+              <div class="col d-flex border border-dark">
+                <div>
+                  <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Shockstone Scholar</h5>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                  </svg>+5 to Pistols, Rifles, Shotguns, and Archery<br />
+                  <br />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                  </svg>-5 to those skills when using non-shockstone weapons<br />
+                </div>
+              </div>
+              <div class="col d-flex border border-dark">
+                <div>
+                  <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Shopkeep</h5>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                  </svg>+10 to Barter and Repair, and +5 to Shotguns<br />
+                  <br />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                  </svg>-5 to Camping, Cooking, and Hunting<br />
+                </div>
+              </div>
+              <div class="col d-flex border border-dark">
+                <div>
+                  <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Snake Oil Saleman</h5>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                  </svg>+5 to Foolery, Persuasion and Barter<br />
+                  <br />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                  </svg>-5 to Pistols, Rifles, and Archery<br />
+                </div>
+              </div>
+              <div class="col d-flex border border-dark">
+                <div>
+                  <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Street Urchin</h5>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                  </svg>+5 to Thievery, Sneak, and Foolery<br />
+                  <br />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                  </svg>-5 to all magic skills and History<br />
+                </div>
+              </div>
+              <div class="col d-flex border border-dark">
+                <div>
+                  <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Wilderness Guide</h5>
+                  Pick a favored biome.  You have +15 Natural Awareness and good odds on checks made to forage, hunt, and intuit and investigate your surroundings while in the wilds of chosen biome<br />
+                When not in your favored biome, you have -15 to Natural Awareness and -1d6 to rolls made for the same checks as above<br />
+                </div>
+              </div>
+              <div class="col d-flex border border-dark">
+                <div>
+                  <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Worshipper</h5>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+                  </svg>+5 to Primordial Magic skills and Persuasion<br />
+                  <br />
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
+                    <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
+                  </svg>-5 to Mysticism<br />
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingSkillz">
+      <button class="accordion-button collapsed text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSkillz" aria-expanded="false" aria-controls="collapseSkillz">
+        <b>4th: Major and Minor skills</b>
+      </button>
+    </h2>
+    <div id="collapseSkillz" class="accordion-collapse collapse" aria-labelledby="headingSkillz" data-bs-parent="#characterCreatorAccordion">
+      <div class="accordion-body">
+        <h2 class="border-bottom">Major Skills</h2>
+        <p>Start at 25, which grants a perk and bonus mod</p>
+        <div class="row g-4 py-1 mb-5 ms-5 ps-5 row-cols-1 row-cols-lg-3">
+          <div class="col d-flex">
+            <div>
+              <h5 class="fs-5 text-body-emphasis">One</h5>
+              <form action="" method="post">{{ form.major_skill_1 }}</form>
+            </div>
+          </div>
+          <div class="col d-flex">
+            <div>
+                <h5 class="fs-5 text-body-emphasis">Two</h5>
+                <form action="" method="post">{{ form.major_skill_2 }}</form>
+            </div>
+          </div>
+          <div class="col d-flex">
+            <div>
+                <h5 class="fs-5 text-body-emphasis">Three</h5>
+                <form action="" method="post">{{ form.major_skill_3 }}</form>
+            </div>
+          </div>
+        </div>
+          <h2 class="border-bottom">Minor Skills</h2>
+  <p>Start at 15, which is novice level, which means one perk. All other skills start at 5</p>
+    <div class="row g-4 py-1 mb-5 row-cols-1 row-cols-lg-5">
+      <div class="col d-flex">
+        <div>
+          <h5 class="fs-5 text-body-emphasis">One</h5>
+          <form action="" method="post">{{ form.major_skill_1 }}</form>
+        </div>
+      </div>
+      <div class="col d-flex">
+        <div>
+            <h5 class="fs-5 text-body-emphasis">Two</h5>
+            <form action="" method="post">{{ form.minor_skill_2 }}</form>
+        </div>
+      </div>
+      <div class="col d-flex">
+        <div>
+            <h5 class="fs-5 text-body-emphasis">Three</h5>
+            <form action="" method="post">{{ form.minor_skill_3 }}</form>
+        </div>
+      </div> 
+      <div class="col d-flex">
+        <div>
+            <h5 class="fs-5 text-body-emphasis">Four</h5>
+            <form action="" method="post">{{ form.minor_skill_4 }}</form>
+        </div>
+      </div> 
+      <div class="col d-flex">
+        <div>
+            <h5 class="fs-5 text-body-emphasis">Five</h5>
+            <form action="" method="post">{{ form.minor_skill_5 }}</form>
+        </div>
+      </div>  
+    </div> 
+        </div>
+      </div>
+    </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingLanguage">
+      <button class="accordion-button collapsed text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLanguage" aria-expanded="false" aria-controls="collapseLanguage">
+        <b>5th: Languages and Morals</b>
+      </button>
+    </h2>
+    <div id="collapseLanguage" class="accordion-collapse collapse" aria-labelledby="headingLanguage" data-bs-parent="#characterCreatorAccordion">
+      <div class="accordion-body">
+        <p>These have no effect on stats or abilities but will have an effect with some in-game scenarios and roleplaying. The creature about to attack the posse could just be protecting its young and if someone could speak its language, they could avoid a slaughter</p>
+        <div class="row g-4 py-1 mb-5 ms-5 ps-5 row-cols-1 row-cols-lg-2">
+          <div class="col d-flex justify-content-center">
+            <div>
+              <h5 class="fs-5 text-body-emphasis">Language</h5>
+              <form action="" method="post">{{ form.language }}</form>
+            </div>
+          </div>
+          <div class="col d-flex">
+            <div>
+                <h5 class="fs-5 text-body-emphasis">Morals</h5>
+                <form action="" method="post">{{ form.morals }}</form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingStarting">
+      <button class="accordion-button collapsed text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStarting" aria-expanded="false" aria-controls="collapseStarting">
+        <b>6th: Starting Items</b>
+      </button>
+    </h2>
+    <div id="collapseStarting" class="accordion-collapse collapse" aria-labelledby="headingStarting" data-bs-parent="#characterCreatorAccordion">
+      <div class="accordion-body">
+        <p>Choose wisely</p>
+        <div class="row py-1 ps-3 mb-5 row-cols-1 row-cols-lg-3">
+          <div class="col border-end border-dark">
+            <div>
+              <h5 class="fs-5 text-body-emphasis"><b>Weapon Proficiency</b></h5>
+              +1 to hits and another +1<br />
+                when the skill reaches lvl 50
+              <form action="" method="post">{{ form.weapon_proficiency }}</form>
+            </div>
+          </div>
+          <div class="col border-end border-dark">
+            <div>
+                <h5 class="fs-5 text-body-emphasis"><b>Starting Weapon</b></h5>
+                <form action="" method="post">{{ form.starting_weapon }}</form>
+            </div>
+          </div>
+          <div class="col">
+            <div>
+                <h5 class="fs-5 text-body-emphasis"><b>Starting Equipment</b></h5>
+                <div class="dropdown dropend">
+                    <a href="#" class="d-block mr-3 link-offset-2 link-offset-3-hover link-secondary link-underline-dark text-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                      Info
+                    </a>
+                    <ul id="drop2" class="dropdown-menu p-2">
+                        <b>General:</b><br />1 Medium Herbal Injection<br />
+                        2 bundles of crafting supplies<br />
+                        1 Mobile Crafting Kit<br />
+                        1 apple, 1 bundle of grapes, and 1 banana<br />
+                        Basic bedroll<br />
+                        15ft of rope<br />
+                        Canteen<br />
+                        Pocket Knife<br />
+                        <br />
+                        <b>Medical:</b><br />2 Small Herbal Injections<br />
+                        1 Small Mystical Tonic<br />
+                        1 Bottle of liquor (antiseptic)<br />
+                        2 packaged meals<br />
+                        Bandages, wraps, and syringes<br />
+                        Canteen<br />
+                        Basic bedroll<br />
+                        15ft of rope<br />
+                        Scissors<br />
+                        <br />
+                        <b>Utility:</b><br />1 Small Energy Tonic<br />
+                        1 Small Lightfoot Tonic<br />
+                        1 Throwing Knife<br />
+                        1 Bear Trap<br />
+                        1 packaged meal<br />
+                        Basic bedroll<br />
+                        15ft of rope<br />
+                        Lockpicking Set<br />
+                        Pocket Knife<br />
+                        <br />
+                        <b>Mystical:</b><br />2 Small Mystical Tonics<br />
+                        1 Ingredient from each biome<br />
+                        1 Mobile Alchemy Kit<br />
+                        3 pears<br />
+                        Basic bedroll<br />
+                        15ft of rope<br />
+                        A collection of small totems and other mystical trinkets used for rituals<br />
+                        <br />
+                        <b>Survival:</b><br />1 Small Herbal Inhaler<br />
+                        1 Small Energy Tonic<br />
+                        1 Mobile Alchemy Kit<br />
+                        3lbs of dried meat<br />
+                        3ft of cloth<br />
+                        1 can of tree sap<br />
+                        Basic bedroll<br />
+                        Simple tent<br />
+                        15ft of rope<br />
+                        Canteen<br />
+                        Hunting Knife<br />
+                        <br />
+                    </ul>
+                </div>
+                <form action="" method="post">{{ form.starting_equipment }}</form>
+            </div>
+          </div>    
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingFinish">
+      <button class="accordion-button collapsed text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFinish" aria-expanded="false" aria-controls="collapseFinish">
+        <b>Name and Finish</b>
+      </button>
+    </h2>
+    <div id="collapseFinish" class="accordion-collapse collapse" aria-labelledby="headingFinish" data-bs-parent="#characterCreatorAccordion">
+      <div class="accordion-body">
+        <p>Almost done, partner</p>
+        <div class="row g-4 py-1 mb-5 ms-5 ps-5 row-cols-1 row-cols-lg-2">
+          <div class="col d-flex justify-content-center">
+            <div>
+              <h5 class="fs-5 text-body-emphasis">Name</h5>
+              <form action="" method="post">{{ form.name }}</form>
+            </div>
+          </div>
+          <div class="col d-flex">
+            <div>
+                <h5 class="fs-5 text-body-emphasis">Class Name</h5>
+                <form action="" method="post">{{ form.class_name }}</form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<div class="border-bottom border-dark mb-3"></div>
+    <div class="text-center fw-bold">
+        <form action="" method="post">
+        {% csrf_token %}
+        <input class="mt-2 mb-2 justify-content-center btn text-white" style="background-color: #226150;" type="submit" value="Finish and Create">
+    </form>
+        </div>
+    </div>
+</body>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'create/character_form.css' %}">
+<link rel="stylesheet" href="character_form.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+
+<script>
+    const globalPointBuys = new Map([
+        
+        ["30", 30],
+        ["20", 20],
+        ["16", 16],
+        ["15", 15],
+        ["10", 10],
+        ["5",5]
+    ]);
+
+    function DeepCopyMap(existingMap) {
+        const deepCopy = new Map(
+            JSON.parse(
+            JSON.stringify(Array.from(existingMap))
+        ))
+        return deepCopy
+    }
+
+    function PopulatePointbuys(elementID) {
+        const selectElement = document.getElementById(elementID);
+        jqID = "#" + elementID
+        if ($(jqID + " option:selected").val() == "" ) {
+            $(jqID).find('option:not(:first)').remove();
+        }
+        else {
+            $(jqID).find('option:not(:selected)').remove();
+        }
+        pointbuys = DeepCopyMap(globalPointBuys)
+        selectedBuys = CheckSelected()
+        selectedBuys.forEach (function(buy) {
+            if (buy != 0) {
+                pointbuys.delete(buy)
+            }
+        })
+        pointbuys.forEach (function(key, value) {
+            let newOption = new Option(key, value);
+            selectElement.appendChild(newOption);
+         })
+    };
+
+    const attributesList = ["id_strength","id_agility","id_gumption","id_intelligence","id_mysticism","id_personality"]
+
+    PopulatePointbuys("id_agility")
+    PopulatePointbuys("id_gumption")
+    PopulatePointbuys("id_strength")
+    PopulatePointbuys("id_intelligence")
+    PopulatePointbuys("id_mysticism")
+    PopulatePointbuys("id_personality")
+
+    function CheckSelected() {
+        const selectedBuys = []
+        attributesList.forEach (function(attribute) {
+            attribute = "#" + attribute
+            if ($(attribute).val() != "") {
+                selectedBuys.push($(attribute).val())
+            }
+            else {
+                selectedBuys.push(0)
+            }
+        })
+        return selectedBuys
+    }
+
+    attributesList.forEach (function(attribute) {
+        //add event listener to each attribute dropdown. should re-populate pointbuys on "change" for all attributes other than the one changing
+        jqID = "#" + attribute
+        $(jqID).change(function(){
+            //update all other dropdowns with new list
+            const filteredAttr = attributesList.filter(val=> val !== attribute)
+            filteredAttr.forEach (function(attr) {
+                PopulatePointbuys(attr)
+            })
+        })
+    })
+
+
+</script>
+
+
+{% endblock content%}

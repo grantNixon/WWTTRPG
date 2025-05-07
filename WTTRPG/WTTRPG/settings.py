@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'create.apps.CreateConfig',
     'guides.apps.GuidesConfig',
     'homebrew.apps.HomebrewConfig',
+    'api.apps.ApiConfig'
 
 ]
 
