@@ -198,7 +198,8 @@
                                 <p class="border-bottom border-dark w-50 text-dark">Available Weapons</p>
                                 <ul id="weapon-options"></ul>
                               </div>
-                              <ul id="current-weapons">
+                              <ul id="currentWeaponList">
+                    
                               </ul>
                           </div>
                           <div class="tab-pane fade pb-5" id="spells-tab" role="spelltabpanel">
@@ -881,7 +882,9 @@ function openWeaponManager() {
         console.log(jsonData.name[0])
         jsonData.name.forEach((weapon) => {
           weaponOptionsList.innerHTML += `<li>${weapon} 
-            <button onclick="addWeapon(${weapon})">➕</button></li>`;
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" style="cursor: pointer;" onclick="addWeapon(${weapon})" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+</svg></li>`;
         });
       });
   }
