@@ -13,7 +13,6 @@ def fetchWeapons(request):
        data = json.loads(request.body)
        primary_key = data.get('id')
        obj = Character.objects.get(id=primary_key)
-       print(obj.inventory.weapons)
        jsonInv = json.dumps(obj.inventory.weapons)
        return JsonResponse(jsonInv, safe=False)
     else:
@@ -23,22 +22,21 @@ def fetchWeapons(request):
 def fetchAllWeapons(request):
     if request.method == 'POST':
         obj = list(Weapon.objects.values_list('WeaponName', flat=True))
-        print(obj)
         jsonObj = json.dumps({'name':obj})
         return JsonResponse(jsonObj, safe=False)
     else:
         return JsonResponse({'status':'error'})
-
+@csrf_exempt
 def addWeapon(request):
     if request.method == 'POST':
        data = json.loads(request.body)
-       weaponToRemove = data.get('weapon_id')
+       weaponToAdd = data.get('weapon_id')
        primary_key = data.get('char_id')
        obj = Character.objects.get(id=primary_key)
-       charInv = obj.inventory.weapons
-       charInv = [weapon for weapon in charInv if weapon["name"] != weaponToRemove]
-       charInv.save()
+       obj.inventory.weapons.append({'name':weaponToAdd})
+       obj.inventory.save()
        obj.save()
+       return JsonResponse({'status': 'success'})
 
 def removeWeapon():
     pass
