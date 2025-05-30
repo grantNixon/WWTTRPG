@@ -881,7 +881,7 @@ function openWeaponManager() {
         console.log(jsonData.name[0])
         jsonData.name.forEach((weapon) => {
           weaponOptionsList.innerHTML += `<li>${weapon} 
-            <button onclick="addWeapon(${weapon})">➕</button></li>`;
+            <button onclick="addWeapon("${weapon}")">➕</button></li>`;
         });
       });
   }
