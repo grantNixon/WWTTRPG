@@ -20,7 +20,7 @@
     display: none;
     position: top;
     overflow-y: auto;
-    background-color: #f0d7a8;
+    background-color: #fffbf1;
     border: 1px solid #000;
     padding: 10px;
     z-index: 1000;
@@ -198,8 +198,8 @@
                                 <p class="border-bottom border-dark w-50 text-dark">Available Weapons</p>
                                 <ul id="weapon-options"></ul>
                               </div>
-                              <ul id="current-weapons">
-                                  <li></li>
+                              <ul id="currentWeaponList">
+                                <li>{{currentWeaponList}}</li>
                               </ul>
                           </div>
                           <div class="tab-pane fade pb-5" id="spells-tab" role="spelltabpanel">
@@ -225,11 +225,22 @@
                               <button class="nav-link text-dark" id="abilities-tab" data-bs-toggle="tab" data-bs-target="#abilities" type="button" role="tab">Abilities & Perks</button>
                           </li>
                           <li class="nav-item" role="presentation">
-                              <button class="nav-link text-dark" id="philosophies-tab" data-bs-toggle="tab" data-bs-target="#philosophies" type="button" role="tab">Philosophies</button>
+                              <button class="nav-link text-dark" id="talents-tab" data-bs-toggle="tab" data-bs-target="#talents" type="button" role="tab">Talents</button>
                           </li>
                       </ul>
                       <div class="tab-content mt-2" id="myTabContent2">
                           <div class="tab-pane fade pb-5 show active" id="inventory" role="tabpanel">
+                            <button id="inventoryToggleButton" class="btn btn-sm btn-dark btn-secondary px-3" onclick="toggleInventoryManager()">Manage</button>
+                              <div id="inventoryManager">                              
+                                <p class="border-bottom border-dark text-dark w-50">Current Inv.</p>
+                                <ul id="current-inventory"></ul>
+                              
+                                <p class="border-bottom border-dark w-50 text-dark">Available Inv.</p>
+                                <ul id="inventory-options"></ul>
+                              </div>
+                              <ul id="currentInventoryList">
+                                <li>{{currentWeaponList}}</li>
+                              </ul>
                               <ul id="inventory-list">
                                   <li>[Item Placeholder]</li>
                               </ul>
@@ -239,9 +250,9 @@
                                   <li><em>Refer to the testing packet for your perks</em></li>
                               </ul>
                           </div>
-                          <div class="tab-pane fade pb-5" id="philosophies" role="tabpanel">
+                          <div class="tab-pane fade pb-5" id="talents" role="tabpanel">
                               <ul>
-                                  <li><em>Refer to the testing packet for your philosophies</em></li>
+                                  <li><em>Refer to the testing packet for your talents</em></li>
                               </ul>
                           </div>
                       </div>
@@ -864,8 +875,9 @@ function openWeaponManager() {
         const currentWeaponList = document.getElementById("current-weapons");
         currentWeaponList.innerHTML = "";
         jsonData.forEach((weapon) => {
-          currentWeaponList.innerHTML += `<li>${weapon.name} 
-            <button onclick="removeWeapon(${weapon.id})">❌</button></li>`;
+          currentWeaponList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: #f0d7a8;" onclick="removeWeapon(${weapon.id})">${weapon.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
+</svg></button><br />`;
         });
       });
 
@@ -880,8 +892,10 @@ function openWeaponManager() {
         jsonData = JSON.parse(data)
         console.log(jsonData.name[0])
         jsonData.name.forEach((weapon) => {
-          weaponOptionsList.innerHTML += `<li>${weapon} 
-            <button onclick="addWeapon("${weapon}")">➕</button></li>`;
+          weaponOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: #f0d7a8;" onclick="addWeapon(${weapon})">${weapon} 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+</svg></button><br />`;
         });
       });
   }
