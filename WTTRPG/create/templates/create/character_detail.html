@@ -31,6 +31,36 @@
     margin-top: 10px;
   }
 
+  #inventoryManager {
+    display: none;
+    position: top;
+    overflow-y: auto;
+    background-color: #fffbf1;
+    border: 1px solid #000;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  #inventoryManager button {
+    margin-top: 10px;
+  }
+
+  #spellManager {
+    display: none;
+    position: top;
+    overflow-y: auto;
+    background-color: #fffbf1;
+    border: 1px solid #000;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  #spellManager button {
+    margin-top: 10px;
+  }
+
       </style>
 <div class="page" style="background-color: #f0d7a8;">
   <div class="container">
@@ -189,28 +219,35 @@
                           </li>
                       </ul>
                       <div class="tab-content mt-2" id="myTabContent1">
-                          <div class="tab-pane fade pb-5 show active" id="weaponManagerTab" role="weapontabpanel">
-                             <button id="weaponToggleButton" class="btn btn-sm btn-dark btn-secondary px-3" onclick="toggleWeaponManager()">Manage</button>
-                              <div id="weaponManager">                              
+                        <div class="tab-pane fade pb-5 show active" id="weapons" role="tabpanel" aria-labelledby="weapons-tab">
+                            <button id="weaponToggleButton" class="btn btn-sm btn-dark btn-secondary px-3" onclick="toggleWeaponManager()">Manage</button>
+                            <div id="weaponManager">
                                 <p class="border-bottom border-dark text-dark w-50">Current Weapons</p>
                                 <ul id="current-weapons"></ul>
-                              
+                    
                                 <p class="border-bottom border-dark w-50 text-dark">Available Weapons</p>
                                 <ul id="weapon-options"></ul>
-                              </div>
-                              <ul id="currentWeaponList">
+                            </div>
+                            <ul id="currentWeaponList">
                                 {% for weapon in character.inventory.weapons %}
-                                  <li>{{ weapon.name }}</li>
+                                    <li>{{ weapon.name }}</li>
                                 {% endfor %}
-                              </ul>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade pb-5" id="spells" role="tabpanel" aria-labelledby="spells-tab">
+                            <button id="spellToggleButton" class="btn btn-sm btn-dark btn-primary" onclick="toggleSpellManager()">Manage</button>
+                            <div id="spellManager">
+                              <p class="border-bottom border-dark text-dark w-50">Current Spells</p>
+                              <ul id="current-spells"></ul>
+                  
+                              <p class="border-bottom border-dark w-50 text-dark">Available Spells</p>
+                              <ul id="spell-options"></ul>
                           </div>
-                          <div class="tab-pane fade pb-5" id="spells-tab" role="spelltabpanel">
-                              <button id="spellToggleButton" class="btn btn-sm btn-dark btn-primary" onclick="openSpellManager()">Manage</button>
-                              <ul>
-                                  <li><em>Refer to the testing packet to pick your spells</em></li>
-                              </ul>
-                          </div>
-                      </div>
+                          <ul id="currentSpellList">
+                                  <li></li>
+                          </ul>
+                        </div>
+                    </div>
                   </div>
               </div>
           </div>
@@ -242,9 +279,6 @@
                               </div>
                               <ul id="currentInventoryList">
                                 <li>{{currentWeaponList}}</li>
-                              </ul>
-                              <ul id="inventory-list">
-                                  <li>[Item Placeholder]</li>
                               </ul>
                           </div>
                           <div class="tab-pane fade pb-5" id="abilities" role="tabpanel">
@@ -934,6 +968,54 @@ function openWeaponManager() {
     manager.style.display = "block";
     button.textContent = "Close";
     fetchWeapons();  // only fetch when opening
+  } else {
+    manager.style.display = "none";
+    button.textContent = "Manage";
+  }
+}
+
+function openInventoryManager() {
+    document.getElementById("inventoryManager").style.display = "block";
+    fetchInventory();
+  }
+
+  function closeInventoryManager() {
+    document.getElementById("inventoryManager").style.display = "none";
+  }
+
+   // inventory manager toggle
+   function toggleInventoryManager() {
+  const manager = document.getElementById("inventoryManager");
+  const button = document.getElementById("inventoryToggleButton");
+
+  if (manager.style.display === "none" || manager.style.display === "") {
+    manager.style.display = "block";
+    button.textContent = "Close";
+    fetchInventory();  // only fetch when opening
+  } else {
+    manager.style.display = "none";
+    button.textContent = "Manage";
+  }
+}
+
+function openSpellManager() {
+    document.getElementById("spellManager").style.display = "block";
+    fetchSpells();
+  }
+
+  function closeSpellManager() {
+    document.getElementById("spellManager").style.display = "none";
+  }
+
+   // spell manager toggle
+   function toggleSpellManager() {
+  const manager = document.getElementById("spellManager");
+  const button = document.getElementById("spellToggleButton");
+
+  if (manager.style.display === "none" || manager.style.display === "") {
+    manager.style.display = "block";
+    button.textContent = "Close";
+    fetchSpells();  // only fetch when opening
   } else {
     manager.style.display = "none";
     button.textContent = "Manage";
