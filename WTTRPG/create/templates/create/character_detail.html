@@ -96,16 +96,19 @@
     
 
 <!-- Level Up Modal -->
-<div id="levelUpModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #f0d7a8; padding: 50px; border: 2px solid black;">
-    <h3 class="text-center">You Leveled Up!</h3>
-    <label class="mb-2">Major Increase:</label>
-    <select id="attributeIncrease5"></select>
+<div class="container" id="levelUpModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #f0d7a8; padding: 50px; border: 2px solid black;">
+    <h3 class="text-center border-bottom border-dark">You Leveled Up!</h3>
+    <h5 class="text-center">Your hands are quicker on the draw and your wits are just a bit sharper</h5>
+    <div class="text-center">
+      <label class="d-block fs-4">Major: +5</label>
+      <select id="attributeIncrease5" class="mx-auto d-block mb-2"></select>
+  </div>
+    <div class="text-center">
+      <label class="d-block fs-4">Minor: +3</label>
+      <select id="attributeIncrease3" class="mx-auto d-block"></select>
     <br>
-    <label>Minor Increase:</label>
-    <select id="attributeIncrease3"></select>
-    <br>
-    <button class="btn btn-secondary btn-dark p-1 mt-2 ms-5" onclick="applyLevelUp()">Confirm</button>
-    <button class="btn btn-secondary btn-dark p-1 mt-2 ms-1" onclick="closeLevelUpModal()">Cancel</button>
+    <button class="btn btn-secondary btn-dark p-1 mt-2" onclick="applyLevelUp()">Confirm</button>
+    </div>
 </div>
 
 <div class="row justify-content-center text-center align-items-center mb-1 mt-3 px-3">
@@ -222,12 +225,24 @@
                         <div class="tab-pane fade pb-5 show active" id="weapons" role="tabpanel" aria-labelledby="weapons-tab">
                             <button id="weaponToggleButton" class="btn btn-link-dark text-decoration-underline" onclick="toggleWeaponManager()">Manage</button>
                             <div id="weaponManager">
-                                <p class="border-bottom border-dark text-dark w-50">Current Weapons</p>
-                                <ul id="current-weapons"></ul>
-                    
-                                <p class="border-bottom border-dark w-50 text-dark">Available Weapons</p>
-                                <ul id="weapon-options"></ul>
-                            </div>
+                              <ul class="nav nav-tabs" id="weaponManagerTabs" role="tablist">
+                                  <li class="nav-item" role="presentation">
+                                      <button class="nav-link text-dark active" id="current-weapons-tab" data-bs-toggle="tab" data-bs-target="#current-weapons-pane" type="button" role="tab">Current Weapons</button>
+                                  </li>
+                                  <li class="nav-item" role="presentation">
+                                      <button class="nav-link text-dark" id="available-weapons-tab" data-bs-toggle="tab" data-bs-target="#available-weapons-pane" type="button" role="tab">Available Weapons</button>
+                                  </li>
+                              </ul>
+                              <div class="tab-content mt-2" id="weaponManagerTabContent">
+                                  <div class="tab-pane fade show active" id="current-weapons-pane" role="tabpanel" aria-labelledby="current-weapons-tab">
+                                      <ul id="current-weapons"></ul>
+                                  </div>
+                                  <div class="tab-pane fade" id="available-weapons-pane" role="tabpanel" aria-labelledby="available-weapons-tab">
+                                      <ul id="weapon-options"></ul>
+                                  </div>
+                              </div>
+                          </div>
+                          
                             <ul id="currentWeaponList">
                                 {% for weapon in character.inventory.weapons %}
                                     <li>{{ weapon.name }}</li>
