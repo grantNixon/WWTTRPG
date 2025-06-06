@@ -31,15 +31,26 @@ def addWeapon(request):
     if request.method == 'POST':
        data = json.loads(request.body)
        weaponToAdd = data.get('weapon_id')
+       print(data)
        primary_key = data.get('char_id')
        obj = Character.objects.get(id=primary_key)
        obj.inventory.weapons.append({'name':weaponToAdd})
        obj.inventory.save()
        obj.save()
        return JsonResponse({'status': 'success'})
-
-def removeWeapon():
-    pass
+    
+@csrf_exempt
+def removeWeapon(request):
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       weaponToRemove = data.get('weapon_id')
+       print(data)
+       primary_key = data.get('char_id')
+       obj = Character.objects.get(id=primary_key)
+       obj.inventory.weapons.remove({'name':weaponToRemove})
+       obj.inventory.save()
+       obj.save()
+       return JsonResponse({'status': 'success'})
 
 def levelUp(request):
     if request.method == 'POST':    
