@@ -158,11 +158,6 @@ def update_skills(request):
         increment = request.POST.get('increment')
         if primary_key and skill_to_update and increment:
             obj = Character.objects.get(id=primary_key)
-            print(obj.perks)
-            addperk = Perk.objects.get(id=65)
-            print(addperk)
-            print(obj.perks.all()) 
-            print(obj.perks)
             current_sk_value = getattr(obj, skill_to_update)
             new_sk_value = current_sk_value + int(increment)
             setattr(obj, skill_to_update, new_sk_value)
