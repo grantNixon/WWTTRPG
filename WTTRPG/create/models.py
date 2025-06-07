@@ -69,6 +69,10 @@ class Inventory(models.Model):
     utilities = models.JSONField(default=list)
     tonics = models.JSONField(default=list)
 
+class Perk(models.Model):
+    skill = models.CharField()
+    skillLevel = models.IntegerField()
+    description = models.TextField()
 
 class Character(models.Model):
     name = models.CharField(max_length = 30)

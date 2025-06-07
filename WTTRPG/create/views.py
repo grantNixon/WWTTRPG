@@ -20,15 +20,16 @@ from django.contrib.auth.decorators import login_required
 
 
 def bulk_DB_upload():
-    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\CSV_Test.csv', newline='') as csvfile:
+    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\perks.csv', newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-           StartingEquipment.objects.create(
-                name = row['name'],
-                itemList = row['itemList'],
+           Perk.objects.create(
+                skill = row['Skill'],
+                skillLevel = row['SkillLevel'],
+                description = row['Perk']
             )
 
-#bulk_DB_upload()
+bulk_DB_upload()
 
 
 # Create your views here.
