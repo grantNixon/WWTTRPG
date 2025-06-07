@@ -585,10 +585,23 @@
                   </div>
                  </div>
     </div>
-   
+   <div id="tempAlert" class="alert alert-success position-fixed top-0 start-50 translate-middle-x mt-3" 
+     style="display: none; z-index: 2000;" role="alert">
+  Weapon Added
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script >
+  let skillLevelUps = 0;
+
+   function showTempAlert(message, duration = 2000) {
+    const alertBox = document.getElementById("tempAlert");
+    alertBox.innerText = message;
+    alertBox.style.display = "block";
+    setTimeout(() => {
+      alertBox.style.display = "none";
+    }, duration);
+  }
 
  // AP adjustments
                   function increase(id) {
@@ -943,10 +956,14 @@ function openWeaponManager() {
         jsonData = JSON.parse(data)
         console.log(jsonData.name[0])
         jsonData.name.forEach((weapon) => {
-          weaponOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: #f0d7a8;" onclick="addWeapon('${weapon}')">${weapon} 
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
-  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
-</svg></button><br />`;
+          weaponOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
+        style="background-color: #f0d7a8;" 
+        onclick="addWeapon('${weapon}'); showTempAlert('Weapon Added');">
+  ${weapon}
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+  </svg>
+</button><br />`;
         });
       });
   }
