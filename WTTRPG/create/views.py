@@ -24,12 +24,12 @@ def bulk_DB_upload():
         reader = csv.DictReader(csvfile)
         for row in reader:
            Perk.objects.create(
-                skill = row['Skill'],
+                perkSkill = row['Skill'],
                 skillLevel = row['SkillLevel'],
                 description = row['Perk']
             )
 
-bulk_DB_upload()
+#bulk_DB_upload()
 
 
 # Create your views here.
@@ -104,7 +104,6 @@ class QSCharCreator(LoginRequiredMixin,CreateView):
         newInv = Inventory.objects.create()
         Character.inventory = newInv
         Character.inventory.weapons.append({'name':str(form.cleaned_data['starting_weapon'])})
-        print(Character.inventory.weapons)
         Character.inventory.save()
         Character.level = 1
         stats = self.compute_stats(form.cleaned_data['gumption'],form.cleaned_data['strength'],form.cleaned_data['agility'],1)
@@ -116,18 +115,19 @@ class QSCharCreator(LoginRequiredMixin,CreateView):
         minSk = [form.cleaned_data['minor_skill_1'],form.cleaned_data['minor_skill_2'],form.cleaned_data['minor_skill_3'],form.cleaned_data['minor_skill_4'],form.cleaned_data['minor_skill_5']]
         for sk in majSk:
             conv_sk = Skills_to_ModelName.skilldic[sk]
-            print(conv_sk)
             setattr(Character,conv_sk,25)
         for sk in minSk:
             conv_sk = Skills_to_ModelName.skilldic[sk]
-            print(conv_sk)
             setattr(Character,conv_sk,15)
         charBackground = form.cleaned_data['background']
         bgBonuses = BackgroundBonuses.bonuses[charBackground]
         for skill, value in bgBonuses.items():
             currentValue = getattr(Character, skill)
             setattr(Character, skill, currentValue + value)
-        Character.save()        
+        Character.save()
+        Character.perks.clear()
+        Character.save()
+        print(Character.perks)        
         return redirect('/create/character_detail/' + str(Character.id))  # Redirect to a success page
 
 def SignUpView(request):
@@ -158,6 +158,11 @@ def update_skills(request):
         increment = request.POST.get('increment')
         if primary_key and skill_to_update and increment:
             obj = Character.objects.get(id=primary_key)
+            print(obj.perks)
+            addperk = Perk.objects.get(id=65)
+            print(addperk)
+            print(obj.perks.all()) 
+            print(obj.perks)
             current_sk_value = getattr(obj, skill_to_update)
             new_sk_value = current_sk_value + int(increment)
             setattr(obj, skill_to_update, new_sk_value)

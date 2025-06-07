@@ -70,9 +70,10 @@ class Inventory(models.Model):
     tonics = models.JSONField(default=list)
 
 class Perk(models.Model):
-    skill = models.CharField()
+    perkSkill = models.CharField(max_length=100)
     skillLevel = models.IntegerField()
     description = models.TextField()
+
 
 class Character(models.Model):
     name = models.CharField(max_length = 30)
@@ -105,6 +106,7 @@ class Character(models.Model):
     mb = models.IntegerField()
     ec = models.IntegerField()
     ap = models.IntegerField()
+    perks = models.ManyToManyField("Perk", related_name="characters", default= None)
     initiative = models.IntegerField(default=2)
     sk_crushing = models.IntegerField(default = 5)
     sk_shotguns = models.IntegerField(default = 5)

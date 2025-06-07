@@ -3,7 +3,10 @@ from .models import *
 
 # Register your models here
 
-admin.site.register(Character)
+class CharacterAdmin(admin.ModelAdmin):
+    filter_horizontal = ('perks',)  # Makes perks selection more user-friendly
+
+admin.site.register(Character, CharacterAdmin)
 admin.site.register(Morals)
 admin.site.register(Language)
 admin.site.register(Weapon)
@@ -16,3 +19,4 @@ admin.site.register(TestPacketFile)
 admin.site.register(OneShotFile)
 admin.site.register(Background)
 admin.site.register(Inventory)
+admin.site.register(Perk)
