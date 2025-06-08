@@ -20,12 +20,13 @@ from django.contrib.auth.decorators import login_required
 
 
 def bulk_DB_upload():
-    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\CSV_Test.csv', newline='') as csvfile:
+    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\perks.csv', newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-           StartingEquipment.objects.create(
-                name = row['name'],
-                itemList = row['itemList'],
+           Perk.objects.create(
+                perkSkill = row['Skill'],
+                skillLevel = row['SkillLevel'],
+                description = row['Perk']
             )
 
 #bulk_DB_upload()
@@ -103,7 +104,6 @@ class QSCharCreator(LoginRequiredMixin,CreateView):
         newInv = Inventory.objects.create()
         Character.inventory = newInv
         Character.inventory.weapons.append({'name':str(form.cleaned_data['starting_weapon'])})
-        print(Character.inventory.weapons)
         Character.inventory.save()
         Character.level = 1
         stats = self.compute_stats(form.cleaned_data['gumption'],form.cleaned_data['strength'],form.cleaned_data['agility'],1)
@@ -115,18 +115,19 @@ class QSCharCreator(LoginRequiredMixin,CreateView):
         minSk = [form.cleaned_data['minor_skill_1'],form.cleaned_data['minor_skill_2'],form.cleaned_data['minor_skill_3'],form.cleaned_data['minor_skill_4'],form.cleaned_data['minor_skill_5']]
         for sk in majSk:
             conv_sk = Skills_to_ModelName.skilldic[sk]
-            print(conv_sk)
             setattr(Character,conv_sk,25)
         for sk in minSk:
             conv_sk = Skills_to_ModelName.skilldic[sk]
-            print(conv_sk)
             setattr(Character,conv_sk,15)
         charBackground = form.cleaned_data['background']
         bgBonuses = BackgroundBonuses.bonuses[charBackground]
         for skill, value in bgBonuses.items():
             currentValue = getattr(Character, skill)
             setattr(Character, skill, currentValue + value)
-        Character.save()        
+        Character.save()
+        Character.perks.clear()
+        Character.save()
+        print(Character.perks)        
         return redirect('/create/character_detail/' + str(Character.id))  # Redirect to a success page
 
 def SignUpView(request):
