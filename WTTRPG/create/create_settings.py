@@ -20,11 +20,11 @@ class WeaponProfs():
 class Skills_to_ModelName():
     skilldic = {"Shotguns":"sk_shotguns","Crushing Melee":"sk_crushing", "Hand-to-Hand":"sk_hand","Athletics":"sk_athletics","Crafting":"sk_crafting","Pistols":"sk_pistols",
               "Slashing Melee":"sk_slashing", "Archery":"sk_archery","Ropework":"sk_ropework",
-              "Acrobatics":" sk_acrobatics","Sneak":"sk_sneak","Thievery":"sk_thievery","Intimidation":"sk_intimidation","Hunting":"sk_hunting","Cooking":"sk_cooking",
+              "Acrobatics":"sk_acrobatics","Sneak":"sk_sneak","Thievery":"sk_thievery","Intimidation":"sk_intimidation","Hunting":"sk_hunting","Cooking":"sk_cooking",
               "Foraging":"sk_foraging","Animal Handling":"sk_animalhandling","Rifles":"sk_rifles","Intuition":"sk_intuition",
-              "Investigation":"sk_investigation","Gambit":"sk_gambit","Brewing":"sk_brewing","Galvanism Magic":" sk_galvanismmagic","Religion":"sk_religion","Medicine":"sk_medicine",
+              "Investigation":"sk_investigation","Gambit":"sk_gambit","Brewing":"sk_brewing","Galvanism Magic":"sk_galvanismmagic","Religion":"sk_religion","Medicine":"sk_medicine",
               "History":"sk_history","Healing Magic":"sk_healingmagic","Utility Magic":"sk_utilitymagic","Absolution Magic":"sk_absolutionmagic",
-              "Foolery":" sk_foolery","Persuasion":"sk_persuasion","Barter":"sk_barter","Performance":"sk_performance","Deception Magic":"sk_deceptionmagic","Ritual Magic":"sk_ritualmagic","Destruction Magic":"sk_destructionmagic"}
+              "Foolery":"sk_foolery","Persuasion":"sk_persuasion","Barter":"sk_barter","Performance":"sk_performance","Deception Magic":"sk_deceptionmagic","Ritual Magic":"sk_ritualmagic","Destruction Magic":"sk_destructionmagic"}
 
 class BackgroundBonuses():
     bonuses = {
