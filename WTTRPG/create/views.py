@@ -20,13 +20,14 @@ from django.contrib.auth.decorators import login_required
 
 
 def bulk_DB_upload():
-    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\perks.csv', newline='') as csvfile:
+    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\Perks1.csv', newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
            Perk.objects.create(
                 perkSkill = row['Skill'],
+                perkName = row['PerkName'],
                 skillLevel = row['SkillLevel'],
-                description = row['Perk']
+                description = row['PerkEffect']
             )
 
 #bulk_DB_upload()
@@ -124,10 +125,14 @@ class QSCharCreator(LoginRequiredMixin,CreateView):
         for skill, value in bgBonuses.items():
             currentValue = getattr(Character, skill)
             setattr(Character, skill, currentValue + value)
-        Character.save()
-        Character.perks.clear()
-        Character.save()
-        print(Character.perks)        
+        for sk in Skills.skillz:
+            conv_sk = Skills_to_ModelName.skilldic[sk]
+            sk_value = getattr(Character, conv_sk)
+            for perc in Perk.all():
+                if sk == perc.perkSkill:
+                    if sk_value >= perc.skillLevel:
+                        Character.perks.add(perc)
+        Character.save()   
         return redirect('/create/character_detail/' + str(Character.id))  # Redirect to a success page
 
 def SignUpView(request):

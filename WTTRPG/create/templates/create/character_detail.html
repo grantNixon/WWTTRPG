@@ -297,9 +297,11 @@
                               </ul>
                           </div>
                           <div class="tab-pane fade pb-5" id="abilities" role="tabpanel">
-                              <ul>
-                                  <li><em>Refer to the testing packet for your perks</em></li>
-                              </ul>
+                            <ul id="perkList">
+                                {% for perk in character.perks.all %}
+                                    <li>{{ perk.perkName }}</li>
+                                {% endfor %}
+                            </ul>
                           </div>
                           <div class="tab-pane fade pb-5" id="talents" role="tabpanel">
                               <ul>

@@ -71,8 +71,12 @@ class Inventory(models.Model):
 
 class Perk(models.Model):
     perkSkill = models.CharField(max_length=100)
+    perkName = models.CharField(max_length=100)
     skillLevel = models.IntegerField()
     description = models.TextField()
+
+    def __str__(self):
+        return self.perkName
 
 
 class Character(models.Model):
