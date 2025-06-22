@@ -20,12 +20,12 @@ from django.contrib.auth.decorators import login_required
 
 
 def bulk_DB_upload():
-    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\Perks1.csv', newline='') as csvfile:
+    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\perk_list.csv', newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
            Perk.objects.create(
                 perkSkill = row['Skill'],
-                perkName = row['PerkName'],
+                perkName = row['Perk'],
                 skillLevel = row['SkillLevel'],
                 description = row['PerkEffect']
             )
@@ -168,12 +168,16 @@ def update_skills(request):
             new_sk_value = current_sk_value + int(increment)
             setattr(obj, skill_to_update, new_sk_value)
             obj.save()
+            sk_pk = Perk.objects.get(perkSkill = request.POST.get('skill')) #get all perks tied to skill being increased - not working currently, need to fix. 
+            for perc in sk_pk:
+                if current_sk_value < perc.skillLevel and new_sk_value >= perc.skillLevel: #loop through all perks in the query set and check if skill threshold for new perk is crossed
+                    obj.perks.add(perc)
             return JsonResponse({'status': 'success'})
         else:
             return JsonResponse({'status': 'error', 'message': 'Failed to update skills'})
     else:
         return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
-    
+ 
 
 @csrf_exempt
 def retrieve_skills(request):
