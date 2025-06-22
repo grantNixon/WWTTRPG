@@ -243,7 +243,7 @@
                               </div>
                           </div>
                           
-                            <ul id="currentWeaponList">
+                            <ul id="current-weapons">
                                 {% for weapon in character.inventory.weapons %}
                                     <li>{{ weapon.name }}</li>
                                 {% endfor %}
@@ -299,7 +299,11 @@
                           <div class="tab-pane fade pb-5" id="abilities" role="tabpanel">
                             <ul id="perkList">
                                 {% for perk in character.perks.all %}
+<<<<<<< HEAD
+                                    <li><small><u>{{ perk.perkName }}</u> - <em>{{ perk.description }}</em></small></li>
+=======
                                     <li>{{ perk.perkName }}/li>
+>>>>>>> 20a44dd0de3dc5f89e0ab2326c08ba43c4dcdf86
                                 {% endfor %}
                             </ul>
                           </div>
@@ -555,6 +559,12 @@
                       <div class="mt-3 mb-1"></div>
         
                       <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="persuasion-skill">{{character.sk_persuasion}}</span> | Persuasion</p>
+                      <button id="persuasion" class="skill-btn" onclick="decreaseXP('persuasion')">-</button>
+                        <button class="skill-btn" onclick="increaseXP('persuasion')">+</button>
+                      Exp: <span id="persuasion-xp-tracker"></span>
+                      <div class="mt-3 mb-1"></div>
+
+                        <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="persuasion-skill">{{character.sk_performance}}</span> | Performance</p>
                       <button id="persuasion" class="skill-btn" onclick="decreaseXP('persuasion')">-</button>
                         <button class="skill-btn" onclick="increaseXP('persuasion')">+</button>
                       Exp: <span id="persuasion-xp-tracker"></span>
