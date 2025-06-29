@@ -243,7 +243,7 @@
                               </div>
                           </div>
                           
-                            <ul id="current-weapons">
+                            <ul id="current-weapons2">
                                 {% for weapon in character.inventory.weapons %}
                                     <li>{{ weapon.name }}</li>
                                 {% endfor %}
@@ -930,6 +930,9 @@ function openWeaponManager() {
     document.getElementById("weaponManager").style.display = "none";
   }
 
+
+
+
   function fetchWeapons() {
     // Load the weapons the character currently has
     const pagePath = window.location.pathname
@@ -943,7 +946,7 @@ function openWeaponManager() {
       .then((response) => response.json())
       .then((data) => {
         jsonData = JSON.parse(data)
-        console.log(jsonData[0].name)
+        console.log(jsonData)
         const currentWeaponList = document.getElementById("current-weapons");
         currentWeaponList.innerHTML = "";
         jsonData.forEach((weapon) => {
@@ -962,7 +965,7 @@ function openWeaponManager() {
         const weaponOptionsList = document.getElementById("weapon-options");
         weaponOptionsList.innerHTML = "";
         jsonData = JSON.parse(data)
-        console.log(jsonData.name[0])
+        console.log(jsonData)
         jsonData.name.forEach((weapon) => {
           weaponOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
         style="background-color: #f0d7a8;" 
@@ -980,6 +983,7 @@ function openWeaponManager() {
     const pagePath = window.location.pathname
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $('#current-weapons2').append('<li>' + weaponId + '</li>');
     fetch('{% url "api:addWeapon" %}', {
       method: "POST",
       headers: {
