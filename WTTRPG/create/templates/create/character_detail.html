@@ -91,6 +91,7 @@
             <span class="fs-6">lvl</span>
             <span class="border-2 border-dark p-1 fs-3" id="characterLevel">{{character.level}}</span>
             <button class="btn btn-sm border border-2 mb-2" style="background-color: #fffbf1;" onclick="openLevelUpModal()">Level Up</button>
+            <button class="btn btn-sm border border-2 mb-2" style="background-color: #fffbf1;" onclick="openSnapshot()">Mechanics Snapshot</button>
         </div>
     </div>
     
@@ -108,6 +109,49 @@
       <select id="attributeIncrease3" class="mx-auto d-block"></select>
     <br>
     <button class="btn btn-secondary btn-dark p-1 mt-2" onclick="applyLevelUp()">Confirm</button>
+    </div>
+</div>
+
+<div class="container" id="snapshot" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #f0d7a8; padding: 50px; border: 2px solid black;">
+    <div class="col-md">
+          <div class="">
+            <div class="row row-cols-2">
+               <!-- Major Skills -->
+               <div class="col">
+                <h1 class="fs-6 text-decoration-underline fw-bold">Major Skills</h1>
+                <ul>
+                  <li>{{character.major_skill_1}}</li>
+                  <li>{{character.major_skill_2}}</li>
+                  <li>{{character.major_skill_3}}</li>
+                </ul>
+                <div>
+                  <h1 class="fs-6 text-decoration-underline fw-bold">Weapon Prof.</h1>
+                  <li id="weaponproficiency">{{character.weapon_proficiency}}</li>
+                </div>
+              </div>
+              <!-- Minor Skills -->
+              <div class="col">
+                <h1 class="fs-6 text-decoration-underline fw-bold">Minor Skills</h1>
+                <ul>
+                  <li>{{character.minor_skill_1}}</li>
+                  <li>{{character.minor_skill_2}}</li>
+                  <li>{{character.minor_skill_3}}</li>
+                  <li>{{character.minor_skill_4}}</li>
+                  <li>{{character.minor_skill_5}}</li>
+                </ul>
+              </div>
+              <div class="col mt-2">
+                <span class="fs-6 border-bottom border-dark">{{character.morals}}</span>
+                <h1 class="fs-6"><b>Morals</b></h1>
+              </div>
+              <div class="col">
+                <span class="fs-6 border-bottom border-dark">{{character.language}}</span>
+                <h1 class="fs-6"><b>Languages</b></h1>
+              </div>
+            </div>
+          </div>
+        
+    <button class="btn btn-secondary btn-dark p-1 mt-2" onclick="closeSnapshot()">Close</button>
     </div>
 </div>
 
@@ -1104,8 +1148,40 @@ function openLevelUpModal() {
     document.getElementById("levelUpModal").style.pointerEvents = "auto"; // Keep modal interactive
 }
 
+function openSnapshot() {
+    const attributes = ["strength", "agility", "gumption", "intelligence", "mysticism", "personality"];
+    const select5 = document.getElementById("attributeIncrease5");
+    const select3 = document.getElementById("attributeIncrease3");
+    
+    // Clear previous options
+    select5.innerHTML = "";
+    select3.innerHTML = "";
+    
+    // Populate dropdowns
+    attributes.forEach(attr => {
+        let option5 = document.createElement("option");
+        option5.value = attr;
+        option5.textContent = attr.charAt(0).toUpperCase() + attr.slice(1);
+        select5.appendChild(option5);
+        
+        let option3 = document.createElement("option");
+        option3.value = attr;
+        option3.textContent = attr.charAt(0).toUpperCase() + attr.slice(1);
+        select3.appendChild(option3);
+    });
+    
+    document.getElementById("snapshot").style.display = "block";
+    document.body.style.pointerEvents = "none"; // Disable interactions with the rest of the page
+    document.getElementById("snapshot").style.pointerEvents = "auto"; // Keep modal interactive
+}
+
 function closeLevelUpModal() {
     document.getElementById("levelUpModal").style.display = "none";
+    document.body.style.pointerEvents = "auto"; // Re-enable interactions with the page
+}
+
+function closeSnapshot() {
+    document.getElementById("snapshot").style.display = "none";
     document.body.style.pointerEvents = "auto"; // Re-enable interactions with the page
 }
 
