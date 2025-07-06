@@ -91,7 +91,7 @@
             <span class="fs-6">lvl</span>
             <span class="border-2 border-dark p-1 fs-3" id="characterLevel">{{character.level}}</span>
             <button class="btn btn-sm border border-2 mb-2" style="background-color: #fffbf1;" onclick="openLevelUpModal()">Level Up</button>
-            <button class="btn btn-sm border border-2 mb-2" style="background-color: #fffbf1;" onclick="openSnapshot()">Mechanics Snapshot</button>
+            <button class="btn btn-sm border border-2 mb-2" style="background-color: rgb(217, 173, 27);" onclick="openSnapshot()">Mechanics Snapshot</button>
         </div>
     </div>
     
@@ -112,43 +112,50 @@
     </div>
 </div>
 
-<div class="container" id="snapshot" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #f0d7a8; padding: 50px; border: 2px solid black;">
+<div class="container" id="snapshot" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fffbf1; padding: 25px; border: 2px solid black;">
     <div class="col-md">
           <div class="">
             <div class="row row-cols-2">
-               <!-- Major Skills -->
-               <div class="col">
-                <h1 class="fs-6 text-decoration-underline fw-bold">Major Skills</h1>
-                <ul>
-                  <li>{{character.major_skill_1}}</li>
-                  <li>{{character.major_skill_2}}</li>
-                  <li>{{character.major_skill_3}}</li>
-                </ul>
-                <div>
-                  <h1 class="fs-6 text-decoration-underline fw-bold">Weapon Prof.</h1>
-                  <li id="weaponproficiency">{{character.weapon_proficiency}}</li>
-                </div>
+              <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Action Points (AP)</b></span>
+                <h1 class="fs-6">-2 AP is refilled at the beginning of a characters turn<br />
+-Half AP values are rounded up at the end of their turn</h1>
+              </div>
+              <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Movement Bank (MB)</b></span>
+                <h1 class="fs-6">-Chance of being hit</h1>
+              </div>
+              <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Evasion Chance (EC)</b></span>
+                <h1 class="fs-6">-The three death saves are still here, but with a few changes. First, when you are reduced to 0 hp, you are conscious and can still move. Also, you can forgo your saves and make one last attack. If that attack kills, you get a second wind, if it misses, you’ve spent the last of your energy and die</h1>
+              </div>
+              <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Swapping Weapons</b></span>
+                <h1 class="fs-6">-It costs 5ft MB to swap between different weapons<br />
+-If a character is holding a one-handed weapon and wants to pull out a two-handed weapon, they can switch to the two-handed for the MB cost immediately or hold it in the opposite hand of the one-handed and still use the one-handed until they decide to two-hand the two-handed weapon later for no cost
+</h1>
+              </div>
+                <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Grazing</b></span>
+                <h1 class="fs-6">-Rolling 1 below a targets EC counts as a graze, dealing half damage</h1>
               </div>
               <!-- Minor Skills -->
               <div class="col">
-                <h1 class="fs-6 text-decoration-underline fw-bold">Minor Skills</h1>
-                <ul>
-                  <li>{{character.minor_skill_1}}</li>
-                  <li>{{character.minor_skill_2}}</li>
-                  <li>{{character.minor_skill_3}}</li>
-                  <li>{{character.minor_skill_4}}</li>
-                  <li>{{character.minor_skill_5}}</li>
-                </ul>
-              </div>
-              <div class="col mt-2">
-                <span class="fs-6 border-bottom border-dark">{{character.morals}}</span>
-                <h1 class="fs-6"><b>Morals</b></h1>
+                <span class="fs-6 border-bottom border-dark"><b>Jams</b></span>
+                <h1 class="fs-6">-Rolling a 1-3 will cause a gun to jam<br />
+-It can be unjammed, but the jam counter will stay<br /> 
+-Getting 3 jams before it’s repaired will cause the gun to break and it will need to be fully repaired before it can be used again
+</h1>
               </div>
               <div class="col">
-                <span class="fs-6 border-bottom border-dark">{{character.language}}</span>
-                <h1 class="fs-6"><b>Languages</b></h1>
+                <span class="fs-6 border-bottom border-dark"><b>Good odds/bad odds</b></span>
+                <h1 class="fs-6">Good odds means you roll two dice and use the highest, bad odds means you use the lowest</h1>
               </div>
             </div>
+             <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Dying</b></span>
+                <h1 class="fs-6">-The three death saves are still here, but with a few changes. First, when you are reduced to 0 hp, you are conscious and can still move. Also, you can forgo your saves and make one last attack. If that attack kills, you get a second wind, if it misses, you’ve spent the last of your energy and die</h1>
+              </div>
           </div>
         
     <button class="btn btn-secondary btn-dark p-1 mt-2" onclick="closeSnapshot()">Close</button>

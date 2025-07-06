@@ -3,19 +3,21 @@
 {% load static %}
 
 <main class="container" style="background-color: #f0d7a8;">
-    <div class="p-4 mb-4 rounded text-body-emphasis bg-body-secondary mt-3">
-      <div class="col-lg-6 px-0">
-        <h1 class="display-4 fst-italic">Welcome to Gumption</h1>
-        <p class="lead my-3 text-dark">Our beta test is live! Download the new test guidebook, create a character, and jump into the Far West. You can test everything out alone or grab some friends and run a session.</p>
+    <div class="p-4 mb-4 rounded text-body-emphasis bg-body-secondary mt-3" style="background-color: #fffbf1;">
+      <div class="row-col-2-lg-6 px-0">
+        <h1 class="display-4 text-center">Welcome to<br />Gumption</h1>
+      </div>
+      <div class="col">
+        <p class="lead text-dark">Our beta test is live! Download the new test guidebook, create a character, and jump into the Far West. You can test everything out alone or grab some friends and run a session online.</p>
       </div>
     </div>
   
-    <div class="row">
+    <div class="row border border-dark border-2 p-2">
       <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 h-75 position-relative" style="background-color: black;">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row shadow-sm h-md-250 h-75 position-relative" style="background-color: rgb(0, 0, 0);">
           <div class="col p-4 d-flex flex-column position-static">
             <h3 class="mb-0 text-light">Step 1: Create an Account</h3>
-            <span class="text-light border-top mt-2 mb-4">Step 1</span>
+            <span class="text-light border-top mt-2 mb-4"></span>
             <a href="{% url "sign_up"%}" class="icon-link gap-1 icon-link-hover stretched-link text-light mt-4">
               Create an account
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-add" viewBox="0 0 16 16">
@@ -108,7 +110,7 @@
       </div>
     </div>
   
-    <div class="row g-5">
+    <div class="row g-5 mt-2">
       <div class="col-md-8">
         <h3 class="pb-4 mb-4 fst-italic text-dark border-bottom border-dark">
           Updates
@@ -175,8 +177,7 @@
       <div class="col-md-4">
         <div class="position-sticky" style="top: 2rem;">
           <div class="p-4 mb-3 bg-body-tertiary rounded">
-            <h4 class="fst-italic">About</h4>
-            <p class="mb-0 text-dark">Raspberry Jam</p>
+            <h4 class="fst-italic"><i>About Raspberry Jam</i></h4>
              <small class="text-body-secondary">We're a small team with dreams of creating TTRPG's, RPG adventure modules and more
              </small>
           </div>
