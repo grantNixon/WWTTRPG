@@ -365,7 +365,7 @@
                                     <ul id="current-tonics"></ul>
                                   </div>
                                   <div class="tab-pane fade" id="items-pane" role="tabpanel" aria-labelledby="items-tab">  
-                                    <ul id="items"></ul>
+                                    <ul id="current-items"></ul>
                                   </div>
                                   <div class="tab-pane fade" id="utilities-pane" role="tabpanel" aria-labelledby="utilities-tab">  
                                     <ul id="utilities"></ul>
@@ -1150,6 +1150,9 @@ function openInventoryManager() {
 
 function fetchInventory() {
   fetchTonics();
+  fetchItems();
+  fetchUtilities();
+  fetchClothing();
 }
 
 function fetchTonics() {
@@ -1224,6 +1227,229 @@ function fetchTonics() {
       body: JSON.stringify({ tonic_id: tonicId, char_id: characterPrimaryKey }),
     }).then(() => fetchTonics());
   }
+
+  // fetch mystical items
+  function fetchItems() {
+    // Load the myst items the character currently has
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    console.log(characterPrimaryKey)
+    fetch('', {
+      method: "POST",
+      body: JSON.stringify({'id':characterPrimaryKey})
+    }) 
+      .then((response) => response.json())
+      .then((data) => {
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        const currentItemsList = document.getElementById("current-items");
+        currentItemsList.innerHTML = "";
+        jsonData.forEach((item) => {
+          currentItemsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeWeapon('${tonic.name}')">${tonic.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
+</svg></button><br />`;
+        });
+      });
+
+    // Load all available items from the database
+    fetch('', {
+      method: "POST"
+    })  // Update with your Django endpoint
+      .then((response) => response.json())
+      .then((data) => {
+        const itemOptionsList = document.getElementById("item-options");
+        itemOptionsList.innerHTML = "";
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        jsonData.name.forEach((item) => {
+          itemOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
+        style="background-color: white;" 
+        onclick="addItem('${item}'); showTempAlert('item Added');">
+  ${item}
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+  </svg>
+</button><br />`;
+        });
+      });
+  }
+
+  function addTonic(itemId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $('#current-items2').append('<li>' + itemId + '</li>');
+    fetch('', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ item_id: itemId, char_id: characterPrimaryKey }),
+    }).then(() => fetchItems());
+  }
+
+  function removeItem(itemId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    fetch('', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ item_id: itemId, char_id: characterPrimaryKey }),
+    }).then(() => fetchItems());
+  }
+
+  // fetch utilities
+  function fetchUtilities() {
+    // Load the utilities the character currently has
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    console.log(characterPrimaryKey)
+    fetch('', {
+      method: "POST",
+      body: JSON.stringify({'id':characterPrimaryKey})
+    }) 
+      .then((response) => response.json())
+      .then((data) => {
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        const currentUtilitiesList = document.getElementById("current-utilities");
+        currentUtilitiesList.innerHTML = "";
+        jsonData.forEach((utility) => {
+          currentUtilitiesList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeWeapon('${tonic.name}')">${tonic.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
+</svg></button><br />`;
+        });
+      });
+
+    // Load all available Utilities from the database
+    fetch('', {
+      method: "POST"
+    })  // Update with your Django endpoint
+      .then((response) => response.json())
+      .then((data) => {
+        const utilityOptionsList = document.getElementById("utility-options");
+        utilityOptionsList.innerHTML = "";
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        jsonData.name.forEach((utility) => {
+          utilityOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
+        style="background-color: white;" 
+        onclick="addUtility('${utility}'); showTempAlert('utility Added');">
+  ${utility}
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+  </svg>
+</button><br />`;
+        });
+      });
+  }
+
+  function addUtility(utilityId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $('#current-utilities2').append('<li>' + utilityId + '</li>');
+    fetch('', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ utility_id: utilityId, char_id: characterPrimaryKey }),
+    }).then(() => fetchUtilities());
+  }
+
+  function removeUtility(utilityId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    fetch('', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ utility_id: utilityId, char_id: characterPrimaryKey }),
+    }).then(() => fetchUtilities());
+  }
+
+  // fetch clothing/armor
+  function fetchClothing() {
+    // Load the clothing the character currently has
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    console.log(characterPrimaryKey)
+    fetch('', {
+      method: "POST",
+      body: JSON.stringify({'id':characterPrimaryKey})
+    }) 
+      .then((response) => response.json())
+      .then((data) => {
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        const currentClothingList = document.getElementById("current-clothing");
+        currentClothingList.innerHTML = "";
+        jsonData.forEach((clothing) => {
+          currentClothingList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeWeapon('${tonic.name}')">${tonic.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
+</svg></button><br />`;
+        });
+      });
+
+    // Load all available clothing from the database
+    fetch('', {
+      method: "POST"
+    })  // Update with your Django endpoint
+      .then((response) => response.json())
+      .then((data) => {
+        const clothingOptionsList = document.getElementById("clothing-options");
+        clothingOptionsList.innerHTML = "";
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        jsonData.name.forEach((clothing) => {
+          clothingOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
+        style="background-color: white;" 
+        onclick="addClothing('${clothing}'); showTempAlert('clothing Added');">
+  ${clothing}
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+  </svg>
+</button><br />`;
+        });
+      });
+  }
+
+  function addClothing(clothingId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $('#current-clothing2').append('<li>' + clothingId + '</li>');
+    fetch('', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ clothing_id: clothingId, char_id: characterPrimaryKey }),
+    }).then(() => fetchClothing());
+  }
+
+  function removeClothing(clothingId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    fetch('', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ clothing_id: clothingId, char_id: characterPrimaryKey }),
+    }).then(() => fetchClothing());
+  }
+
 
 function openSpellManager() {
     document.getElementById("spellManager").style.display = "block";
