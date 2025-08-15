@@ -73,5 +73,51 @@ def levelUp(request):
     else:
          return JsonResponse({'status': 'error', 'message': 'Failed to update skills'})
 
-    #need logic for major/minor skill increases 
+@csrf_exempt
+def fetchAllTonics(request):
+    if request.method == 'POST':
+        obj = list(Tonic.objects.values_list('TonicName', flat=True))
+        jsonObj = json.dumps({'name':obj})
+        return JsonResponse(jsonObj, safe=False)
+    else:
+        return JsonResponse({'status':'error'})
+    
+@csrf_exempt
+def fetchTonics(request):
+    #return all weapons in current characters inventory
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       primary_key = data.get('id')
+       obj = Character.objects.get(id=primary_key)
+       jsonInv = json.dumps(obj.inventory.tonics)
+       return JsonResponse(jsonInv, safe=False)
+    else:
+        return JsonResponse({'status':'error'})
+    
+@csrf_exempt
+def addTonic(request):
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       tonicToAdd = data.get('tonic_id')
+       print(data)
+       primary_key = data.get('char_id')
+       obj = Character.objects.get(id=primary_key)
+       obj.inventory.tonics.append({'name':tonicToAdd})
+       obj.inventory.save()
+       obj.save()
+       return JsonResponse({'status': 'success'})
+    
+@csrf_exempt
+def removeTonic(request):
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       tonicToRemove = data.get('tonic_id')
+       print(data)
+       primary_key = data.get('char_id')
+       obj = Character.objects.get(id=primary_key)
+       obj.inventory.tonics.remove({'name':tonicToRemove})
+       obj.inventory.save()
+       obj.save()
+       return JsonResponse({'status': 'success'})
+
 

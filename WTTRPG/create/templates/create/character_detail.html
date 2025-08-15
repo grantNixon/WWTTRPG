@@ -357,12 +357,12 @@
                               <div class="tab-content mt-2" id="inventoryManagerTabContent">
                                   <div class="tab-pane fade show active" id="current-inventory-pane" role="tabpanel" aria-labelledby="current-inventory-tab">
                                       <ul id="current-items"></ul>
-                                      <ul id="current-tonics"></ul>
+                                      <ul id="tonics"></ul>
                                       <ul id="current-clothing"></ul>
                                       <ul id="current-utilities"></ul>
                                   </div>
                                   <div class="tab-pane fade" id="tonic-pane" role="tabpanel" aria-labelledby="tonics-tab">  
-                                    <ul id="tonics">hello world</ul>
+                                    <ul id="current-tonics"></ul>
                                   </div>
                                   <div class="tab-pane fade" id="items-pane" role="tabpanel" aria-labelledby="items-tab">  
                                     <ul id="items"></ul>
@@ -1148,16 +1148,20 @@ function openInventoryManager() {
   }
 }
 
+function fetchInventory() {
+  fetchTonics();
+}
+
 function fetchTonics() {
     // Load the tonics the character currently has
     const pagePath = window.location.pathname
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
     console.log(characterPrimaryKey)
-    fetch('', {
+    fetch('{% url "api:fetchTonics" %}', {
       method: "POST",
       body: JSON.stringify({'id':characterPrimaryKey})
-    })  // Update with your Django endpoint
+    }) 
       .then((response) => response.json())
       .then((data) => {
         jsonData = JSON.parse(data)
@@ -1165,14 +1169,14 @@ function fetchTonics() {
         const currentTonicList = document.getElementById("current-tonics");
         currentTonicList.innerHTML = "";
         jsonData.forEach((tonic) => {
-          currentTonicList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeWeapon('${weapon.name}')">${weapon.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+          currentTonicList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeWeapon('${tonic.name}')">${tonic.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
 </svg></button><br />`;
         });
       });
 
     // Load all available weapons from the database
-    fetch('', {
+    fetch('{% url "api:fetchAllTonics" %}', {
       method: "POST"
     })  // Update with your Django endpoint
       .then((response) => response.json())
@@ -1185,7 +1189,7 @@ function fetchTonics() {
           tonicOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
         style="background-color: white;" 
         onclick="addTonic('${tonic}'); showTempAlert('tonic Added');">
-  ${weapon}
+  ${tonic}
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
     <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
   </svg>
