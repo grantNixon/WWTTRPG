@@ -357,12 +357,12 @@
                               <div class="tab-content mt-2" id="inventoryManagerTabContent">
                                   <div class="tab-pane fade show active" id="current-inventory-pane" role="tabpanel" aria-labelledby="current-inventory-tab">
                                       <ul id="current-items"></ul>
-                                      <ul id="tonics"></ul>
+                                      <ul id="current-tonics"></ul>
                                       <ul id="current-clothing"></ul>
                                       <ul id="current-utilities"></ul>
                                   </div>
                                   <div class="tab-pane fade" id="tonic-pane" role="tabpanel" aria-labelledby="tonics-tab">  
-                                    <ul id="current-tonics"></ul>
+                                    <ul id="tonic-options"></ul>
                                   </div>
                                   <div class="tab-pane fade" id="items-pane" role="tabpanel" aria-labelledby="items-tab">  
                                     <ul id="current-items"></ul>
@@ -1083,7 +1083,7 @@ function openWeaponManager() {
     const pagePath = window.location.pathname
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
-    $('#current-weapons2').append('<li>' + weaponId + '</li>');
+    $('#current-weapons2').append('<li id="weapon-' + weaponId + '">' + weaponId + '</li>');
     fetch('{% url "api:addWeapon" %}', {
       method: "POST",
       headers: {
@@ -1097,6 +1097,7 @@ function openWeaponManager() {
     const pagePath = window.location.pathname
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $(`[id="weapon-${weaponId}"]`).remove();
     fetch('{% url "api:removeWeapon" %}', {
       method: "POST",
       headers: {
@@ -1172,7 +1173,7 @@ function fetchTonics() {
         const currentTonicList = document.getElementById("current-tonics");
         currentTonicList.innerHTML = "";
         jsonData.forEach((tonic) => {
-          currentTonicList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeWeapon('${tonic.name}')">${tonic.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+          currentTonicList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeTonic('${tonic.name}')">${tonic.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
 </svg></button><br />`;
         });
@@ -1205,8 +1206,8 @@ function fetchTonics() {
     const pagePath = window.location.pathname
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
-    $('#current-tonics2').append('<li>' + tonicId + '</li>');
-    fetch('', {
+    $('#current-tonics2').append('<li id="tonic-' + tonicId + '">' + tonicId + '</li>');
+    fetch('{% url "api:addTonic" %}', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -1219,7 +1220,8 @@ function fetchTonics() {
     const pagePath = window.location.pathname
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
-    fetch('', {
+    $(`[id="tonic-${tonicId}"]`).remove();
+    fetch('{% url "api:removeTonic" %}', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -1275,7 +1277,7 @@ function fetchTonics() {
       });
   }
 
-  function addTonic(itemId) {
+  function addItem(itemId) {
     const pagePath = window.location.pathname
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
