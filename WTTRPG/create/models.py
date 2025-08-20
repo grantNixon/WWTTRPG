@@ -65,7 +65,7 @@ class StartingEquipment(models.Model):
 
 class Inventory(models.Model):
     weapons = models.JSONField(default=list)
-    armors = models.JSONField(default=list)
+    clothing = models.JSONField(default=list)
     utilities = models.JSONField(default=list)
     tonics = models.JSONField(default=list)
 
@@ -173,13 +173,13 @@ class Spell(models.Model):
     def __str__(self):
         return self.SpellName  
 
-class Armor(models.Model):
-    ArmorName = models.CharField(max_length = 100)
-    ArmorDescription = models.TextField()
-    ArmorStats = models.TextField()
+class Clothing(models.Model):
+    ClothingName = models.CharField(max_length = 100)
+    ClothingDescription = models.TextField()
+    ClothingStats = models.TextField()
 
     def __str__(self):
-        return self.ArmorName
+        return self.ClothingName
 
 class Tonic(models.Model):
     TonicName = models.CharField(max_length = 100)

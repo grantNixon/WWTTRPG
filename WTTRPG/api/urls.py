@@ -7,6 +7,7 @@ app_name = 'api'
 urlpatterns = [
     path('character/weapons', views.fetchWeapons, name='fetchWeapons'),
     path('character/tonics', views.fetchTonics, name='fetchTonics'),
+    path('character/clothing', views.fetchClothing, name='fetchClothing'),
     path('character/levelUp', views.levelUp, name='levelup'),
     path('fetchAllWeapons', views.fetchAllWeapons, name='fetchAllWeapons'),
     path('addWeapon', views.addWeapon, name="addWeapon"),
@@ -14,5 +15,8 @@ urlpatterns = [
     path('fetchAllTonics', views.fetchAllTonics, name='fetchAllTonics'),
     path('addTonic', views.addTonic, name="addTonic"),
     path('removeTonic', views.removeTonic, name="removeTonic"),
+    path('fetchAllClothing', views.fetchAllClothing, name='fetchAllClothing'),
+    path('addClothing', views.addClothing, name="addClothing"),
+    path('removeClothing', views.removeClothing, name="removeClothing"),
 
 ]

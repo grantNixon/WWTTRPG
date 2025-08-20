@@ -371,7 +371,7 @@
                                     <ul id="utilities"></ul>
                                   </div>
                                   <div class="tab-pane fade" id="clothing-pane" role="tabpanel" aria-labelledby="clothing-tab">  
-                                    <ul id="clothing"></ul>
+                                    <ul id="clothing-options"></ul>
                                   </div>
                               </div>
                           </div>
@@ -1385,7 +1385,7 @@ function fetchTonics() {
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
     console.log(characterPrimaryKey)
-    fetch('', {
+    fetch('{% url "api:fetchClothing" %}', {
       method: "POST",
       body: JSON.stringify({'id':characterPrimaryKey})
     }) 
@@ -1396,14 +1396,14 @@ function fetchTonics() {
         const currentClothingList = document.getElementById("current-clothing");
         currentClothingList.innerHTML = "";
         jsonData.forEach((clothing) => {
-          currentClothingList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeWeapon('${tonic.name}')">${tonic.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+          currentClothingList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeClothing('${clothing.name}')">${clothing.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
 </svg></button><br />`;
         });
       });
 
     // Load all available clothing from the database
-    fetch('', {
+    fetch('{% url "api:fetchAllClothing" %}', {
       method: "POST"
     })  // Update with your Django endpoint
       .then((response) => response.json())
@@ -1429,8 +1429,8 @@ function fetchTonics() {
     const pagePath = window.location.pathname
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
-    $('#current-clothing2').append('<li>' + clothingId + '</li>');
-    fetch('', {
+    $('#current-clothing2').append('<li id="clothing-' + clothingId + '">' + clothingId + '</li>');
+    fetch('{% url "api:addClothing" %}', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -1443,7 +1443,8 @@ function fetchTonics() {
     const pagePath = window.location.pathname
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
-    fetch('', {
+    $(`[id="clothing-${clothingId}"]`).remove();
+    fetch('{% url "api:removeClothing" %}', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

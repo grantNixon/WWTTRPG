@@ -119,5 +119,53 @@ def removeTonic(request):
        obj.inventory.save()
        obj.save()
        return JsonResponse({'status': 'success'})
+    
+@csrf_exempt
+def fetchAllClothing(request):
+    if request.method == 'POST':
+        obj = list(Clothing.objects.values_list('ClothingName', flat=True))
+        jsonObj = json.dumps({'name':obj})
+        return JsonResponse(jsonObj, safe=False)
+    else:
+        return JsonResponse({'status':'error'})
+    
+@csrf_exempt
+def fetchClothing(request):
+    #return all clothing in current characters inventory
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       primary_key = data.get('id')
+       obj = Character.objects.get(id=primary_key)
+       jsonInv = json.dumps(obj.inventory.clothing)
+       return JsonResponse(jsonInv, safe=False)
+    else:
+        return JsonResponse({'status':'error'})
+    
+@csrf_exempt
+def addClothing(request):
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       clothingToAdd = data.get('clothing_id')
+       print(data)
+       primary_key = data.get('char_id')
+       obj = Character.objects.get(id=primary_key)
+       obj.inventory.clothing.append({'name':clothingToAdd})
+       obj.inventory.save()
+       obj.save()
+       return JsonResponse({'status': 'success'})
+    
+@csrf_exempt
+def removeClothing(request):
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       clothingToRemove = data.get('clothing_id')
+       print(data)
+       primary_key = data.get('char_id')
+       obj = Character.objects.get(id=primary_key)
+       obj.inventory.clothing.remove({'name':clothingToRemove})
+       obj.inventory.save()
+       obj.save()
+       return JsonResponse({'status': 'success'})
+
 
 
