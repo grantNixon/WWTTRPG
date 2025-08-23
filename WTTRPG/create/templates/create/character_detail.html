@@ -291,11 +291,22 @@
                       </ul>
                       <div class="tab-content mt-2" id="myTabContent1">
                         <div class="tab-pane fade pb-5 show active" id="weapons" role="tabpanel" aria-labelledby="weapons-tab">
-                            <button id="weaponToggleButton" class="btn btn-link-dark text-decoration-underline float-end" onclick="toggleWeaponManager()">Manage Weap.</button>
+                            <div id="weaponButtonHome">
+    <button id="weaponToggleButton" class="mb-2 btn btn-sm btn-outline-danger text-dark float-end"
+        onclick="toggleWeaponManager()">
+        Manage Weap.
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+</svg>
+    </button>
+</div>
                             <div id="weaponManager">
+                              <h5 class="border-bottom border-dark">Weapons</h5>
+                              <div id="weaponButtonSidebar"></div>
                               <ul class="nav nav-tabs" id="weaponManagerTabs" role="tablist">
                                   <li class="nav-item" role="presentation">
-                                      <button class="nav-link text-dark active" id="current-weapons-tab" data-bs-toggle="tab" data-bs-target="#current-weapons-pane" type="button" role="tab">Current Weapons</button>
+                                      <button class="nav-link text-dark active" id="current-weapons-tab" data-bs-toggle="tab" data-bs-target="#current-weapons-pane" type="button" role="tab">My Weapons</button>
                                   </li>
                                   <li class="nav-item" role="presentation">
                                       <button class="nav-link text-dark" id="available-weapons-tab" data-bs-toggle="tab" data-bs-target="#available-weapons-pane" type="button" role="tab">Available Weapons</button>
@@ -352,12 +363,19 @@
                       </ul>
                      <div class="tab-content mt-2" id="myTabContent1">
                         <div class="tab-pane fade pb-5 show active" id="inventory" role="tabpanel" aria-labelledby="inventory-tab">
-                    <button id="inventoryToggleButton" 
-        class="btn btn-link-dark text-decoration-underline" 
+                    <div id="buttonHome">
+    <button id="inventoryToggleButton" class="mb-2 btn btn-sm btn-outline-danger text-dark float-end"
         onclick="toggleInventoryManager()">
-  Manage Inv.
-</button>
+        Manage Inv.
+       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+</svg>
+    </button>
+</div>
                             <div id="inventoryManager">
+                              <h5 class="border-bottom border-dark">Inventory</h5>
+                              <div id="buttonSidebar"></div>
                               <ul class="nav nav-tabs" id="inventoryManagerTabs" role="tablist">
                                   <li class="nav-item" role="presentation">
                                       <button class="nav-link text-dark active" id="current-inventory-tab" data-bs-toggle="tab" data-bs-target="#current-inventory-pane" type="button" role="tab">My Inventory</button>
@@ -1133,19 +1151,23 @@ function openWeaponManager() {
   }
        // weapon manager toggle
 function toggleWeaponManager() {
-  const manager = document.getElementById("weaponManager");
-  const button = document.getElementById("weaponToggleButton");
+    const manager = document.getElementById("weaponManager");
+    const button = document.getElementById("weaponToggleButton");
+    const buttonHome = document.getElementById("weaponButtonHome");
+    const buttonSidebar = document.getElementById("weaponButtonSidebar");
 
-  const isOpen = manager.classList.contains("open");
+    const isOpen = manager.classList.contains("open");
 
-  if (!isOpen) {
-    manager.classList.add("open");
-    button.textContent = "Close";
-    fetchWeapons(); // Load weapons when opening
-  } else {
-    manager.classList.remove("open");
-    button.textContent = "Manage Weap.";
-  }
+    if (!isOpen) {
+        manager.classList.add("open");
+        button.innerHTML = 'Close'
+        fetchWeapons();
+        buttonSidebar.appendChild(button); // move into sidebar
+    } else {
+        manager.classList.remove("open");
+        button.innerHTML = 'Manage Weap. <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg>';
+        buttonHome.appendChild(button); // move back outside
+    }
 }
  // Inventory mngr
 function openInventoryManager() {
@@ -1158,20 +1180,29 @@ function openInventoryManager() {
   }
 
    // inventory manager toggle
-   function toggleInventoryManager() {
-  const manager = document.getElementById("inventoryManager");
-  const button = document.getElementById("inventoryToggleButton");
+  function toggleInventoryManager() {
+    const manager = document.getElementById("inventoryManager");
+    const button = document.getElementById("inventoryToggleButton");
+    const buttonHome = document.getElementById("buttonHome");
+    const buttonSidebar = document.getElementById("buttonSidebar");
 
-  const isOpen = manager.classList.contains("open");
+    const isOpen = manager.classList.contains("open");
 
-  if (!isOpen) {
-    manager.classList.add("open");
-    button.textContent = "Close";
-    fetchInventory(); // Fetch only when opening
-  } else {
-    manager.classList.remove("open");
-    button.textContent = "Manage Inv.";
-  }
+    if (!isOpen) {
+        // Open sidebar
+        manager.classList.add("open");
+        button.textContent = 'Close'
+        fetchInventory();
+        // Move button into sidebar
+        buttonSidebar.appendChild(button);
+    } else {
+        // Close sidebar
+        manager.classList.remove("open");
+        button.innerHTML = 'Manage Inv. <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg>';
+        
+        // Move button back to home position
+        buttonHome.appendChild(button);
+    }
 }
 
 
@@ -1218,7 +1249,7 @@ function fetchTonics() {
         jsonData.name.forEach((tonic) => {
           tonicOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
         style="background-color: white;" 
-        onclick="addTonic('${tonic}'); showTempAlert('Tonic Added');">
+        onclick="addTonic('${tonic}'); showTempAlert('tonic Added');">
   ${tonic}
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
     <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
@@ -1293,7 +1324,7 @@ function fetchTonics() {
         jsonData.name.forEach((item) => {
           itemOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
         style="background-color: white;" 
-        onclick="addItem('${item}'); showTempAlert('Item Added');">
+        onclick="addItem('${item}'); showTempAlert('item Added');">
   ${item}
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
     <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
@@ -1367,7 +1398,7 @@ function fetchTonics() {
         jsonData.name.forEach((utility) => {
           utilityOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
         style="background-color: white;" 
-        onclick="addUtility('${utility}'); showTempAlert('Utility Added');">
+        onclick="addUtility('${utility}'); showTempAlert('utility Added');">
   ${utility}
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
     <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
@@ -1441,7 +1472,7 @@ function fetchTonics() {
         jsonData.name.forEach((clothing) => {
           clothingOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
         style="background-color: white;" 
-        onclick="addClothing('${clothing}'); showTempAlert('Clothing Added');">
+        onclick="addClothing('${clothing}'); showTempAlert('clothing Added');">
   ${clothing}
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
     <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
