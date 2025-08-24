@@ -108,7 +108,9 @@
             <span class="fs-6">lvl</span>
             <span class="border-2 border-dark p-1 fs-3" id="characterLevel">{{character.level}}</span>
             <button class="btn btn-sm border border-2 mb-2" style="background-color: #fffbf1;" onclick="openLevelUpModal()">Level Up</button>
-            <button class="btn btn-sm border border-2 mb-2" style="background-color: rgb(217, 173, 27);" onclick="openSnapshot()">Mechanics Snapshot</button>
+            <button class="btn btn-info btn-sm border border-2 mb-2 ms-4" onclick="openSnapshot()">Mechanics <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+</svg></button>
         </div>
     </div>
     
@@ -125,7 +127,11 @@
       <label class="d-block fs-4">Minor: +3</label>
       <select id="attributeIncrease3" class="mx-auto d-block"></select>
     <br>
-    <button class="btn btn-secondary btn-dark p-1 mt-2" onclick="applyLevelUp()">Confirm</button>
+    <button class="btn btn-secondary btn-dark p-1 mt-2" onclick="applyLevelUp()">Confirm</button><button type="button" class="btn btn-info btn-sm ms-3 mt-2" data-bs-container="body"  data-bs-html="true"  data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Strength = MB<br>Agilty = EC<br>Gumption = HP<br>Intelligence = Natural awareness<br>Mysticism = More spell slots<br>Personality = More spell slots/better prices<br><br>Higher overall level = AP">
+  attribute mods <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+</svg>
+</button>
     </div>
 </div>
 
@@ -302,7 +308,9 @@
     </button>
 </div>
                             <div id="weaponManager">
-                              <h5 class="border-bottom border-dark">Weapons</h5>
+                              <h5 class="border-bottom border-dark">Weapons<button type="button" class="btn btn-sm btn-info mb-3 ms-1" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Clockwork weapons do piercing damage, Cindeli weapons do slashing, and Evergladian weapons do crushing">
+  ?
+</button></h5>
                               <div id="weaponButtonSidebar"></div>
                               <ul class="nav nav-tabs" id="weaponManagerTabs" role="tablist">
                                   <li class="nav-item" role="presentation">
@@ -456,7 +464,11 @@
     
       
       <!-- Attributes, Skills -->
-      <h1 class="fs-5 fw-bold mt-4 mb-2 border-bottom border-dark w-25">Attributes and Skills</h1>
+      <h1 class="fs-5 fw-bold mt-4 mb-2 border-bottom border-dark w-50">Attributes and Skills <button type="button" class="btn btn-info btn-sm mb-2" data-bs-container="body"  data-bs-html="true"  data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Add these bonuses to your skill check rolls, weapon hits, and damage done<br><br>Skill Lvl 5 = -1<br>Lvl 10 = 0<br>Lvl 15 = +1<br>Lvl 25 = +2<br>Lvl 40 = +3<br> Lvl 50 = +4<br>Lvl 60 = +5<br>Lvl 75 = +6<br>Lvl 100 = +8">
+  Skill mods <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+</svg>
+</button></h1>
         <div class="row g-4 py-1 row-cols-1 row-cols-lg-6">
           <div class="col d-flex align-items-start">
             <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
@@ -1662,6 +1674,9 @@ function trackSkillLevelUp() {
         openLevelUpModal();
     }
 }
+
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
 
 </script>
