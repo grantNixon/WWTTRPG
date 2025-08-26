@@ -53,6 +53,9 @@ def create_view(request):
 def homebrew_view(request):
     return(render(request,"create/homebrew.html"))
 
+def expCharCreator(request):
+    return(render(request, "create/character_form_expand.html"))
+
 class CharacterListView(LoginRequiredMixin,ListView):
     model = Character
     
