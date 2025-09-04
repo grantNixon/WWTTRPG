@@ -108,7 +108,7 @@
             <span class="fs-6">lvl</span>
             <span class="border-2 border-dark p-1 fs-3" id="characterLevel">{{character.level}}</span>
             <button class="btn btn-sm border border-2 mb-2" style="background-color: #fffbf1;" onclick="openLevelUpModal()">Level Up</button>
-            <button class="btn btn-info btn-sm border border-2 mb-2 ms-4" onclick="openSnapshot()">Mechanics <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+            <button class="btn btn-info btn-sm border border-2 mb-2 ms-4" onclick="openSnapshot()">Mechanics<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
   <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
 </svg></button>
         </div>
@@ -118,7 +118,7 @@
 <!-- Level Up Modal -->
 <div class="container" id="levelUpModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #f0d7a8; padding: 50px; border: 2px solid black;">
     <h3 class="text-center border-bottom border-dark">You Leveled Up!</h3>
-    <h5 class="text-center">Your hands are quicker on the draw and your wits are just a bit sharper</h5>
+    <h5 class="text-center">Your time spent in the wild west has made your hands and wits sharper, but there's still many dangers ahead</h5>
     <div class="text-center">
       <label class="d-block fs-4">Major: +5</label>
       <select id="attributeIncrease5" class="mx-auto d-block mb-2"></select>
@@ -127,8 +127,8 @@
       <label class="d-block fs-4">Minor: +3</label>
       <select id="attributeIncrease3" class="mx-auto d-block"></select>
     <br>
-    <button class="btn btn-secondary btn-dark p-1 mt-2" onclick="applyLevelUp()">Confirm</button><button type="button" class="btn btn-info btn-sm ms-3 mt-2" data-bs-container="body"  data-bs-html="true"  data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Strength = MB<br>Agilty = EC<br>Gumption = HP<br>Intelligence = Natural awareness<br>Mysticism = More spell slots<br>Personality = More spell slots/better prices<br><br>Higher overall level = AP">
-  attribute mods <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+    <button class="btn btn-secondary btn-dark p-1 mt-2" onclick="applyLevelUp()">Confirm</button><button type="button" class="btn btn-info btn-sm ms-3 mt-2 border-2" data-bs-container="body"  data-bs-html="true"  data-bs-toggle="popover" data-bs-placement="right" data-bs-content="<b>Strength</b>: MB<br><b>Agilty</b>: EC<br><b>Gumption</b>: HP<br><b>Intelligence</b>: Natural awareness<br><b>Mysticism</b>: More spell slots<br><b>Personality</b>: More spell slots/better prices<br><b>Character level</b>: AP">
+  Attributes<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
   <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
 </svg>
 </button>
@@ -141,7 +141,7 @@
             <div class="row row-cols-2">
               <div class="col">
                 <span class="fs-6 border-bottom border-dark"><b>Action Points (AP)</b></span>
-                <h1 class="fs-6">-2 AP is refilled at the beginning of a characters turn<br />
+                <h1 class="fs-6">-3 AP is refilled at the beginning of a characters turn<br />
 -Half AP values are rounded up at the end of their turn</h1>
               </div>
               <div class="col">
@@ -206,11 +206,11 @@
         </div>
         <!-- MB -->
         <div class="col mb-1">
-          <span class="fs-6 border-bottom border-dark">{{character.mb}}</span>
+          <span class="fs-6 border-bottom border-dark">{{character.mb}}ft</span>
           <h1 class="fs-6"><b>MB</b></h1>
         </div>
         <div class="col">
-          <span class="fs-6 border-bottom border-dark">{{character.initiative}}</span>
+          <span class="fs-6 border-bottom border-dark">+{{character.initiative}}</span>
           <h1 class="fs-6"><b>Initiative</b></h1>
         </div>
       </div>
@@ -220,72 +220,7 @@
       <div class="row">
         <!-- Left Side: Stats -->
         <div class="col-md">
-          <div class="border border-dark border-2 p-3">
-            <div class="row row-cols-2">
-               <!-- Major Skills -->
-               <div class="col">
-                <h1 class="fs-6 text-decoration-underline fw-bold">Major Skills</h1>
-                <ul>
-                  <li>{{character.major_skill_1}}</li>
-                  <li>{{character.major_skill_2}}</li>
-                  <li>{{character.major_skill_3}}</li>
-                </ul>
-                <div>
-                  <h1 class="fs-6 text-decoration-underline fw-bold">Weapon Prof.</h1>
-                  <li id="weaponproficiency">{{character.weapon_proficiency}}</li>
-                </div>
-              </div>
-              <!-- Minor Skills -->
-              <div class="col">
-                <h1 class="fs-6 text-decoration-underline fw-bold">Minor Skills</h1>
-                <ul>
-                  <li>{{character.minor_skill_1}}</li>
-                  <li>{{character.minor_skill_2}}</li>
-                  <li>{{character.minor_skill_3}}</li>
-                  <li>{{character.minor_skill_4}}</li>
-                  <li>{{character.minor_skill_5}}</li>
-                </ul>
-              </div>
-              <div class="col mt-2">
-                <span class="fs-6 border-bottom border-dark">{{character.morals}}</span>
-                <h1 class="fs-6"><b>Morals</b></h1>
-              </div>
-              <div class="col">
-                <span class="fs-6 border-bottom border-dark">{{character.language}}</span>
-                <h1 class="fs-6"><b>Languages</b></h1>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-
-        <!-- Right Side: Skills -->
-        <div class="col-md-6">
-          <div class="border border-dark border-2 p-3">
-            <div class="row row-cols-2 ">
-              <div class="col">
-                <h1 class="fs-6 fw-bold border-bottom border-dark">Conditions</h1>
-                <h1 class="fs-6 mt-1">Inspiration<input class="form-check-input ms-1" type="checkbox" value="" id="inspirationCheckbox"></h1>
-              </div>
-                <div class="mt-4">
-                  <h1 class="fs-6 mt-1">Full Rest<input class="form-check-input ms-1" type="checkbox" value="" id="toggleFunction" onchange="toggleFeature(this, 'inspirationCheckbox')"></h1>
-                </div>
-              </div>
-              <!-- Minor Skills -->
-              <div class="col">
-                <h1 class="fs-6 mt-1 me-2">Exhaustion 0<input class="form-check-input ms-1 me-1" type="radio" name="flexRadioDefault" id="flexRadioDefault1">1<input class="form-check-input ms-1 me-1" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> 2<input class="form-check-input me-1" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> 3<input class="form-check-input me-1" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> 4<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></h1>
-              </div>
-              <div class="col mt-3">
-                <h1 class="fs-6 mb-5 pb-5"><button class="skill-btn" onclick="tempdown('temp')">-</button>Temp HP<button class="skill-btn" onclick="tempup('temp')">+</button></h1>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-2">
-          <!-- Left Side: Stats -->
-          <div class="col">
-              <div class="border border-dark border-2 p-3">
+          <div class="border border-dark border-2 p-3 pb-5">
                   <div class="tab-section">
                       <ul class="nav nav-tabs" id="myTab1" role="tablist">
                           <li class="nav-item" role="presentation">
@@ -298,18 +233,20 @@
                       <div class="tab-content mt-2" id="myTabContent1">
                         <div class="tab-pane fade pb-5 show active" id="weapons" role="tabpanel" aria-labelledby="weapons-tab">
                             <div id="weaponButtonHome">
-    <button id="weaponToggleButton" class="mb-2 btn btn-sm btn-outline-danger text-dark float-end"
-        onclick="toggleWeaponManager()">
-        Manage Weap.
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-</svg>
-    </button>
-</div>
+                            <button id="weaponToggleButton" class="mb-2 btn btn-sm btn-danger text-dark float-end"
+                             onclick="toggleWeaponManager()">
+                             Manage
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                              </svg>
+                               </button>
+                               </div>
                             <div id="weaponManager">
-                              <h5 class="border-bottom border-dark">Weapons<button type="button" class="btn btn-sm btn-info mb-3 ms-1" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Clockwork weapons do piercing damage, Cindeli weapons do slashing, and Evergladian weapons do crushing">
-  ?
+                              <h5 class="border-bottom border-dark">Weapons<button type="button" class="btn btn-sm btn-info mb-3 ms-1 p-0" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Clockwork weapons do piercing damage, Cindeli weapons do slashing, and Evergladian weapons do crushing">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+</svg>
 </button></h5>
                               <div id="weaponButtonSidebar"></div>
                               <ul class="nav nav-tabs" id="weaponManagerTabs" role="tablist">
@@ -336,6 +273,9 @@
                                 {% endfor %}
                             </ul>
                         </div>
+                        <div>
+                <h5 class="fs-6"><b>Proficiency: </b><span class="fs-6 border-bottom border-dark">{{character.weapon_proficiency}}</span></h5>
+                </div>
                         <div class="tab-pane fade pb-5" id="spells" role="tabpanel" aria-labelledby="spells-tab">
                             <button id="spellToggleButton" class="btn btn-link-dark text-decoration-underline" onclick="toggleSpellManager()">Manage</button>
                             <div id="spellManager">
@@ -351,12 +291,13 @@
                         </div>
                     </div>
                   </div>
-              </div>
           </div>
-      
-          <!-- Right Side: Inventory & Perks -->
-          <div class="col-md-6">
-              <div class="border border-dark border-2 p-3">
+        </div>
+        
+
+        <!-- Right Side: Skills -->
+        <div class="col-md-6">
+            <div class="border border-dark border-2 p-3">
                   <div class="tab-section">
                       <ul class="nav nav-tabs" id="myTab2" role="tablist">
                           <li class="nav-item" role="presentation">
@@ -372,9 +313,9 @@
                      <div class="tab-content mt-2" id="myTabContent1">
                         <div class="tab-pane fade pb-5 show active" id="inventory" role="tabpanel" aria-labelledby="inventory-tab">
                     <div id="buttonHome">
-    <button id="inventoryToggleButton" class="mb-2 btn btn-sm btn-outline-danger text-dark float-end"
+    <button id="inventoryToggleButton" class="mb-2 btn btn-sm btn-danger text-dark float-end"
         onclick="toggleInventoryManager()">
-        Manage Inv.
+        Manage
        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
   <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
@@ -459,13 +400,77 @@
                   </div>
               </div>
           </div>
+        </div>
+
+        <div class="row mt-2">
+          <!-- Left Side: Stats -->
+          <div class="col">
+                  <div class="border border-dark border-2 p-3">
+            <div class="row row-cols-2">
+               <!-- Major Skills -->
+               <div class="col">
+                <h1 class="fs-6 text-decoration-underline fw-bold">Major Skills</h1>
+                <ul>
+                  <li>{{character.major_skill_1}}</li>
+                  <li>{{character.major_skill_2}}</li>
+                  <li>{{character.major_skill_3}}</li>
+                </ul>
+              </div>
+              <!-- Minor Skills -->
+              <div class="col">
+                <h1 class="fs-6 text-decoration-underline fw-bold">Minor Skills</h1>
+                <ul>
+                  <li>{{character.minor_skill_1}}</li>
+                  <li>{{character.minor_skill_2}}</li>
+                  <li>{{character.minor_skill_3}}</li>
+                  <li>{{character.minor_skill_4}}</li>
+                  <li>{{character.minor_skill_5}}</li>
+                </ul>
+              </div>
+              <div class="col mt-2">
+                <span class="fs-6 border-bottom border-dark">{{character.morals}}</span>
+                <h1 class="fs-6"><b>Morals</b></h1>
+              </div>
+              <div class="col">
+                <span class="fs-6 border-bottom border-dark">{{character.language}}</span>
+                <h1 class="fs-6"><b>Languages</b></h1>
+              </div>
+            </div>
+              </div>
+          </div>
+      
+          <!-- Right Side: Inventory & Perks -->
+          <div class="col-md-6">
+               <div class="border border-dark border-2 p-3">
+            <div class="row row-cols-2 ">
+              <div class="col">
+                <h1 class="fs-6 fw-bold border-bottom border-dark">Conditions</h1>
+                <h1 class="fs-6 mt-1">Inspiration<input class="form-check-input ms-1" type="checkbox" value="" id="inspirationCheckbox"></h1>
+              </div>
+                <div class="mt-4">
+                  <h1 class="fs-6 mt-1">Full Rest<input class="form-check-input ms-1" type="checkbox" value="" id="toggleFunction" onchange="toggleFeature(this, 'inspirationCheckbox')"></h1>
+                </div>
+              </div>
+              <!-- Minor Skills -->
+              <div class="col">
+                <h1 class="fs-6 mt-1 me-2">Exhaustion 0<input class="form-check-input ms-1 me-1" type="radio" name="flexRadioDefault" id="flexRadioDefault1">1<input class="form-check-input ms-1 me-1" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> 2<input class="form-check-input me-1" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> 3<input class="form-check-input me-1" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> 4<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></h1>
+              </div>
+              <div class="col mt-3">
+                <h1 class="fs-6 mb-5 pb-5"><button class="skill-btn" onclick="tempdown('temp')">-</button>Temp HP<button class="skill-btn" onclick="tempup('temp')">+</button></h1>
+              </div>
+            </div>
+          </div>
       </div>
       
     
       
       <!-- Attributes, Skills -->
       <h1 class="fs-5 fw-bold mt-4 mb-2 border-bottom border-dark w-50">Attributes and Skills <button type="button" class="btn btn-info btn-sm mb-2" data-bs-container="body"  data-bs-html="true"  data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Add these bonuses to your skill check rolls, weapon hits, and damage done<br><br>Skill Lvl 5 = -1<br>Lvl 10 = 0<br>Lvl 15 = +1<br>Lvl 25 = +2<br>Lvl 40 = +3<br> Lvl 50 = +4<br>Lvl 60 = +5<br>Lvl 75 = +6<br>Lvl 100 = +8">
-  Skill mods <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+  Skills<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+</svg>
+</button> <button type="button" class="btn btn-info btn-sm mb-2" data-bs-container="body"  data-bs-html="true"  data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Add these mods when making saves<br><br>Att. Lvl 5 = -2<br>Lvl 10 = -1<br>Lvl 15 = 0<br>Lvl 25 = +1<br>Lvl 40 = +2<br> Lvl 50 = +3<br>Lvl 75 = +5<br>Lvl 100 = +7">
+  Attributes<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
   <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
 </svg>
 </button></h1>
@@ -1177,7 +1182,7 @@ function toggleWeaponManager() {
         buttonSidebar.appendChild(button); // move into sidebar
     } else {
         manager.classList.remove("open");
-        button.innerHTML = 'Manage Weap. <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg>';
+        button.innerHTML = 'Manage<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg>';
         buttonHome.appendChild(button); // move back outside
     }
 }
@@ -1210,7 +1215,7 @@ function openInventoryManager() {
     } else {
         // Close sidebar
         manager.classList.remove("open");
-        button.innerHTML = 'Manage Inv. <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg>';
+        button.innerHTML = 'Manage<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg>';
         
         // Move button back to home position
         buttonHome.appendChild(button);

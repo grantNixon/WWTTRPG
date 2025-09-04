@@ -24,7 +24,7 @@
     </style>
 
 <body class="d-flex flex-column min-vh-100" style="background-color: #be2a4a;">
-<div class="container-fluid" style="background-color: #fffbf1;">
+<div class="container-fluid" style="background-color: #f0d7a8;">
     <h4 class="text-center text-decoration-bold mt-2">Expanded Character Creator</h4>
 <div class="row mb-2 container-fluid text-center">
   <div class="accordion mt-4 mb-5" id="characterCreatorAccordion">
@@ -32,7 +32,7 @@
     <!-- ATTRIBUTES -->
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingAttributes">
-        <button class="accordion-button text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAttributes" aria-expanded="true" aria-controls="collapseAttributes">
+        <button class="accordion-button text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAttributes" aria-expanded="true" aria-controls="collapseAttributes">
           <b>1st: Attributes</b>
         </button>
       </h2>
@@ -43,14 +43,14 @@
             <div class="col d-flex border-end border-dark">
               <div>
                 <h5 class="fs-5 text-body-emphasis">Strength</h5>
-                <p>Total "MB" or movement bank. How far you can move each turn</p>
+                <p>Determines total movement bank or "MB" which is how far you can move each turn</p>
                 <form action="" method="post">{{ form.strength }}</form>
               </div>
             </div>
             <div class="col d-flex border-end border-dark">
               <div>
                 <h5 class="fs-5 text-body-emphasis">Agility</h5>
-                <p>Total "EC" or evasion chance. How likely you are to be hit</p>
+                <p>Determines total evasion chance or "EC" which is how likely you are to be hit</p>
                 <form action="" method="post">{{ form.agility }}</form>
               </div>
             </div>
@@ -71,14 +71,14 @@
             <div class="col d-flex border-end border-dark justify-content-center">
               <div>
                 <h5 class="fs-5 text-body-emphasis">Mysticism</h5>
-                <p>Total spell slots</p>
+                <p>Total spell slots for mysticism schools of magic</p>
                 <form action="" method="post">{{ form.mysticism }}</form>
               </div>
             </div>
             <div class="col d-flex border-end border-dark justify-content-center">
               <div>
                 <h5 class="fs-5 text-body-emphasis">Personality</h5>
-                <p>Total spell slots and discounts in stores</p>
+                <p>Total spell slots for personality schools of magic and discounts in stores</p>
                 <form action="" method="post">{{ form.personality }}</form>
               </div>
             </div>
@@ -89,7 +89,7 @@
       <!-- SPECIES -->
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingSpecies">
-      <button class="accordion-button collapsed text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpecies" aria-expanded="false" aria-controls="collapseSpecies">
+      <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpecies" aria-expanded="false" aria-controls="collapseSpecies">
         <b>2nd: Species</b> <form class="ms-3" action="" method="post">{{ form.species }}</form>
       </button>
     </h2>
@@ -354,13 +354,13 @@
   </div> 
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingBackground">
-      <button class="accordion-button collapsed text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBackground" aria-expanded="false" aria-controls="collapseBackground">
+      <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBackground" aria-expanded="false" aria-controls="collapseBackground">
         <b>3rd: Background</b><form class="ms-3" action="" method="post">{{ form.background }}</form>
       </button>
     </h2>
     <div id="collapseBackground" class="accordion-collapse collapse" aria-labelledby="headingBackground" data-bs-parent="#characterCreatorAccordion">
       <div class="accordion-body">
-        <p>Grant bonuses and subtractions to skills, with some granting perks instead</p>
+        <p>Backgrounds give bonuses and subtractions to skills, with some granting perks instead</p>
         <div class="row g-4 py-1 mb-5 row-cols-1 row-cols-lg-5">
           <div class="col d-flex gy=2 border border-dark">
             <div>
@@ -585,14 +585,14 @@
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingSkillz">
-      <button class="accordion-button collapsed text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSkillz" aria-expanded="false" aria-controls="collapseSkillz">
+      <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSkillz" aria-expanded="false" aria-controls="collapseSkillz">
         <b>4th: Major and Minor skills</b>
       </button>
     </h2>
     <div id="collapseSkillz" class="accordion-collapse collapse" aria-labelledby="headingSkillz" data-bs-parent="#characterCreatorAccordion">
       <div class="accordion-body">
         <h2 class="border-bottom">Major Skills</h2>
-        <p>Start at 25, which grants a perk and bonus mod</p>
+        <p>Major skills start at 25, which grant a perk and a bonus mod</p>
         <div class="row g-4 py-1 mb-5 ms-5 ps-5 row-cols-1 row-cols-lg-3">
           <div class="col d-flex">
             <div>
@@ -614,7 +614,7 @@
           </div>
         </div>
           <h2 class="border-bottom">Minor Skills</h2>
-  <p>Start at 15, which is novice level, which means one perk. All other skills start at 5</p>
+  <p>Minor skills start at 15, which gives one perk. All other skills not picked start at 5</p>
     <div class="row g-4 py-1 mb-5 row-cols-1 row-cols-lg-5">
       <div class="col d-flex">
         <div>
@@ -652,13 +652,13 @@
     </div>
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingLanguage">
-      <button class="accordion-button collapsed text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLanguage" aria-expanded="false" aria-controls="collapseLanguage">
+      <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLanguage" aria-expanded="false" aria-controls="collapseLanguage">
         <b>5th: Languages and Morals</b>
       </button>
     </h2>
     <div id="collapseLanguage" class="accordion-collapse collapse" aria-labelledby="headingLanguage" data-bs-parent="#characterCreatorAccordion">
       <div class="accordion-body">
-        <p>These have no effect on stats or abilities but will have an effect with some in-game scenarios and roleplaying. The creature about to attack the posse could just be protecting its young and if someone could speak its language, they could avoid a slaughter</p>
+        <p>These have no effect on stats or abilities but will have an effect with some in-game scenarios and roleplaying. The creature about to attack the posse could just be protecting its young, and if someone could speak its language, the posse could avoid a slaughter</p>
         <div class="row g-4 py-1 mb-5 ms-5 ps-5 row-cols-1 row-cols-lg-2">
           <div class="col d-flex justify-content-center">
             <div>
@@ -678,7 +678,7 @@
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingStarting">
-      <button class="accordion-button collapsed text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStarting" aria-expanded="false" aria-controls="collapseStarting">
+      <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStarting" aria-expanded="false" aria-controls="collapseStarting">
         <b>6th: Starting Items</b>
       </button>
     </h2>
@@ -768,7 +768,7 @@
   </div>
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingFinish">
-      <button class="accordion-button collapsed text-dark" style="background-color: #f0d7a8;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFinish" aria-expanded="false" aria-controls="collapseFinish">
+      <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFinish" aria-expanded="false" aria-controls="collapseFinish">
         <b>Name and Finish</b>
       </button>
     </h2>
