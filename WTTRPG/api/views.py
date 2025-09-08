@@ -166,6 +166,53 @@ def removeClothing(request):
        obj.inventory.save()
        obj.save()
        return JsonResponse({'status': 'success'})
+    
+@csrf_exempt
+def addUtility(request):
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       utilityToAdd = data.get('utility_id')
+       print(data)
+       primary_key = data.get('char_id')
+       obj = Character.objects.get(id=primary_key)
+       obj.inventory.utilities.append({'name':utilityToAdd})
+       obj.inventory.save()
+       obj.save()
+       return JsonResponse({'status': 'success'})
+    
+@csrf_exempt
+def removeUtility(request):
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       utilityToRemove = data.get('utility_id')
+       print(data)
+       primary_key = data.get('char_id')
+       obj = Character.objects.get(id=primary_key)
+       obj.inventory.utilities.remove({'name':utilityToRemove})
+       obj.inventory.save()
+       obj.save()
+       return JsonResponse({'status': 'success'})
+    
+@csrf_exempt
+def fetchAllUtility(request):
+    if request.method == 'POST':
+        obj = list(Utilities.objects.values_list('UtilityName', flat=True))
+        jsonObj = json.dumps({'name':obj})
+        return JsonResponse(jsonObj, safe=False)
+    else:
+        return JsonResponse({'status':'error'})
+    
+@csrf_exempt
+def fetchUtility(request):
+    #return all clothing in current characters inventory
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       primary_key = data.get('id')
+       obj = Character.objects.get(id=primary_key)
+       jsonInv = json.dumps(obj.inventory.utilities)
+       return JsonResponse(jsonInv, safe=False)
+    else:
+        return JsonResponse({'status':'error'})
 
 
 

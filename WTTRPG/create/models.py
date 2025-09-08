@@ -194,7 +194,7 @@ class Tonic(models.Model):
 class Utilities(models.Model):
     UtilityName = models.CharField(max_length = 100)
     UtilityType = models.CharField(max_length = 100)
-    ActionCost = models.FloatField()
+    ActionCost = models.TextField()
     Range = models.CharField(max_length = 100)
     Effect = models.TextField()
 

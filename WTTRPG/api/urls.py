@@ -8,6 +8,7 @@ urlpatterns = [
     path('character/weapons', views.fetchWeapons, name='fetchWeapons'),
     path('character/tonics', views.fetchTonics, name='fetchTonics'),
     path('character/clothing', views.fetchClothing, name='fetchClothing'),
+    path('character/utilities', views.fetchUtility, name='fetchUtility'),
     path('character/levelUp', views.levelUp, name='levelup'),
     path('fetchAllWeapons', views.fetchAllWeapons, name='fetchAllWeapons'),
     path('addWeapon', views.addWeapon, name="addWeapon"),
@@ -18,5 +19,9 @@ urlpatterns = [
     path('fetchAllClothing', views.fetchAllClothing, name='fetchAllClothing'),
     path('addClothing', views.addClothing, name="addClothing"),
     path('removeClothing', views.removeClothing, name="removeClothing"),
+    path('fetchAllUtility', views.fetchAllUtility, name='fetchAllUtility'),
+    path('addUtility', views.addUtility, name="addUtility"),
+    path('removeUtility', views.removeUtility, name="removeUtility"),
+
 
 ]

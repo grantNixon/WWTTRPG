@@ -20,13 +20,15 @@ from django.contrib.auth.decorators import login_required
 
 
 def bulk_DB_upload():
-    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\Clothing.csv', newline='') as csvfile:
+    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\Utilities.csv', newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-           Clothing.objects.create(
-                ClothingName = row['ClothingName'],
-                ClothingDescription = row['ClothingDescription'],
-                ClothingStats = row['ClothingStats']
+           Utilities.objects.create(
+                UtilityName = row['UtilityName'],
+                UtilityType = row['UtilityType'],
+                ActionCost = row['ActionCost'],
+                Range = row['Range'],
+                Effect = row['Effect'],
             )
 
 #bulk_DB_upload()

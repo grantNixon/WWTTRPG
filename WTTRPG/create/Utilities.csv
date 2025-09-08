@@ -1,0 +1,39 @@
+UtilityName,UtilityType,ActionCost,Range,Effect
+Brau,Alcohol,1,Self,"+10 to Strength skills -10 to Intelligence skills for 30 min. (consumer only get the mod bonuses to skills, not the perks)"
+Mezca,Alcohol,1,Self,"+10 to Agility skills -10 to Mysticism skills for 30 min. (consumer only get the mod bonuses to skills, not the perks)"
+Vina,Alcohol,1,Self,"+10 to Intelligence skills -10 to Strength skills for 30 min. (consumer only get the mod bonuses to skills, not the perks)"
+Eskee,Alcohol,1,Self,"+10 to Gumption skills -10 to Personality skills for 30 min. (consumer only get the mod bonuses to skills, not the perks)"
+Hallush,Alcohol,1,Self,"+10 to Personality skills -10 to Gumption skills for 30 min. (consumer only get the mod bonuses to skills, not the perks)"
+Throwing Knife,Throwable (single),1,25/35ft,1d4 piercing
+Throwing Hatchet,Throwable (single),1.5,20/30ft,1d6 slashing
+Kunai,Throwable (single),0.5,40/80ft,1d2 piercing
+Throwing Star,Throwable (single),0.5,20/40ft,1d2 slashing
+Shot Put Ball,Throwable (single),2,15/25ft,1d8 crushing
+Dynamite,Throwable (AoE),1.5,20/30ft (10ft sphere),5ft:2d6/10ft:1d6 explosive
+Acid Bottle,Throwable (AoE),1.5,25/40ft (5ft circle for 10 seconds),1d6 acid on impact/1d6 when entering or starting turn in circle
+Smoke Bomb,Throwable (AoE),0.5,20/30ft (5ft sphere for 10 seconds),Anyone in cloud of smoke is concealed from sight but is also Blinded
+Shock Bottle,Throwable (AoE),1.5,20/40ft (10ft sphere),
+Pocket of Sand,Trap (instant),0.5,5ft,1d2 slashing (no mod)
+Caltrops,Trap (instant),1.5,10ft line or 5ft circle,1d6 when stepped on and covered area is rough terrain
+Madness Powder,Trap (instant),2,5ft,Target makes a Gum.S(12) on fail they become mad for 10 seconds
+Sloth Powder,Trap (instant),2,5ft,Target makes a Gum.S(12) on fail they become slowed for 10 seconds
+Bear Trap,Trap (set),1,-,Stepped on: 1d6 crushing + 1d4 piercing + holds target in place until disarmed. Disarm: crafting check or Strength.S(10) EC: 10
+Rope Trap,Trap (set),1,-,Stepped on: 1d4 crushing + hold target dangling in air until disarmed. Disarm: melee attack or gun shot at bad odds. EC: 20
+Mine,Trap (set),1,10ft sphere,Stepped on: 2d8 explosive. All targets in range: 1d8 explosive. Disarm: crafting check. EC: 10
+Acid Mine,Trap (set),1.5,10ft circle acid puddle,Stepped on: 2d6 acid. 1d6 acid when someone steps in or ends their turn in the puddle. Disarm: crafting check. EC: 10
+Shock Mine,Trap (set),1.5,10ft sphere,Stepped on: 1d8 shock + Gum.S(10) on fail target is stunned for 5 seconds. All targets in range: 1d8 shock. EC: 10
+Acid Coated Bullet,Special Ammo,-,-,+1d6 acid damage
+Holy Coated Bullet,Special Ammo,-,-,+1d6 holy damage
+Incendiary Coated Bullet,Special Ammo,-,-,+1d6 incendiary damage
+Sleep Coated Bullet,Special Ammo,-,-,Gum.S(8) on fail target falls alseep for 10 seconds
+Holy Shockstone,Special Ammo,-,-,+1d6 holy damage
+Overclocked Shockstone,Special Ammo,-,-,Double the amount of damage dice
+Slowing Shockstone,Special Ammo,-,-,Gum.S(8) on fail target is slowed for 10 seconds
+Maddening Shockstone,Special Ammo,-,-,Mys.S(8) on fail target becomes mad for 10 seconds
+Incendiary Arrow,Special Ammo,-,-,+1d6 incendiary damage
+Acid Arrow,Special Ammo,-,-,+1d6 acid damage
+Explosive Arrow,Special Ammo,-,-,+1d6 explosive damage
+Sleep Arrow,Special Ammo,-,-,Gum.S(8) on fail target falls alseep for 10 seconds
+Indendiary Lacquer,Special Ammo,-,-,+1d6 incendiary damage
+Acidic Lacquer,Special Ammo,-,-,+1d6 acid damage
+Sleep Lacquer,Special Ammo,-,-,Gum.S(8) on fail target falls alseep for 10 seconds

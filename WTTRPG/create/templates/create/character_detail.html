@@ -356,13 +356,14 @@
                                     <ul id="current-items"></ul>
                                   </div>
                                   <div class="tab-pane fade" id="utilities-pane" role="tabpanel" aria-labelledby="utilities-tab">  
-                                    <ul id="utilities"></ul>
+                                    <ul id="utility-options"></ul>
                                   </div>
                                   <div class="tab-pane fade" id="clothing-pane" role="tabpanel" aria-labelledby="clothing-tab">  
                                     <ul id="clothing-options"></ul>
                                   </div>
                               </div>
                           </div>
+                          <!-- For these inventory li items.. need to update to ensure the IDs added in the fetch functions are retained on page refresh -->
                                <ul id="current-tonics2">
                                 {% for tonic in character.inventory.tonics %}
                                     <li>{{ tonic.name }}</li>
@@ -374,7 +375,7 @@
                                 {% endfor %}
                             </ul>
                               <ul id="current-utilities2">
-                                {% for utilities in character.inventory.utilities %}
+                                {% for utility in character.inventory.utilities %}
                                     <li>{{ utility.name }}</li>
                                 {% endfor %}
                             </ul>
@@ -1385,7 +1386,7 @@ function fetchTonics() {
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
     console.log(characterPrimaryKey)
-    fetch('', {
+    fetch('{% url "api:fetchUtility" %}', {
       method: "POST",
       body: JSON.stringify({'id':characterPrimaryKey})
     }) 
@@ -1396,14 +1397,14 @@ function fetchTonics() {
         const currentUtilitiesList = document.getElementById("current-utilities");
         currentUtilitiesList.innerHTML = "";
         jsonData.forEach((utility) => {
-          currentUtilitiesList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeWeapon('${tonic.name}')">${tonic.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+          currentUtilitiesList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeUtility('${utility.name}')">${utility.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
 </svg></button><br />`;
         });
       });
 
     // Load all available Utilities from the database
-    fetch('', {
+    fetch('{% url "api:fetchAllUtility" %}', {
       method: "POST"
     })  // Update with your Django endpoint
       .then((response) => response.json())
@@ -1429,8 +1430,8 @@ function fetchTonics() {
     const pagePath = window.location.pathname
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
-    $('#current-utilities2').append('<li>' + utilityId + '</li>');
-    fetch('', {
+    $('#current-utilities2').append('<li id="utility-' + utilityId + '">' + utilityId + '</li>');
+    fetch('{% url "api:addUtility" %}', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -1443,7 +1444,8 @@ function fetchTonics() {
     const pagePath = window.location.pathname
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
-    fetch('', {
+    $(`[id="utility-${utilityId}"]`).remove();
+    fetch('{% url "api:removeUtility" %}', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
