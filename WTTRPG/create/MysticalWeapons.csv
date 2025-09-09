@@ -1,0 +1,14 @@
+﻿MysticalWeaponName,DamageType,ActionCost,Range,Damage,ExtraEffect
+Stunning Hand Wraps,Shock,1,5ft,1d4,"+1 AP: on hit, target rolls a Gum.S(12), on fail, target is stunned for 10 seconds. Twice per rest"
+Butterfly Knife,Slashing,1.5,5ft,1d4,"Rolling a natural 17-19 counts as a critical, and upon rolling a critical, you can make an additional attack with this knife for no AP cost. You can continue to attack if you roll criticals for no cost until you don’t roll a critical"
+Trigger Finger Revolver,Piercing,1.5,25/45ft,1d6,"+3.5 AP: when dual-wielding pistols, they each have -.5 AP cost to shoot. After a landing a crit with a pistol, your next shot with a pistol has good odds"
+Vermilion Rifle,Piercing,2,40/65ft,1d8,"On hit, this rifle heals the user for 1d4, 2d4 on a natural 20"
+Warper,Shock,2.5/3.5,5/10ft/30/70ft,2d4/1d10,This can be shot at short range as a shotgun or converted to a rifle for long range shots
+Tranquilizer Pistol,Crushing,1,25/40ft,1d4,"+1 AP:  can choose to forgo the mundane damage and instead shoot a sleep shot. Target makes a Gum.S(10), on fail, target falls asleep for 15 seconds or until saved. Twice per rest"
+Twin Soul,Piercing/shock,1.5,30/50ft,1d6,You can switch between bullets and shockstones
+Hopskip Bow,Shock,2,50/80ft,1d8,"+.5 AP: can teleport to within 5ft of the location of where your arrow lands, as long as you are within 80ft of the arrow. Twice a day"
+Repentance,Slashing,2,15/20ft,1d6,"+1 AP: whip yourself once, doing the damage of the whip on yourself. For the next 15 seconds, you deal 3d6 + Ropework with this whip. Once per rest"
+Harbinger,Piercing,2,75/100ft,1d8,+1.5 AP: a called shot has good odds and +1d8 damage. Twice per rest
+Gatling Gun,Piercing,2+,60/85ft,1d4,"can use MB or AP to shoot this gun, where 5ft = 2 AP. You can exhaust both AP and MB to shoot for longer"
+Spider Bite Revolver,Acid,1.5,25/45ft,1d6,Does acid damage
+Gauntlet of Storms,Crushing/shock,1.5,5ft,1d6,"+2 AP:  +1d10 shock, on hit, target makes a Gum.S(12) or is stunned for 10 seconds. On a critical hit, the gauntlet sends a bolt of electricity (1d10 shock) to another target that’s within 15ft of the target being hit. Twice per rest"

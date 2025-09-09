@@ -53,6 +53,17 @@ class Weapon(models.Model):
 
     def __str__(self):
         return self.WeaponName    
+    
+class MysticalWeapon(models.Model):
+    MysticalWeaponName = models.CharField(max_length = 100)
+    DamageType = models.CharField(max_length = 100)
+    ActionCost = models.CharField(max_length=100)
+    Range = models.CharField(max_length=30)
+    Damage = models.CharField(max_length = 100)
+    ExtraEffect = models.TextField()
+
+    def __str__(self):
+        return self.MysticalWeaponName    
 
 class StartingEquipment(models.Model):
     name = models.CharField(max_length=30)
