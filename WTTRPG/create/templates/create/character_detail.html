@@ -295,6 +295,13 @@
                         </div>
                     </div>
                   </div>
+                  <!-- Modal for spell selection -->
+<div id="spellModal" style="display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:#fff; border:2px solid #000; padding:20px; z-index:1000;">
+  <h3>Choose a Spell</h3>
+  <ul id="spellList"></ul>
+  <button onclick="closeSpellModal()">Cancel</button>
+</div>
+
           </div>
         </div>
         
@@ -951,6 +958,8 @@ if (level < 16) {
 }
 
 // XP UI
+const skillMilestones = [15, 25, 50, 75, 100];
+
 function updateUI(skill) {
     const skillData = skills[skill];
     const requiredXP = getRequiredXP(skillData.level);
@@ -974,16 +983,25 @@ function increaseXP(skill) {
     const skillData = skills[skill];
     const requiredXP = getRequiredXP(skillData.level);
     skillData.xp += 1;
+
     if (skillData.xp >= requiredXP) {
         skillData.xp = 0;
         skillData.level += 1;
         updateDatabaseSkills(skill, 1);
+
         if (skillData.level > 100) {
             skillData.level = 100;
             skillData.xp = 0;
         }
-        trackSkillLevelUp(); // Track level-ups when a skill levels up
+
+        // 🎯 Check milestone here
+        if (skill === "healing" && skillMilestones.includes(skillData.level)) {
+            showSpellSelection(skillData.level);
+        }
+
+        trackSkillLevelUp(); 
     }
+
     updateUI(skill);
 }
 
@@ -1058,38 +1076,71 @@ function updateDatabaseSkills(skill, increment) {
   //send AJAX request with pk, skill, and increment to update_skills view which should update the DB
 }
 
-// Spell manager 
-document.addEventListener("DOMContentLoaded", function () {
-    let skillLevel = 15;  // Assume this value comes from the backend
+// Spell logic 
+function showSpellSelection(level) {
+    fetch(`/api/spells/?skill=healing&level=${level}`) // your Django view should filter spells
+        .then(response => response.json())
+        .then(data => {
+            let spellList = document.getElementById("spellList");
+            spellList.innerHTML = "";
 
-    if (skillLevel >= 15) {
-        fetch(`/api/spells/1/`) // Replace with actual skill ID
-            .then(response => response.json())
-            .then(data => {
-                if (data.spells.length > 0) {
-                    let spellList = document.getElementById("spellList");
-                    spellList.innerHTML = "";
-                    data.spells.forEach(spell => {
-                        let li = document.createElement("li");
-                        li.innerHTML = `<button onclick="chooseSpell(${spell.id})">${spell.name}</button> - ${spell.description}`;
-                        spellList.appendChild(li);
-                    });
-
-                    document.getElementById("spellModal").style.display = "block";
-                }
-            });
-    }
-});
+            if (data.spells.length > 0) {
+                data.spells.forEach(spell => {
+                    let li = document.createElement("li");
+                    li.innerHTML = `
+                        <button onclick="chooseSpell(${spell.id})">${spell.name}</button> 
+                        - ${spell.description}`;
+                    spellList.appendChild(li);
+                });
+                document.getElementById("spellModal").style.display = "block";
+            }
+        })
+        .catch(err => console.error("Error fetching spells:", err));
+}
 
 function chooseSpell(spellId) {
+    const pagePath = window.location.pathname;
+    const pathSections = pagePath.split("/");
+    const characterPrimaryKey = pathSections[pathSections.length - 1];
+
     fetch("/api/add_spell/", {
         method: "POST",
-        body: JSON.stringify({ character_name: "Hero", spell_id: spellId }),
-        headers: { "Content-Type": "application/json" }
-    }).then(response => response.json())
-      .then(data => alert(data.message));
-    
+        body: JSON.stringify({ character_id: characterPrimaryKey, spell_id: spellId }),
+        headers: { "Content-Type": "application/json", "X-CSRFToken": "{{ csrf_token }}" }
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message || "Spell learned!");
+        closeSpellModal();
+    });
+}
+
+function closeSpellModal() {
     document.getElementById("spellModal").style.display = "none";
+}
+
+function openSpellManager() {
+    document.getElementById("spellManager").style.display = "block";
+    fetchSpells();
+  }
+
+  function closeSpellManager() {
+    document.getElementById("spellManager").style.display = "none";
+  }
+
+   // spell manager toggle
+   function toggleSpellManager() {
+  const manager = document.getElementById("spellManager");
+  const button = document.getElementById("spellToggleButton");
+
+  if (manager.style.display === "none" || manager.style.display === "") {
+    manager.style.display = "block";
+    button.textContent = "Close";
+    fetchSpells();  // only fetch when opening
+  } else {
+    manager.style.display = "none";
+    button.textContent = "Manage";
+  }
 }
 
 function openWeaponManager() {
@@ -1542,31 +1593,6 @@ function fetchTonics() {
       body: JSON.stringify({ clothing_id: clothingId, char_id: characterPrimaryKey }),
     }).then(() => fetchClothing());
   }
-
-
-function openSpellManager() {
-    document.getElementById("spellManager").style.display = "block";
-    fetchSpells();
-  }
-
-  function closeSpellManager() {
-    document.getElementById("spellManager").style.display = "none";
-  }
-
-   // spell manager toggle
-   function toggleSpellManager() {
-  const manager = document.getElementById("spellManager");
-  const button = document.getElementById("spellToggleButton");
-
-  if (manager.style.display === "none" || manager.style.display === "") {
-    manager.style.display = "block";
-    button.textContent = "Close";
-    fetchSpells();  // only fetch when opening
-  } else {
-    manager.style.display = "none";
-    button.textContent = "Manage";
-  }
-}
 
 // Initialize UI for all skills
 for (let skill in skills) {
