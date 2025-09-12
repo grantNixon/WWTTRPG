@@ -79,6 +79,7 @@ class Inventory(models.Model):
     clothing = models.JSONField(default=list)
     utilities = models.JSONField(default=list)
     tonics = models.JSONField(default=list)
+    mysticalweapons = models.JSONField(default=list)
 
 class Perk(models.Model):
     perkSkill = models.CharField(max_length=100)
