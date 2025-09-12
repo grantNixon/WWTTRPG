@@ -364,7 +364,7 @@
                                     <ul id="tonic-options"></ul>
                                   </div>
                                   <div class="tab-pane fade" id="items-pane" role="tabpanel" aria-labelledby="items-tab">  
-                                    <ul id="current-items"></ul>
+                                    <ul id="item-options"></ul>
                                   </div>
                                   <div class="tab-pane fade" id="utilities-pane" role="tabpanel" aria-labelledby="utilities-tab">  
                                     <ul id="utility-options"></ul>
@@ -1377,7 +1377,7 @@ function fetchTonics() {
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
     console.log(characterPrimaryKey)
-    fetch('', {
+    fetch('{% url "api:fetchMysticalWeapons" %}', {
       method: "POST",
       body: JSON.stringify({'id':characterPrimaryKey})
     }) 
@@ -1388,14 +1388,14 @@ function fetchTonics() {
         const currentItemsList = document.getElementById("current-items");
         currentItemsList.innerHTML = "";
         jsonData.forEach((item) => {
-          currentItemsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeWeapon('${tonic.name}')">${tonic.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+          currentItemsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeItem('${item.name}')">${item.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
 </svg></button><br />`;
         });
       });
 
     // Load all available items from the database
-    fetch('', {
+    fetch('{% url "api:fetchAllMysticalWeapons" %}', {
       method: "POST"
     })  // Update with your Django endpoint
       .then((response) => response.json())
@@ -1404,11 +1404,11 @@ function fetchTonics() {
         itemOptionsList.innerHTML = "";
         jsonData = JSON.parse(data)
         console.log(jsonData)
-        jsonData.name.forEach((item) => {
+        jsonData.name.forEach((mitem) => {
           itemOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
         style="background-color: white;" 
-        onclick="addItem('${item}'); showTempAlert('item Added');">
-  ${item}
+        onclick="addItem('${mitem}'); showTempAlert('item Added');">
+  ${mitem}
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
     <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
   </svg>
@@ -1421,8 +1421,8 @@ function fetchTonics() {
     const pagePath = window.location.pathname
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
-    $('#current-items2').append('<li>' + itemId + '</li>');
-    fetch('', {
+    $('#current-items2').append('<li id="mysticalweapon-' + itemId + '">' + itemId + '</li>');
+    fetch('{% url "api:addMysticalWeapon" %}', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -1435,7 +1435,8 @@ function fetchTonics() {
     const pagePath = window.location.pathname
     const pathSections = pagePath.split("/")
     const characterPrimaryKey = pathSections[pathSections.length - 1]
-    fetch('', {
+    $(`[id="mysticalweapon-${itemId}"]`).remove();
+    fetch('{% url "api:removeMysticalWeapon" %}', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -214,5 +214,50 @@ def fetchUtility(request):
     else:
         return JsonResponse({'status':'error'})
 
-
+@csrf_exempt
+def fetchMysticalWeapons(request):
+    #return all weapons in current characters inventory
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       primary_key = data.get('id')
+       obj = Character.objects.get(id=primary_key)
+       jsonInv = json.dumps(obj.inventory.mysticalweapons)
+       return JsonResponse(jsonInv, safe=False)
+    else:
+        return JsonResponse({'status':'error'})
+    
+@csrf_exempt    
+def fetchAllMysticalWeapons(request):
+    if request.method == 'POST':
+        obj = list(MysticalWeapon.objects.values_list('MysticalWeaponName', flat=True))
+        jsonObj = json.dumps({'name':obj})
+        return JsonResponse(jsonObj, safe=False)
+    else:
+        return JsonResponse({'status':'error'})
+    
+@csrf_exempt
+def addMysticalWeapon(request):
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       mysticalWeaponToAdd = data.get('item_id')
+       print(data)
+       primary_key = data.get('char_id')
+       obj = Character.objects.get(id=primary_key)
+       obj.inventory.mysticalweapons.append({'name':mysticalWeaponToAdd})
+       obj.inventory.save()
+       obj.save()
+       return JsonResponse({'status': 'success'})
+    
+@csrf_exempt
+def removeMysticalWeapon(request):
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       mysticalWeaponToRemove = data.get('item_id')
+       print(data)
+       primary_key = data.get('char_id')
+       obj = Character.objects.get(id=primary_key)
+       obj.inventory.mysticalweapons.remove({'name':mysticalWeaponToRemove})
+       obj.inventory.save()
+       obj.save()
+       return JsonResponse({'status': 'success'})
 
