@@ -15,5 +15,4 @@ urlpatterns = [
     path('test_packet/', views.download_testpacket, name = 'test_packet'),
     path('oneshot/', views.download_oneshot, name = 'oneshot'),
     path('user_profile/', UserProfileView.as_view(), name= 'user_profile'),
-    path('expanded_create', views.expCharCreator, name="expCharCreator")
 ]
