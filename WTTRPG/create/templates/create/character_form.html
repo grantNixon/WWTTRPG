@@ -59,28 +59,28 @@
               <div>
                 <h5 class="fs-5 text-body-emphasis">Gumption</h5>
                 <p>Total health</p>
-                <form action="" method="post">{{ form.gumption }}</form>
+                <p>{{ form.gumption }}</p>
               </div>
             </div>
             <div class="col d-flex border-end border-dark">
               <div>
                 <h5 class="fs-5 text-body-emphasis">Intelligence</h5>
                 <p>Total natural awareness or your ability to sense things in your surroundings</p>
-                <form action="" method="post">{{ form.intelligence }}</form>
+                <p>{{ form.intelligence }}</p>
               </div>
             </div>
             <div class="col d-flex border-end border-dark justify-content-center">
               <div>
                 <h5 class="fs-5 text-body-emphasis">Mysticism</h5>
                 <p>Total spell slots for mysticism schools of magic</p>
-                <form action="" method="post">{{ form.mysticism }}</form>
+                <p>{{ form.mysticism }}</p>
               </div>
             </div>
             <div class="col d-flex border-end border-dark justify-content-center">
               <div>
                 <h5 class="fs-5 text-body-emphasis">Personality</h5>
                 <p>Total spell slots for personality schools of magic and discounts in stores</p>
-                <form action="" method="post">{{ form.personality }}</form>
+                <p>{{ form.personality }}</p>
               </div>
             </div>
           </div>
@@ -91,7 +91,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingSpecies">
       <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpecies" aria-expanded="false" aria-controls="collapseSpecies">
-        <b>2nd: Species</b> <form class="ms-3" action="" method="post">{{ form.species }}</form>
+        <b>2nd: Species</b><p  class="mt-3 ms-2">{{ form.species }}</p>
       </button>
     </h2>
     <div id="collapseSpecies" class="accordion-collapse collapse" aria-labelledby="headingSpecies" data-bs-parent="#characterCreatorAccordion">
@@ -356,7 +356,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingBackground">
       <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBackground" aria-expanded="false" aria-controls="collapseBackground">
-        <b>3rd: Background</b><form class="ms-3" action="" method="post">{{ form.background }}</form>
+        <b>3rd: Background</b><p class="mt-3 ms-2">{{ form.background }}</p>
       </button>
     </h2>
     <div id="collapseBackground" class="accordion-collapse collapse" aria-labelledby="headingBackground" data-bs-parent="#characterCreatorAccordion">
@@ -598,19 +598,19 @@
           <div class="col d-flex">
             <div>
               <h5 class="fs-5 text-body-emphasis">One</h5>
-              <form action="" method="post">{{ form.major_skill_1 }}</form>
+              <p>{{ form.major_skill_1 }}</p>
             </div>
           </div>
           <div class="col d-flex">
             <div>
                 <h5 class="fs-5 text-body-emphasis">Two</h5>
-                <form action="" method="post">{{ form.major_skill_2 }}</form>
+                <p>{{ form.major_skill_2 }}</p>
             </div>
           </div>
           <div class="col d-flex">
             <div>
                 <h5 class="fs-5 text-body-emphasis">Three</h5>
-                <form action="" method="post">{{ form.major_skill_3 }}</form>
+                <p>{{ form.major_skill_3 }}</p>
             </div>
           </div>
         </div>
@@ -620,31 +620,31 @@
       <div class="col d-flex">
         <div>
           <h5 class="fs-5 text-body-emphasis">One</h5>
-          <form action="" method="post">{{ form.major_skill_1 }}</form>
+          <p>{{ form.major_skill_1 }}</p>
         </div>
       </div>
       <div class="col d-flex">
         <div>
             <h5 class="fs-5 text-body-emphasis">Two</h5>
-            <form action="" method="post">{{ form.minor_skill_2 }}</form>
+            <p>{{ form.minor_skill_2 }}</p>
         </div>
       </div>
       <div class="col d-flex">
         <div>
             <h5 class="fs-5 text-body-emphasis">Three</h5>
-            <form action="" method="post">{{ form.minor_skill_3 }}</form>
+            <p>{{ form.minor_skill_3 }}</p>
         </div>
       </div> 
       <div class="col d-flex">
         <div>
             <h5 class="fs-5 text-body-emphasis">Four</h5>
-            <form action="" method="post">{{ form.minor_skill_4 }}</form>
+            <p>{{ form.minor_skill_4 }}</p>
         </div>
       </div> 
       <div class="col d-flex">
         <div>
             <h5 class="fs-5 text-body-emphasis">Five</h5>
-            <form action="" method="post">{{ form.minor_skill_5 }}</form>
+            <p>{{ form.minor_skill_5 }}</p>
         </div>
       </div>  
     </div> 
@@ -664,13 +664,13 @@
           <div class="col d-flex justify-content-center">
             <div>
               <h5 class="fs-5 text-body-emphasis">Language</h5>
-              <form action="" method="post">{{ form.language }}</form>
+              <p>{{ form.language }}</p>
             </div>
           </div>
           <div class="col d-flex">
             <div>
                 <h5 class="fs-5 text-body-emphasis">Morals</h5>
-                <form action="" method="post">{{ form.morals }}</form>
+                <p>{{ form.morals }}</p>
             </div>
           </div>
         </div>
@@ -692,13 +692,13 @@
               <h5 class="fs-5 text-body-emphasis"><b>Weapon Proficiency</b></h5>
               +1 to hits and another +1<br />
                 when the skill reaches lvl 50
-              <form action="" method="post">{{ form.weapon_proficiency }}</form>
+              <p>{{ form.weapon_proficiency }}</p>
             </div>
           </div>
           <div class="col border-end border-dark">
             <div>
                 <h5 class="fs-5 text-body-emphasis"><b>Starting Weapon</b></h5>
-                <form action="" method="post">{{ form.starting_weapon }}</form>
+                <p>{{ form.starting_weapon }}</p>
             </div>
           </div>
           <div class="col">
@@ -760,7 +760,7 @@
                         <br />
                     </ul>
                 </div>
-                <form action="" method="post">{{ form.starting_equipment }}</form>
+                <p>{{ form.starting_equipment }}</p>
             </div>
           </div>    
         </div>
@@ -780,13 +780,13 @@
           <div class="col d-flex justify-content-center">
             <div>
               <h5 class="fs-5 text-body-emphasis">Name</h5>
-              <form action="" method="post">{{ form.name }}</form>
+              <p>{{ form.name }}</p>
             </div>
           </div>
           <div class="col d-flex">
             <div>
                 <h5 class="fs-5 text-body-emphasis">Class Name</h5>
-                <form action="" method="post">{{ form.class_name }}</form>
+                <p>{{ form.class_name }}</p>
             </div>
           </div>
         </div>
