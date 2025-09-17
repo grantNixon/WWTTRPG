@@ -24,12 +24,14 @@
     </style>
 
 <body class="d-flex flex-column min-vh-100" style="background-color: #be2a4a;">
+<form id="charform" method="post">
+  {% csrf_token %}
 <div class="container-fluid" style="background-color: #f0d7a8;">
     <h4 class="text-center text-decoration-bold mt-2">Expanded Character Creator</h4>
 <div class="row mb-2 container-fluid text-center">
   <div class="accordion mt-4 mb-5" id="characterCreatorAccordion">
 
-    <form action="" method="post">
+
     <!-- ATTRIBUTES -->
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingAttributes">
@@ -620,7 +622,7 @@
       <div class="col d-flex">
         <div>
           <h5 class="fs-5 text-body-emphasis">One</h5>
-          <p>{{ form.major_skill_1 }}</p>
+          <p>{{ form.minor_skill_1 }}</p>
         </div>
       </div>
       <div class="col d-flex">
@@ -797,13 +799,12 @@
 </div>
 <div class="border-bottom border-dark mb-3"></div>
     <div class="text-center fw-bold">
-        <form action="" method="post">
-        {% csrf_token %}
-        <input class="mt-2 mb-2 justify-content-center btn text-white" style="background-color: #226150;" type="submit" value="Finish and Create">
-    </form>
+        
+        <input class="mt-2 mb-2 justify-content-center btn text-white" style="background-color: #226150;" type="submit" form="charform" value="Finish and Create">
+
         </div>
     </div>
-    </form>
+</form>
 </body>
 
 {% load static %}
