@@ -20,16 +20,16 @@ from django.contrib.auth.decorators import login_required
 
 
 def bulk_DB_upload():
-    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\MysticalWeapons.csv', newline='') as csvfile:
+    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\Spells.csv', newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-           MysticalWeapon.objects.create(
-                MysticalWeaponName = 'test',
-                DamageType = row['DamageType'],
+           Spell.objects.create(
+                MagicSchool = row['MagicSchool'],
+                SpellDescription = row['SpellDescription'],
                 ActionCost = row['ActionCost'],
+                SpellName = row['SpellName'],
                 Range = row['Range'],
-                Damage = row['Damage'],
-                ExtraEffect = row['ExtraEffect']
+                SpellEffect = row['SpellEffect']
             )
 
 #bulk_DB_upload()
@@ -203,26 +203,26 @@ def retrieve_skills(request):
            'thievery':{'level':obj.sk_thievery, 'xp': 0},
            'intimidation':{'level':obj.sk_intimidation, 'xp': 0},
            'hunting':{'level':obj.sk_hunting, 'xp': 0},
-           'animal':{'level':obj.sk_animalhandling, 'xp': 0 },
+           'animalhandling':{'level':obj.sk_animalhandling, 'xp': 0 },
             'rifles': { 'level': obj.sk_rifles, 'xp': 0 },
             'intuition': { 'level': obj.sk_intuition , 'xp': 0 },
             'investigation': { 'level': obj.sk_investigation , 'xp': 0 },
             'gambit': { 'level':obj.sk_gambit, 'xp': 0 },
             'brewing': { 'level': obj.sk_brewing, 'xp': 0 },
-            'galvanism': { 'level': obj.sk_galvanismmagic, 'xp': 0 },
+            'galvanismmagic': { 'level': obj.sk_galvanismmagic, 'xp': 0 },
             'religion': { 'level': obj.sk_religion, 'xp': 0 },
             'history': { 'level': obj.sk_history, 'xp': 0 },
             'medicine': { 'level': obj.sk_medicine, 'xp': 0 },
-           'healing': { 'level': obj.sk_healingmagic, 'xp': 0 },
-            'utility': { 'level': obj.sk_utilitymagic, 'xp': 0 },
-            'absolution': { 'level': obj.sk_absolutionmagic, 'xp': 0 },
+           'healingmagic': { 'level': obj.sk_healingmagic, 'xp': 0 },
+            'utilitymagic': { 'level': obj.sk_utilitymagic, 'xp': 0 },
+            'absolutionmagic': { 'level': obj.sk_absolutionmagic, 'xp': 0 },
             'foolery': { 'level': obj.sk_foolery, 'xp': 0 },
             'persuasion': { 'level': obj.sk_persuasion, 'xp': 0 },
             'barter': { 'level': obj.sk_barter, 'xp': 0 },
             'performance': { 'level': obj.sk_performance, 'xp': 0 },
-            'deception': { 'level': obj.sk_deceptionmagic, 'xp': 0 },
-            'ritual': { 'level': obj.sk_ritualmagic, 'xp': 0 },
-            'destruction': { 'level': obj.sk_destructionmagic, 'xp': 0 },
+            'deceptionmagic': { 'level': obj.sk_deceptionmagic, 'xp': 0 },
+            'ritualmagic': { 'level': obj.sk_ritualmagic, 'xp': 0 },
+            'destructionmagic': { 'level': obj.sk_destructionmagic, 'xp': 0 },
             'cooking': {'level':obj.sk_cooking, 'xp': 0},
             'foraging': {'level':obj.sk_foraging, 'xp': 0},
            

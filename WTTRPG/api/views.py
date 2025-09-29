@@ -240,7 +240,6 @@ def addMysticalWeapon(request):
     if request.method == 'POST':
        data = json.loads(request.body)
        mysticalWeaponToAdd = data.get('item_id')
-       print(data)
        primary_key = data.get('char_id')
        obj = Character.objects.get(id=primary_key)
        obj.inventory.mysticalweapons.append({'name':mysticalWeaponToAdd})
@@ -253,11 +252,26 @@ def removeMysticalWeapon(request):
     if request.method == 'POST':
        data = json.loads(request.body)
        mysticalWeaponToRemove = data.get('item_id')
-       print(data)
        primary_key = data.get('char_id')
        obj = Character.objects.get(id=primary_key)
        obj.inventory.mysticalweapons.remove({'name':mysticalWeaponToRemove})
        obj.inventory.save()
        obj.save()
        return JsonResponse({'status': 'success'})
+    
+@csrf_exempt
+def showSpellSelection(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        spellSkill = data.get('sk')
+        spells = Spell.objects.all()
+        spells = spells.filter(MagicSchool = spellSkill)
+        data = list(
+            spells.values("SpellName", "SpellDescription"))
+        print(data)
+        return JsonResponse(data, safe=False)
+    else:
+        return JsonResponse({'status':'error'})
+
+
 
