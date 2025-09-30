@@ -1090,7 +1090,7 @@ function showSpellSelection(skill) {
                 jsonData.forEach((spell) => {
                     let li = document.createElement("li");
                     li.innerHTML = `
-                        <button onclick="chooseSpell(${spell.SpellName})">${spell.SpellName}</button> 
+                        <button onclick="chooseSpell('${spell.SpellName}')">${spell.SpellName}</button> 
                         - ${spell.SpellDescription}`;
                     spellList.appendChild(li);
                 });
@@ -1105,9 +1105,9 @@ function chooseSpell(spellId) {
     const pathSections = pagePath.split("/");
     const characterPrimaryKey = pathSections[pathSections.length - 1];
 
-    fetch("/api/add_spell/", {
+    fetch("{% url 'api:addSpell' %}", {
         method: "POST",
-        body: JSON.stringify({ character_id: characterPrimaryKey, spell_id: spellId }),
+        body: JSON.stringify({ char_id: characterPrimaryKey, spell_id: spellId }),
         headers: { "Content-Type": "application/json", "X-CSRFToken": "{{ csrf_token }}" }
     })
     .then(response => response.json())

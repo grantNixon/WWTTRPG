@@ -268,10 +268,20 @@ def showSpellSelection(request):
         spells = spells.filter(MagicSchool = spellSkill)
         data = list(
             spells.values("SpellName", "SpellDescription"))
-        print(data)
         return JsonResponse(data, safe=False)
     else:
         return JsonResponse({'status':'error'})
 
-
+@csrf_exempt
+def addSpell(request):
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       spellToAdd = data.get('spell_id')
+       print(spellToAdd)
+       primary_key = data.get('char_id')
+       obj = Character.objects.get(id=primary_key)
+       obj.inventory.spells.append({'name':spellToAdd})
+       obj.inventory.save()
+       obj.save()
+       return JsonResponse({'status': 'success'})
 

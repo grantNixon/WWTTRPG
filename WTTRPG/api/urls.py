@@ -27,5 +27,6 @@ urlpatterns = [
     path('addMysticalWeapon', views.addMysticalWeapon, name="addMysticalWeapon"),
     path('removeMysticalWeapon', views.removeMysticalWeapon, name="removeMysticalWeapon"),
     path('showSpellSelection', views.showSpellSelection, name="showSpellSelection"),
+    path('addSpell', views.addSpell, name = 'addSpell'),
 
 ]
