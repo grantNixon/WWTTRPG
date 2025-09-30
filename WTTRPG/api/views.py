@@ -266,6 +266,7 @@ def showSpellSelection(request):
         spellSkill = data.get('sk')
         spells = Spell.objects.all()
         spells = spells.filter(MagicSchool = spellSkill)
+        print(spells)
         data = list(
             spells.values("SpellName", "SpellDescription"))
         return JsonResponse(data, safe=False)

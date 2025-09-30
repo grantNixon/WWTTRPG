@@ -994,8 +994,11 @@ function increaseXP(skill) {
             skillData.xp = 0;
         }
 
+
+        console.log(skill)
+        console.log(skillData.level)
         // 🎯 Check milestone here
-        if (skill === "healingmagic" && skillMilestones.includes(skillData.level)) {
+        if (skill.includes("magic") && skillMilestones.includes(skillData.level)) {
             showSpellSelection(skill);
         }
 
