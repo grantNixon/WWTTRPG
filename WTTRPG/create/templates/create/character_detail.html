@@ -729,10 +729,10 @@
                       Exp: <span id="persuasion-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
 
-                        <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="persuasion-skill">{{character.sk_performance}}</span> | Performance</p>
-                      <button id="persuasion" class="skill-btn" onclick="decreaseXP('persuasion')">-</button>
-                        <button class="skill-btn" onclick="increaseXP('persuasion')">+</button>
-                      Exp: <span id="persuasion-xp-tracker"></span>
+                        <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="performance-skill">{{character.sk_performance}}</span> | Performance</p>
+                      <button id="performance" class="skill-btn" onclick="decreaseXP('performance')">-</button>
+                        <button class="skill-btn" onclick="increaseXP('performance')">+</button>
+                      Exp: <span id="performance-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                       
                       <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="barter-skill">{{character.sk_barter}}</span> | Barter</p>
@@ -769,6 +769,8 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script >
+  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
   let skillLevelUps = 0;
 
    function showTempAlert(message, duration = 2000) {
@@ -1672,6 +1674,20 @@ function applyLevelUp() {
         alert("You must choose different attributes to increase.");
         return;
     }
+
+     // Cap logic
+    let current5 = parseInt(document.getElementById(attr5).textContent);
+    let current3 = parseInt(document.getElementById(attr3).textContent);
+
+    let new5 = Math.min(current5 + 5, 100); // cap at 100
+    let new3 = Math.min(current3 + 3, 100); // cap at 100
+
+    document.getElementById(attr5).textContent = new5;
+    document.getElementById(attr3).textContent = new3;
+
+    skillLevelUps = 0; // Reset skill level-up counter after leveling up
+    closeLevelUpModal();
+}
     
     // Update attributes
     document.getElementById(attr5).textContent = parseInt(document.getElementById(attr5).textContent) + 5;
@@ -1696,7 +1712,7 @@ function applyLevelUp() {
     
     skillLevelUps = 0; // Reset skill level-up counter after leveling up
     closeLevelUpModal();
-}
+
 
 
 function getRequiredSkillLevelUps(characterLevel) {
@@ -1718,10 +1734,6 @@ function trackSkillLevelUp() {
         openLevelUpModal();
     }
 }
-
-const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
-
 
 </script>
 
