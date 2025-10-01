@@ -247,7 +247,13 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
                                         <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
                                    </svg>
+                                  </button><div>
+                <h5 class="fs-6 ms-2"><b>Proficiency: </b><span class="fs-6 border-bottom border-dark">{{character.weapon_proficiency}} </span><button type="button" class="btn btn-sm btn-info ms-2 p-0" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="+1 to hit checks and another +1 when the skill reaches level 50">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+                                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                   </svg>
                                   </button></h5>
+                </div></h5>
                               <div id="weaponButtonSidebar"></div>
                               <ul class="nav nav-tabs" id="weaponManagerTabs" role="tablist">
                                   <li class="nav-item" role="presentation">
@@ -273,22 +279,7 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                        <div>
-                <h5 class="fs-6 ms-2"><b>Proficiency: </b><span class="fs-6 border-bottom border-dark">{{character.weapon_proficiency}} </span><button type="button" class="btn btn-sm btn-info ms-2 p-0" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="+1 to hit checks and another +1 when the skill reaches level 50">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
-                                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
-                                   </svg>
-                                  </button></h5>
-                </div>
                         <div class="tab-pane fade pb-5" id="spells" role="tabpanel" aria-labelledby="spells-tab">
-                            <button id="spellToggleButton" class="btn btn-link-dark text-decoration-underline" onclick="toggleSpellManager()">Manage</button>
-                            <div id="spellManager">
-                              <p class="border-bottom border-dark text-dark w-50">Current Spells</p>
-                              <ul id="current-spells"></ul>
-                  
-                              <p class="border-bottom border-dark w-50 text-dark">Available Spells</p>
-                              <ul id="spell-options"></ul>
-                          </div>
                           <ul id="currentSpellList">
                                   <li></li>
                           </ul>
@@ -297,8 +288,8 @@
                   </div>
                   <!-- Modal for spell selection -->
 <div id="spellModal" style="display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:#fff; border:2px solid #000; padding:20px; z-index:1000;">
-  <h3>Choose a Spell</h3>
-  <ul id="spellList"></ul>
+  <h3 class="text-center"><u>Choose a Spell</u></h3>
+  <ul class="mb-2" id="spellList"></ul>
   <button onclick="closeSpellModal()">Cancel</button>
 </div>
 
@@ -334,7 +325,7 @@
     </button>
 </div>
                             <div id="inventoryManager">
-                              <h5 class="border-bottom border-dark">Inventory</h5>
+                              <h5 class="border-bottom border-dark">Inventory<h5 class="fs-6">*items that heal, buff stats, and affect other aspects of the character (like EC) won't update those aspects in the sheet when added/used, be sure to take note and adjust them yourself</h5></h5>
                               <div id="buttonSidebar"></div>
                               <ul class="nav nav-tabs" id="inventoryManagerTabs" role="tablist">
                                   <li class="nav-item" role="presentation">
@@ -1093,7 +1084,7 @@ function showSpellSelection(skill) {
                 jsonData.forEach((spell) => {
                     let li = document.createElement("li");
                     li.innerHTML = `
-                        <button onclick="chooseSpell('${spell.SpellName}')">${spell.SpellName}</button> 
+                        <button class="btn btn-sm btn-warning mb-2" onclick="chooseSpell('${spell.SpellName}') showTempAlert('Spell Added')">${spell.SpellName}</button>
                         - ${spell.SpellDescription}`;
                     spellList.appendChild(li);
                 });
@@ -1115,7 +1106,6 @@ function chooseSpell(spellId) {
     })
     .then(response => response.json())
     .then(data => {
-        alert(data.message || "Spell learned!");
         closeSpellModal();
     });
 }
