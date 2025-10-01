@@ -1084,7 +1084,7 @@ function showSpellSelection(skill) {
                 jsonData.forEach((spell) => {
                     let li = document.createElement("li");
                     li.innerHTML = `
-                        <button class="btn btn-sm btn-warning mb-2" onclick="chooseSpell('${spell.SpellName}') showTempAlert('Spell Added')">${spell.SpellName}</button>
+                        <button class="btn btn-sm btn-warning mb-2" onclick="chooseSpell('${spell.SpellName}')">${spell.SpellName}</button>
                         - ${spell.SpellDescription}`;
                     spellList.appendChild(li);
                 });
@@ -1106,6 +1106,7 @@ function chooseSpell(spellId) {
     })
     .then(response => response.json())
     .then(data => {
+      alert(data.message || "Spell learned!");
         closeSpellModal();
     });
 }
