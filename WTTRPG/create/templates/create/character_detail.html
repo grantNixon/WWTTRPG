@@ -1621,8 +1621,6 @@ function openLevelUpModal() {
     });
     
     document.getElementById("levelUpModal").style.display = "block";
-    document.body.style.pointerEvents = "none"; // Disable interactions with the rest of the page
-    document.getElementById("levelUpModal").style.pointerEvents = "auto"; // Keep modal interactive
 }
 
 function openSnapshot() {
@@ -1654,7 +1652,6 @@ function openSnapshot() {
 
 function closeLevelUpModal() {
     document.getElementById("levelUpModal").style.display = "none";
-    document.body.style.pointerEvents = "auto"; // Re-enable interactions with the page
 }
 
 function closeSnapshot() {
