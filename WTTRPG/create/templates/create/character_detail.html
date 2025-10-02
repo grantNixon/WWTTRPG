@@ -287,10 +287,10 @@
                     </div>
                   </div>
                   <!-- Modal for spell selection -->
-<div id="spellModal" style="display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:#fff; border:2px solid #000; padding:20px; z-index:1000;">
-  <h3 class="text-center"><u>Choose a Spell</u></h3>
+<div id="spellModal" style="display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:#f0d7a8; border:2px solid #000; padding:20px; z-index:1000;">
+  <h3 class="text-center"><u>Magic Milestone Reached!</br></h3><h3 class="text-center fs-4"></u>Pick a New Spell</br></h3><h3 class="fs-6 text-center">(These are permanent)</h3>
   <ul class="mb-2" id="spellList"></ul>
-  <button onclick="closeSpellModal()">Cancel</button>
+  <button class="btn btn-sm btn-dark" onclick="closeSpellModal()">Cancel</button>
 </div>
 
           </div>
@@ -1049,25 +1049,26 @@ function updateDatabaseSkills(skill, increment) {
   const pagePath = window.location.pathname
   const pathSections = pagePath.split("/")
   const characterPrimaryKey = pathSections[pathSections.length - 1]
-  console.log(characterPrimaryKey)
-  $.ajax({
-            url: '{% url "create:update_skills" %}',
-            type: 'POST',
-            data: {
-                'id': characterPrimaryKey,
-                'skill': skill,
-                'increment': increment,
-                'csrfmiddlewaretoken': '{{ csrf_token }}'
-            },
-            success: function(response) {
-                if (response.status === 'success') {
-                    console.log('Data updated successfully!');
-                } else {
-                    console.log('Error: ' + response.message);
-                }
-            }
+  const skillData = skills[skill];
 
-        });
+  $.ajax({
+    url: '{% url "create:update_skills" %}',
+    type: 'POST',
+    data: {
+      'id': characterPrimaryKey,
+      'skill': skill,
+      'increment': increment,
+      'xp': skillData.xp,   // <-- send XP too
+      'csrfmiddlewaretoken': '{{ csrf_token }}'
+    },
+    success: function(response) {
+      if (response.status === 'success') {
+        console.log('Skill updated!');
+      } else {
+        console.log('Error: ' + response.message);
+      }
+    }
+  });
   //parse int at end of path from above variable -> this is the character primary key
   //send AJAX request with pk, skill, and increment to update_skills view which should update the DB
 }
