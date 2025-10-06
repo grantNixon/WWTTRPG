@@ -66,7 +66,6 @@ class BackgroundBonuses():
             "sk_sneak": 5,
             "sk_acrobatics": 5,
             "sk_pistols": 5,
-            "sk_repair": -5,
             "sk_crafting": -5,
             "sk_shotguns": -5,
         },

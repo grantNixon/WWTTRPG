@@ -20,16 +20,14 @@ from django.contrib.auth.decorators import login_required
 
 
 def bulk_DB_upload():
-    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\Spells.csv', newline='') as csvfile:
+    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\perk_list.csv', newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-           Spell.objects.create(
-                MagicSchool = row['MagicSchool'],
-                SpellDescription = row['SpellDescription'],
-                ActionCost = row['ActionCost'],
-                SpellName = row['SpellName'],
-                Range = row['Range'],
-                SpellEffect = row['SpellEffect']
+           Perk.objects.create(
+                perkSkill = row['Skill'],
+                skillLevel = row['SkillLevel'],
+                perkName = row['Perk'],
+                description = row['PerkEffect'],
             )
 
 #bulk_DB_upload()
@@ -171,7 +169,9 @@ def update_skills(request):
             new_sk_value = current_sk_value + int(increment)
             setattr(obj, skill_to_update, new_sk_value)
             obj.save()
-            sk_pk = Perk.objects.get(perkSkill = request.POST.get('skill')) #get all perks tied to skill being increased - not working currently, need to fix. 
+            print(request.POST.get('skill'))
+            sk_pk = Perk.objects.filter(perkSkill = request.POST.get('skill')) #get all perks tied to skill being increased - not working currently, need to fix. 
+            print(sk_pk)
             for perc in sk_pk:
                 if current_sk_value < perc.skillLevel and new_sk_value >= perc.skillLevel: #loop through all perks in the query set and check if skill threshold for new perk is crossed
                     obj.perks.add(perc)
