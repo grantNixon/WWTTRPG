@@ -1075,7 +1075,31 @@ function updateDatabaseSkills(skill, increment) {
   //send AJAX request with pk, skill, and increment to update_skills view which should update the DB
 }
 
-// Spell logic 
+// Spell logic
+function fetchSpells() {
+    // Load the spells the character currently has
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    console.log(characterPrimaryKey)
+    fetch('{% url "api:fetchSpells" %}', {
+      method: "POST",
+      body: JSON.stringify({'id':characterPrimaryKey})
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        const currentSpellList = document.getElementById("current-spells");
+        currentSpellList.innerHTML = "";
+        jsonData.forEach((spell) => {
+          currentSpellList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeWeapon('${weapon.name}')">${weapon.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
+</svg></button><br />`;
+        });
+      });
+    }
+
 function showSpellSelection(skill) {
   fetch("{% url 'api:showSpellSelection' %}", {
     method: "POST",
