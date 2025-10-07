@@ -129,9 +129,10 @@ class QSCharCreator(LoginRequiredMixin,CreateView):
         Character.save()
         for sk in Skills.skillz:
             conv_sk = Skills_to_ModelName.skilldic[sk]
+            borkedNaming = conv_sk[3:]
             sk_value = getattr(Character, conv_sk)
             for perc in Perk.objects.all():
-                if sk == perc.perkSkill:
+                if borkedNaming == perc.perkSkill:
                     if sk_value >= perc.skillLevel:
                         Character.perks.add(perc)
         Character.save()   

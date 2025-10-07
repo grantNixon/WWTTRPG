@@ -281,7 +281,9 @@
                         </div>
                         <div class="tab-pane fade pb-5" id="spells" role="tabpanel" aria-labelledby="spells-tab">
                           <ul id="currentSpellList">
-                                  <li></li>
+                            {% for spell in character.inventory.spells %}
+                                  <li>{{spell.name}}</li>
+                            {% endfor %}
                           </ul>
                         </div>
                     </div>
