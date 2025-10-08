@@ -369,26 +369,26 @@
                           </div>
                           <!-- For these inventory li items.. need to update to ensure the IDs added in the fetch functions are retained on page refresh -->     
                           
-                          <ul id="current-tonics2" class="mb-0 border-start border-top border-dark w-50"><u><b>Tonics</b></u>
+                          <ul id="current-tonics2" class="mb-0"><u><b>Tonics</b></u>
                                 {% for tonic in character.inventory.tonics %}
                                     <li>{{ tonic.name }}</li>
                                 {% endfor %}
                             </ul>
-                             <ul id="current-items2" class="mb-0 border-start border-top border-dark w-50 mt-3"><u><b>Mystical Items</b></u>
+                             <ul id="current-items2" class="mb-0 mt-3"><u><b>Mystical Items</b></u>
                                 {% for item in character.inventory.items %}
                                    {% if item.name %}
                              <li>{{ item.name }}</li>
                                {% endif %}
                                {% endfor %}
                             </ul>
-                              <ul id="current-utilities2" class="mb-0 border-start border-top border-dark w-50 mt-3"><u><b>Utilities</b></u>
+                              <ul id="current-utilities2" class="mb-0 mt-3"><u><b>Utilities</b></u>
                                 {% for utility in character.inventory.utilities %}
                                    {% if utility.name %}
                                   <li>{{ utility.name }}</li>
                                {% endif %}
                              {% endfor %}
                             </ul>
-                             <ul id="current-clothing2" class="mb-0 border-start border-top border-dark w-50 mt-3"><u><b>Clothing/Armor</b></u>
+                             <ul id="current-clothing2" class="mb-0 mt-3"><u><b>Clothing/Armor</b></u>
                                 {% for clothing in character.inventory.clothing %}
                                   {% if clothing.name %}
                              <li>{{ clothing.name }}</li>
@@ -1093,9 +1093,7 @@ function fetchSpells() {
         const currentSpellList = document.getElementById("current-spells");
         currentSpellList.innerHTML = "";
         jsonData.forEach((spell) => {
-          currentSpellList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeWeapon('${weapon.name}')">${weapon.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
-  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
-</svg></button><br />`;
+          currentSpellList.innerHTML += ``;
         });
       });
     }
@@ -1135,7 +1133,7 @@ function chooseSpell(spellId) {
     })
     .then(response => response.json())
     .then(data => {
-      alert(data.message || "Spell learned!");
+      alert(data.message || "Spell learned! Refresh page to populate");
         closeSpellModal();
     });
 }
