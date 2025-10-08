@@ -285,4 +285,15 @@ def addSpell(request):
        obj.inventory.save()
        obj.save()
        return JsonResponse({'status': 'success'})
+    
+@csrf_exempt
+def fetchSpells(request):
+    if request.method == 'POST':
+       data = json.loads(request.body)
+       primary_key = data.get('id')
+       obj = Character.objects.get(id=primary_key)
+       jsonInv = json.dumps(obj.inventory.spells)
+       return JsonResponse(jsonInv, safe=False)
+    else:
+        return JsonResponse({'status':'error'})
 
