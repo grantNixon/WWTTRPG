@@ -19,8 +19,8 @@
            #weaponManager {
   position: fixed;
   top: 0;
-  left: -400px; /* start hidden off-screen to the left */
-  width: 400px;
+  left: -450px; /* start hidden off-screen to the left */
+  width: 450px;
   height: 100%;
   overflow-y: auto;
   background-color: #f0d7a8;
@@ -42,8 +42,8 @@
 #inventoryManager {
   position: fixed;
   top: 0;
-  right: -400px; /* start hidden outside the screen */
-  width: 400px;
+  right: -450px; /* start hidden outside the screen */
+  width: 450px;
   height: 100%;
   overflow-y: auto;
   background-color: #f0d7a8;
@@ -116,18 +116,28 @@
     
 
 <!-- Level Up Modal -->
-<div class="container" id="levelUpModal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #f0d7a8; padding: 50px; border: 2px solid black;">
-    <h3 class="text-center border-bottom border-dark">You Leveled Up!</h3>
-    <h5 class="text-center">Your time spent in the wild west has made your hands and wits sharper, but there's still many dangers ahead</h5>
-    <div class="text-center">
-      <label class="d-block fs-4">Major: +5</label>
-      <select id="attributeIncrease5" class="mx-auto d-block mb-2"></select>
-  </div>
-    <div class="text-center">
-      <label class="d-block fs-4">Minor: +3</label>
-      <select id="attributeIncrease3" class="mx-auto d-block"></select>
-    <br>
-    <button class="btn btn-secondary btn-dark p-1 mt-2" onclick="applyLevelUp()">Confirm</button><button type="button" class="btn btn-info btn-sm ms-3 mt-2 border-2" data-bs-container="body"  data-bs-html="true"  data-bs-toggle="popover" data-bs-placement="right" data-bs-content="<b>Strength</b>: MB<br><b>Agilty</b>: EC<br><b>Gumption</b>: HP<br><b>Intelligence</b>: Natural awareness<br><b>Mysticism</b>: More spell slots<br><b>Personality</b>: More spell slots/better prices<br><b>Character level</b>: AP">
+<div class="container" id="levelUpModal" 
+     style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: #f0d7a8; padding: 50px; border: 2px solid black; max-width: 600px;">
+  <h3 class="text-center border-bottom border-dark">You Leveled Up!</h3>
+  <h5 class="text-center mb-2">
+    Your time spent in the outer west has made your hands and wits just a bit sharper.<br><br><p class="fs-6">Pick which attributes you'd like to increase:</p>
+  </h5>
+
+  <div class="row text-center">
+    <!-- Major -->
+    <div class="col-md-6">
+      <label class="d-block fs-4 border-bottom border-dark mb-1">Major: +5</label>
+      <select id="attributeIncrease5" class="form-select mx-auto w-75 mb-2"></select>
+    </div>
+
+    <!-- Minor -->
+    <div class="col-md-6">
+      <label class="d-block fs-4 border-bottom border-dark mb-1">Minor: +3</label>
+      <select id="attributeIncrease3" class="form-select mx-auto w-75"></select>
+    </div>
+
+    <button class="btn btn-secondary btn-dark p-1 mt-2" onclick="applyLevelUp()">Confirm</button><button type="button" class="btn btn-info btn-sm mt-2 border-2" data-bs-container="body"  data-bs-html="true"  data-bs-toggle="popover" data-bs-placement="right" data-bs-content="<b>Strength</b>: MB<br><b>Agilty</b>: EC<br><b>Gumption</b>: HP<br><b>Intelligence</b>: Natural awareness<br><b>Mysticism</b>: More spell slots<br><b>Personality</b>: More spell slots/better prices<br><b>Character level</b>: AP">
   Attributes<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
   <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
 </svg>
@@ -233,7 +243,7 @@
                       <div class="tab-content mt-2" id="myTabContent1">
                         <div class="tab-pane fade pb-5 show active" id="weapons" role="tabpanel" aria-labelledby="weapons-tab">
                             <div id="weaponButtonHome">
-                            <button id="weaponToggleButton" class="mb-2 btn btn-sm btn-danger text-dark float-end"
+                            <button id="weaponToggleButton" class="mb-2 btn btn-sm btn-danger text-dark float-end rounded-0"
                              onclick="toggleWeaponManager()">
                              Manage
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -247,13 +257,14 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
                                         <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
                                    </svg>
-                                  </button><div>
-                <h5 class="fs-6 ms-2"><b>Proficiency: </b><span class="fs-6 border-bottom border-dark">{{character.weapon_proficiency}} </span><button type="button" class="btn btn-sm btn-info ms-2 p-0" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="+1 to hit checks and another +1 when the skill reaches level 50">
+                                  </button></h5>
+                                  <div>
+                                        <h5 class="fs-6"><b>Proficiency: </b><span class="fs-6"><u>{{character.weapon_proficiency}}</u> </span><button type="button" class="btn btn-sm btn-info p-0 mb-2" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="+1 to hit checks and another +1 when the skill reaches level 50">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
                                         <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
                                    </svg>
                                   </button></h5>
-                </div></h5>
+                                  </div></h5>
                               <div id="weaponButtonSidebar"></div>
                               <ul class="nav nav-tabs" id="weaponManagerTabs" role="tablist">
                                   <li class="nav-item" role="presentation">
@@ -317,7 +328,7 @@
                      <div class="tab-content mt-2" id="myTabContent1">
                         <div class="tab-pane fade pb-5 show active" id="inventory" role="tabpanel" aria-labelledby="inventory-tab">
                     <div id="buttonHome">
-    <button id="inventoryToggleButton" class="mb-2 btn btn-sm btn-danger text-dark float-end"
+    <button id="inventoryToggleButton" class="mb-2 btn btn-sm btn-danger text-dark float-end rounded-0"
         onclick="toggleInventoryManager()">
         Manage
        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -327,7 +338,7 @@
     </button>
 </div>
                             <div id="inventoryManager">
-                              <h5 class="border-bottom border-dark">Inventory<h5 class="fs-6">*items that heal, buff stats, and affect other aspects of the character (like EC) won't update those aspects in the sheet when added/used, be sure to take note and adjust them yourself</h5></h5>
+                              <h5 class="border-bottom border-dark">Inventory<h6 class="fs-6 border-bottom border-dark mb-1">*Items that heal, buff stats, and affect other aspects of the character (like EC) won't update those aspects in the sheet when added/used, be sure to take note and adjust them yourself</h6></h5>
                               <div id="buttonSidebar"></div>
                               <ul class="nav nav-tabs" id="inventoryManagerTabs" role="tablist">
                                   <li class="nav-item" role="presentation">
@@ -1195,9 +1206,9 @@ function openWeaponManager() {
         const currentWeaponList = document.getElementById("current-weapons");
         currentWeaponList.innerHTML = "";
         jsonData.forEach((weapon) => {
-          currentWeaponList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeWeapon('${weapon.name}')">${weapon.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+          currentWeaponList.innerHTML += `<button class="btn btn-sm text-dark" style="background-color: white;" onclick="removeWeapon('${weapon.name}')">${weapon.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-1" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
-</svg></button><br />`;
+</svg></button><br>`;
         });
       });
 
@@ -1212,14 +1223,13 @@ function openWeaponManager() {
         jsonData = JSON.parse(data)
         console.log(jsonData)
         jsonData.name.forEach((weapon) => {
-          weaponOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
-        style="background-color: white;" 
+          weaponOptionsList.innerHTML += `<button class="btn btn-sm text-dark" style="background-color: white;" 
         onclick="addWeapon('${weapon}'); showTempAlert('Weapon Added');">
   ${weapon}
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill mb-1" viewBox="0 0 16 16">
     <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
   </svg>
-</button><br />`;
+</button><br>`;
         });
       });
   }
@@ -1580,7 +1590,7 @@ function fetchTonics() {
         jsonData.name.forEach((clothing) => {
           clothingOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
         style="background-color: white;" 
-        onclick="addClothing('${clothing}'); showTempAlert('clothing Added');">
+        onclick="addClothing('${clothing}'); showTempAlert('Clothing Added');">
   ${clothing}
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
     <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
@@ -1719,21 +1729,59 @@ function applyLevelUp() {
      const levelElement = document.getElementById("characterLevel");
     levelElement.textContent = parseInt(levelElement.textContent) + 1;
 
+    function applyLevelUp() {
+    const pagePath = window.location.pathname;
+    const pathSections = pagePath.split("/");
+    const characterPrimaryKey = pathSections[pathSections.length - 1];
+
+    const attr5 = document.getElementById("attributeIncrease5").value;
+    const attr3 = document.getElementById("attributeIncrease3").value;
+
+    if (attr5 === attr3) {
+        alert("You must choose different attributes to increase.");
+        return;
+    }
+
+    // Cap logic
+    let current5 = parseInt(document.getElementById(attr5).textContent);
+    let current3 = parseInt(document.getElementById(attr3).textContent);
+
+    let new5 = Math.min(current5 + 5, 100);
+    let new3 = Math.min(current3 + 3, 100);
+
+    document.getElementById(attr5).textContent = new5;
+    document.getElementById(attr3).textContent = new3;
+
+    // Increase character level
+    const levelElement = document.getElementById("characterLevel");
+    const newLevel = parseInt(levelElement.textContent) + 1;
+    levelElement.textContent = newLevel;
+
+    // Send update to backend
     fetch('{% url "api:levelup" %}', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-CSRFToken': getCSRFToken() 
-    },
-      body: JSON.stringify( {
-        'id':characterPrimaryKey,
-        'major':attr5,
-        'minor':attr3
-      })
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCSRFToken()
+        },
+        body: JSON.stringify({
+            'id': characterPrimaryKey,
+            'major': attr5,
+            'minor': attr3,
+            'level': newLevel
+        })
     })
-    
-    skillLevelUps = 0; // Reset skill level-up counter after leveling up
+    .then(response => {
+        if (!response.ok) {
+            console.error("Level up failed:", response.statusText);
+        }
+    });
+
+    // Reset counters and close modal
+    skillLevelUps = 0;
     closeLevelUpModal();
+}
+
 
 
 

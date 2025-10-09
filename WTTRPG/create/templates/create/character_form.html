@@ -23,20 +23,21 @@
     }
     </style>
 
-<body class="d-flex flex-column min-vh-100" style="background-color: #be2a4a;">
-<form id="charform" method="post">
-  {% csrf_token %}
-<div class="container-fluid" style="background-color: #f0d7a8;">
-    <h4 class="text-center text-decoration-bold mt-2">Expanded Character Creator</h4>
-<div class="row mb-2 container-fluid text-center">
-  <div class="accordion mt-4 mb-5" id="characterCreatorAccordion">
+<div class="container d-flex justify-content-center" style="background-color: #f0d7a8; max-width: 1200px; border-radius: 10px;">
+      <div class="w-100 text-center">
+        <h3 class="text-center text-decoration-bold mt-3 border-bottom border-dark">
+          Character Creator
+        </h3>
+
+        <div class="row mb-2 text-center">
+          <div class="accordion mt-4 mb-2" id="characterCreatorAccordion">
 
 
     <!-- ATTRIBUTES -->
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingAttributes">
         <button class="accordion-button text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAttributes" aria-expanded="true" aria-controls="collapseAttributes">
-          <b>1st: Attributes</b>
+          <b><u>1st: Attributes</u></b>
         </button>
       </h2>
       <div id="collapseAttributes" class="accordion-collapse collapse show" aria-labelledby="headingAttributes" data-bs-parent="#characterCreatorAccordion">
@@ -45,42 +46,42 @@
           <div class="row g-4 py-1 mb-5 row-cols-1 row-cols-lg-6">
             <div class="col d-flex border-end border-dark">
               <div>
-                <h5 class="fs-5 text-body-emphasis">Strength</h5>
+                <h5 class="fs-5 text-body-emphasis border-bottom border-dark">Strength</h5>
                 <p>Determines total movement bank or "MB" which is how far you can move each turn</p>
                 <p>{{ form.strength }}</p>
               </div>
             </div>
             <div class="col d-flex border-end border-dark">
               <div>
-                <h5 class="fs-5 text-body-emphasis">Agility</h5>
+                <h5 class="fs-5 text-body-emphasis border-bottom border-dark">Agility</h5>
                 <p>Determines total evasion chance or "EC" which is how likely you are to be hit</p>
                 <p>{{ form.agility }}<p>
               </div>
             </div>
             <div class="col d-flex border-end border-dark justify-content-center">
               <div>
-                <h5 class="fs-5 text-body-emphasis">Gumption</h5>
+                <h5 class="fs-5 text-body-emphasis border-bottom border-dark">Gumption</h5>
                 <p>Total health</p>
                 <p>{{ form.gumption }}</p>
               </div>
             </div>
             <div class="col d-flex border-end border-dark">
               <div>
-                <h5 class="fs-5 text-body-emphasis">Intelligence</h5>
+                <h5 class="fs-5 text-body-emphasis border-bottom border-dark">Intelligence</h5>
                 <p>Total natural awareness or your ability to sense things in your surroundings</p>
                 <p>{{ form.intelligence }}</p>
               </div>
             </div>
             <div class="col d-flex border-end border-dark justify-content-center">
               <div>
-                <h5 class="fs-5 text-body-emphasis">Mysticism</h5>
+                <h5 class="fs-5 text-body-emphasis border-bottom border-dark">Mysticism</h5>
                 <p>Total spell slots for mysticism schools of magic</p>
                 <p>{{ form.mysticism }}</p>
               </div>
             </div>
             <div class="col d-flex border-end border-dark justify-content-center">
               <div>
-                <h5 class="fs-5 text-body-emphasis">Personality</h5>
+                <h5 class="fs-5 text-body-emphasis border-bottom border-dark">Personality</h5>
                 <p>Total spell slots for personality schools of magic and discounts in stores</p>
                 <p>{{ form.personality }}</p>
               </div>
@@ -88,12 +89,11 @@
           </div>
         </div>
       </div>
-    </div>
       <!-- SPECIES -->
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingSpecies">
       <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpecies" aria-expanded="false" aria-controls="collapseSpecies">
-        <b>2nd: Species</b><p  class="mt-3 ms-2">{{ form.species }}</p>
+        <b><u>2nd: Species</u></b><p  class="mt-3 ms-2">{{ form.species }}</p>
       </button>
     </h2>
     <div id="collapseSpecies" class="accordion-collapse collapse" aria-labelledby="headingSpecies" data-bs-parent="#characterCreatorAccordion">
@@ -103,7 +103,7 @@
             <div>
               <h4 class="text-body-emphasis border-bottom border-dark mt-2">Ambaazi</h4>
               <div class="dropdown">
-                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Ancestries</a>
                 <ul class="dropdown-menu">
                     <li><div class="dropdown-item-text"><b>Annointed Ambaazi</b><br />
                         <i>Soft Hands</i><br />
@@ -124,7 +124,7 @@
             <div>
               <h4 class="text-body-emphasis border-bottom border-dark mt-2">Armadill</h4>
               <div class="dropdown">
-                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Ancestries</a>
                 <ul class="dropdown-menu">
                     <li><div class="dropdown-item-text"><b>Seven-Banded Armadill</b><br />
                         <i>Ball Form</i><br />
@@ -145,7 +145,7 @@
             <div>
               <h4 class="text-body-emphasis border-bottom border-dark mt-2">Bak'wa</h4>
               <div class="dropdown">
-                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Ancestries</a>
                 <ul class="dropdown-menu">
                     <li><div class="dropdown-item-text w-100 me-5"><b>Mossy Bak'wa</b><br />
                         <i>Quick-Clotting Blood</i><br />
@@ -166,7 +166,7 @@
             <div>
               <h4 class="text-body-emphasis border-bottom border-dark mt-2">Bolibar</h4>
               <div class="dropdown">
-                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Ancestries</a>
                 <ul class="dropdown-menu">
                     <li><div class="dropdown-item-text"><b>Solid Bolibar</b><br />
                         <i>Hearty</i><br />
@@ -187,7 +187,7 @@
               <div>
                 <h4 class="text-body-emphasis border-bottom border-dark mt-2">Cincindel</h4>
                 <div class="dropdown">
-                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Ancestries</a>
                     <ul class="dropdown-menu">
                         <li><div class="dropdown-item-text"><b>Triadic Cincindel</b><br />
                             <i>Flutter</i><br />
@@ -208,7 +208,7 @@
               <div>
                 <h4 class="text-body-emphasis border-bottom border-dark mt-2">Egriss</h4>
                 <div class="dropdown">
-                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Ancestries</a>
                     <ul class="dropdown-menu">
                         <li><div class="dropdown-item-text"><b>Roaming Egriss</b><br />
                             <i>Fly</i><br />
@@ -229,7 +229,7 @@
               <div>
                 <h4 class="text-body-emphasis mt-3 border-bottom border-dark">Folinn</h4>
                 <div class="dropdown">
-                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Ancestries</a>
                     <ul class="dropdown-menu">
                         <li><div class="dropdown-item-text"><b>Short-Tailed Folinn</b><br />
                             <i>Swift Spirit</i><br />
@@ -250,7 +250,7 @@
               <div>
                 <h4 class="text-body-emphasis mt-3 border-bottom border-dark">Hillock</h4>
                 <div class="dropdown">
-                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Ancestries</a>
                     <ul class="dropdown-menu">
                         <li><div class="dropdown-item-text"><b>Village Hillock</b><br />
                             <i>Happy Mind</i><br />
@@ -271,7 +271,7 @@
                 <div>
                   <h4 class="text-body-emphasis mt-3 border-bottom border-dark">Human</h4>
                   <div class="dropdown">
-                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Ancestries</a>
                     <ul class="dropdown-menu">
                         <li><div class="dropdown-item-text"><b>Valley Human</b><br />
                             <i>Versatile</i><br />
@@ -292,7 +292,7 @@
                 <div>
                   <h4 class="text-body-emphasis mt-3 border-bottom border-dark">Latran</h4>
                   <div class="dropdown">
-                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Ancestries</a>
                 <ul class="dropdown-menu">
                     <li><div class="dropdown-item-text"><b>Desert Latran</b><br />
                         <i>Magical Inheritance</i><br />
@@ -313,7 +313,7 @@
                 <div>
                   <h4 class="text-body-emphasis mt-3 border-bottom border-dark">Margart</h4>
                   <div class="dropdown">
-                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Ancestries</a>
                     <ul class="dropdown-menu">
                         <li><div class="dropdown-item-text"><b>Long-Haired Margart</b><br />
                             <i>Margart Insulation</i><br />
@@ -334,7 +334,7 @@
                 <div>
                   <h4 class="text-body-emphasis mt-3 border-bottom border-dark">Shikasa</h4>
                   <div class="dropdown">
-                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Choose ancestry</a>
+                    <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">Ancestries</a>
                     <ul class="dropdown-menu">
                         <li><div class="dropdown-item-text"><b>Smooth Shikasa</b><br />
                             <i>Tail Whip</i><br />
@@ -358,7 +358,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingBackground">
       <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBackground" aria-expanded="false" aria-controls="collapseBackground">
-        <b>3rd: Background</b><p class="mt-3 ms-2">{{ form.background }}</p>
+        <b><u>3rd: Background</u></b><p class="mt-3 ms-2">{{ form.background }}</p>
       </button>
     </h2>
     <div id="collapseBackground" class="accordion-collapse collapse" aria-labelledby="headingBackground" data-bs-parent="#characterCreatorAccordion">
@@ -429,7 +429,7 @@
                 <h5 class="fs-5 text-body-emphasis border-bottom border-dark mt-2">Cowboy</h5>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#226150" class="bi bi-plus-circle-dotted me-2" viewBox="0 0 16 16">
                   <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
-                </svg>+10 to Medicine and +5 to Slashing Melee<br />
+                </svg>+5 to Rifles, Pistols, and Ropework<br />
                 <br />
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#be2a4a" class="bi bi-dash-circle-dotted me-2" viewBox="0 0 16 16">
                   <path d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
@@ -589,7 +589,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingSkillz">
       <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSkillz" aria-expanded="false" aria-controls="collapseSkillz">
-        <b>4th: Major and Minor skills</b>
+        <b><u>4th: Major and Minor skills</u></b>
       </button>
     </h2>
     <div id="collapseSkillz" class="accordion-collapse collapse" aria-labelledby="headingSkillz" data-bs-parent="#characterCreatorAccordion">
@@ -656,7 +656,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingLanguage">
       <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLanguage" aria-expanded="false" aria-controls="collapseLanguage">
-        <b>5th: Languages and Morals</b>
+        <b><u>5th: Languages and Morals</u></b>
       </button>
     </h2>
     <div id="collapseLanguage" class="accordion-collapse collapse" aria-labelledby="headingLanguage" data-bs-parent="#characterCreatorAccordion">
@@ -682,7 +682,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingStarting">
       <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStarting" aria-expanded="false" aria-controls="collapseStarting">
-        <b>6th: Starting Items</b>
+        <b><u>6th: Starting Items</u></b>
       </button>
     </h2>
     <div id="collapseStarting" class="accordion-collapse collapse" aria-labelledby="headingStarting" data-bs-parent="#characterCreatorAccordion">
@@ -692,9 +692,9 @@
           <div class="col border-end border-dark">
             <div>
               <h5 class="fs-5 text-body-emphasis"><b>Weapon Proficiency</b></h5>
+               <p>{{ form.weapon_proficiency }}</p>
               +1 to hits and another +1<br />
                 when the skill reaches lvl 50
-              <p>{{ form.weapon_proficiency }}</p>
             </div>
           </div>
           <div class="col border-end border-dark">
@@ -706,6 +706,7 @@
           <div class="col">
             <div>
                 <h5 class="fs-5 text-body-emphasis"><b>Starting Equipment</b></h5>
+                <p>{{ form.starting_equipment }}</p>
                 <div class="dropdown dropend">
                     <a href="#" class="d-block mr-3 link-offset-2 link-offset-3-hover link-secondary link-underline-dark text-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                       Info
@@ -762,7 +763,6 @@
                         <br />
                     </ul>
                 </div>
-                <p>{{ form.starting_equipment }}</p>
             </div>
           </div>    
         </div>
@@ -772,7 +772,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header" id="headingFinish">
       <button class="accordion-button collapsed text-dark" style="background-color: #fffbf1;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFinish" aria-expanded="false" aria-controls="collapseFinish">
-        <b>Name and Finish</b>
+        <b><u>Name and Finish</u></b>
       </button>
     </h2>
     <div id="collapseFinish" class="accordion-collapse collapse" aria-labelledby="headingFinish" data-bs-parent="#characterCreatorAccordion">
@@ -797,13 +797,13 @@
   </div>
   </div>
 </div>
-<div class="border-bottom border-dark mb-3"></div>
-    <div class="text-center fw-bold">
+<div class="text-center fw-bold">
         
-        <input class="mt-2 mb-2 justify-content-center btn text-white" style="background-color: #226150;" type="submit" form="charform" value="Finish and Create">
+        <input class="mb-2 justify-content-center btn text-white" style="background-color: #226150;" type="submit" form="charform" value="Finish and Create">
 
         </div>
     </div>
+<div class="border-bottom border-dark mb-3"></div>
 </form>
 </body>
 
