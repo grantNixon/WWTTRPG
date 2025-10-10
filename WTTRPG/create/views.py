@@ -36,13 +36,13 @@ def bulk_DB_upload():
 # Create your views here.
 
 def download_testpacket(request):
-    uploaded_file = TestPacketFile.objects.get(pk=2)
+    uploaded_file = TestPacketFile.objects.get(pk=1)
     response = FileResponse(uploaded_file.tpFile, content_type='application/force-download')
     response['Content-Disposition'] = f'attachment; filename={uploaded_file.tpFile.name}'
     return response
 
 def download_oneshot(request):
-    uploaded_file = OneShotFile.objects.get(pk=2)
+    uploaded_file = OneShotFile.objects.get(pk=1)
     response = FileResponse(uploaded_file.tpFile, content_type='application/force-download')
     response['Content-Disposition'] = f'attachment; filename={uploaded_file.tpFile.name}'
     return response
