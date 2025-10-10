@@ -75,12 +75,12 @@ Waning Crescent Bow (2H),Shock,2.5,40/80ft,1d10 + Archery
 Electrified Standing Bow (2H),Shock,4,85/150ft,3d6 + Archery
 Volt Concealed Pistol,Shock,1,15/25ft,1d4 + Pistols
 Zapper Revolver,Shock,1.5,25/35ft,1d6 + Pistols
-Ohm Charge Pistol,Shock,2/3,25/45ft,1d8/2d8 + Pistols
+Ohm Charge Pistol,Shock,0.5,25/45ft,1d8/2d8 + Pistols
 Crown Joule Double-Action Pistol,Shock,2.5,30/40ft,1d6 + Pistols (2 shots)
 Watt-A-Pistol,Shock,3,35/50ft,2d8 + Pistols
 Transformer Revolver,Shock,4,60/90ft,1d12 + Pistols
 Amped Repeater ,Shock,1,25/50ft,1d4 + Rifles
-Quad-Arc Charge Rifle,Shock,2/3/4/5,45/90ft,1d6/2d6/3d6/4d6 + Rifles
+Quad-Arc Charge Rifle,Shock,3.5,45/90ft,1d6/2d6/3d6/4d6 + Rifles
 Lighting Bolt-Action Rifle,Shock,2.5,50/70ft,1d8 + Rifles
 Railgun,Shock,3,60/85ft,1d12 + Rifles
 Gauss Cannon,Shock,5,240/400ft,4d12 + Rifles (disintegrates target if killed. Can only be shot once every 12 hours)

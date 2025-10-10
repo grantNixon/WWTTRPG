@@ -14,7 +14,7 @@ class Command(BaseCommand):
             reader = csv.DictReader(csvfile)
             for row in reader:
                 MysticalWeapon.objects.update_or_create(
-                    MysticalWeaponName = row['MysticalWeaponName'],
+                    MysticalWeaponName = "test",
                     DamageType = row['DamageType'],
                     ActionCost = row['ActionCost'],
                     Range = row['Range'],

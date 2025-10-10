@@ -181,7 +181,7 @@ class Spell(models.Model):
     SpellName = models.CharField(max_length = 100)
     ActionCost = models.CharField(max_length=100)
     Range = models.CharField(max_length=100)
-    SpellEffect =models.CharField(max_length=100)
+    SpellEffect = models.CharField(max_length=500)
 
     def __str__(self):
         return self.SpellName  
