@@ -14,7 +14,7 @@
 {% endif %}
 {% endif %}
 <body>
-  <div class="container" style="background-color: #F9E49A;">
+  <div class="container" style="background-color: #f0d7a8;">
     <div class=" container mx-auto my-5 col-lg-5">
       <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="post" action="{% url 'login'%}">
         {% csrf_token %}
@@ -25,6 +25,7 @@
           </label>
         </div>
         <button class="w-100 btn btn-lg btn-primary mb-2" value="login" type="submit">Login</button>
+        <a href="{% url "sign_up"%}"><button class="w-100 btn btn-lg btn-dark" type="submit">Create an account</button></a>
         <hr class="my-4">
         <input type="hidden" name="next" value="{{next}}">
       </form>
