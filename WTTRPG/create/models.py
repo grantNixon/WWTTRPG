@@ -53,6 +53,17 @@ class Weapon(models.Model):
 
     def __str__(self):
         return self.WeaponName    
+    
+class MysticalWeapon(models.Model):
+    MysticalWeaponName = models.CharField(max_length = 100)
+    DamageType = models.CharField(max_length = 100)
+    ActionCost = models.CharField(max_length=100)
+    Range = models.CharField(max_length=30)
+    Damage = models.CharField(max_length = 100)
+    ExtraEffect = models.TextField()
+
+    def __str__(self):
+        return self.MysticalWeaponName    
 
 class StartingEquipment(models.Model):
     name = models.CharField(max_length=30)
@@ -61,6 +72,25 @@ class StartingEquipment(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Inventory(models.Model):
+    weapons = models.JSONField(default=list)
+    clothing = models.JSONField(default=list)
+    utilities = models.JSONField(default=list)
+    tonics = models.JSONField(default=list)
+    mysticalweapons = models.JSONField(default=list)
+    spells = models.JSONField(default=list)
+
+class Perk(models.Model):
+    perkSkill = models.CharField(max_length=100)
+    perkName = models.CharField(max_length=100)
+    skillLevel = models.IntegerField()
+    description = models.TextField()
+
+    def __str__(self):
+        return self.perkName
+
 
 class Character(models.Model):
     name = models.CharField(max_length = 30)
@@ -86,12 +116,14 @@ class Character(models.Model):
     class_name = models.CharField(max_length=30)
     starting_weapon = models.ForeignKey(Weapon, on_delete=models.CASCADE)
     starting_equipment = models.ForeignKey(StartingEquipment, on_delete=models.CASCADE)
+    inventory = models.OneToOneField('Inventory', on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     level = models.IntegerField()
     hp = models.IntegerField()
     mb = models.IntegerField()
     ec = models.IntegerField()
     ap = models.IntegerField()
+    perks = models.ManyToManyField("Perk", related_name="characters", default= None)
     initiative = models.IntegerField(default=2)
     sk_crushing = models.IntegerField(default = 5)
     sk_shotguns = models.IntegerField(default = 5)
@@ -149,18 +181,18 @@ class Spell(models.Model):
     SpellName = models.CharField(max_length = 100)
     ActionCost = models.CharField(max_length=100)
     Range = models.CharField(max_length=100)
-    SpellEffect =models.CharField(max_length=100)
+    SpellEffect = models.CharField(max_length=500)
 
     def __str__(self):
         return self.SpellName  
 
-class Armor(models.Model):
-    ArmorName = models.CharField(max_length = 100)
-    ArmorDescription = models.TextField()
-    ArmorStats = models.TextField()
+class Clothing(models.Model):
+    ClothingName = models.CharField(max_length = 100)
+    ClothingDescription = models.TextField()
+    ClothingStats = models.TextField()
 
     def __str__(self):
-        return self.ArmorName
+        return self.ClothingName
 
 class Tonic(models.Model):
     TonicName = models.CharField(max_length = 100)
@@ -175,7 +207,7 @@ class Tonic(models.Model):
 class Utilities(models.Model):
     UtilityName = models.CharField(max_length = 100)
     UtilityType = models.CharField(max_length = 100)
-    ActionCost = models.FloatField()
+    ActionCost = models.TextField()
     Range = models.CharField(max_length = 100)
     Effect = models.TextField()
 
@@ -185,7 +217,6 @@ class Utilities(models.Model):
 class Skill(models.Model):
     skillName = models.CharField(max_length = 30)
     skillAttribute = models.CharField(max_length = 30)
-
 
 
 

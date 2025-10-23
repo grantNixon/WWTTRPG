@@ -1,0 +1,25 @@
+ClothingName,ClothingDescription,ClothingStats
+Alligator Skin Torso,Extra spell slots,+1 for all tiers
+Alligator Skin Legs,Extra spell slots,+1 for all tiers
+Fur Torso,Extra MB,+10ft
+Fur Legs,Extra MB,+5ft
+Gecko Skin Torso,Extra health,+10
+Gecko Skin Legs,Extra health,+5
+Leather Torso,Extra EC,+2
+Leather Legs,Extra EC,+1
+Caravanner Torso,Extra carry weight,+3%
+Caravanner Legs,Extra carry weight,+2%
+Feathered Torso,Extra initiative,+2
+Feathered Legs,Extra initiative,+1
+Crab Shell Torso,Slashing resistance,Slashing res.
+Petrified Bark Torso,Piercing resistance,Piercing res.
+Thiquid Torso,Crushing resistance,Crushing res.
+Lobster Shell Torso,Enemies can't land critical hits,Can't be critted
+Acid Sapper Legs,Heal when dealing acid damage,+1d2 health anytime the wearer deals acid damage
+Fire Sapper Legs,Heal when dealing incendiary damage,+1d2 health anytime the wearer deals incendiary damage
+Holy Sapper Legs,Heal when dealing holy damage,+1d2 health anytime the wearer deals holy damage
+Swamp Trekker Legs,Extra MB,+10ft MB when in swamps
+Desert Trekker Legs,Extra MB,+10ft MB when in deserts
+Valley Trekker Legs,Extra MB,+10ft MB when in grasslands
+All Terrain Trekker Legs,Rough terrain movement,Allows normal movement over rough terrain
+Ravaging Legs,Extra damage,"After killing a creature, the wearer gains +1d6 damage on their next attack"

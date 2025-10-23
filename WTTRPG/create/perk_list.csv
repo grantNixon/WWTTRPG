@@ -1,0 +1,181 @@
+Skill,SkillLevel,Perk,PerkEffect
+crushing,15,Knock Down,"When attacking with a crushing melee weapon, if you roll above a 17 and your target is medium or smaller, they're knocked prone for 5 seconds. Three times per rest"
+crushing,25,Crushing M.,+1 to damage
+crushing,50,Momentum Swing,"if you miss a hit, you can re-roll. Must say the attack will be a momentum swing before the attack is made. Twice per nap"
+crushing,75,Crushing M.,Natural rolls between 18-20 count as crits
+crushing,100,Crushing M. Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+shotguns,15,Free Shot,Can shoot a shotgun for no AP cost. Once per nap
+shotguns,25,Shotguns,+1 to damage
+shotguns,50,Surgical,Shotguns do full damage at long range
+shotguns,75,Shotguns,Natural rolls between 18-20 count as crits
+shotguns,100,Shotgun Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+hand,15,Double Punch," Can strike twice per attack. If the weapon allows two hits per attack already, then it hits four times. Twice per nap"
+hand,25,Hand-to-Hand,+1 to damage
+hand,50,Paralyzing Strike,"On hit, target must make a Gum.S(17), on fail, target is paralyzed for 5 seconds. Only works on medium or smaller targets, on large and gigantic targets, they are stunned instead. Twice per rest"
+hand,75,Hand-to-Hand,Natural rolls between 18 and 20 count as crits
+hand,100,Hand-to-Hand Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+athletics,15,Climber,Can climb twice your MB
+athletics,25,Athletics,+1 to checks
+athletics,50,Athlete,"+10ft to max MB, good odds on all checks"
+athletics,75,Athletics,1 re-roll per rest
+athletics,100,Athletics Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+crafting,15,Ignore Jam,The first jam of the day doesn't actually jam
+crafting,25,Recycler,"Materials of the first fail when crafting aren't lost, +1 to checks"
+crafting,50,Crafty,Mobile kits can craft all crafting options 
+crafting,75,Crafting,1 re-roll per rest
+crafting,100,Crafting Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+slashing,15,Parry,"When you are attacked or shot at and you have a slashing or piercing weapon in your hand, you can attempt to parry it by making a hit check against the attack roll. If the parry roll is the same as the attack or above, negate half of the damage. If the weapon is coated or is special ammo, the special effect doesn't happen. Doesn't work on shockstone bolts. Twice per nap"
+slashing,25,Slashing M.,+1 to damage 
+slashing,50,Artery Cut,"Make a hit check with a slashing or piercing melee weapon with bad odds. On hit, target takes 1d6 damage every 5 seconds until they are reduced to 0 hp. Does not work on creatures that have a DR of 5 or legendary creatures. Twice per rest"
+slashing,75,Slashing M.,Natural rolls between 18 and 20 count as crits
+slashing,100,Slashing M. Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+pistols,15,Free Shot,Can shoot a pistol for no cost. Once per nap
+pistols,25,Pistols,+1 to damage
+pistols,50,Hammer Fan,Choose up to six targets within range and make hit checks with bad odds on each. Once per rest.
+pistols,75,Pistols,Natural rolls between 18 and 20 count as crits
+pistols,100,Pistols Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+ropework,15,Bane of Hogs,You have good odds when attempting to rope a creature when outside of combat
+ropework,25,Ropework,+1 to damage 
+ropework,50,Knot Expert,Any creature attempting to break free while tied up has to roll a crit in order to escape
+ropework,75,Ropework,Natural rolls between 18 and 20 count as crits
+ropework,100,Ropework Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+archery,15,Veiled Hunter,+1d6 to sneak attack damage when using a bow
+archery,25,Archery,+1 to damage
+archery,50,Archer, Called shots don�t have bad odds. You can also double nock and shoot two arrows at the same target for the cost of one. Twice per nap
+archery,75,Archery,Natural rolls between 18 and 20 count as crits
+archery,100,Archery Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+acrobatics,15,Dodge Roll,"Can use 5ft of movement to roll in a direction as a reaction to being hit or shot at, giving you +5 to your EC against the attack. Must decide to do so after the attack roll is made. Three times per nap"
+acrobatics,25,Acrobatics,+1 to checks
+acrobatics,50,Acrobat,"+2 to EC, good odds on checks"
+acrobatics,75,Acrobatics,1 re-roll per rest
+acrobatics,100,Acrobatics Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+sneak,15,Must�ve Been the Wind,"Can re-roll a check, once per nap"
+sneak,25,Veiled,+1d6 to sneak attack damage
+sneak,50,Sneak,+1 to checks
+sneak,75,One-with-the-Shadows," Good odds on checks, can attempt to hide in dim light"
+sneak,100,Sneak Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+thievery,15,Can pick level 25 locks,
+thievery,25,"Can pick level 50 locks, Wax Object","You carry a collection of homemade wax objects like keys, coins, and gems. After successfully picking a pocket, you can replace what you stole with one of these wax replicas"
+thievery,50,"Can pick level 75 locks, 1 re-roll per nap when picking a lock, safe, or vault",
+thievery,75,"Can pick level 100 locks, Thief","Good odds on checks, when picking a safe or vault that has a dial lock, you automatically know the 1st number"
+thievery,100,Thievery Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+intimidation,15,�Piercing Gaze,+1d4 to checks
+intimidation,25,Intimidation,+1 to checks
+intimidation,50,Stone Will, You cannot be intimidated except under very rare circumstances
+intimidation,75,Intimidation,1 re-roll per rest
+intimidation,100,Intimidation Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+foraging,15,Green Thumb,"You get two ingredients per plant when foraging, three on a crit"
+foraging,25,Foraging,+1 to checks
+foraging,50,Botanist,Healing gained from edible ingredients is doubled
+foraging,75,Foraging,1 re-roll per rest
+foraging,100,Foraging Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+cooking,15,Quick Snack,"For .5 AP you can eat a snack that you have stored like jerky or an apple and heal for 1d4 +1. Alternatively, you can toss a snack to a target within 15ft of you for no AP cost. The target can eat the snack immediately for no cost or save it and eat it later for .5 AP. Three times per rest"
+cooking,25,Preserve,you can preserve any amount of food by smoking it or keeping it in a thick layer of salt for a day. That food can last up to a year and gives double healing
+cooking,50,Cooking,+1 to checks
+cooking,75,Creature Connoisseur,"You can carve and use meat not only from normal game, but from any creature in the wild"
+cooking,100,Cooking Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+hunting,15,Favored Animal,"Choose a type of animal in the wild such as deer, boar, gecko, etc. You have good odds when tracking and hunting chosen creature type and do an extra 1d8 on hit"
+hunting,25,Hunting,+1 to checks
+hunting,50,Just a Bug Bite,"If you hit an animal that you're hunting with a ranged weapon and it doesn't kill, the animal will stay where they are as if nothing happened"
+hunting,75,Hunting,1 re-roll per rest
+hunting,100,Hunting Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+animalhandling,15,Animals Best Friend,You have good odds when attempting to tame wild animals and they're less likely to attack you
+animalhandling,25,Animal Handl.,+1 to checks
+animalhandling,50,Mounted Marksman,"When attacking while riding on a moving mount, you don't have bad odds"
+animalhandling,75,Animal Handl.,1 re-roll per rest
+animalhandling,100,Animal Handl. Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+rifles,15,Hold Breath,"You can hold your breath, giving you good odds on your current shot. Twice per nap"
+rifles,25,Rifles,+1 to damage 
+rifles,50,Rifleman,Long ranges for rifles don't have bad odds and you can swap to a rifle for no cost
+rifles,75,Rifles,Natural rolls between 18 and 20 count as crits
+rifles,100,Rifles Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+intuition,15,Aware, +15 to Natural Awareness
+intuition,25,Intuition,+1 to checks
+intuition,50,No Surprises,You automatically sense non-magically hidden creatures within 20ft of you when entering a room and have good odds on checks
+intuition,75,Intuition,1 re-roll per rest
+intuition,100,Intuition Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+investigation,15,Sleuth," When looking for clues to a theft or murder, you have good odds"
+investigation,25,Investigation,+1 to checks
+investigation,50,Investigator," When entering a room that has a trigger that opens a secret door, you know the area in which the trigger is and you have good odds when searching bodies"
+investigation,75,Investigation,1 re-roll per rest
+investigation,100,Investigation Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+gambit,15,Card-in-Sleeve,"When you draw a card that isn't favorable, you can attempt to swap it out with an ace of spades (20) hidden in your sleeve. You can continue attempting this swap throughout a game"
+gambit,25,Gambit,+1 to checks
+gambit,50,Gambler,"You have good odds when drawing cards, rolling dice, and cheating "
+gambit,75,Gambit,1 re-roll per rest
+gambit,100,Gambit Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+brewing,15,Quick Fermenter,Brewing times are halved
+brewing,25,Ingredient Stretcher,You only need half the ingredients to make medium and large tonics
+brewing,50,Brewing,+1 to checks
+brewing,75,Brew Master,"Can brew all manner of alcohol, healing items, and tonics with mobile kits"
+brewing,100,Brewing Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+galvanismmagic,15,Can cast 1st tier Gal. spells,
+galvanismmagic,25,Can cast 2nd tier Gal. spells. Double Down,Any spell that only targets one creature can be doubled to target two creatures. Twice per rest
+galvanismmagic,50,Can cast 3rd tier Gal. spells,
+galvanismmagic,75,Shocking Revelations,Can cast 1st tier spells for half the AP cost (to a minimum of .5) and all shock damage done to you is halved
+galvanismmagic,100,Galvanism Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+religion,15,Missionary,Good odds on checks when in a place of worship or holy ground 
+religion,25,Religion,+1 to checks
+religion,50,Blessed One,"You can pray to your god with a check and on success, gain inspiration. Once per day"
+religion,75,Religion,1 re-roll per rest
+religion,100,Religion Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+history,15,Ain't Repeatin' Nothin',Gain double exp from reading a history skill book
+history,25,History,+1 on checks
+history,50,Historian,"When attempting to decipher ancient writing or puzzles, you have good odds"
+history,75,History,1 re-roll per rest
+history,100,History Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+medicine,15,Medic,+1d8 healing when using healing items on yourself or others
+medicine,25,Medicine,+1 to checks
+medicine,50,Angel,You re-roll all 1's and 2's when using healing items on yourself or others
+medicine,75,Medicine,1 re-roll per rest
+medicine,100,Medicine Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+healingmagic,15,Can cast 1st tier Hea. spells,
+healingmagic,25,Can cast 2nd tier Hea. spells. Protector,Healing spells with a range of touch have a range of 10ft
+healingmagic,50,Can cast 3rd tier Hea. spells,
+healingmagic,75,Guardian,"Half AP cost for all spells (to a minimum of .5) and if you roll a crit on a healing spell, you heal the target for the maximum dice value plus mods"
+healingmagic,100,Healing M. Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+utilitymagic,15,Can cast 1st tier Uti. spells,
+utilitymagic,25,Can cast 2nd tier Uti. spells. Mender,Spells that fix jams or repair are half AP cost (to a minimum of .5)
+utilitymagic,50,Can cast 3rd tier Uti. spells,
+utilitymagic,75,Fixin' Magician,"Can cast a 1st tier spell for no cost, twice per rest, and all spells that have a range of touch instead have a range of 10ft"
+utilitymagic,100,Utility M. Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+absolutionmagic,15,Can cast 1st tier Abs. spells,
+absolutionmagic,25,Can cast 2nd tier Abs. spells. Holy Warrior,Spells do an extra 1d6 holy damage
+absolutionmagic,50,"Can cast 3rd tier Abs. spells, +1 to damage",
+absolutionmagic,75,Right Hand of Aurelia,"Can cast a 1st tier spell for no cost, twice per rest and all ranged spells have an extra 5ft range"
+absolutionmagic,100,Absolution Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+foolery,15,Crossed Fingers,People you try to deceive have bad odds on their intuition checks
+foolery,25,Foolery,+1 to checks
+foolery,50,Can't BS a Bser,"Except under very rare instances, you cannot be deceived and people are more likely to believe your lies"
+foolery,75,Foolery,1 re-roll per rest
+foolery,100,Foolery Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+persuasion,15,Charming Smile,+1d4 on checks
+persuasion,25,Persuasion,+1 to checks 
+persuasion,50,Master Charmer,People are more naturally trusting of you and have lower checks when needing to be persuaded
+persuasion,75,Persuasion,1 re-roll per rest
+persuasion,100,Persuasion Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+barter,15,Mercantilist,You have good odds when attempting to get a discount
+barter,25,Barter,+1 to checks
+barter,50,Gold Thumb,"In most general stores, you have 25% off their entire inventory and they will buy your goods at 100% of their value"
+barter,75,Barter,1 re-roll per rest
+barter,100,Barter Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+performance,15,First Time Nerves,"If you fail the first roll, you may try again, but with bad odds. Twice per nap "
+performance,25,Performance,+1 to checks
+performance,50,One Man Band,"When making a performance check alone, you have good odds"
+performance,75,Performance,1 re-roll per rest
+performance,100,Performance Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+deceptionmagic,15,Can cast 1st tier Dec. spells,
+deceptionmagic,25,Can cast 2nd tier Dec. spells. Deceiver,Spell effects last twice as long
+deceptionmagic,50,Can cast 3rd tier Dec. spells,
+deceptionmagic,75,Mind Ravager,Half cost for all spells (to a minimum of .5)
+deceptionmagic,100,Deception M. Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+ritualmagic,15,Can cast 1st tier Rit. spells,
+ritualmagic,25,Can cast 2nd tier Rit. spells. Hexer,Only half the time is needed to cast 1st and 2nd tier spells
+ritualmagic,50,Can cast 3rd tier Rit. spells,
+ritualmagic,75,Ritual Master,Can cast 1st and 2nd tier spells for half AP cost (to a minimum of .5 ) and 3rd tier spells only need half the time to cast
+ritualmagic,100,Ritual M. Mastery,"All checks are automatic successes. You still roll, but only for possible crits"
+destructionmagic,15,Can cast 1st tier Des. spells,
+destructionmagic,25,Can cast 2nd tier Des. spells. Demoralizer,"If a spell causes a target to make a save, they have -1d8 on the save"
+destructionmagic,50,"Can cast 3rd tier Des. spells, +1 to damage",
+destructionmagic,75,Lord Death,You re-roll all 1's when dealing damage and half cost (to a minimum of .5 AP) for 1st tier spells
+destructionmagic,100,Destruction M. Mastery,"All checks are automatic successes. You still roll, but only for possible crits"

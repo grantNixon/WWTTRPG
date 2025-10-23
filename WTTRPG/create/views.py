@@ -20,12 +20,14 @@ from django.contrib.auth.decorators import login_required
 
 
 def bulk_DB_upload():
-    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\CSV_Test.csv', newline='') as csvfile:
+    with open(r'C:\Users\grntn\OneDrive\Documents\wwttrpg\WWTTRPG\WTTRPG\create\perk_list.csv', newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-           StartingEquipment.objects.create(
-                name = row['name'],
-                itemList = row['itemList'],
+           Perk.objects.create(
+                perkSkill = row['Skill'],
+                skillLevel = row['SkillLevel'],
+                perkName = row['Perk'],
+                description = row['PerkEffect'],
             )
 
 #bulk_DB_upload()
@@ -34,7 +36,7 @@ def bulk_DB_upload():
 # Create your views here.
 
 def download_testpacket(request):
-    uploaded_file = TestPacketFile.objects.get(pk=2)
+    uploaded_file = TestPacketFile.objects.get(pk=1)
     response = FileResponse(uploaded_file.tpFile, content_type='application/force-download')
     response['Content-Disposition'] = f'attachment; filename={uploaded_file.tpFile.name}'
     return response
@@ -51,6 +53,7 @@ def create_view(request):
 
 def homebrew_view(request):
     return(render(request,"create/homebrew.html"))
+
 
 class CharacterListView(LoginRequiredMixin,ListView):
     model = Character
@@ -100,6 +103,10 @@ class QSCharCreator(LoginRequiredMixin,CreateView):
     def form_valid(self, form):
         Character = form.save(commit=False)
         Character.user = self.request.user  # Set the user field
+        newInv = Inventory.objects.create()
+        Character.inventory = newInv
+        Character.inventory.weapons.append({'name':str(form.cleaned_data['starting_weapon'])})
+        Character.inventory.save()
         Character.level = 1
         stats = self.compute_stats(form.cleaned_data['gumption'],form.cleaned_data['strength'],form.cleaned_data['agility'],1)
         Character.hp = stats.get("hp")
@@ -110,13 +117,25 @@ class QSCharCreator(LoginRequiredMixin,CreateView):
         minSk = [form.cleaned_data['minor_skill_1'],form.cleaned_data['minor_skill_2'],form.cleaned_data['minor_skill_3'],form.cleaned_data['minor_skill_4'],form.cleaned_data['minor_skill_5']]
         for sk in majSk:
             conv_sk = Skills_to_ModelName.skilldic[sk]
-            print(conv_sk)
             setattr(Character,conv_sk,25)
         for sk in minSk:
             conv_sk = Skills_to_ModelName.skilldic[sk]
-            print(conv_sk)
             setattr(Character,conv_sk,15)
-        Character.save()        
+        charBackground = form.cleaned_data['background']
+        bgBonuses = BackgroundBonuses.bonuses[charBackground]
+        for skill, value in bgBonuses.items():
+            currentValue = getattr(Character, skill)
+            setattr(Character, skill, currentValue + value)
+        Character.save()
+        for sk in Skills.skillz:
+            conv_sk = Skills_to_ModelName.skilldic[sk]
+            borkedNaming = conv_sk[3:]
+            sk_value = getattr(Character, conv_sk)
+            for perc in Perk.objects.all():
+                if borkedNaming == perc.perkSkill:
+                    if sk_value >= perc.skillLevel:
+                        Character.perks.add(perc)
+        Character.save()   
         return redirect('/create/character_detail/' + str(Character.id))  # Redirect to a success page
 
 def SignUpView(request):
@@ -151,12 +170,19 @@ def update_skills(request):
             new_sk_value = current_sk_value + int(increment)
             setattr(obj, skill_to_update, new_sk_value)
             obj.save()
+            print(request.POST.get('skill'))
+            sk_pk = Perk.objects.filter(perkSkill = request.POST.get('skill')) #get all perks tied to skill being increased - not working currently, need to fix. 
+            print(sk_pk)
+            for perc in sk_pk:
+                if current_sk_value < perc.skillLevel and new_sk_value >= perc.skillLevel: #loop through all perks in the query set and check if skill threshold for new perk is crossed
+                    obj.perks.add(perc)
             return JsonResponse({'status': 'success'})
         else:
             return JsonResponse({'status': 'error', 'message': 'Failed to update skills'})
     else:
         return JsonResponse({'status': 'error', 'message': 'Invalid request method'})
-    
+ 
+
 @csrf_exempt
 def retrieve_skills(request):
     if request.method == 'GET':
@@ -178,26 +204,26 @@ def retrieve_skills(request):
            'thievery':{'level':obj.sk_thievery, 'xp': 0},
            'intimidation':{'level':obj.sk_intimidation, 'xp': 0},
            'hunting':{'level':obj.sk_hunting, 'xp': 0},
-           'animal':{'level':obj.sk_animalhandling, 'xp': 0 },
+           'animalhandling':{'level':obj.sk_animalhandling, 'xp': 0 },
             'rifles': { 'level': obj.sk_rifles, 'xp': 0 },
             'intuition': { 'level': obj.sk_intuition , 'xp': 0 },
             'investigation': { 'level': obj.sk_investigation , 'xp': 0 },
             'gambit': { 'level':obj.sk_gambit, 'xp': 0 },
             'brewing': { 'level': obj.sk_brewing, 'xp': 0 },
-            'galvanism': { 'level': obj.sk_galvanismmagic, 'xp': 0 },
+            'galvanismmagic': { 'level': obj.sk_galvanismmagic, 'xp': 0 },
             'religion': { 'level': obj.sk_religion, 'xp': 0 },
             'history': { 'level': obj.sk_history, 'xp': 0 },
             'medicine': { 'level': obj.sk_medicine, 'xp': 0 },
-           'healing': { 'level': obj.sk_healingmagic, 'xp': 0 },
-            'utility': { 'level': obj.sk_utilitymagic, 'xp': 0 },
-            'absolution': { 'level': obj.sk_absolutionmagic, 'xp': 0 },
+           'healingmagic': { 'level': obj.sk_healingmagic, 'xp': 0 },
+            'utilitymagic': { 'level': obj.sk_utilitymagic, 'xp': 0 },
+            'absolutionmagic': { 'level': obj.sk_absolutionmagic, 'xp': 0 },
             'foolery': { 'level': obj.sk_foolery, 'xp': 0 },
             'persuasion': { 'level': obj.sk_persuasion, 'xp': 0 },
             'barter': { 'level': obj.sk_barter, 'xp': 0 },
             'performance': { 'level': obj.sk_performance, 'xp': 0 },
-            'deception': { 'level': obj.sk_deceptionmagic, 'xp': 0 },
-            'ritual': { 'level': obj.sk_ritualmagic, 'xp': 0 },
-            'destruction': { 'level': obj.sk_destructionmagic, 'xp': 0 },
+            'deceptionmagic': { 'level': obj.sk_deceptionmagic, 'xp': 0 },
+            'ritualmagic': { 'level': obj.sk_ritualmagic, 'xp': 0 },
+            'destructionmagic': { 'level': obj.sk_destructionmagic, 'xp': 0 },
             'cooking': {'level':obj.sk_cooking, 'xp': 0},
             'foraging': {'level':obj.sk_foraging, 'xp': 0},
            

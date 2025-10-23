@@ -2,21 +2,32 @@
 {%block content%}
 {% load static %}
 
-<body class="d-flex flex-column min-vh-100" style="background-color: #123524;">
-       <div class="container d-flex flex-column min-vh-100" style="background-color: #F9E49A;">
-        <h2 class="pb-2 pt-3 border-bottom border-dark text-center">Characters</h2>
-        <a href="{%url "create:qscc"%}" class="text-decoration-none text-white">
-          <div class="d-flex flex-column text-center text-white text-shadow-1">
-            <h3 class="ps-2 pb-1 mt-1 ms-5 me-5 mb-1 text-white d-grid display-6 fw-bold btn btn-lg" style="background-color: #924A36;">New Character</h3>
+<body class="d-flex flex-column" style="background-color: #123524;">
+       <div class="container d-flex flex-column min-vh-100" style="background-color: #fffbf1;">
+        <h2 class="pb-2 border-bottom border-dark text-center mt-3">Characters</h2>
+        <a href="{%url "create:qscc"%}" class="text-dark">
+          <div class="d-flex flex-column text-center">
+            <h4 class="ps-2 pb-1 mt-1 ms-5 me-5 mb-1 text-dark link-offset-2 link-offset-3-hover link-underline-opacity-0 link-secondary">Create a New Character</h4>
           </div>
       </a>
-        <div class="container">
+        <div class="container text-center justify-content-center align-items-center">
           {% for character in object_list %}
           <!-- href should link to character sheet. need to somehow access primary keys from object list to build the right URL -->
-          <a href="{% url 'create:character_sheet' character.pk %}" class="nav-link">
-          <h5 id="characterone" class="ps-2 pb-1 pt-3 mt-5 ms-5 me-5 mb-4 border-bottom border-start border-dark">{{character.name}}</h5>
-          </a>
+          
+          <div class="row text-center">
+            <div class="col">
+              <a href="{% url 'create:character_sheet' character.pk %}" class="card card-cover h-75 w-100 me-5 pt-2 overflow-hidden rounded-1 shadow" style="background-color: #b26a40;">
+               <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" fill="white" class="bi bi-file-person mx-auto mb-1" viewBox="0 0 16 16">
+  <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+  <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+</svg>
+                <h6 class="nav-link-light text-light">{{ character.name }}</h6>
+              </a>
+            </div>
+          </div>
+          
           {% endfor %}
         </div>
+       </div>
 
 {% endblock content%}

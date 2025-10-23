@@ -4,220 +4,502 @@
 
 <style>      
         .skill-btn {
-          background-color: #C3976A;
-          border: none;
+          background-color: #efebe2;
+          border: black;
+          border: 2px;
           color: black;
-          padding: 4px;
+          padding-left: 3px;
+          padding-right: 3px;
+          padding-top: 0px;
+          margin-right: 1px;
+          margin-left: 1px;
           cursor: pointer;
       }
+
+           #weaponManager {
+  position: fixed;
+  top: 0;
+  left: -450px; /* start hidden off-screen to the left */
+  width: 450px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #f0d7a8;
+  border-right: 1px solid #000;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: 4px 0px 20px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease;
+}
+
+#weaponManager.open {
+  left: 0; /* slide into view */
+}
+
+#weaponManager button {
+  margin-top: 10px;
+}
+
+#inventoryManager {
+  position: fixed;
+  top: 0;
+  right: -450px; /* start hidden outside the screen */
+  width: 450px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #f0d7a8;
+  border-left: 1px solid #000;
+  padding: 10px;
+  z-index: 1000;
+  box-shadow: -4px 0px 20px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease; /* smooth slide animation */
+}
+
+#inventoryManager.open {
+  right: 0; /* slide into view */
+}
+
+#inventoryManager button {
+  margin-top: 10px;
+}
+
+
+  #spellManager {
+    display: none;
+    position: top;
+    overflow-y: auto;
+    background-color: #fffbf1;
+    border: 1px solid #000;
+    padding: 10px;
+    z-index: 1000;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  #spellManager button {
+    margin-top: 10px;
+  }
+
       </style>
-<div class="page" style="background-color: #226150;">
-  <div class="container my-1">
-    <div class="container px-4 py-1" id="hanging-icons" style="background-color: #F9E49A;">
-      
-      <!-- Name, Species, Class, Background -->
-      <h2 class="border-bottom mt-2 border-dark">{{character.name}}</h2>
-      <h1 id="name" class="fs-6 text-body-emphasis"></h1>
-              <h1 class="fs-6 badge" style="background-color: #924A36;">Name</h1>
-        <div class="row g-4 py-2 mt-1 row-cols-1 row-cols-lg-5">
-          <div class="col d-flex align-items-start">
-            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-              
-            </div>
-            <div>
-              <h1 class="fs-6">{{character.species}}</h1>
-              <h1 id="species" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
-              <h1 class="fs-6 badge" style="background-color: #924A36;">Species</h1>
-            </div>
-          </div>
-          <div class="col d-flex align-items-start">
-            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-             
-            </div>
-            <div>
-              <h1 class="fs-6">{{character.class_name}}</h1>
-              <h1 id="class" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
-              <h1 class="fs-6 badge" style="background-color: #924A36;">Class</h1>
-            </div>
-          </div>
-          <div class="col d-flex align-items-start">
-            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-              
-            </div>
-          <div>
-              <h1 class="fs-6">{{character.background}}</h1>
-              <h1 id="background" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
-              <h1 class="fs-6 badge" style="background-color: #924A36;">Background</h1>
-          </div>
+<div class="page" style="background-color: #f0d7a8;">
+  <div class="container">
+    <div class="container border border-dark px-4 py-1 pt-3" id="hanging-icons" style="background-color: #fffbf1;">
+    
+      <div class="row row-cols-6">
+        <div class="col-4">
+            <!-- Character Name -->
+            <h2 class="mt-2 fs-1 border-start border-bottom w-75 border-dark border-2 ps-2 me-3">{{character.name}}</h2>
         </div>
-          <div class="col d-flex align-items-start">
-            <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-             
+        <!-- Species -->
+        <div class="col-2 mt-4 text-center">
+            <span class="fs-6">{{character.species}}</span>
+            <h1 class="fs-6 border-top border-dark text-center"><b>Species</b></h1>
+        </div>
+        <!-- Class -->
+        <div class="col-2 mt-4 text-center">
+            <span class="fs-6 text-center">{{character.class_name}}</span>
+            <h1 class="fs-6 border-top border-dark text-center"><b>Class</b></h1>
+        </div>
+        <!-- Background -->
+        <div class="col-2 mt-4 text-center">
+            <span class="fs-6">{{character.background}}</span>
+            <h1 class="fs-6 border-top border-dark text-center"><b>Background</b></h1>
+        </div>
+        <!-- Level & Level Up Button (Now Inside the Row) -->
+        <div class="col-2 text-center">
+            <span class="fs-6">lvl</span>
+            <span class="border-2 border-dark p-1 fs-3" id="characterLevel">{{character.level}}</span>
+            <button class="btn btn-sm border border-2 mb-2" style="background-color: #fffbf1;" onclick="openLevelUpModal()">Level Up</button>
+            <button class="btn btn-info btn-sm border border-2 mb-2 ms-4" onclick="openSnapshot()">Mechanics<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+</svg></button>
+        </div>
+    </div>
+    
+
+<!-- Level Up Modal -->
+<div class="container" id="levelUpModal" 
+     style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: #f0d7a8; padding: 50px; border: 2px solid black; max-width: 600px;">
+  <h3 class="text-center border-bottom border-dark">You Leveled Up!</h3>
+  <h5 class="text-center mb-2">
+    Your time spent in the outer west has made your hands and wits just a bit sharper.<br><br><p class="fs-6">Pick which attributes you'd like to increase:</p>
+  </h5>
+
+  <div class="row text-center">
+    <!-- Major -->
+    <div class="col-md-6">
+      <label class="d-block fs-4 border-bottom border-dark mb-1">Major: +5</label>
+      <select id="attributeIncrease5" class="form-select mx-auto w-75 mb-2"></select>
+    </div>
+
+    <!-- Minor -->
+    <div class="col-md-6">
+      <label class="d-block fs-4 border-bottom border-dark mb-1">Minor: +3</label>
+      <select id="attributeIncrease3" class="form-select mx-auto w-75"></select>
+    </div>
+
+    <button class="btn btn-secondary btn-dark p-1 mt-2" onclick="applyLevelUp()">Confirm</button><button type="button" class="btn btn-info btn-sm mt-2 border-2" data-bs-container="body"  data-bs-html="true"  data-bs-toggle="popover" data-bs-placement="right" data-bs-content="<b>Strength</b>: MB<br><b>Agilty</b>: EC<br><b>Gumption</b>: HP<br><b>Intelligence</b>: Natural awareness<br><b>Mysticism</b>: More spell slots<br><b>Personality</b>: More spell slots/better prices<br><b>Character level</b>: AP">
+  Attributes<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+</svg>
+</button>
+    </div>
+</div>
+
+<div class="container" id="snapshot" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fffbf1; padding: 25px; border: 2px solid black;">
+    <div class="col-md">
+          <div class="">
+            <div class="row row-cols-2">
+              <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Action Points (AP)</b></span>
+                <h1 class="fs-6">-3 AP is refilled at the beginning of a characters turn<br />
+-Half AP values are rounded up at the end of their turn</h1>
+              </div>
+              <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Movement Bank (MB)</b></span>
+                <h1 class="fs-6">-Amount of feet you can move in a turn</h1>
+              </div>
+              <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Evasion Chance (EC)</b></span>
+                <h1 class="fs-6">-Chance of being hit. The person attacking must roll that number or above to land a hit</h1>
+              </div>
+              <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Swapping Weapons</b></span>
+                <h1 class="fs-6">-It costs 5ft MB to swap between different weapons<br />
+-If a character is holding a one-handed weapon and wants to pull out a two-handed weapon, they can switch to the two-handed for the MB cost immediately or hold it in the opposite hand of the one-handed and still use the one-handed until they decide to two-hand the two-handed weapon later for no cost
+</h1>
+              </div>
+                <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Grazing</b></span>
+                <h1 class="fs-6">-Rolling 1 below a targets EC counts as a graze, dealing half damage</h1>
+              </div>
+              <!-- Minor Skills -->
+              <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Jams</b></span>
+                <h1 class="fs-6">-Rolling a 1-3 will cause a gun to jam<br />
+-It can be unjammed, but the jam counter will stay<br /> 
+-Getting 3 jams before it’s repaired will cause the gun to break and it will need to be fully repaired before it can be used again
+</h1>
+              </div>
+              <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Good odds/bad odds</b></span>
+                <h1 class="fs-6">Good odds means you roll two dice and use the highest, bad odds means you use the lowest</h1>
+              </div>
             </div>
+             <div class="col">
+                <span class="fs-6 border-bottom border-dark"><b>Dying</b></span>
+                <h1 class="fs-6">-The three death saves are still here, but with a few changes. First, when you are reduced to 0 hp, you are conscious and can still move. Also, you can forgo your saves and make one last attack. If that attack kills, you get a second wind, if it misses, you’ve spent the last of your energy and die</h1>
+              </div>
           </div>
+        
+    <button class="btn btn-secondary btn-dark p-1 mt-2" onclick="closeSnapshot()">Close</button>
+    </div>
+</div>
+
+<div class="row justify-content-center text-center align-items-center mb-1 px-3">
+  <div class="col-md-6">
+    <div class="border-start border-end border-bottom border-dark border-2 px-3">
+      <div class="row row-cols-5">
+        <!-- HP -->
+        <div class="col mb-1">
+          <span class="border-bottom border-dark" id="hp-amount">{{character.hp}}</span><span class="border-bottom ms-3 border-dark" id="temp-amount">0</span>
+          <h1 class="fs-6"><button class="skill-btn" onclick="hpdown('hp')">-</button><b>HP</b><button class="skill-btn" onclick="hpup('hp')">+</button></h1>
         </div>
-      
-        <!-- HP, MB, EC, AP, Initiative -->
-        <div class="row g-4 py-2 mt-2 row-cols-1 row-cols-lg-5">
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <button class="skill-btn" onclick="hpdown5('hp')">-5</button>
-            <button class="skill-btn" onclick="hpdown('hp')">-</button>
-                <span id="hp-amount">{{character.hp}}</span>
-                <button class="skill-btn" onclick="hpup('hp')">+</button>
-                <button class="skill-btn" onclick="hpup5('hp')">+5</button>
-            <h1 id="actionpoints" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
-            <h1 id="hp" class="fs-6 badge" style="background-color: #924A36;">HP</h1>
-          </div>
+        <!-- AP -->
+        <div class="col mb-1">
+          <span class="border-bottom border-dark" id="ap-amount">{{character.ap}}</span>
+          <h1 class="fs-6"><button class="skill-btn" onclick="decrease('ap')">-</button><b>AP</b><button class="skill-btn" onclick="increase('ap')">+</button></h1>
         </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <span id="hp-amount">{{character.mb}}</span>
-            <h1 id="movementbank" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
-            <h1 class="fs-6 badge" style="background-color: #924A36;">MB</h1>
-          </div>
+        <!-- EC -->
+        <div class="col">
+          <span class="fs-6 border-bottom border-dark">{{character.ec}}</span>
+          <h1 class="fs-6"><b>EC</b></h1>
         </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <span id="hp-amount">{{character.ec}}</span>
-            <h1 id="evasionchance" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
-            <h1 class="fs-6 badge" style="background-color: #924A36;">EC</h1>
-          </div>
+        <!-- MB -->
+        <div class="col mb-1">
+          <span class="fs-6 border-bottom border-dark">{{character.mb}}ft</span>
+          <h1 class="fs-6"><b>MB</b></h1>
         </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <button class="skill-btn" onclick="decrease('ap')">-</button>
-                <span id="ap-amount">{{character.ap}}</span>
-                <button class="skill-btn" onclick="increase('ap')">+</button>
-            <h1 id="actionpoints" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
-            <h1 id="ap" class="fs-6 badge" style="background-color: #924A36;">AP</h1>
-          </div>
-        </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <span id="ap-amount">+{{character.initiative}}</span>
-            <h1 id="initiative" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
-            <h1 class="fs-6 badge" style="background-color: #924A36;">Initiative</h1>
-          </div>
+        <div class="col">
+          <span class="fs-6 border-bottom border-dark">+{{character.initiative}}</span>
+          <h1 class="fs-6"><b>Initiative</b></h1>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+      <div class="row">
+        <!-- Left Side: Stats -->
+        <div class="col-md-6">
+          <div class="border border-dark border-2 p-3">
+                  <div class="tab-section">
+                      <ul class="nav nav-tabs" id="myTab1" role="tablist">
+                          <li class="nav-item" role="presentation">
+                              <button class="nav-link text-dark active" id="weapons-tab" data-bs-toggle="tab" data-bs-target="#weapons" type="button" role="tab">Weapons</button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                              <button class="nav-link text-dark" id="spells-tab" data-bs-toggle="tab" data-bs-target="#spells" type="button" role="tab">Spells</button>
+                          </li>
+                      </ul>
+                      <div class="tab-content mt-2" id="myTabContent1">
+                        <div class="tab-pane fade pb-5 show active" id="weapons" role="tabpanel" aria-labelledby="weapons-tab">
+                            <div id="weaponButtonHome">
+                            <button id="weaponToggleButton" class="mb-2 btn btn-sm btn-danger text-dark float-end rounded-0"
+                             onclick="toggleWeaponManager()">
+                             Manage
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                              </svg>
+                               </button>
+                               </div>
+                            <div id="weaponManager">
+                              <h5 class="border-bottom border-dark">Weapons<button type="button" class="btn btn-sm btn-info mb-3 ms-1 p-0" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Clockwork weapons do piercing damage, Cindeli weapons do slashing, and Evergladian weapons do crushing">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+                                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                   </svg>
+                                  </button></h5>
+                                  <div>
+                                        <h5 class="fs-6"><b>Proficiency: </b><span class="fs-6"><u>{{character.weapon_proficiency}}</u> </span><button type="button" class="btn btn-sm btn-info p-0 mb-2" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="+1 to hit checks and another +1 when the skill reaches level 50">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+                                        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                                   </svg>
+                                  </button></h5>
+                                  </div></h5>
+                              <div id="weaponButtonSidebar"></div>
+                              <ul class="nav nav-tabs" id="weaponManagerTabs" role="tablist">
+                                  <li class="nav-item" role="presentation">
+                                      <button class="nav-link text-dark active" id="current-weapons-tab" data-bs-toggle="tab" data-bs-target="#current-weapons-pane" type="button" role="tab">My Weapons</button>
+                                  </li>
+                                  <li class="nav-item" role="presentation">
+                                      <button class="nav-link text-dark" id="available-weapons-tab" data-bs-toggle="tab" data-bs-target="#available-weapons-pane" type="button" role="tab">Available Weapons</button>
+                                  </li>
+                              </ul>
+                              <div class="tab-content mt-2" id="weaponManagerTabContent">
+                                  <div class="tab-pane fade show active" id="current-weapons-pane" role="tabpanel" aria-labelledby="current-weapons-tab">
+                                      <ul id="current-weapons"></ul>
+                                  </div>
+                                  <div class="tab-pane fade" id="available-weapons-pane" role="tabpanel" aria-labelledby="available-weapons-tab">
+                                      <ul id="weapon-options"></ul>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                            <ul id="current-weapons2" class="mb-5 pb-5">
+                                {% for weapon in character.inventory.weapons %}
+                                    <li>{{ weapon.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade pb-5" id="spells" role="tabpanel" aria-labelledby="spells-tab">
+                          <ul id="currentSpellList">
+                            {% for spell in character.inventory.spells %}
+                                  <li>{{spell.name}}</li>
+                            {% endfor %}
+                          </ul>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- Modal for spell selection -->
+<div id="spellModal" style="display:none; position:fixed; top:20%; left:50%; transform:translateX(-50%); background:#f0d7a8; border:2px solid #000; padding:20px; z-index:1000;">
+  <h3 class="text-center"><u>Magic Milestone Reached!</br></h3><h3 class="text-center fs-4"></u>Pick a New Spell</br></h3><h3 class="fs-6 text-center">(These are permanent)</h3>
+  <ul class="mb-2" id="spellList"></ul>
+  <button class="btn btn-sm btn-dark" onclick="closeSpellModal()">Cancel</button>
+</div>
+
+          </div>
+        </div>
+        
+
+        <!-- Right Side: Skills -->
+        <div class="col-md-6">
+            <div class="border border-dark border-2 p-3">
+                  <div class="tab-section">
+                      <ul class="nav nav-tabs" id="myTab2" role="tablist">
+                          <li class="nav-item" role="presentation">
+                              <button class="nav-link text-dark active" id="inventory-tab" data-bs-toggle="tab" data-bs-target="#inventory" type="button" role="tab">Inventory</button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                              <button class="nav-link text-dark" id="abilities-tab" data-bs-toggle="tab" data-bs-target="#abilities" type="button" role="tab">Abilities & Perks</button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                              <button class="nav-link text-dark" id="talents-tab" data-bs-toggle="tab" data-bs-target="#talents" type="button" role="tab">Talents</button>
+                          </li>
+                      </ul>
+                     <div class="tab-content mt-2" id="myTabContent1">
+                        <div class="tab-pane fade pb-5 show active" id="inventory" role="tabpanel" aria-labelledby="inventory-tab">
+                    <div id="buttonHome">
+    <button id="inventoryToggleButton" class="mb-2 btn btn-sm btn-danger text-dark float-end rounded-0"
+        onclick="toggleInventoryManager()">
+        Manage
+       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+</svg>
+    </button>
+</div>
+                            <div id="inventoryManager">
+                              <h5 class="border-bottom border-dark">Inventory<h6 class="fs-6 border-bottom border-dark mb-1">*Items that heal, buff stats, and affect other aspects of the character (like EC) won't update those aspects in the sheet when added/used, be sure to take note and adjust them yourself</h6></h5>
+                              <div id="buttonSidebar"></div>
+                              <ul class="nav nav-tabs" id="inventoryManagerTabs" role="tablist">
+                                  <li class="nav-item" role="presentation">
+                                      <button class="nav-link text-dark active" id="current-inventory-tab" data-bs-toggle="tab" data-bs-target="#current-inventory-pane" type="button" role="tab">My Inventory</button>
+                                  </li>
+                                  <li class="nav-item" role="presentation">
+                                      <button class="nav-link text-dark" id="clothing-tab" data-bs-toggle="tab" data-bs-target="#clothing-pane" type="button" role="tab">Clothing</button>
+                                  </li>
+                                  <li class="nav-item" role="presentation">
+                                      <button class="nav-link text-dark" id="items-tab" data-bs-toggle="tab" data-bs-target="#items-pane" type="button" role="tab">Mystical Items</button>
+                                  </li>
+                                  <li class="nav-item" role="presentation">
+                                      <button class="nav-link text-dark" id="tonics-tab" data-bs-toggle="tab" data-bs-target="#tonic-pane" type="button" role="tab">Tonics</button>
+                                  </li>
+                                  <li class="nav-item" role="presentation">
+                                      <button class="nav-link text-dark" id="utilities-tab" data-bs-toggle="tab" data-bs-target="#utilities-pane" type="button" role="tab">Utilities</button>
+                                  </li>
+                              </ul>
+                              <div class="tab-content mt-2" id="inventoryManagerTabContent">
+                                  <div class="tab-pane fade show active" id="current-inventory-pane" role="tabpanel" aria-labelledby="current-inventory-tab">
+                                      <ul id="current-items"></ul>
+                                      <ul id="current-tonics"></ul>
+                                      <ul id="current-clothing"></ul>
+                                      <ul id="current-utilities"></ul>
+                                  </div>
+                                  <div class="tab-pane fade" id="tonic-pane" role="tabpanel" aria-labelledby="tonics-tab">  
+                                    <ul id="tonic-options"></ul>
+                                  </div>
+                                  <div class="tab-pane fade" id="items-pane" role="tabpanel" aria-labelledby="items-tab">  
+                                    <ul id="item-options"></ul>
+                                  </div>
+                                  <div class="tab-pane fade" id="utilities-pane" role="tabpanel" aria-labelledby="utilities-tab">  
+                                    <ul id="utility-options"></ul>
+                                  </div>
+                                  <div class="tab-pane fade" id="clothing-pane" role="tabpanel" aria-labelledby="clothing-tab">  
+                                    <ul id="clothing-options"></ul>
+                                  </div>
+                              </div>
+                          </div>
+                          <!-- For these inventory li items.. need to update to ensure the IDs added in the fetch functions are retained on page refresh -->     
+                          
+                          <ul id="current-tonics2" class="mb-0"><u><b>Tonics</b></u>
+                                {% for tonic in character.inventory.tonics %}
+                                    <li>{{ tonic.name }}</li>
+                                {% endfor %}
+                            </ul>
+                             <ul id="current-items2" class="mb-0 mt-3"><u><b>Mystical Items</b></u>
+                                {% for item in character.inventory.items %}
+                                   {% if item.name %}
+                             <li>{{ item.name }}</li>
+                               {% endif %}
+                               {% endfor %}
+                            </ul>
+                              <ul id="current-utilities2" class="mb-0 mt-3"><u><b>Utilities</b></u>
+                                {% for utility in character.inventory.utilities %}
+                                   {% if utility.name %}
+                                  <li>{{ utility.name }}</li>
+                               {% endif %}
+                             {% endfor %}
+                            </ul>
+                             <ul id="current-clothing2" class="mb-0 mt-3"><u><b>Clothing/Armor</b></u>
+                                {% for clothing in character.inventory.clothing %}
+                                  {% if clothing.name %}
+                             <li>{{ clothing.name }}</li>
+                              {% endif %}
+                              {% endfor %}
+                            </ul>
+                          </div>
+                          <div class="tab-pane fade pb-5" id="abilities" role="tabpanel">
+                            <ul id="perkList">
+                                {% for perk in character.perks.all %}
+                                    <li><u>{{ perk.perkName }}</u> - <small><em>{{ perk.description }}</em></small></li>
+                                {% endfor %}
+                            </ul>
+                          </div>
+                          <div class="tab-pane fade pb-5" id="talents" role="tabpanel">
+                              <ul>
+                                  <li><em>Refer to the testing packet for your talents</em></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="row mt-2">
+          <!-- Left Side: Stats -->
+          <div class="col mt-0">
+                  <div class="border border-dark border-2 p-3">
+                      <h4 class="fw-bold border-bottom border-dark w-75 mb-3">Characteristics</h4>
+            <div class="row row-cols-2">
+               <!-- Major Skills -->
+               <div class="col">
+                <h1 class="fs-6 text-decoration-underline fw-bold">Major Skills</h1>
+                <ul>
+                  <li>{{character.major_skill_1}}</li>
+                  <li>{{character.major_skill_2}}</li>
+                  <li>{{character.major_skill_3}}</li>
+                </ul>
+              </div>
+              <!-- Minor Skills -->
+              <div class="col">
+                <h1 class="fs-6 text-decoration-underline fw-bold">Minor Skills</h1>
+                <ul>
+                  <li>{{character.minor_skill_1}}</li>
+                  <li>{{character.minor_skill_2}}</li>
+                  <li>{{character.minor_skill_3}}</li>
+                  <li>{{character.minor_skill_4}}</li>
+                  <li>{{character.minor_skill_5}}</li>
+                </ul>
+              </div>
+              <div class="col mt-2">
+                <span class="fs-6 border-bottom border-dark">{{character.morals}}</span>
+                <h1 class="fs-6"><b>Morals</b></h1>
+              </div>
+              <div class="col">
+                <span class="fs-6 border-bottom border-dark">{{character.language}}</span>
+                <h1 class="fs-6"><b>Languages</b></h1>
+              </div>
+            </div>
+              </div>
+          </div>
       
-      <!-- Major/Minor skills, Weapon prof. -->
-      <div class="row g-4 py-3 mt-2 row-cols-1 row-cols-3">
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
+          <!-- Right Side: Inventory & Perks -->
+          <div class="col-md-6">
+               <div class="border border-dark border-2 p-3">
+                <h4 class="fw-bold border-bottom border-dark w-75">Conditions</h4>
+            <div class="row row-cols-2 ">
+              <div class="col">
+                <h1 class="fs-6 mt-1">Inspiration<input class="form-check-input ms-1" type="checkbox" value="" id="inspirationCheckbox"></h1>
+              </div>
+                <div class="">
+                  <h1 class="fs-6 mt-1">Full Rest<input class="form-check-input ms-1" type="checkbox" value="" id="toggleFunction" onchange="toggleFeature(this, 'inspirationCheckbox')"></h1>
+                </div>
+              </div>
+              <!-- Minor Skills -->
+              <div class="col">
+                <h1 class="fs-6 mt-1 me-2">Exhaustion 0<input class="form-check-input ms-1 me-1" type="radio" name="flexRadioDefault" id="flexRadioDefault1">1<input class="form-check-input ms-1 me-1" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> 2<input class="form-check-input me-1" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> 3<input class="form-check-input me-1" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> 4<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"></h1>
+              </div>
+              <div class="col mt-3">
+                <h1 class="fs-6 mb-5 pb-5"><button class="skill-btn" onclick="tempdown('temp')">-</button>Temp HP<button class="skill-btn" onclick="tempup('temp')">+</button></h1>
+              </div>
+            </div>
           </div>
-          <div>
-            <h1 class="fs-6 badge" style="background-color: #924A36;">Major Skills</h1>
-            <li id="major1">{{character.major_skill_1}}</li>
-            <li id="major2">{{character.major_skill_2}}</li>
-            <li id="major3">{{character.major_skill_3}}</li>
-          </div>
-        </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <h1 class="fs-6 badge" style="background-color: #924A36;">Minor Skills</h1>
-            <li id="minor1">{{character.minor_skill_1}}</li>
-            <li id="minor2">{{character.minor_skill_2}}</li>
-            <li id="minor3">{{character.minor_skill_3}}</li>
-            <li id="minor4">{{character.minor_skill_4}}</li>
-            <li id="minor5">{{character.minor_skill_5}}</li>
-          </div>
-        </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <h1 class="fs-6 badge" style="background-color: #924A36;">Weapon Prof.</h1>
-            <li id="weaponproficiency">{{character.weapon_proficiency}}</li>
-          </div>
-        </div>
       </div>
       
-      <!-- Spells, Weapons, Inventory -->
-      <div class="row g-4 py-1 mt-2 row-cols-1 row-cols-lg-2">
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <h1 class="fs-6 badge" style="background-color: #924A36;">Weapons</h1>
-            <li id="weapon1">{{character.starting_weapon}}</li>
-          </div>
-        </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <h1 class="fs-6 badge" style="background-color: #924A36;">Spells</h1>
-            <li id="spell1"><em>Refer to the testing packet to pick your spells</em></li>
-          </div>
-        </div>
-      </div>
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <h1 class="fs-6 mt-3 badge" style="background-color: #924A36;">Inventory</h1>
-            <li>{{character.starting_equipment}}</li>
-            <ul>
-              <li id="startingequipment">{{character.starting_equipment.itemList}}</li>
-            </ul>
-          </div>
-        </div>
-      
-      <!-- Perks, Morals, Languages -->
-        <div class="row g-2 py-2 row-cols-1 row-cols-lg-3">
-        <div class="col d-flex align-items-start">
-          <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div>
-            <h1 class="fs-6 badge mt-3" style="background-color: #924A36;">Abilities and Perks</h1>
-            <li id=""><em>Refer to the testing packet for your perks</em></li>
-          </div>
-        </div>
-        <div class="col d-flex me-2 align-items-start">
-          <div class="icon-square me-2 text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
-           
-          </div>
-          <div class="me-3">
-            <h1 class="fs-6 mt-3">{{character.morals}}</h1>
-            <h1 id="morals" class="fs-6 me-3 text-body-emphasis border-bottom border-dark"></h1>
-            <h1 class="fs-6 badge" style="background-color: #924A36;">Morals</h1>
-          </div>
-          <div>
-            <h1 class="fs-6 mt-3">{{character.language}}</h1>
-            <h1 id="languages" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
-            <h1 class="fs-6 badge" style="background-color: #924A36;">Languages</h1>
-          </div>
-        </div>
-      </div>
+    
       
       <!-- Attributes, Skills -->
-      <h2 class="fs-6 mt-3 border-bottom border-dark badge" style="background-color: #924A36;">Attributes and Skills</h2>
+       <div>
+      <h1 class="fs-5 fw-bold mt-4 mb-2 border-bottom border-dark w-50">Attributes and Skills <button type="button" class="btn btn-info btn-sm mb-2 ms-3" data-bs-container="body"  data-bs-html="true"  data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Add these mods when making saves<br><br>Att. Lvl 5 = -2<br>Lvl 10 = -1<br>Lvl 15 = 0<br>Lvl 25 = +1<br>Lvl 40 = +2<br> Lvl 50 = +3<br>Lvl 75 = +5<br>Lvl 100 = +7">
+  Attributes<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+</svg>
+</button> <button type="button" class="btn btn-info btn-sm mb-2" data-bs-container="body"  data-bs-html="true"  data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Add these bonuses to your skill check rolls, weapon hits, and damage done<br><br>Skill Lvl 5 = -1<br>Lvl 10 = 0<br>Lvl 15 = +1<br>Lvl 25 = +2<br>Lvl 40 = +3<br> Lvl 50 = +4<br>Lvl 60 = +5<br>Lvl 75 = +6<br>Lvl 100 = +8">
+  Skills<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info mb-1" viewBox="0 0 16 16">
+  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+</svg>
+</button></h1>
+    </div>
         <div class="row g-4 py-1 row-cols-1 row-cols-lg-6">
           <div class="col d-flex align-items-start">
             <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
@@ -226,276 +508,292 @@
             
            <!-- Strength -->
             <div>
-              <h1 class="fs-6">{{character.strength}}</h1>
-            <h1 id="strength" class="fs-6 text-body border-bottom border-dark"></h1>
-              <h1 class="fs-6 fw-bold pb-2">Strength</h1>
+              <h1 class="fs-5 fw-bold text-center">Strength</h1>
+              <h5 class="text-center border-bottom border-dark" id="strength">{{character.strength}}</h5>
               
-              <p class="border-bottom border-dark mb-1">Crushing Melee</p>
+              <p class="text-dark text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="crushing-skill">{{character.sk_crushing}}</span> | Crushing Melee</p>
               <button id="crushing" class="skill-btn" onclick="decreaseXP('crushing')">-</button>
                 <button class="skill-btn" onclick="increaseXP('crushing')">+</button>
-              <span id="crushing-skill">{{character.sk_crushing}} | xp: <span id="crushing-xp-tracker"></span></span>
+              Exp: <span id="crushing-xp-tracker"></span>
               <div class="mt-3 mb-1"></div>
 
-              <p class="border-bottom border-dark mb-1">Shotguns</p>
+              <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="shotguns-skill">{{character.sk_shotguns}}</span> | Shotguns</p>
               <button id="shotguns" class="skill-btn" onclick="decreaseXP('shotguns')">-</button>
                 <button class="skill-btn" onclick="increaseXP('shotguns')">+</button>
-              <span id="shotguns-skill">{{character.sk_shotguns}}| xp: <span id="shotguns-xp-tracker"></span></span>
+              Exp: <span id="shotguns-xp-tracker"></span>
               <div class="mt-3 mb-1"></div>
               
-              <p class="border-bottom border-dark mb-1">Hand-to-Hand</p>
+              <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="hand-skill">{{character.sk_hand}}</span> | Hand-to-Hand</p>
               <button id="hand" class="skill-btn" onclick="decreaseXP('hand')">-</button>
                 <button class="skill-btn" onclick="increaseXP('hand')">+</button>
-              <span id="hand-skill">{{character.sk_hand}} | xp: <span id="hand-xp-tracker"></span></span>
+              Exp: <span id="hand-xp-tracker"></span>
               <div class="mt-3 mb-1"></div>
               
-              <p class="border-bottom border-dark mb-1">Athletics</p>
+              <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="athletics-skill">{{character.sk_athletics}}</span> | Athletics</p>
               <button id="athletics" class="skill-btn" onclick="decreaseXP('athletics')">-</button>
                 <button class="skill-btn" onclick="increaseXP('athletics')">+</button>
-              <span id="athletics-skill">{{character.sk_athletics}} | xp: <span id="athletics-xp-tracker"></span></span>
+              Exp: <span id="athletics-xp-tracker"></span>
               <div class="mt-3 mb-1"></div>
               
-              <p class="border-bottom border-dark mb-1">Crafting</p>
+              <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="crafting-skill">{{character.sk_crafting}}</span> | Crafting</p>
               <button id="crafting" class="skill-btn" onclick="decreaseXP('crafting')">-</button>
                 <button class="skill-btn" onclick="increaseXP('crafting')">+</button>
-              <span id="crafting-skill">{{character.sk_crafting}}| xp: <span id="crafting-xp-tracker"></span></span>
+              Exp: <span id="crafting-xp-tracker"></span>
               <div class="mt-3 mb-1"></div>
             </div>
                     
                   </div>
-                  <div class="col d-flex align-items-start">
+                  <div class="col d-flex align-items-start border-start border-end border-dark">
                     <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
                      
                     </div>
                     
                     <!-- Agility -->
                     <div>
-                      <h1 class="fs-6">{{character.agility}}</h1>
-                      <h1 id="agility" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
-                      <h1 class="fs-6 fw-bold pb-2">Agility</h1>
-                      <p class="border-bottom border-dark mb-1">Slashing Melee</p>
+                      <h1 class="fs-5 fw-bold text-center">Agility</h1>
+              <h5 class="text-center border-bottom border-dark" id="agility">{{character.agility}}</h5>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="slashing-skill">{{character.sk_slashing}}</span> | Slashing Melee</p>
                       <button id="slashing" class="skill-btn" onclick="decreaseXP('slashing')">-</button>
                         <button class="skill-btn" onclick="increaseXP('slashing')">+</button>
-                      <span id="slashing-skill">{{character.sk_slashing}} | xp: <span id="slashing-xp-tracker"></span></span>
+                      Exp: <span id="slashing-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
         
-                      <p class="border-bottom border-dark mb-1">Pistols</p>
+                      <p class="text-dark border-bottom border-dark mb-1"> <span class="fw-bold" id="pistols-skill">{{character.sk_pistols}}</span> | Pistols</p>
                       <button id="pistols" class="skill-btn" onclick="decreaseXP('pistols')">-</button>
                         <button class="skill-btn" onclick="increaseXP('pistols')">+</button>
-                      <span id="pistols-skill">{{character.sk_pistols}}| xp: <span id="pistols-xp-tracker"></span></span>
+                     Exp: <span id="pistols-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                       
-                      <p class="border-bottom border-dark mb-1">Archery</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="archery-skill">{{character.sk_archery}}</span> | Archery</p>
                       <button id="archery" class="skill-btn" onclick="decreaseXP('archery')">-</button>
                         <button class="skill-btn" onclick="increaseXP('archery')">+</button>
-                      <span id="archery-skill">{{character.sk_archery}} | xp: <span id="archery-xp-tracker"></span></span>
+                      Exp: <span id="archery-xp-tracker"></span></span>
                       <div class="mt-3 mb-1"></div>
                       
-                      <p class="border-bottom border-dark mb-1">Ropework</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="ropework-skill">{{character.sk_ropework}}</span> | Ropework</p>
                       <button id="ropework" class="skill-btn" onclick="decreaseXP('ropework')">-</button>
                         <button class="skill-btn" onclick="increaseXP('ropework')">+</button>
-                      <span id="ropework-skill">{{character.sk_ropework}} | xp: <span id="ropework-xp-tracker"></span></span>
+                      Exp: <span id="ropework-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                       
-                      <p class="border-bottom border-dark mb-1">Acrobatics</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="acrobatics-skill">{{character.sk_acrobatics}}</span> | Acrobatics</p>
                       <button id="acrobatics" class="skill-btn" onclick="decreaseXP('acrobatics')">-</button>
                         <button class="skill-btn" onclick="increaseXP('acrobatics')">+</button>
-                      <span id="acrobatics-skill">{{character.sk_acrobatics}}| xp: <span id="acrobatics-xp-tracker"></span></span>
+                      Exp: <span id="acrobatics-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
 
-                      <p class="border-bottom border-dark mb-1">Sneak</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="sneak-skill">{{character.sk_sneak}}</span> | Sneak</p>
                       <button id="sneak" class="skill-btn" onclick="decreaseXP('sneak')">-</button>
                         <button class="skill-btn" onclick="increaseXP('sneak')">+</button>
-                      <span id="sneak-skill">{{character.sk_sneak}}| xp: <span id="sneak-xp-tracker"></span></span>
+                      Exp: <span id="sneak-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
 
-                      <p class="border-bottom border-dark mb-1">Thievery</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" class="fw-bold" id="thievery-skill">{{character.sk_thievery}}</span> | Thievery</p>
                       <button id="thievery" class="skill-btn" onclick="decreaseXP('thievery')">-</button>
                         <button class="skill-btn" onclick="increaseXP('thievery')">+</button>
-                      <span id="thievery-skill">{{character.sk_thievery}}| xp: <span id="thievery-xp-tracker"></span></span>
+                      Exp: <span id="thievery-xp-tracker"></span></span>
                       <div class="mt-3 mb-1"></div>
                     </div>
                   </div>
-                  <div class="col d-flex align-items-start">
+                  <div class="col d-flex align-items-start border-end border-dark">
                     <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
                       
                     </div>
                     
                     <!-- Gumption -->
                     <div>
-                      <h1 class="fs-6">{{character.gumption}}</h1>
-                      <h1 id="gumption" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
-                      <h1 class="fs-6 fw-bold pb-2">Gumption</h1>
-                      <p class="border-bottom border-dark mb-1">Intimidation</p>
+                      <h1 class="fs-5 fw-bold text-center">Gumption</h1>
+                      <h5 class="text-center border-bottom border-dark" id="gumption">{{character.gumption}}</h5>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="intimidation-skill">{{character.sk_intimidation}}</span> | Intimidation</p>
                       <button id="intimidation" class="skill-btn" onclick="decreaseXP('intimidation')">-</button>
                         <button class="skill-btn" onclick="increaseXP('intimidation')">+</button>
-                      <span id="intimidation-skill">{{character.sk_intimidation}} | xp: <span id="intimidation-xp-tracker"></span></span>
+                      Exp: <span id="intimidation-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
         
-                      <p class="border-bottom border-dark mb-1">Hunting</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="hunting-skill">{{character.sk_hunting}}</span> | Hunting</p>
                       <button id="hunting" class="skill-btn" onclick="decreaseXP('hunting')">-</button>
                         <button class="skill-btn" onclick="increaseXP('hunting')">+</button>
-                      <span id="hunting-skill">{{character.sk_hunting}}| xp: <span id="hunting-xp-tracker"></span></span>
+                      Exp: <span id="hunting-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                       
-                      <p class="border-bottom border-dark mb-1">Cooking</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="cooking-skill">{{character.sk_cooking}}</span> | Cooking</p>
                       <button id="cooking" class="skill-btn" onclick="decreaseXP('cooking')">-</button>
                         <button class="skill-btn" onclick="increaseXP('cooking')">+</button>
-                      <span id="cooking-skill">{{character.sk_cooking}} | xp: <span id="cooking-xp-tracker"></span></span>
+                      Exp: <span id="cooking-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                       
-                      <p class="border-bottom border-dark mb-1">Foraging</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="foraging-skill">{{character.sk_foraging}}</span> | Foraging</p>
                       <button id="foraging" class="skill-btn" onclick="decreaseXP('foraging')">-</button>
                         <button class="skill-btn" onclick="increaseXP('foraging')">+</button>
-                      <span id="foraging-skill">{{character.sk_foraging}} | xp: <span id="foraging-xp-tracker"></span></span>
+                      Exp: <span id="foraging-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                       
-                      <p class="border-bottom border-dark mb-1">Animal Handling</p>
-                      <button id="animal" class="skill-btn" onclick="decreaseXP('animal')">-</button>
-                        <button class="skill-btn" onclick="increaseXP('animal')">+</button>
-                      <span id="animal-skill">{{character.sk_animalhandling}}| xp: <span id="animal-xp-tracker"></span></span>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="animalhandling-skill">{{character.sk_animalhandling}}</span> | Animal Handling</p>
+                      <button id="animal" class="skill-btn" onclick="decreaseXP('animalhandling')">-</button>
+                        <button class="skill-btn" onclick="increaseXP('animalhandling')">+</button>
+                      Exp: <span id="animalhandling-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                     </div>
                   </div>
-                  <div class="col d-flex align-items-start">
+                  <div class="col d-flex align-items-start border-end border-dark">
                     <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
                       
                     </div>
                     
                     <!-- Intelligence -->
                     <div>
-                      <h1 class="fs-6">{{character.intelligence}}</h1>
-                      <h1 id="intelligence" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
-                      <h1 class="fs-6 fw-bold pb-2">Intelligence</h1>
-                      <p class="border-bottom border-dark mb-1">Rifles</p>
+                      <h1 class="fs-5 fw-bold text-center">Intelligence</h1>
+                      <h5 class="text-center border-bottom border-dark" id="intelligence">{{character.intelligence}}</h5>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="rifles-skill">{{character.sk_rifles}}</span> | Rifles</p>
                       <button id="rifles" class="skill-btn" onclick="decreaseXP('rifles')">-</button>
                         <button class="skill-btn" onclick="increaseXP('rifles')">+</button>
-                      <span id="rifles-skill">{{character.sk_rifles}} | xp: <span id="rifles-xp-tracker"></span></span>
+                      Exp: <span id="rifles-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
         
-                      <p class="border-bottom border-dark mb-1">Intuition</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="intuition-skill">{{character.sk_intuition}}</span> | Intuition</p>
                       <button id="intuition" class="skill-btn" onclick="decreaseXP('intuition')">-</button>
                         <button class="skill-btn" onclick="increaseXP('intuition')">+</button>
-                      <span id="intuition-skill">{{character.sk_intuition}}| xp: <span id="intuition-xp-tracker"></span></span>
+                      Exp: <span id="intuition-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                       
-                      <p class="border-bottom border-dark mb-1">Investigation</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="investigation-skill">{{character.sk_investigation}}</span> | Investigation</p>
                       <button id="investigation" class="skill-btn" onclick="decreaseXP('investigation')">-</button>
                         <button class="skill-btn" onclick="increaseXP('investigation')">+</button>
-                      <span id="investigation-skill">{{character.sk_investigation}} | xp: <span id="investigation-xp-tracker"></span></span>
+                      Exp: <span id="investigation-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                       
-                      <p class="border-bottom border-dark mb-1">Brewing</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="brewing-skill">{{character.sk_brewing}}</span> | Brewing</p>
                       <button id="brewing" class="skill-btn" onclick="decreaseXP('brewing')">-</button>
                         <button class="skill-btn" onclick="increaseXP('brewing')">+</button>
-                      <span id="brewing-skill">{{character.sk_brewing}} | xp: <span id="brewing-xp-tracker"></span></span>
+                      Exp: <span id="brewing-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                       
-                      <p class="border-bottom border-dark mb-1">Galvanism Magic</p>
-                      <button id="galvanism" class="skill-btn" onclick="decreaseXP('galvanism')">-</button>
-                        <button class="skill-btn" onclick="increaseXP('galvanism')">+</button>
-                      <span id="galvanism-skill">{{character.sk_galvanismmagic}}| xp: <span id="galvanism-xp-tracker"></span></span>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="galvanismmagic-skill">{{character.sk_galvanismmagic}}</span> | Galvanism Magic</p>
+                      <button id="galvanis" class="skill-btn" onclick="decreaseXP('galvanismmagic')">-</button>
+                        <button class="skill-btn" onclick="increaseXP('galvanismmagic')">+</button>
+                      Exp: <span id="galvanismmagic-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                     </div>
                   </div>
-                  <div class="col d-flex align-items-start">
+                  <div class="col d-flex align-items-start border-end border-dark">
                     <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
                      
                     </div>
                     
                     <!-- Mysticism -->
                     <div>
-                      <h1 class="fs-6">{{character.mysticism}}</h1>
-                      <h1 id="mysticism" class="fs-6 text-body-emphasis border-bottom border-dark"></h1>
-                      <h1 class="fs-6 fw-bold pb-2">Mysticism</h1>
-                      <p class="border-bottom border-dark mb-1">Religion</p>
+                      <h1 class="fs-5 fw-bold text-center">Mysticism</h1>
+                      <h5 class="text-center border-bottom border-dark" id="mysticism">{{character.mysticism}}</h5>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="religion-skill">{{character.sk_religion}}</span> | Religion</p>
                       <button id="religion" class="skill-btn" onclick="decreaseXP('religion')">-</button>
                         <button class="skill-btn" onclick="increaseXP('religion')">+</button>
-                      <span id="religion-skill">{{character.sk_religion}} | xp: <span id="religion-xp-tracker"></span></span>
+                      Exp: <span id="religion-xp-tracker"></span></span>
                       <div class="mt-3 mb-1"></div>
         
-                      <p class="border-bottom border-dark mb-1">History</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="history-skill">{{character.sk_history}}</span> | History</p>
                       <button id="history" class="skill-btn" onclick="decreaseXP('history')">-</button>
                         <button class="skill-btn" onclick="increaseXP('history')">+</button>
-                      <span id="history-skill">{{character.sk_history}}| xp: <span id="history-xp-tracker"></span></span>
+                      Exp: <span id="history-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                       
-                      <p class="border-bottom border-dark mb-1">Medicine</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="medicine-skill">{{character.sk_medicine}}</span> | Medicine</p>
                       <button id="medicine" class="skill-btn" onclick="decreaseXP('medicine')">-</button>
                         <button class="skill-btn" onclick="increaseXP('medicine')">+</button>
-                      <span id="medicine-skill">{{character.sk_medicine}} | xp: <span id="medicine-xp-tracker"></span></span>
+                      Exp: <span id="medicine-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                       
-                      <p class="border-bottom border-dark mb-1">Healing Magic</p>
-                      <button id="healing" class="skill-btn" onclick="decreaseXP('healing')">-</button>
-                        <button class="skill-btn" onclick="increaseXP('healing')">+</button>
-                      <span id="healing-skill">{{character.sk_healingmagic}} | xp: <span id="healing-xp-tracker"></span></span>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="healingmagic-skill">{{character.sk_healingmagic}}</span> | Healing Magic</p>
+                      <button id="healing" class="skill-btn" onclick="decreaseXP('healingmagic')">-</button>
+                        <button class="skill-btn" onclick="increaseXP('healingmagic')">+</button>
+                     Exp: <span id="healingmagic-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                       
-                      <p class="border-bottom border-dark mb-1">Utility Magic</p>
-                      <button id="utility" class="skill-btn" onclick="decreaseXP('utility')">-</button>
-                        <button class="skill-btn" onclick="increaseXP('utility')">+</button>
-                      <span id="utility-skill">{{character.sk_utilitymagic}}| xp: <span id="utility-xp-tracker"></span></span>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="utilitymagic-skill">{{character.sk_utilitymagic}}</span> | Utility Magic</p>
+                      <button id="utility" class="skill-btn" onclick="decreaseXP('utilitymagic')">-</button>
+                        <button class="skill-btn" onclick="increaseXP('utilitymagic')">+</button>
+                      Exp: <span id="utilitymagic-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
 
-                      <p class="border-bottom border-dark mb-1">Absolution Magic</p>
-                      <button id="absolution" class="skill-btn" onclick="decreaseXP('absolution')">-</button>
-                        <button class="skill-btn" onclick="increaseXP('absolution')">+</button>
-                      <span id="absolution-skill">{{character.sk_absolutionmagic}}| xp: <span id="absolution-xp-tracker"></span></span>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="absolutionmagic-skill">{{character.sk_absolutionmagic}}</span> | Absolution Magic</p>
+                      <button id="absolution" class="skill-btn" onclick="decreaseXP('absolutionmagic')">-</button>
+                        <button class="skill-btn" onclick="increaseXP('absolutionmagic')">+</button>
+                      Exp: <span id="absolutionmagic-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                     </div>
                   </div>
-                  <div class="col d-flex align-items-start">
+                  <div class="col d-flex align-items-start border-dark">
                     <div class="icon-square text-body-emphasis bg-body-secondary d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-1">
                       
                     </div>
                     
                     <!-- Personality -->
                     <div>
-                      <h1 class="fs-6 text-body-emphasis">{{character.personality}}</h1>
-                      <h1 id="personality" class="fs-6 border-bottom border-dark"></h1>
-                      <h1 class="fs-6 fw-bold pb-2">Personality</h1>
-                      <p class="border-bottom border-dark mb-1">Foolery</p>
+                      <h1 class="fs-5 fw-bold text-center">Personality</h1>
+                      <h5 class="text-center border-bottom border-dark" id="personality">{{character.personality}}</h5>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="foolery-skill">{{character.sk_foolery}}</span> | Foolery</p>
                       <button id="foolery" class="skill-btn" onclick="decreaseXP('foolery')">-</button>
                         <button class="skill-btn" onclick="increaseXP('foolery')">+</button>
-                      <span id="foolery-skill">{{character.sk_foolery}} | xp: <span id="foolery-xp-tracker"></span></span>
+                      Exp: <span id="foolery-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
         
-                      <p class="border-bottom border-dark mb-1">Persuasion</p>
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="persuasion-skill">{{character.sk_persuasion}}</span> | Persuasion</p>
                       <button id="persuasion" class="skill-btn" onclick="decreaseXP('persuasion')">-</button>
                         <button class="skill-btn" onclick="increaseXP('persuasion')">+</button>
-                      <span id="persuasion-skill">{{character.sk_persuasion}}| xp: <span id="persuasion-xp-tracker"></span></span>
-                      <div class="mt-3 mb-1"></div>
-                      
-                      <p class="border-bottom border-dark mb-1">Barter</p>
-                      <button id="barter" class="skill-btn" onclick="decreaseXP('barter')">-</button>
-                        <button class="skill-btn" onclick="increaseXP('barter')">+</button>
-                      <span id="barter-skill">{{character.sk_barter}} | xp: <span id="barter-xp-tracker"></span></span>
-                      <div class="mt-3 mb-1"></div>
-                      
-                      <p class="border-bottom border-dark mb-1">Deception Magic</p>
-                      <button id="deception" class="skill-btn" onclick="decreaseXP('deception')">-</button>
-                        <button class="skill-btn" onclick="increaseXP('deception')">+</button>
-                      <span id="deception-skill">{{character.sk_deceptionmagic}} | xp: <span id="deception-xp-tracker"></span></span>
-                      <div class="mt-3 mb-1"></div>
-                      
-                      <p class="border-bottom border-dark mb-1">Ritual Magic</p>
-                      <button id="ritual" class="skill-btn" onclick="decreaseXP('ritual')">-</button>
-                        <button class="skill-btn" onclick="increaseXP('ritual')">+</button>
-                      <span id="ritual-skill">{{character.sk_ritualmagic}}| xp: <span id="ritual-xp-tracker"></span></span>
+                      Exp: <span id="persuasion-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
 
-                      <p class="border-bottom border-dark mb-1">Destruction Magic</p>
-                      <button id="destruction" class="skill-btn" onclick="decreaseXP('destruction')">-</button>
-                        <button class="skill-btn" onclick="increaseXP('destruction')">+</button>
-                      <span id="destruction-skill">{{character.sk_destructionmagic}}| xp: <span id="destruction-xp-tracker"></span></span>
+                        <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="performance-skill">{{character.sk_performance}}</span> | Performance</p>
+                      <button id="performance" class="skill-btn" onclick="decreaseXP('performance')">-</button>
+                        <button class="skill-btn" onclick="increaseXP('performance')">+</button>
+                      Exp: <span id="performance-xp-tracker"></span>
+                      <div class="mt-3 mb-1"></div>
+                      
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="barter-skill">{{character.sk_barter}}</span> | Barter</p>
+                      <button id="barter" class="skill-btn" onclick="decreaseXP('barter')">-</button>
+                        <button class="skill-btn" onclick="increaseXP('barter')">+</button>
+                      Exp: <span id="barter-xp-tracker"></span>
+                      <div class="mt-3 mb-1"></div>
+                      
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="deceptionmagic-skill">{{character.sk_deceptionmagic}}</span> | Deception Magic</p>
+                      <button id="deception" class="skill-btn" onclick="decreaseXP('deceptionmagic')">-</button>
+                        <button class="skill-btn" onclick="increaseXP('deceptionmagic')">+</button>
+                      Exp: <span id="deceptionmagic-xp-tracker"></span>
+                      <div class="mt-3 mb-1"></div>
+                      
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="ritualmagic-skill">{{character.sk_ritualmagic}}</span> | Ritual Magic</p>
+                      <button id="ritual" class="skill-btn" onclick="decreaseXP('ritualmagic')">-</button>
+                        <button class="skill-btn" onclick="increaseXP('ritualmagic')">+</button>
+                      Exp: <span id="ritualmagic-xp-tracker"></span>
+                      <div class="mt-3 mb-1"></div>
+
+                      <p class="text-dark border-bottom border-dark mb-1"><span class="fw-bold" id="destructionmagic-skill">{{character.sk_destructionmagic}}</span> | Destruction Magic</p>
+                      <button id="destruction" class="skill-btn" onclick="decreaseXP('destructionmagic')">-</button>
+                        <button class="skill-btn" onclick="increaseXP('destructionmagic')">+</button>
+                      Exp: <span id="destructionmagic-xp-tracker"></span>
                       <div class="mt-3 mb-1"></div>
                     </div>
                   </div>
                  </div>
-   
+    </div>
+   <div id="tempAlert" class="alert alert-success position-fixed top-0 start-50 translate-middle-x mt-3" 
+     style="display: none; z-index: 2000;" role="alert">
+  Weapon Added
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script >
+  const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+  let skillLevelUps = 0;
+
+   function showTempAlert(message, duration = 2000) {
+    const alertBox = document.getElementById("tempAlert");
+    alertBox.innerText = message;
+    alertBox.style.display = "block";
+    setTimeout(() => {
+      alertBox.style.display = "none";
+    }, duration);
+  }
 
  // AP adjustments
                   function increase(id) {
@@ -543,26 +841,57 @@ function hpdown(id) {
     amountSpan.textContent = currentValue.toFixed(1);
 }
 
-function hpup5(id) {
+function tempup(id) {
     const amountSpan = document.getElementById(`${id}-amount`);
     let currentValue = parseFloat(amountSpan.textContent);
 
-    currentValue += 5;
+    currentValue += 1;
 
     amountSpan.textContent = currentValue.toFixed(1);
 }
 
-function hpdown5(id) {
+function tempdown(id) {
     const amountSpan = document.getElementById(`${id}-amount`);
     let currentValue = parseFloat(amountSpan.textContent);
 
-    currentValue -= 5;
+    currentValue -= 1;
 
     if (currentValue < 0) {
         currentValue = 0;
     }
 
     amountSpan.textContent = currentValue.toFixed(1);
+}
+
+function fullRestOn(id, add = true) {
+    const amountSpan = document.getElementById(`${id}-amount`);
+    let currentValue = parseFloat(amountSpan.textContent);
+
+    if (add) {
+        currentValue += 10; // Add 5 temp HP
+    } else {
+        currentValue -= 10; // Subtract 5 temp HP
+    }
+
+    if (currentValue < 0) {
+        currentValue = 0; // Ensure temp HP doesn't go below 0
+    }
+
+    amountSpan.textContent = currentValue.toFixed(1);
+}
+
+
+function toggleFeature(checkbox, linkedCheckboxId) {
+    const inspirationCheckbox = document.getElementById(linkedCheckboxId);
+
+    if (checkbox.checked) {
+        console.log("Feature Enabled");
+        fullRestOn('temp', true); // Add 5 temp HP
+        inspirationCheckbox.checked = true; // Check the linked checkbox
+    } else {
+        console.log("Feature Disabled");
+        fullRestOn('temp', false); // Subtract 5 temp HP
+    }
 }
 
 // Initialize skill levels and XP for each skill
@@ -580,7 +909,7 @@ async function getData() {
 // Usage
 (async () => {
     await getData()
-    console.log(skills);  // The response is now saved in the 'data' variable
+    console.log(skills);  
 })();
 
 
@@ -635,18 +964,71 @@ if (level < 16) {
 }
 
 // XP UI
+const skillMilestones = [15, 25, 50, 75, 100];
+
 function updateUI(skill) {
-const skillData = skills[skill];
-const requiredXP = getRequiredXP(skillData.level);
-document.getElementById(`${skill}-skill`).innerHTML = ` ${skillData.level} | xp: ${renderXPTracker(skillData.xp, requiredXP)}`;
+    const skillData = skills[skill];
+    const requiredXP = getRequiredXP(skillData.level);
+
+    // Update only the skill level
+    document.getElementById(`${skill}-skill`).innerText = skillData.level;
+
+    // Update only the XP tracker
+    document.getElementById(`${skill}-xp-tracker`).innerHTML = renderXPTracker(skillData.xp, requiredXP);
 }
 
 function renderXPTracker(xp, requiredXP) {
-let tracker = '';
-for (let i = 0; i < requiredXP; i++) {
-  tracker += i < xp ? '■' : '□';
+    let tracker = '';
+    for (let i = 0; i < requiredXP; i++) {
+        tracker += i < xp ? '■' : '□';
+    }
+    return tracker;
 }
-return tracker;
+
+function increaseXP(skill) {
+    const skillData = skills[skill];
+    const requiredXP = getRequiredXP(skillData.level);
+    skillData.xp += 1;
+
+    if (skillData.xp >= requiredXP) {
+        skillData.xp = 0;
+        skillData.level += 1;
+        updateDatabaseSkills(skill, 1);
+
+        if (skillData.level > 100) {
+            skillData.level = 100;
+            skillData.xp = 0;
+        }
+
+
+        console.log(skill)
+        console.log(skillData.level)
+        // 🎯 Check milestone here
+        if (skill.includes("magic") && skillMilestones.includes(skillData.level)) {
+            showSpellSelection(skill);
+        }
+
+        trackSkillLevelUp(); 
+    }
+
+    updateUI(skill);
+}
+
+function decreaseXP(skill) {
+const skillData = skills[skill];
+skillData.xp -= 1;
+if (skillData.xp < 0 && skillData.level > 1) {
+  updateDatabaseSkills(skill,-1)
+  skillData.level -= 1;
+  skillData.xp = getRequiredXP(skillData.level) - 1;
+}
+
+updateUI(skill);
+}
+
+// Initialize UI for all skills
+for (let skill in skills) {
+updateUI(skill);
 }
 
 function getDatabaseSkills() {
@@ -680,64 +1062,748 @@ function updateDatabaseSkills(skill, increment) {
   const pagePath = window.location.pathname
   const pathSections = pagePath.split("/")
   const characterPrimaryKey = pathSections[pathSections.length - 1]
-  console.log(characterPrimaryKey)
-  $.ajax({
-            url: '{% url "create:update_skills" %}',
-            type: 'POST',
-            data: {
-                'id': characterPrimaryKey,
-                'skill': skill,
-                'increment': increment,
-                'csrfmiddlewaretoken': '{{ csrf_token }}'
-            },
-            success: function(response) {
-                if (response.status === 'success') {
-                    console.log('Data updated successfully!');
-                } else {
-                    console.log('Error: ' + response.message);
-                }
-            }
+  const skillData = skills[skill];
 
-        });
+  $.ajax({
+    url: '{% url "create:update_skills" %}',
+    type: 'POST',
+    data: {
+      'id': characterPrimaryKey,
+      'skill': skill,
+      'increment': increment,
+      'xp': skillData.xp,   // <-- send XP too
+      'csrfmiddlewaretoken': '{{ csrf_token }}'
+    },
+    success: function(response) {
+      if (response.status === 'success') {
+        console.log('Skill updated!');
+      } else {
+        console.log('Error: ' + response.message);
+      }
+    }
+  });
   //parse int at end of path from above variable -> this is the character primary key
   //send AJAX request with pk, skill, and increment to update_skills view which should update the DB
 }
 
-function increaseXP(skill) {
-const skillData = skills[skill];
-const requiredXP = getRequiredXP(skillData.level);
-skillData.xp += 1;
-if (skillData.xp >= requiredXP) {
-  skillData.xp = 0;
-  skillData.level += 1;
-  updateDatabaseSkills(skill,1)
-  if (skillData.level > 100) {
-      skillData.level = 100;
-      skillData.xp = 0;
+// Spell logic
+function fetchSpells() {
+    // Load the spells the character currently has
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    console.log(characterPrimaryKey)
+    fetch('{% url "api:fetchSpells" %}', {
+      method: "POST",
+      body: JSON.stringify({'id':characterPrimaryKey})
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        const currentSpellList = document.getElementById("current-spells");
+        currentSpellList.innerHTML = "";
+        jsonData.forEach((spell) => {
+          currentSpellList.innerHTML += ``;
+        });
+      });
+    }
+
+function showSpellSelection(skill) {
+  fetch("{% url 'api:showSpellSelection' %}", {
+    method: "POST",
+    body: JSON.stringify({sk: skill})
+    }) // your Django view should filter spells
+        .then(response => response.json())
+        .then(jsonData => {
+            let spellList = document.getElementById("spellList");
+            spellList.innerHTML = "";
+            if (jsonData.length > 0) {
+                jsonData.forEach((spell) => {
+                    let li = document.createElement("li");
+                    li.innerHTML = `
+                        <button class="btn btn-sm btn-warning mb-2" onclick="chooseSpell('${spell.SpellName}')">${spell.SpellName}</button>
+                        - ${spell.SpellDescription}`;
+                    spellList.appendChild(li);
+                });
+                document.getElementById("spellModal").style.display = "block";
+            }
+        })
+        .catch(err => console.error("Error fetching spells:", err));
+}
+
+function chooseSpell(spellId) {
+    const pagePath = window.location.pathname;
+    const pathSections = pagePath.split("/");
+    const characterPrimaryKey = pathSections[pathSections.length - 1];
+
+    fetch("{% url 'api:addSpell' %}", {
+        method: "POST",
+        body: JSON.stringify({ char_id: characterPrimaryKey, spell_id: spellId }),
+        headers: { "Content-Type": "application/json", "X-CSRFToken": "{{ csrf_token }}" }
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.message || "Spell learned! Refresh page to populate");
+        closeSpellModal();
+    });
+}
+
+function closeSpellModal() {
+    document.getElementById("spellModal").style.display = "none";
+}
+
+function openSpellManager() {
+    document.getElementById("spellManager").style.display = "block";
+    //fetchSpells();
+  }
+
+  function closeSpellManager() {
+    document.getElementById("spellManager").style.display = "none";
+  }
+
+   // spell manager toggle
+   function toggleSpellManager() {
+  const manager = document.getElementById("spellManager");
+  const button = document.getElementById("spellToggleButton");
+
+  if (manager.style.display === "none" || manager.style.display === "") {
+    manager.style.display = "block";
+    button.textContent = "Close";
+    //fetchSpells();  // only fetch when opening
+  } else {
+    manager.style.display = "none";
+    button.textContent = "Manage";
   }
 }
 
-updateUI(skill);
+function openWeaponManager() {
+    document.getElementById("weaponManager").style.display = "block";
+    fetchWeapons();
+  }
+
+  function closeWeaponManager() {
+    document.getElementById("weaponManager").style.display = "none";
+  }
+
+
+
+
+  function fetchWeapons() {
+    // Load the weapons the character currently has
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    console.log(characterPrimaryKey)
+    fetch('{% url "api:fetchWeapons" %}', {
+      method: "POST",
+      body: JSON.stringify({'id':characterPrimaryKey})
+    })  // Update with your Django endpoint
+      .then((response) => response.json())
+      .then((data) => {
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        const currentWeaponList = document.getElementById("current-weapons");
+        currentWeaponList.innerHTML = "";
+        jsonData.forEach((weapon) => {
+          currentWeaponList.innerHTML += `<button class="btn btn-sm text-dark" style="background-color: white;" onclick="removeWeapon('${weapon.name}')">${weapon.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-1" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
+</svg></button><br>`;
+        });
+      });
+
+    // Load all available weapons from the database
+    fetch('{% url "api:fetchAllWeapons" %}', {
+      method: "POST"
+    })  // Update with your Django endpoint
+      .then((response) => response.json())
+      .then((data) => {
+        const weaponOptionsList = document.getElementById("weapon-options");
+        weaponOptionsList.innerHTML = "";
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        jsonData.name.forEach((weapon) => {
+          weaponOptionsList.innerHTML += `<button class="btn btn-sm text-dark" style="background-color: white;" 
+        onclick="addWeapon('${weapon}'); showTempAlert('Weapon Added');">
+  ${weapon}
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill mb-1" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+  </svg>
+</button><br>`;
+        });
+      });
+  }
+
+  function addWeapon(weaponId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $('#current-weapons2').append('<li id="weapon-' + weaponId + '">' + weaponId + '</li>');
+    fetch('{% url "api:addWeapon" %}', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ weapon_id: weaponId, char_id: characterPrimaryKey }),
+    }).then(() => fetchWeapons());
+  }
+
+  function removeWeapon(weaponId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $(`[id="weapon-${weaponId}"]`).remove();
+    fetch('{% url "api:removeWeapon" %}', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ weapon_id: weaponId, char_id: characterPrimaryKey }),
+    }).then(() => fetchWeapons());
+  }
+
+  function getCSRFToken() {
+    return document.querySelector("[name=csrfmiddlewaretoken]").value;
+  }
+       // weapon manager toggle
+function toggleWeaponManager() {
+    const manager = document.getElementById("weaponManager");
+    const button = document.getElementById("weaponToggleButton");
+    const buttonHome = document.getElementById("weaponButtonHome");
+    const buttonSidebar = document.getElementById("weaponButtonSidebar");
+
+    const isOpen = manager.classList.contains("open");
+
+    if (!isOpen) {
+        manager.classList.add("open");
+        button.innerHTML = 'Close'
+        fetchWeapons();
+        buttonSidebar.appendChild(button); // move into sidebar
+    } else {
+        manager.classList.remove("open");
+        button.innerHTML = 'Manage<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg>';
+        buttonHome.appendChild(button); // move back outside
+    }
+}
+ // Inventory mngr
+function openInventoryManager() {
+    document.getElementById("inventoryManager").style.display = "block";
+    fetchInventory();
+  }
+
+  function closeInventoryManager() {
+    document.getElementById("inventoryManager").style.display = "none";
+  }
+
+   // inventory manager toggle
+  function toggleInventoryManager() {
+    const manager = document.getElementById("inventoryManager");
+    const button = document.getElementById("inventoryToggleButton");
+    const buttonHome = document.getElementById("buttonHome");
+    const buttonSidebar = document.getElementById("buttonSidebar");
+
+    const isOpen = manager.classList.contains("open");
+
+    if (!isOpen) {
+        // Open sidebar
+        manager.classList.add("open");
+        button.textContent = 'Close'
+        fetchInventory();
+        // Move button into sidebar
+        buttonSidebar.appendChild(button);
+    } else {
+        // Close sidebar
+        manager.classList.remove("open");
+        button.innerHTML = 'Manage<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16"><path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/><path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/></svg>';
+        
+        // Move button back to home position
+        buttonHome.appendChild(button);
+    }
 }
 
-function decreaseXP(skill) {
-const skillData = skills[skill];
-skillData.xp -= 1;
-if (skillData.xp < 0 && skillData.level > 1) {
-  updateDatabaseSkills(skill,-1)
-  skillData.level -= 1;
-  skillData.xp = getRequiredXP(skillData.level) - 1;
+
+function fetchInventory() {
+  fetchTonics();
+  fetchItems();
+  fetchUtilities();
+  fetchClothing();
 }
 
-updateUI(skill);
-}
+function fetchTonics() {
+    // Load the tonics the character currently has
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    console.log(characterPrimaryKey)
+    fetch('{% url "api:fetchTonics" %}', {
+      method: "POST",
+      body: JSON.stringify({'id':characterPrimaryKey})
+    }) 
+      .then((response) => response.json())
+      .then((data) => {
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        const currentTonicList = document.getElementById("current-tonics");
+        currentTonicList.innerHTML = "";
+        jsonData.forEach((tonic) => {
+          currentTonicList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeTonic('${tonic.name}')">${tonic.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
+</svg></button><br />`;
+        });
+      });
+
+    // Load all available weapons from the database
+    fetch('{% url "api:fetchAllTonics" %}', {
+      method: "POST"
+    })  // Update with your Django endpoint
+      .then((response) => response.json())
+      .then((data) => {
+        const tonicOptionsList = document.getElementById("tonic-options");
+        tonicOptionsList.innerHTML = "";
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        jsonData.name.forEach((tonic) => {
+          tonicOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
+        style="background-color: white;" 
+        onclick="addTonic('${tonic}'); showTempAlert('Tonic Added');">
+  ${tonic}
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+  </svg>
+</button><br />`;
+        });
+      });
+  }
+
+  function addTonic(tonicId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $('#current-tonics2').append('<li id="tonic-' + tonicId + '">' + tonicId + '</li>');
+    fetch('{% url "api:addTonic" %}', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ tonic_id: tonicId, char_id: characterPrimaryKey }),
+    }).then(() => fetchTonics());
+  }
+
+  function removeTonic(tonicId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $(`[id="tonic-${tonicId}"]`).remove();
+    fetch('{% url "api:removeTonic" %}', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ tonic_id: tonicId, char_id: characterPrimaryKey }),
+    }).then(() => fetchTonics());
+  }
+
+  // fetch mystical items
+  function fetchItems() {
+    // Load the myst items the character currently has
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    console.log(characterPrimaryKey)
+    fetch('{% url "api:fetchMysticalWeapons" %}', {
+      method: "POST",
+      body: JSON.stringify({'id':characterPrimaryKey})
+    }) 
+      .then((response) => response.json())
+      .then((data) => {
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        const currentItemsList = document.getElementById("current-items");
+        currentItemsList.innerHTML = "";
+        jsonData.forEach((item) => {
+          currentItemsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeItem('${item.name}')">${item.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
+</svg></button><br />`;
+        });
+      });
+
+    // Load all available items from the database
+    fetch('{% url "api:fetchAllMysticalWeapons" %}', {
+      method: "POST"
+    })  // Update with your Django endpoint
+      .then((response) => response.json())
+      .then((data) => {
+        const itemOptionsList = document.getElementById("item-options");
+        itemOptionsList.innerHTML = "";
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        jsonData.name.forEach((mitem) => {
+          itemOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
+        style="background-color: white;" 
+        onclick="addItem('${mitem}'); showTempAlert('Mystical Weapon Added');">
+  ${mitem}
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+  </svg>
+</button><br />`;
+        });
+      });
+  }
+
+  function addItem(itemId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $('#current-items2').append('<li id="mysticalweapon-' + itemId + '">' + itemId + '</li>');
+    fetch('{% url "api:addMysticalWeapon" %}', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ item_id: itemId, char_id: characterPrimaryKey }),
+    }).then(() => fetchItems());
+  }
+
+  function removeItem(itemId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $(`[id="mysticalweapon-${itemId}"]`).remove();
+    fetch('{% url "api:removeMysticalWeapon" %}', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ item_id: itemId, char_id: characterPrimaryKey }),
+    }).then(() => fetchItems());
+  }
+
+  // fetch utilities
+  function fetchUtilities() {
+    // Load the utilities the character currently has
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    console.log(characterPrimaryKey)
+    fetch('{% url "api:fetchUtility" %}', {
+      method: "POST",
+      body: JSON.stringify({'id':characterPrimaryKey})
+    }) 
+      .then((response) => response.json())
+      .then((data) => {
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        const currentUtilitiesList = document.getElementById("current-utilities");
+        currentUtilitiesList.innerHTML = "";
+        jsonData.forEach((utility) => {
+          currentUtilitiesList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeUtility('${utility.name}')">${utility.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
+</svg></button><br />`;
+        });
+      });
+
+    // Load all available Utilities from the database
+    fetch('{% url "api:fetchAllUtility" %}', {
+      method: "POST"
+    })  // Update with your Django endpoint
+      .then((response) => response.json())
+      .then((data) => {
+        const utilityOptionsList = document.getElementById("utility-options");
+        utilityOptionsList.innerHTML = "";
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        jsonData.name.forEach((utility) => {
+          utilityOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
+        style="background-color: white;" 
+        onclick="addUtility('${utility}'); showTempAlert('Utility Added');">
+  ${utility}
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+  </svg>
+</button><br />`;
+        });
+      });
+  }
+
+  function addUtility(utilityId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $('#current-utilities2').append('<li id="utility-' + utilityId + '">' + utilityId + '</li>');
+    fetch('{% url "api:addUtility" %}', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ utility_id: utilityId, char_id: characterPrimaryKey }),
+    }).then(() => fetchUtilities());
+  }
+
+  function removeUtility(utilityId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $(`[id="utility-${utilityId}"]`).remove();
+    fetch('{% url "api:removeUtility" %}', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ utility_id: utilityId, char_id: characterPrimaryKey }),
+    }).then(() => fetchUtilities());
+  }
+
+  // fetch clothing/armor
+  function fetchClothing() {
+    // Load the clothing the character currently has
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    console.log(characterPrimaryKey)
+    fetch('{% url "api:fetchClothing" %}', {
+      method: "POST",
+      body: JSON.stringify({'id':characterPrimaryKey})
+    }) 
+      .then((response) => response.json())
+      .then((data) => {
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        const currentClothingList = document.getElementById("current-clothing");
+        currentClothingList.innerHTML = "";
+        jsonData.forEach((clothing) => {
+          currentClothingList.innerHTML += `<button class="btn btn-primary p-1 text-dark" style="background-color: white;" onclick="removeClothing('${clothing.name}')">${clothing.name}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-dash-square-fill ms-2" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm2.5 7.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1"/>
+</svg></button><br />`;
+        });
+      });
+
+    // Load all available clothing from the database
+    fetch('{% url "api:fetchAllClothing" %}', {
+      method: "POST"
+    })  // Update with your Django endpoint
+      .then((response) => response.json())
+      .then((data) => {
+        const clothingOptionsList = document.getElementById("clothing-options");
+        clothingOptionsList.innerHTML = "";
+        jsonData = JSON.parse(data)
+        console.log(jsonData)
+        jsonData.name.forEach((clothing) => {
+          clothingOptionsList.innerHTML += `<button class="btn btn-primary p-1 text-dark" 
+        style="background-color: white;" 
+        onclick="addClothing('${clothing}'); showTempAlert('Clothing Added');">
+  ${clothing}
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-plus-square-fill ms-1" viewBox="0 0 16 16">
+    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0"/>
+  </svg>
+</button><br />`;
+        });
+      });
+  }
+
+  function addClothing(clothingId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $('#current-clothing2').append('<li id="clothing-' + clothingId + '">' + clothingId + '</li>');
+    fetch('{% url "api:addClothing" %}', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ clothing_id: clothingId, char_id: characterPrimaryKey }),
+    }).then(() => fetchClothing());
+  }
+
+  function removeClothing(clothingId) {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    $(`[id="clothing-${clothingId}"]`).remove();
+    fetch('{% url "api:removeClothing" %}', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ clothing_id: clothingId, char_id: characterPrimaryKey }),
+    }).then(() => fetchClothing());
+  }
 
 // Initialize UI for all skills
 for (let skill in skills) {
-updateUI(skill);
+    updateUI(skill);
+}
+// Level up functions
+function openLevelUpModal() {
+    const attributes = ["strength", "agility", "gumption", "intelligence", "mysticism", "personality"];
+    const select5 = document.getElementById("attributeIncrease5");
+    const select3 = document.getElementById("attributeIncrease3");
+    
+    // Clear previous options
+    select5.innerHTML = "";
+    select3.innerHTML = "";
+    
+    // Populate dropdowns
+    attributes.forEach(attr => {
+        let option5 = document.createElement("option");
+        option5.value = attr;
+        option5.textContent = attr.charAt(0).toUpperCase() + attr.slice(1);
+        select5.appendChild(option5);
+        
+        let option3 = document.createElement("option");
+        option3.value = attr;
+        option3.textContent = attr.charAt(0).toUpperCase() + attr.slice(1);
+        select3.appendChild(option3);
+    });
+    
+    document.getElementById("levelUpModal").style.display = "block";
+}
+
+function openSnapshot() {
+    const attributes = ["strength", "agility", "gumption", "intelligence", "mysticism", "personality"];
+    const select5 = document.getElementById("attributeIncrease5");
+    const select3 = document.getElementById("attributeIncrease3");
+    
+    // Clear previous options
+    select5.innerHTML = "";
+    select3.innerHTML = "";
+    
+    // Populate dropdowns
+    attributes.forEach(attr => {
+        let option5 = document.createElement("option");
+        option5.value = attr;
+        option5.textContent = attr.charAt(0).toUpperCase() + attr.slice(1);
+        select5.appendChild(option5);
+        
+        let option3 = document.createElement("option");
+        option3.value = attr;
+        option3.textContent = attr.charAt(0).toUpperCase() + attr.slice(1);
+        select3.appendChild(option3);
+    });
+    
+    document.getElementById("snapshot").style.display = "block";
+    document.body.style.pointerEvents = "none"; // Disable interactions with the rest of the page
+    document.getElementById("snapshot").style.pointerEvents = "auto"; // Keep modal interactive
+}
+
+function closeLevelUpModal() {
+    document.getElementById("levelUpModal").style.display = "none";
+}
+
+function closeSnapshot() {
+    document.getElementById("snapshot").style.display = "none";
+    document.body.style.pointerEvents = "auto"; // Re-enable interactions with the page
+}
+
+function applyLevelUp() {
+    const pagePath = window.location.pathname
+    const pathSections = pagePath.split("/")
+    const characterPrimaryKey = pathSections[pathSections.length - 1]
+    console.log(characterPrimaryKey)
+    const attr5 = document.getElementById("attributeIncrease5").value;
+    const attr3 = document.getElementById("attributeIncrease3").value;
+    
+    if (attr5 === attr3) {
+        alert("You must choose different attributes to increase.");
+        return;
+    }
+
+     // Cap logic
+    let current5 = parseInt(document.getElementById(attr5).textContent);
+    let current3 = parseInt(document.getElementById(attr3).textContent);
+
+    let new5 = Math.min(current5 + 5, 100); // cap at 100
+    let new3 = Math.min(current3 + 3, 100); // cap at 100
+
+    document.getElementById(attr5).textContent = new5;
+    document.getElementById(attr3).textContent = new3;
+
+    skillLevelUps = 0; // Reset skill level-up counter after leveling up
+    closeLevelUpModal();
+}
+    
+    // Update attributes
+    document.getElementById(attr5).textContent = parseInt(document.getElementById(attr5).textContent) + 5;
+    document.getElementById(attr3).textContent = parseInt(document.getElementById(attr3).textContent) + 3;
+
+     // Increase character level
+     const levelElement = document.getElementById("characterLevel");
+    levelElement.textContent = parseInt(levelElement.textContent) + 1;
+
+    function applyLevelUp() {
+    const pagePath = window.location.pathname;
+    const pathSections = pagePath.split("/");
+    const characterPrimaryKey = pathSections[pathSections.length - 1];
+
+    const attr5 = document.getElementById("attributeIncrease5").value;
+    const attr3 = document.getElementById("attributeIncrease3").value;
+
+    if (attr5 === attr3) {
+        alert("You must choose different attributes to increase.");
+        return;
+    }
+
+    // Cap logic
+    let current5 = parseInt(document.getElementById(attr5).textContent);
+    let current3 = parseInt(document.getElementById(attr3).textContent);
+
+    let new5 = Math.min(current5 + 5, 100);
+    let new3 = Math.min(current3 + 3, 100);
+
+    document.getElementById(attr5).textContent = new5;
+    document.getElementById(attr3).textContent = new3;
+
+    // Increase character level
+    const levelElement = document.getElementById("characterLevel");
+    const newLevel = parseInt(levelElement.textContent) + 1;
+    levelElement.textContent = newLevel;
+
+    // Send update to backend
+    fetch('{% url "api:levelup" %}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCSRFToken()
+        },
+        body: JSON.stringify({
+            'id': characterPrimaryKey,
+            'major': attr5,
+            'minor': attr3,
+            'level': newLevel
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            console.error("Level up failed:", response.statusText);
+        }
+    });
+
+    // Reset counters and close modal
+    skillLevelUps = 0;
+    closeLevelUpModal();
 }
 
 
+
+
+function getRequiredSkillLevelUps(characterLevel) {
+    if (characterLevel <= 3) {
+        return 3;
+    } else if (characterLevel <= 15) {
+        return 5;
+    } else {
+        return 7;
+    }
+}
+
+function trackSkillLevelUp() {
+    skillLevelUps++;
+    const characterLevel = parseInt(document.getElementById("characterLevel").textContent);
+    const requiredSkillLevelUps = getRequiredSkillLevelUps(characterLevel);
+    
+    if (skillLevelUps >= requiredSkillLevelUps) {
+        openLevelUpModal();
+    }
+}
 
 </script>
 

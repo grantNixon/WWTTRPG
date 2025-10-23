@@ -1,0 +1,36 @@
+TonicName,ActionCost,TonicSize,TonicDescription
+Herbal Tonic,0.5,Small,1d4 health + Medicine
+Herbal Tonic,1,Medium,2d4 health + Medicine
+Herbal Tonic,1.5,Large,3d4 health + Medicine
+Herbal Injection,1,Small,1d6 health + Medicine
+Herbal Injection,1.5,Medium,2d6 health + Medicine
+Herbal Injection,2,Large,3d6 health + Medicine
+Herbal Inhaler,1.5,Small,1d4 health + Medicine every 5 seconds for 10 seconds
+Herbal Inhaler,2.5,Large,1d8 health + Medicine every 5 seconds for 10 seconds
+Energy Tonic,5ft MB,Small,+1 AP for 5 seconds
+Energy Tonic,10ft MB,Medium,+2 AP for 5 seconds
+Energy Tonic,15ft MB,Large,+2 AP for 10 seconds
+Lightfoot Tonic,0.5,Small,+5ft MB for 5 seconds
+Lightfoot Tonic,1,Medium,+10ft MB for 5 seconds
+Lightfoot Tonic,1.5,Large,+15ft MB for 5 seconds
+Dead-Shot Tonic,1,Small,Good odds on next shot
+Dead-Shot Tonic,1.5,Medium,Good odds on next two shots
+Dead-Shot Tonic,2,Large,Good odds on next three shots
+Mystical Tonic,5ft MB,Small,Can cast a 1st tier spell for no cost
+Mystical Tonic,10ft MB,Medium,Can cast a 2nd tier spell for no cost
+Mystical Tonic,15ft MB,Large,Can cast a 3rd tier spell for no cost
+Invisibility Tonic,1,,Become invisible for 10 seconds
+Silver Tongue Tonic,1,,Good odds on persuasion and foolery checks for 2 minutes
+Swift Step Tonic,1,,+20 EC for 10 seconds
+Mastery Tonic,1,,Gain instant mastery of a chosen skill and all bonuses and perks that come with it for 10 seconds
+Nourishing Tonic,1,,Gain double healing from all food and drink for 30 seconds
+Cure Common Disease Tonic,1,,Cures a common disease (does not cure Mortia's Disease)
+Stamina Burst Tonic,1,,Instantly refills MB
+Unlocking Tonic,1,,Gain the ability to attempt to pick any lock level
+Exp Tonic,1,,Gain double exp from all sources for 30 seconds
+Shock Resistance Tonic,1,,Resistance to Shock damage for 30 minutes
+Fire Resistance Tonic,1,,Resistance to Fire damage for 30 minutes
+Holy Reistance Tonic,1,,Resistance to Holy damage for 30 minutes
+Acid Resistance Tonic,1,,Resistance to Acid damage for 30 minutes
+Water Breathing Tonic,1,,Can breathe underwater for 30 minutes
+Soft Step Tonic,1,,Footsteps are silent for 30 seconds
