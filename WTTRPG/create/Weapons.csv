@@ -1,0 +1,89 @@
+WeaponName,DamageType,ActionCost,Range,Damage
+Hand Wraps,Crushing,0.5,5ft,1d2 no mod
+Brass Knuckles,Crushing,1,5ft,1d4 + Hand-to-Hand
+Bejeweled Cestus,Piercing,2.5,5ft,1d6 + Hand-to-Hand (2 hits)
+Boxing Gloves,Crushing,3.5,5ft,1d8 + Hand-to-Hand (2 hits)
+Hunting Knife,Slashing,1,5ft,1d4 + Slashing Melee
+Clockwork Switchblade,Slashing,1,5ft,1d4 + Slashing Melee
+Evergladian Tanto,Slashing,1.5,5ft,1d6 + Slashing Melee
+Copper Pipe,Crushing,1.5,5ft,1d6 + Crushing Melee
+Frying Pan,Crushing,2,5ft,1d6 + Crushing Melee
+Giant Mallet (2H),Crushing,3,10ft,1d12 + Crushing Melee
+Cindeli Spear (2H),Piercing,2,10ft,1d8 + Slashing Melee
+Butcher Knife,Slashing,1.5,5ft,1d6 + Slashing Melee
+Old War Sabre,Slashing,2.5,5ft,1d10 + Slashing Melee
+Leather Whip,Slashing,2,10ft,2d4 + Ropework
+Barbed Whip,Piercing,3,15ft,2d6 + Ropework
+Knotted Whip,Crushing,2,10ft,2d4 + Ropework
+Shortbow (2H),Piercing,1,15/30ft,1d4 + Archery
+Crossbow,Piercing,2,35/60ft,1d4 + Archery (2 hits)
+Evergladian Crossbow (2H),Crushing,3,20/45ft,1d10 + Archery
+Bow (2H),Piercing,2,25/50ft,1d6 + Archery
+Long Bow (2H),Piercing,2.5,45/90ft,1d8 + Archery
+Waxing Crescent Bow (2H),Slashing,3,65/90ft,1d10 + Archery
+Clockwork Standing Bow (2H),Piercing,4,85/100ft,2d10 + Archery
+Cindeli Concealed Pistol,Slashing,0.5,10/20ft,1d2 no mod
+Cindeli Break-Action Revolver,Slashing,2,20/40ft,1d6 + Pistols
+Cindeli Single-Action Revolver,Slashing,2.5,30/40ft,1d8 + Pistols
+Clockwork Concealed Pistol,Piercing,0.5,10/20ft,1d2 no mod
+Clockwork Six-Shooter Revolver,Piercing,1,25/35ft,1d4 + Pistols
+Clockwork Single-Action Revolver,Piercing,2,30/40ft,1d8 + Pistols
+Clockwork Double-Action Revolver,Piercing,2.5,40/55ft,1d10 + Pistols
+Clockwork Semi-Auto Pistol,Piercing,1.5,20/30ft,1d4 + Pistols (2 shots)
+Clockwork Hand Cannon,Piercing,4,60/80ft,3d8 + Pistols
+Evergladian Six-Shooter Revolver,Crushing,1,25/35ft,1d4 + Pistols
+Evergladian Break-Action Revolver,Crushing,2,20/40ft,1d6 + Pistols
+Evergladian Semi-Auto Pistol,Crushing,1.5,20/30ft,1d4 + Pistols (2 shots)
+Evergladian Heavy Revolver,Crushing,2.5,40/60ft,1d10 + Pistols
+Cindeli Lever-Action Rifle,Slashing,1.5,25/50ft,1d6 + Rifles
+Cindeli Repeater,Slashing,2,60/80ft,1d4 + Rilfes (2 shots)
+Cindeli Revolver Rifle,Slashing,2.5,65/85ft,1d8 + Rifles
+Cindeli Semi-Auto Rifle,Slashing,2.5,65/85ft,1d6 + Rifles (2 shots)
+Cindeli Break-Action Rifle,Slashing,3,75/95ft,1d12 + Rifles
+Clockwork Lever-Action Rifle,Piercing,1.5,25/50ft,1d6 + Rifles
+Clockwork Bolt-Action Rifle,Piercing,2,80/100ft,1d10 + Rifles
+Clockwork Repeater,Piercing,2,60/80ft,1d4 + Rifles (2 shots)
+Evergladian Bolt-Action Rifle,Crushing,2,80/100ft,1d10 + Rifles
+Evergladian Anti-Material Rifle,Crushing,6,120/240ft,3d10 + Rifles (can only be shot once every 15 seconds)
+Cindeli Pump-Action Shotgun,Slashing,1.5,15/25ft,1d4 + Shotguns
+Cindeli Sawed-Off,Slashing,2,10/15ft,1d6 + Shotguns (can fire both barrels for 4 AP)
+Clockwork Pump-Action Shotgun,Piercing,1.5,15/25ft,1d4 + Shotguns
+Clockwork Sawed-Off,Piercing,2,10/15ft,1d6 + Shotguns (can fire both barrels for 4 AP)
+Clockwork Semi-Auto Shotgun,Piercing,3.5,20/35ft,1d8 + Shotguns (2 shots)
+Evergladian Pump-Action Shotgun,Crushing,1.5,15/25ft,1d4 + Shotguns
+Evergladian Sawed-Off,Crushing,2,10/15ft,1d6 + Shotguns (can fire both barrels for 4 AP)
+Evergladian Semi-Auto Shotgun,Crushing,3.5,20/35ft,1d8 + Shotguns (2 shots)
+Evergladian Break-Action Shotguns,Crushing,3,15/25ft,3d6 + Shotguns
+Evergladian Elephant Killer,Crushing,5.5,10/20ft,4d8 + Shotguns
+Knuckle Pads,Shock,1,5ft,1d4 + Hand-to-Hand
+Shock Talons,Shock,2,5ft,1d4 + Hand-to-Hand (2 hits)
+Shock Gloves,Shock,2.5,5ft,1d6 + Hand-to-Hand (2 hits)
+Electric Cestus,Shock,5,5ft,1d10 + Hand-to-Hand (2 hits)
+Hot Knife,Shock,0.5,5ft,1d2 no mod
+Shock Axe,Shock,1.5,5ft,1d4 + Slashing Melee
+Shock Whip,Shock,1,5ft,1d4 + Ropework
+Tesla Whip,Shock,2,10ft,1d6 + Ropework
+Electric Dai-Katana (2H),Shock,2,5ft,1d8 + Slashing Melee
+Taser,Shock,0.5,5ft,1d2 no mod
+Cattle Prod,Shock,1.5,5ft,1d6 + Crushing Melee
+Electromallet (2H),Shock,3,5ft,1d10 + Crushing Melee
+Wristbow,Shock,0.5,10/20ft,1d2 no mod
+Shockbow (2H),Shock,1,15/30ft,1d4 + Archery
+Electric Crossbow (2H),Shock,1.5,15/30ft,1d6 + Archery
+Pylon Bow (2H),Shock,2,25/45ft,1d8 + Archery
+Waning Crescent Bow (2H),Shock,2.5,40/80ft,1d10 + Archery
+Electrified Standing Bow (2H),Shock,4,85/150ft,3d6 + Archery
+Volt Concealed Pistol,Shock,1,15/25ft,1d4 + Pistols
+Zapper Revolver,Shock,1.5,25/35ft,1d6 + Pistols
+Ohm Charge Pistol,Shock,0.5,25/45ft,1d8/2d8 + Pistols
+Crown Joule Double-Action Pistol,Shock,2.5,30/40ft,1d6 + Pistols (2 shots)
+Watt-A-Pistol,Shock,3,35/50ft,2d8 + Pistols
+Transformer Revolver,Shock,4,60/90ft,1d12 + Pistols
+Amped Repeater ,Shock,1,25/50ft,1d4 + Rifles
+Quad-Arc Charge Rifle,Shock,3.5,45/90ft,1d6/2d6/3d6/4d6 + Rifles
+Lighting Bolt-Action Rifle,Shock,2.5,50/70ft,1d8 + Rifles
+Railgun,Shock,3,60/85ft,1d12 + Rifles
+Gauss Cannon,Shock,5,240/400ft,4d12 + Rifles (disintegrates target if killed. Can only be shot once every 12 hours)
+Thunder Sawed-Off,Shock,3,5/10ft,2d6 + Shotguns (can fire both shots for 6 AP)
+Electric Semi-Auto Shotgun,Shock,2,15/25ft,1d4 + Shotguns (2 shots)
+Current Pump-Action Shotgun,Shock,1,20/30ft,1d4 + Shotguns

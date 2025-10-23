@@ -15,5 +15,5 @@ def getting_started(request):
     return render(request, 'home_page/Getting_Started.html')
 
 def intro_page(request):
-    return render(request, 'home_page/intro.html')
+    return render(request, 'home_page/intro_page.html')
 
